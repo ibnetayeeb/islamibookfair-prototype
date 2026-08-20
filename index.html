@@ -1,953 +1,2947 @@
-<!-- ================================================================
-     ইসলামী বইমেলা (Islami Book Fair) — Universal Digital Platform
-     Single-file build for WordPress Elementor "Custom HTML" widget.
-     Tailwind CDN (preflight disabled for Elementor safety) + Vanilla JS.
-     All visual + interactive content is scoped under #nibf2026.
-     ================================================================ -->
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ইসলামী বইমেলা | Islami Book Fair</title>
+
+  <!-- Tailwind CDN: Preflight disabled to prevent Elementor conflicts -->
+  <script>
+    tailwind = {
+      config: {
+        corePlugins: {
+          preflight: false
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* =========================================================
+       ISLAMI BOOK FAIR
+       Elementor-safe scoped CSS
+       ========================================================= */
+
+    #nibf2026 {
+      --blue-950: #071b33;
+      --blue-900: #0f4c81;
+      --blue-800: #174f88;
+      --blue-700: #1e3a8a;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-100: #dbeafe;
+      --blue-50: #eff6ff;
+
+      --gold: #f59e0b;
+      --gold-light: #fbbf24;
+
+      --white: #ffffff;
+      --offwhite: #f8fafc;
+      --softblue: #f0f7ff;
+
+      --navy: #0f172a;
+      --slate: #475569;
+      --muted: #64748b;
+
+      --border: rgba(15, 76, 129, 0.12);
+
+      font-family:
+        "Noto Sans Bengali",
+        "Hind Siliguri",
+        "SolaimanLipi",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      color: var(--navy);
+      background: var(--offwhite);
+      width: 100%;
+      overflow: hidden;
+      line-height: 1.6;
+    }
+
+    #nibf2026 *,
+    #nibf2026 *::before,
+    #nibf2026 *::after {
+      box-sizing: border-box;
+    }
+
+    #nibf2026 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #nibf2026 button {
+      font-family: inherit;
+    }
+
+    /* =========================================================
+       GLOBAL
+       ========================================================= */
+
+    #nibf2026 .nibf-container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    #nibf2026 .section {
+      padding: 92px 0;
+      position: relative;
+    }
+
+    #nibf2026 .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue-700);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    #nibf2026 .section-label::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      border-radius: 10px;
+      background: var(--gold);
+    }
+
+    #nibf2026 .section-title {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.2;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -.03em;
+    }
+
+    #nibf2026 .section-subtitle {
+      max-width: 680px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    #nibf2026 .section-head {
+      margin-bottom: 42px;
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    #nibf2026 .nibf-header {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0;
+      transition: .3s ease;
+    }
+
+    #nibf2026 .nibf-header.scrolled {
+      padding: 8px 0;
+    }
+
+    #nibf2026 .header-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 0 18px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(15,76,129,.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 18px;
+      box-shadow: 0 14px 40px rgba(7,27,51,.16);
+    }
+
+    #nibf2026 .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    #nibf2026 .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      background: rgba(245,158,11,.12);
+      border: 1px solid rgba(245,158,11,.32);
+    }
+
+    #nibf2026 .brand-name {
+      color: #fff;
+      font-size: 20px;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    #nibf2026 .brand-en {
+      display: block;
+      margin-top: 2px;
+      color: rgba(255,255,255,.62);
+      font-size: 8px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      font-family: Arial, sans-serif;
+    }
+
+    #nibf2026 .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    #nibf2026 .nav-link {
+      position: relative;
+      padding: 10px 12px;
+      color: rgba(255,255,255,.82);
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: .25s ease;
+      white-space: nowrap;
+    }
+
+    #nibf2026 .nav-link:hover {
+      color: #fff;
+      background: rgba(255,255,255,.10);
+    }
+
+    #nibf2026 .news-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg,#fbbf24,#f59e0b);
+      color: #172033;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 0 0 rgba(245,158,11,0);
+      animation: nibf-news-pulse 3s infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes nibf-news-pulse {
+      0%,100% {
+        box-shadow: 0 0 0 rgba(245,158,11,0);
+      }
+      50% {
+        box-shadow: 0 0 22px rgba(245,158,11,.38);
+      }
+    }
+
+    #nibf2026 .mobile-menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      border-radius: 12px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #nibf2026 .mobile-menu {
+      display: none;
+      margin-top: 8px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(15,76,129,.97);
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 20px 40px rgba(7,27,51,.2);
+    }
+
+    #nibf2026 .mobile-menu.active {
+      display: block;
+    }
+
+    #nibf2026 .mobile-menu a {
+      display: block;
+      color: #fff;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    #nibf2026 .mobile-menu a:hover {
+      background: rgba(255,255,255,.10);
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    #nibf2026 .hero {
+      position: relative;
+      min-height: 780px;
+      display: flex;
+      align-items: center;
+      padding: 150px 0 90px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 32%, rgba(59,130,246,.17), transparent 32%),
+        radial-gradient(circle at 12% 75%, rgba(245,158,11,.07), transparent 28%),
+        linear-gradient(135deg,#f8fbff 0%,#eef6ff 52%,#f8fafc 100%);
+    }
+
+    /* subtle grid */
+    #nibf2026 .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .36;
+      background-image:
+        linear-gradient(rgba(37,99,235,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,.035) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+      pointer-events: none;
+    }
+
+    #nibf2026 .hero-content {
+      position: relative;
+      z-index: 5;
+      width: 58%;
+    }
+
+    #nibf2026 .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(37,99,235,.15);
+      border-radius: 999px;
+      background: rgba(255,255,255,.74);
+      color: var(--blue-700);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      box-shadow: 0 8px 24px rgba(15,76,129,.06);
+    }
+
+    #nibf2026 .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(245,158,11,.12);
+    }
+
+    #nibf2026 .hero-title {
+      max-width: 720px;
+      margin: 0;
+      color: var(--blue-950);
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 1.13;
+      letter-spacing: -.045em;
+      font-weight: 900;
+    }
+
+    #nibf2026 .hero-title span {
+      display: block;
+      color: var(--blue-700);
+    }
+
+    #nibf2026 .hero-description {
+      max-width: 620px;
+      margin: 22px 0 0;
+      color: #52647a;
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.85;
+    }
+
+    #nibf2026 .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    #nibf2026 .primary-btn,
+    #nibf2026 .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 13px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    #nibf2026 .primary-btn {
+      border: 1px solid var(--blue-600);
+      background: var(--blue-600);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(37,99,235,.22);
+    }
+
+    #nibf2026 .primary-btn:hover {
+      transform: translateY(-2px);
+      background: var(--blue-700);
+      box-shadow: 0 16px 32px rgba(37,99,235,.28);
+    }
+
+    #nibf2026 .secondary-btn {
+      border: 1px solid rgba(15,76,129,.15);
+      background: rgba(255,255,255,.72);
+      color: var(--blue-900);
+    }
+
+    #nibf2026 .secondary-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37,99,235,.35);
+      background: #fff;
+    }
+
+    /* Current event mini card */
+    #nibf2026 .hero-event {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 32px;
+      padding: 12px 15px;
+      border: 1px solid rgba(15,76,129,.10);
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 12px 30px rgba(15,76,129,.07);
+    }
+
+    #nibf2026 .event-live {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #0f766e;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    #nibf2026 .event-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 5px rgba(16,185,129,.10);
+    }
+
+    #nibf2026 .event-meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       VECTOR BOOK LINE ART
+       ========================================================= */
+
+    #nibf2026 .book-art-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    #nibf2026 .vector-book {
+      position: absolute;
+      width: 210px;
+      height: 150px;
+      opacity: .14;
+      color: var(--blue-600);
+      filter: drop-shadow(0 10px 30px rgba(37,99,235,.05));
+      animation: nibf-book-float 8s ease-in-out infinite;
+    }
+
+    #nibf2026 .vector-book svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    #nibf2026 .vector-book path,
+    #nibf2026 .vector-book line {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    #nibf2026 .book-one {
+      right: 15%;
+      top: 18%;
+      transform: rotate(-7deg);
+    }
+
+    #nibf2026 .book-two {
+      right: 5%;
+      bottom: 20%;
+      width: 260px;
+      opacity: .09;
+      color: var(--blue-700);
+      animation-delay: -2s;
+      animation-duration: 10s;
+      transform: rotate(8deg);
+    }
+
+    #nibf2026 .book-three {
+      left: 42%;
+      bottom: 8%;
+      width: 180px;
+      opacity: .08;
+      color: var(--gold);
+      animation-delay: -5s;
+      animation-duration: 9s;
+      transform: rotate(-12deg);
+    }
+
+    #nibf2026 .book-four {
+      right: 32%;
+      top: 8%;
+      width: 120px;
+      opacity: .07;
+      animation-delay: -3s;
+      animation-duration: 7s;
+    }
+
+    @keyframes nibf-book-float {
+      0%,100% {
+        translate: 0 0;
+        rotate: 0deg;
+      }
+      50% {
+        translate: 0 -18px;
+        rotate: 2deg;
+      }
+    }
+
+    /* Page flip line animation */
+    #nibf2026 .page-flip {
+      transform-origin: 50% 50%;
+      animation: nibf-page-flip 5s ease-in-out infinite;
+    }
+
+    #nibf2026 .page-flip.delay {
+      animation-delay: -2.5s;
+    }
+
+    @keyframes nibf-page-flip {
+      0%, 20%, 100% {
+        opacity: .2;
+        transform: rotateY(0deg);
+      }
+      42% {
+        opacity: .8;
+        transform: rotateY(70deg);
+      }
+      62% {
+        opacity: .35;
+        transform: rotateY(0deg);
+      }
+    }
+
+    /* Blue atmospheric orb */
+    #nibf2026 .hero-orb {
+      position: absolute;
+      right: 8%;
+      top: 26%;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,99,235,.13), rgba(37,99,235,0) 70%);
+      filter: blur(2px);
+      z-index: 1;
+      animation: nibf-orb 8s ease-in-out infinite;
+    }
+
+    @keyframes nibf-orb {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+
+    /* subtle fireworks */
+    #nibf2026 .spark {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0;
+      animation: nibf-spark 5s infinite;
+    }
+
+    #nibf2026 .spark:nth-child(1) { right: 15%; top: 27%; animation-delay: .2s; }
+    #nibf2026 .spark:nth-child(2) { right: 22%; top: 42%; animation-delay: 1.8s; }
+    #nibf2026 .spark:nth-child(3) { right: 8%; top: 57%; animation-delay: 3.1s; }
+    #nibf2026 .spark:nth-child(4) { right: 32%; top: 20%; animation-delay: 2.2s; }
+
+    @keyframes nibf-spark {
+      0% {
+        opacity: 0;
+        transform: scale(.3);
+      }
+      20% {
+        opacity: .6;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0;
+        transform: translateY(-22px) scale(.4);
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* =========================================================
+       CURRENT EVENT
+       ========================================================= */
+
+    #nibf2026 .current-section {
+      background: #fff;
+      border-top: 1px solid rgba(15,76,129,.06);
+      border-bottom: 1px solid rgba(15,76,129,.06);
+    }
+
+    #nibf2026 .current-card {
+      position: relative;
+      overflow: hidden;
+      padding: 34px;
+      border-radius: 24px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(59,130,246,.42), transparent 30%),
+        linear-gradient(135deg,#0f4c81,#1e3a8a);
+      box-shadow: 0 24px 60px rgba(15,76,129,.18);
+    }
+
+    #nibf2026 .current-card::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -100px;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 35px rgba(255,255,255,.025),
+        0 0 0 70px rgba(255,255,255,.018);
+    }
+
+    #nibf2026 .current-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    #nibf2026 .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(16,185,129,.18);
+      border: 1px solid rgba(255,255,255,.14);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .current-title {
+      margin: 14px 0 5px;
+      color: #fff;
+      font-size: clamp(27px,4vw,42px);
+      font-weight: 800;
+    }
+
+    #nibf2026 .current-description {
+      max-width: 650px;
+      margin: 0;
+      color: rgba(255,255,255,.70);
+      font-size: 15px;
+    }
+
+    #nibf2026 .event-info-box {
+      min-width: 270px;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    #nibf2026 .event-info-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      margin: 8px 0;
+    }
+
+    /* =========================================================
+       CARDS
+       ========================================================= */
+
+    #nibf2026 .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    #nibf2026 .campaign-card,
+    #nibf2026 .publisher-card,
+    #nibf2026 .notice-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 10px 32px rgba(15,76,129,.05);
+      transition: .28s ease;
+    }
+
+    #nibf2026 .campaign-card:hover,
+    #nibf2026 .publisher-card:hover,
+    #nibf2026 .notice-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(37,99,235,.22);
+      box-shadow: 0 22px 44px rgba(15,76,129,.10);
+    }
+
+    #nibf2026 .campaign-image {
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px 20px 0 0;
+      background:
+        linear-gradient(135deg,rgba(37,99,235,.90),rgba(15,76,129,.98));
+    }
+
+    #nibf2026 .campaign-image::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      right: -30px;
+      top: -50px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 35px rgba(255,255,255,.025),
+        0 0 0 70px rgba(255,255,255,.018);
+    }
+
+    #nibf2026 .campaign-image-label {
+      position: absolute;
+      left: 20px;
+      bottom: 18px;
+      color: #fff;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .campaign-content {
+      padding: 20px;
+    }
+
+    #nibf2026 .badge {
+      display: inline-flex;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--blue-700);
+      background: var(--blue-50);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .campaign-title {
+      margin: 12px 0 7px;
+      color: var(--navy);
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .campaign-text {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    #nibf2026 .card-link {
+      display: inline-flex;
+      margin-top: 16px;
+      color: var(--blue-600);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       BOOKS
+       ========================================================= */
+
+    #nibf2026 .books-section {
+      background: var(--softblue);
+    }
+
+    #nibf2026 .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    #nibf2026 .filter-btn {
+      padding: 9px 14px;
+      border: 1px solid rgba(15,76,129,.12);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--slate);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #nibf2026 .filter-btn.active {
+      color: #fff;
+      background: var(--blue-600);
+      border-color: var(--blue-600);
+    }
+
+    #nibf2026 .book-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+    }
+
+    #nibf2026 .book-card {
+      padding: 12px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      transition: .28s ease;
+    }
+
+    #nibf2026 .book-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(15,76,129,.10);
+    }
+
+    #nibf2026 .book-cover {
+      height: 245px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 18px;
+      border-radius: 13px;
+      color: #fff;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg,#0f4c81,#2563eb);
+      position: relative;
+    }
+
+    #nibf2026 .book-cover::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 9px;
+    }
+
+    #nibf2026 .book-cover span {
+      position: relative;
+      z-index: 2;
+      font-size: 17px;
+      line-height: 1.5;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    #nibf2026 .book-info {
+      padding: 12px 4px 4px;
+    }
+
+    #nibf2026 .book-title {
+      margin: 0;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .book-author {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       PUBLISHERS
+       ========================================================= */
+
+    #nibf2026 .search-box {
+      position: relative;
+      max-width: 620px;
+      margin-bottom: 22px;
+    }
+
+    #nibf2026 .search-box input {
+      width: 100%;
+      height: 54px;
+      padding: 0 18px 0 48px;
+      border: 1px solid rgba(15,76,129,.13);
+      border-radius: 15px;
+      outline: none;
+      background: #fff;
+      color: var(--navy);
+      font-family: inherit;
+      font-size: 14px;
+      box-shadow: 0 8px 24px rgba(15,76,129,.04);
+    }
+
+    #nibf2026 .search-box input:focus {
+      border-color: rgba(37,99,235,.45);
+      box-shadow: 0 0 0 4px rgba(37,99,235,.08);
+    }
+
+    #nibf2026 .search-icon {
+      position: absolute;
+      left: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--blue-600);
+    }
+
+    #nibf2026 .publisher-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    #nibf2026 .publisher-card {
+      padding: 20px;
+    }
+
+    #nibf2026 .publisher-top {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    #nibf2026 .publisher-logo {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--blue-700);
+      background: var(--blue-50);
+      font-weight: 900;
+    }
+
+    #nibf2026 .publisher-name {
+      margin: 0;
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .publisher-category {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    #nibf2026 .publisher-description {
+      margin: 15px 0 0;
+      color: var(--slate);
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       NOTICE
+       ========================================================= */
+
+    #nibf2026 .notice-section {
+      background: #fff;
+    }
+
+    #nibf2026 .notice-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 20px;
+    }
+
+    #nibf2026 .notice-card {
+      padding: 22px;
+    }
+
+    #nibf2026 .notice-card.featured {
+      background: linear-gradient(145deg,#eff6ff,#fff);
+      border-color: rgba(37,99,235,.16);
+    }
+
+    #nibf2026 .notice-date {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    #nibf2026 .notice-title {
+      margin: 8px 0;
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .notice-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       ARCHIVE
+       ========================================================= */
+
+    #nibf2026 .archive-section {
+      background:
+        radial-gradient(circle at 90% 30%,rgba(37,99,235,.08),transparent 28%),
+        var(--softblue);
+    }
+
+    #nibf2026 .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 14px;
+    }
+
+    #nibf2026 .archive-card {
+      min-height: 210px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: linear-gradient(145deg,#0f4c81,#1e3a8a);
+      color: #fff;
+      transition: .3s ease;
+    }
+
+    #nibf2026 .archive-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 22px 42px rgba(15,76,129,.18);
+    }
+
+    #nibf2026 .archive-card::before {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      right: -50px;
+      top: -50px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px rgba(255,255,255,.025);
+    }
+
+    #nibf2026 .archive-year {
+      position: relative;
+      z-index: 2;
+      color: var(--gold-light);
+      font-family: Arial, sans-serif;
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    #nibf2026 .archive-name {
+      position: relative;
+      z-index: 2;
+      margin-top: 4px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    #nibf2026 .archive-place {
+      position: relative;
+      z-index: 2;
+      color: rgba(255,255,255,.64);
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    #nibf2026 .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    #nibf2026 .about-copy {
+      color: var(--slate);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    #nibf2026 .about-visual {
+      position: relative;
+      min-height: 420px;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 40%,rgba(59,130,246,.28),transparent 30%),
+        linear-gradient(145deg,#0f4c81,#071b33);
+    }
+
+    #nibf2026 .about-book {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 280px;
+      height: 180px;
+      transform: translate(-50%,-50%) rotate(-5deg);
+    }
+
+    #nibf2026 .about-book .page {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      background: linear-gradient(145deg,#fff,#e7eef7);
+      border: 1px solid rgba(15,76,129,.10);
+    }
+
+    #nibf2026 .about-book .left {
+      left: 0;
+      border-radius: 16px 5px 5px 16px;
+      transform: skewY(3deg);
+    }
+
+    #nibf2026 .about-book .right {
+      right: 0;
+      border-radius: 5px 16px 16px 5px;
+      transform: skewY(-3deg);
+    }
+
+    #nibf2026 .about-book .center {
+      position: absolute;
+      left: 50%;
+      top: 5%;
+      width: 2px;
+      height: 90%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      opacity: .7;
+    }
+
+    #nibf2026 .about-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(37,99,235,.16);
+      filter: blur(30px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    #nibf2026 .stats {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    #nibf2026 .stat {
+      padding: 20px 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    #nibf2026 .stat-number {
+      color: var(--blue-700);
+      font-family: Arial, sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    #nibf2026 .stat-label {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    /* =========================================================
+       SOCIAL
+       ========================================================= */
+
+    #nibf2026 .social-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg,#0f4c81,#1e3a8a);
+      color: #fff;
+    }
+
+    #nibf2026 .social-title {
+      color: #fff;
+    }
+
+    #nibf2026 .social-subtitle {
+      color: rgba(255,255,255,.66);
+    }
+
+    #nibf2026 .social-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    #nibf2026 .social-card {
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 18px;
+      background: rgba(255,255,255,.06);
+      transition: .25s ease;
+    }
+
+    #nibf2026 .social-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    #nibf2026 .social-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(255,255,255,.10);
+      color: var(--gold-light);
+    }
+
+    #nibf2026 .social-name {
+      margin: 14px 0 4px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .social-description {
+      margin: 0;
+      color: rgba(255,255,255,.58);
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    #nibf2026 .footer {
+      padding: 70px 0 0;
+      background: #071b33;
+      color: #fff;
+    }
+
+    #nibf2026 .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 55px;
+    }
+
+    #nibf2026 .footer-brand {
+      max-width: 330px;
+    }
+
+    #nibf2026 .footer-brand-name {
+      margin: 14px 0 7px;
+      color: #fff;
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .footer-description {
+      margin: 0;
+      color: rgba(255,255,255,.52);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    #nibf2026 .footer-title {
+      margin: 0 0 16px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    #nibf2026 .footer-link {
+      display: block;
+      margin: 9px 0;
+      color: rgba(255,255,255,.52);
+      font-size: 12px;
+      transition: .2s ease;
+    }
+
+    #nibf2026 .footer-link:hover {
+      color: var(--gold-light);
+    }
+
+    #nibf2026 .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 70px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.45);
+      font-size: 11px;
+    }
+
+    /* Tiny open book footer animation */
+    #nibf2026 .tiny-book {
+      position: relative;
+      width: 44px;
+      height: 28px;
+      opacity: .75;
+    }
+
+    #nibf2026 .tiny-page {
+      position: absolute;
+      top: 3px;
+      width: 20px;
+      height: 22px;
+      background: #fff;
+      border-radius: 3px;
+      opacity: .75;
+      transform-origin: center bottom;
+    }
+
+    #nibf2026 .tiny-page.left {
+      left: 2px;
+      transform: skewY(7deg);
+      animation: nibf-footer-book 3s ease-in-out infinite;
+    }
+
+    #nibf2026 .tiny-page.right {
+      right: 2px;
+      transform: skewY(-7deg);
+      animation: nibf-footer-book 3s ease-in-out infinite reverse;
+    }
+
+    @keyframes nibf-footer-book {
+      0%,100% { transform: rotateY(0deg) skewY(7deg); }
+      50% { transform: rotateY(-25deg) skewY(7deg); }
+    }
+
+    /* =========================================================
+       MODAL
+       ========================================================= */
+
+    #nibf2026 .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(7,27,51,.62);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    #nibf2026 .modal.active {
+      display: flex;
+      animation: nibf-modal-bg .25s ease;
+    }
+
+    @keyframes nibf-modal-bg {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #nibf2026 .modal-box {
+      width: min(560px,100%);
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 30px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+      animation: nibf-modal-box .3s ease;
+    }
+
+    @keyframes nibf-modal-box {
+      from {
+        opacity: 0;
+        transform: translateY(15px) scale(.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    #nibf2026 .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    #nibf2026 .modal-title {
+      margin: 0;
+      color: var(--navy);
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    #nibf2026 .close-modal {
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--blue-50);
+      color: var(--blue-700);
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    #nibf2026 .modal-content {
+      margin-top: 22px;
+      color: var(--slate);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION
+       ========================================================= */
+
+    #nibf2026 .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    #nibf2026 .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1050px) {
+      #nibf2026 .desktop-nav {
+        gap: 0;
+      }
+
+      #nib2026 .nav-link {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      #nibf2026 .book-grid {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      #nibf2026 .publisher-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      #nibf2026 .archive-grid {
+        grid-template-columns: repeat(3,1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      #nibf2026 .desktop-nav,
+      #nibf2026 .header-news {
+        display: none;
+      }
+
+      #nibf2026 .mobile-menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      #nibf2026 .hero {
+        min-height: 720px;
+      }
+
+      #nibf2026 .hero-content {
+        width: 72%;
+      }
+
+      #nibf2026 .current-grid,
+      #nibf2026 .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #nibf2026 .event-info-box {
+        width: 100%;
+      }
+
+      #nibf2026 .social-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      #nibf2026 .footer-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      #nibf2026 .nibf-container {
+        width: min(100% - 28px,1180px);
+      }
+
+      #nibf2026 .section {
+        padding: 65px 0;
+      }
+
+      #nibf2026 .header-inner {
+        min-height: 58px;
+        border-radius: 14px;
+      }
+
+      #nibf2026 .brand-name {
+        font-size: 17px;
+      }
+
+      #nibf2026 .brand-icon {
+        width: 35px;
+        height: 35px;
+      }
+
+      #nibf2026 .hero {
+        min-height: auto;
+        padding: 145px 0 65px;
+      }
+
+      #nibf2026 .hero-content {
+        width: 100%;
+      }
+
+      #nibf2026 .hero-title {
+        font-size: clamp(39px,11vw,58px);
+      }
+
+      #nibf2026 .hero-description {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      #nibf2026 .hero-actions {
+        flex-direction: column;
+      }
+
+      #nibf2026 .primary-btn,
+      #nibf2026 .secondary-btn {
+        width: 100%;
+      }
+
+      #nibf2026 .hero-event {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      #nibf2026 .vector-book {
+        opacity: .07;
+      }
+
+      #nibf2026 .book-one {
+        right: -55px;
+        top: 18%;
+      }
+
+      #nibf2026 .book-two {
+        right: -100px;
+        bottom: 20%;
+      }
+
+      #nibf2026 .book-three {
+        left: -60px;
+      }
+
+      #nibf2026 .hero-orb {
+        right: -100px;
+        top: 25%;
+      }
+
+      #nibf2026 .current-card {
+        padding: 24px;
+      }
+
+      #nibf2026 .card-grid,
+      #nibf2026 .publisher-grid,
+      #nibf2026 .notice-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #nibf2026 .book-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+      }
+
+      #nibf2026 .book-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      #nibf2026 .book-card {
+        min-width: 190px;
+        scroll-snap-align: start;
+      }
+
+      #nibf2026 .book-cover {
+        height: 220px;
+      }
+
+      #nibf2026 .archive-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      #nibf2026 .stats {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      #nibf2026 .about-visual {
+        min-height: 330px;
+      }
+
+      #nibf2026 .about-book {
+        transform: translate(-50%,-50%) rotate(-5deg) scale(.82);
+      }
+
+      #nibf2026 .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #nibf2026 .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      #nibf2026 .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+        text-align: center;
+      }
+
+      #nibf2026 .modal-box {
+        padding: 22px;
+        border-radius: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #nibf2026 *,
+      #nibf2026 *::before,
+      #nibf2026 *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
 
 <div id="nibf2026">
 
-  <!-- ============================================================
-       DATA (edit this object to update the whole site)
-       ============================================================ -->
-  <script>
-    window.ISLAMI_BOOK_FAIR_DATA = {
-      brandName: "ইসলামী বইমেলা",
-      brandNameEn: "Islami Book Fair",
-
-      currentEvent: {
-        year: 2026,
-        title: "ইসলামী বইমেলা ২০২৬",
-        location: "কওমি মার্কেট, বাংলা বাজার, ঢাকা",
-        startDate: "৬ আগস্ট ২০২৬",
-        endDate: "১৩ আগস্ট ২০২৬",
-        status: "current",
-        description: "মেলার সময়সূচি, চলমান ক্যাম্পেইন, প্রতিযোগিতা এবং সর্বশেষ আপডেট এক জায়গায় পাবেন।"
-      },
-
-      events: [
-        { year: 2026, title: "ইসলামী বইমেলা", location: "বাংলা বাজার, ঢাকা", startDate: "৬ আগস্ট", endDate: "১৩ আগস্ট ২০২৬", status: "current" },
-        { year: 2026, title: "ইসলামী বইমেলা", location: "ময়মনসিংহ", startDate: "২০ সেপ্টেম্বর", endDate: "২৫ সেপ্টেম্বর ২০২৬", status: "upcoming" }
-      ],
-
-      notices: [
-        { category: "সময়সূচি", title: "চলমান বইমেলার সময়সূচি প্রকাশিত হয়েছে", date: "১৫ জুলাই ২০২৬", description: "৬ আগস্ট থেকে ১৩ আগস্ট পর্যন্ত প্রতিদিন সকাল ১০টা থেকে রাত ৯টা পর্যন্ত মেলা প্রাঙ্গণ খোলা থাকবে। স্টল বরাদ্দ সংক্রান্ত সকল তথ্য প্রকাশনী প্যানেলে পাওয়া যাবে।" },
-        { category: "প্রকাশনী", title: "নতুন প্রকাশনী নিবন্ধন শুরু", date: "২ জুলাই ২০২৬", description: "যেসব প্রকাশনী এবারের মেলায় অংশ নিতে চান, তারা নির্ধারিত ফর্ম পূরণ করে ৩০ জুলাইয়ের মধ্যে নিবন্ধন সম্পন্ন করতে পারবেন।" },
-        { category: "নিরাপত্তা", title: "মেলা প্রাঙ্গণে প্রবেশ নির্দেশিকা", date: "২৮ জুন ২০২৬", description: "দর্শনার্থীদের সুবিধার্থে এবার তিনটি পৃথক প্রবেশপথ রাখা হয়েছে। ব্যাগ তল্লাশি ও নিরাপত্তা যাচাই সংক্রান্ত বিস্তারিত নির্দেশনা।" }
-      ],
-
-      campaigns: [
-        { badge: "ফেসবুক ক্যাম্পেইন", icon: "✍️", title: "বই রিভিউ প্রতিযোগিতা", description: "প্রিয় বইয়ের রিভিউ লিখে পোস্ট করুন, জিতে নিন বইয়ের সেট।", deadline: "৩১ আগস্ট ২০২৬", cta: "অংশ নিন" },
-        { badge: "ফটোগ্রাফি", icon: "📸", title: "বই ফটোগ্রাফি প্রতিযোগিতা", description: "মেলার সেরা মুহূর্ত ক্যামেরাবন্দি করে শেয়ার করুন।", deadline: "১৩ আগস্ট ২০২৬", cta: "ছবি জমা দিন" },
-        { badge: "পরিচিতি", icon: "📖", title: "নতুন বই পরিচিতি", description: "নতুন প্রকাশিত বইয়ের ওপর সংক্ষিপ্ত ভিডিও রিভিউ তৈরি করুন।", deadline: "২০ আগস্ট ২০২৬", cta: "বিস্তারিত" },
-        { badge: "গিভঅ্যাওয়ে", icon: "🎁", title: "শেয়ার ও মেনশন গিভঅ্যাওয়ে", description: "পোস্ট শেয়ার করে তিনজন বন্ধুকে মেনশন করুন, জিতে নিন উপহার।", deadline: "প্রতি শুক্রবার", cta: "যোগ দিন" }
-      ],
-
-      books: [
-        { title: "কুরআনের মহামানব", author: "ড. আলী আল-সাল্লাবী", publisher: "রুহামা পাবলিকেশন", year: 2026, tag: "নতুন" },
-        { title: "ইতিহাসের সত্যপাঠ", author: "ড. রাগেব সারজানি", publisher: "সমকালীন প্রকাশন", year: 2026, tag: "আলোচিত" },
-        { title: "আত্মার সন্ধানে", author: "মাওলানা কারিম উদ্দিন", publisher: "গার্ডিয়ান পাবলিকেশনস", year: 2026, tag: "জনপ্রিয়" },
-        { title: "পথের দিশা", author: "ড. ইউসুফ আল-কারযাভী", publisher: "রুহামা পাবলিকেশন", year: 2025, tag: "জনপ্রিয়" },
-        { title: "সময়ের ইতিহাস", author: "অধ্যাপক সেলিম আহমাদ", publisher: "সমকালীন প্রকাশন", year: 2026, tag: "নতুন" },
-        { title: "জ্ঞানের প্রদীপ", author: "মুফতি তাকি উসমানী", publisher: "গার্ডিয়ান পাবলিকেশনস", year: 2025, tag: "আলোচিত" }
-      ],
-
-      publishers: [
-        { name: "রুহামা পাবলিকেশন", category: "ইসলামি", description: "ইসলামী সাহিত্য, চিন্তা, অনুবাদ ও আত্মশুদ্ধি বিষয়ক প্রকাশনা।", books: 150, stall: "১২-১৪", website: "https://example.com", facebook: "https://facebook.com" },
-        { name: "সমকালীন প্রকাশন", category: "গবেষণা", description: "গবেষণা, অনুবাদ, ইতিহাস ও দর্শনের নির্ভরযোগ্য বই।", books: 80, stall: "২৫-২৬", website: "https://example.com", facebook: "https://facebook.com" },
-        { name: "গার্ডিয়ান পাবলিকেশনস", category: "অনুবাদ", description: "আন্তর্জাতিক মানের অনুবাদ, চিন্তাধারা ও ক্যারিয়ার সহায়িকা।", books: 120, stall: "০৫-০৭", website: "https://example.com", facebook: "https://facebook.com" },
-        { name: "কিশোর কণ্ঠ প্রকাশনী", category: "শিশু", description: "শিশু-কিশোরদের জন্য গল্প, ছড়া ও ইসলামী শিক্ষামূলক বই।", books: 60, stall: "৩০-৩১", website: "https://example.com", facebook: "https://facebook.com" },
-        { name: "আদর্শ সাহিত্য কুটির", category: "সাহিত্য", description: "উপন্যাস, কবিতা ও ইসলামী সাহিত্যের বিস্তৃত সংগ্রহ।", books: 95, stall: "১৮-১৯", website: "https://example.com", facebook: "https://facebook.com" },
-        { name: "নূর রিসার্চ সেন্টার", category: "গবেষণা", description: "একাডেমিক গবেষণা ও তুলনামূলক ধর্মতত্ত্ব বিষয়ক গ্রন্থ।", books: 40, stall: "০৯-১০", website: "https://example.com", facebook: "https://facebook.com" }
-      ],
-
-      archive: [
-        { year: 2026, location: "বাংলা বাজার, ঢাকা", title: "ইসলামী বইমেলা ২০২৬", description: "সর্বাধিক প্রকাশনী অংশগ্রহণে অনুষ্ঠিত হয় এবারের মেলা। ৮ দিনব্যাপী আয়োজনে হাজারো দর্শনার্থী অংশ নেন।", publishers: 60, books: 1000, photos: 42, bestseller: "কুরআনের মহামানব" },
-        { year: 2025, location: "বাংলা বাজার, ঢাকা", title: "ইসলামী বইমেলা ২০২৫", description: "দ্বিতীয় আয়োজনে অংশগ্রহণকারী প্রকাশনীর সংখ্যা উল্লেখযোগ্যভাবে বৃদ্ধি পায় এবং ক্যালিগ্রাফি প্রদর্শনী যুক্ত হয়।", publishers: 48, books: 820, photos: 35, bestseller: "পথের দিশা" },
-        { year: 2024, location: "চকবাজার, ঢাকা", title: "ইসলামী বইমেলা ২০২৪", description: "নতুন ভেন্যুতে আয়োজিত এই মেলায় শিশু-কিশোর কর্নার প্রথমবারের মতো যুক্ত হয়।", publishers: 35, books: 600, photos: 28, bestseller: "জ্ঞানের প্রদীপ" },
-        { year: 2023, location: "বাংলা বাজার, ঢাকা", title: "ইসলামী বইমেলা ২০২৩", description: "জাতীয় পর্যায়ের প্রথম আয়োজন। সীমিত পরিসরে শুরু হলেও পাঠকদের ব্যাপক সাড়া পাওয়া যায়।", publishers: 22, books: 350, photos: 18, bestseller: "আত্মার সন্ধানে" },
-        { year: 2022, location: "ময়মনসিংহ", title: "ইসলামী বইমেলা ২০২২", description: "স্থানীয় পর্যায়ে ছোট পরিসরে শুরু হওয়া এই আয়োজনই পরবর্তীতে জাতীয় প্ল্যাটফর্মের ভিত্তি তৈরি করে।", publishers: 12, books: 150, photos: 10, bestseller: "সময়ের ইতিহাস" }
-      ],
-
-      socialLinks: {
-        facebook: "https://facebook.com",
-        youtube: "https://youtube.com",
-        whatsapp: "https://whatsapp.com",
-        facebookGroup: "https://facebook.com/groups"
-      }
-    };
-  </script>
-
-  <style>
-    #nibf2026{
-      --deep-green:#0B3D2E;
-      --sec-green:#145A43;
-      --gold:#C9A227;
-      --light-gold:#E6C766;
-      --bg-off:#F8F5ED;
-      --text-main:#14231D;
-      --muted:#68736D;
-      --white:#FFFFFF;
-      font-family:'Hind Siliguri','Segoe UI',sans-serif;
-      background:var(--bg-off);
-      color:var(--text-main);
-      -webkit-font-smoothing:antialiased;
-      overflow-x:hidden;
-    }
-    #nibf2026 *{ box-sizing:border-box; }
-    #nibf2026 a{ text-decoration:none; color:inherit; }
-    #nibf2026 button{ font-family:inherit; cursor:pointer; }
-    #nibf2026 img{ max-width:100%; display:block; }
-    #nibf2026 :focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
-
-    #nibf2026 .eyebrow{ letter-spacing:.2em; }
-
-    /* ---------- header ---------- */
-    #nibf2026 .nibf-header{
-      background:rgba(11,61,46,0.96);
-      backdrop-filter:blur(10px);
-      transition:box-shadow .3s ease;
-    }
-    #nibf2026 .nibf-header.scrolled{ box-shadow:0 10px 30px -12px rgba(0,0,0,.35); }
-    #nibf2026 .nav-link{ position:relative; }
-    #nibf2026 .nav-link::after{
-      content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px;
-      background:var(--gold); transition:width .3s cubic-bezier(.16,1,.3,1);
-    }
-    #nibf2026 .nav-link:hover::after,
-    #nibf2026 .nav-link:focus-visible::after{ width:100%; }
-
-    #nibf2026 .glow-btn{
-      background:linear-gradient(135deg, var(--gold), var(--light-gold));
-      color:var(--deep-green);
-      box-shadow:0 0 0 0 rgba(201,162,39,.55);
-    }
-    @media (prefers-reduced-motion:no-preference){
-      #nibf2026 .glow-btn{ animation: nibfGlowPulse 2.4s ease-in-out infinite; }
-    }
-    @keyframes nibfGlowPulse{
-      0%,100%{ box-shadow:0 0 0 0 rgba(201,162,39,.5); }
-      50%{ box-shadow:0 0 0 10px rgba(201,162,39,0); }
-    }
-
-    /* ---------- hero ---------- */
-    #nibf2026 .hero{
-      background:
-        radial-gradient(900px 480px at 12% -10%, rgba(230,199,102,.12), transparent 60%),
-        radial-gradient(800px 480px at 100% 20%, rgba(20,90,67,.55), transparent 55%),
-        linear-gradient(160deg, var(--deep-green) 0%, #0d2f24 60%, #081f18 100%);
-    }
-    #nibf2026 .islamic-lattice{
-      background-image:
-        linear-gradient(135deg, rgba(230,199,102,0.06) 1px, transparent 1px),
-        linear-gradient(45deg, rgba(230,199,102,0.06) 1px, transparent 1px);
-      background-size:36px 36px;
-    }
-
-    @media (prefers-reduced-motion:no-preference){
-      .nibf-fade{ animation:nibfFadeUp .7s cubic-bezier(.16,1,.3,1) both; }
-      .nibf-fade.d1{ animation-delay:.08s; }
-      .nibf-fade.d2{ animation-delay:.16s; }
-      .nibf-fade.d3{ animation-delay:.26s; }
-    }
-    @keyframes nibfFadeUp{ from{ opacity:0; transform:translateY(20px);} to{ opacity:1; transform:translateY(0);} }
-
-    /* ---------- 3D open book ---------- */
-    #nibf2026 .book-stage{ perspective:1400px; }
-    #nibf2026 .book{
-      position:relative; width:220px; height:170px; margin:0 auto;
-      transform-style:preserve-3d;
-    }
-    @media (prefers-reduced-motion:no-preference){
-      #nibf2026 .book{ animation:nibfBookFloat 6s ease-in-out infinite; }
-      #nibf2026 .book .cover-left{ animation:nibfPageLeft 7s ease-in-out infinite; }
-      #nibf2026 .book .cover-right{ animation:nibfPageRight 7s ease-in-out infinite; }
-    }
-    #nibf2026 .book .spine{
-      position:absolute; left:50%; top:0; width:6px; height:100%; margin-left:-3px;
-      background:linear-gradient(180deg, var(--light-gold), var(--gold));
-      border-radius:2px; z-index:3;
-    }
-    #nibf2026 .book .cover-left, #nibf2026 .book .cover-right{
-      position:absolute; top:0; width:110px; height:170px;
-      background:linear-gradient(135deg, #fffdf7, #f3ecd8);
-      border:1px solid rgba(201,162,39,.5);
-      box-shadow:0 18px 40px -14px rgba(0,0,0,.55);
-      border-radius:4px;
-    }
-    #nibf2026 .book .cover-left{ left:0; transform-origin:right center; }
-    #nibf2026 .book .cover-right{ right:0; transform-origin:left center; }
-    #nibf2026 .book .page-lines{
-      position:absolute; inset:14px; background:
-        repeating-linear-gradient(180deg, rgba(11,61,46,.12) 0 2px, transparent 2px 10px);
-    }
-    @keyframes nibfBookFloat{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-12px);} }
-    @keyframes nibfPageLeft{ 0%,100%{ transform:rotateY(0deg);} 50%{ transform:rotateY(18deg);} }
-    @keyframes nibfPageRight{ 0%,100%{ transform:rotateY(0deg);} 50%{ transform:rotateY(-18deg);} }
-
-    #nibf2026 .gold-particle{
-      position:absolute; border-radius:50%;
-      background:radial-gradient(circle, var(--light-gold), transparent 70%);
-      opacity:.7; pointer-events:none;
-    }
-    @media (prefers-reduced-motion:no-preference){
-      #nibf2026 .gold-particle{ animation:nibfParticleFloat linear infinite; }
-    }
-    @keyframes nibfParticleFloat{
-      0%{ transform:translateY(0) translateX(0); opacity:0; }
-      15%{ opacity:.8; }
-      100%{ transform:translateY(-160px) translateX(20px); opacity:0; }
-    }
-
-    /* ---------- cards / motion ---------- */
-    #nibf2026 .lift-card{
-      transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s cubic-bezier(.16,1,.3,1), border-color .4s;
-    }
-    #nibf2026 .lift-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 26px 40px -18px rgba(11,61,46,.28);
-      border-color:rgba(201,162,39,.55);
-    }
-    #nibf2026 .cover-zoom{ overflow:hidden; }
-    #nibf2026 .cover-zoom img, #nibf2026 .cover-zoom .cover-ph{ transition:transform .5s ease; }
-    #nibf2026 .lift-card:hover .cover-zoom img,
-    #nibf2026 .lift-card:hover .cover-zoom .cover-ph{ transform:scale(1.06); }
-
-    /* ---------- modal ---------- */
-    #nibf2026 .nibf-modal-backdrop{
-      background:rgba(8,17,13,.72); backdrop-filter:blur(6px);
-      opacity:0; transition:opacity .3s ease;
-    }
-    #nibf2026 .nibf-modal-backdrop.show{ opacity:1; }
-    #nibf2026 .nibf-modal-panel{
-      transform:scale(.94) translateY(16px); opacity:0;
-      transition:transform .4s cubic-bezier(.16,1,.3,1), opacity .35s ease;
-    }
-    #nibf2026 .nibf-modal-backdrop.show .nibf-modal-panel{ transform:scale(1) translateY(0); opacity:1; }
-
-    /* ---------- filter pills ---------- */
-    #nibf2026 .pill{
-      transition:background .3s, color .3s, border-color .3s;
-      border:1px solid rgba(11,61,46,.2);
-    }
-    #nibf2026 .pill.active, #nibf2026 .pill:hover{
-      background:var(--deep-green); color:var(--white); border-color:var(--deep-green);
-    }
-
-    /* ---------- mobile menu ---------- */
-    #nibf2026 .mobile-menu{
-      max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.16,1,.3,1);
-    }
-    #nibf2026 .mobile-menu.open{ max-height:420px; }
-
-    /* ---------- footer book icon ---------- */
-    #nibf2026 .footer-book{ display:inline-block; }
-    @media (prefers-reduced-motion:no-preference){
-      #nibf2026 .footer-book{ animation:nibfFooterBook 4s ease-in-out infinite; }
-    }
-    @keyframes nibfFooterBook{ 0%,100%{ transform:rotateY(0deg);} 50%{ transform:rotateY(35deg);} }
-
-    /* ---------- scroll reveal (safe: visible by default) ---------- */
-    #nibf2026 .reveal{ opacity:1; }
-    @media (prefers-reduced-motion:no-preference){
-      #nibf2026 .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
-      #nibf2026 .reveal.in-view{ opacity:1; transform:translateY(0); }
-    }
-
-    #nibf2026 .counter{ font-variant-numeric:tabular-nums; }
-  </style>
-
-  <!-- ============================================================
+  <!-- =======================================================
        HEADER
-       ============================================================ -->
-  <header class="nibf-header sticky top-0 z-40 text-white" id="nibfHeader" role="banner">
-    <div class="max-w-7xl mx-auto px-4 md:px-6 py-3.5 flex items-center justify-between gap-4">
-      <a href="#nibf-home" class="flex items-center gap-3" aria-label="ইসলামী বইমেলা হোম">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center border" style="background:rgba(230,199,102,.1); border-color:rgba(230,199,102,.35);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 5c3-1.2 5.5-1 8 .8V19c-2.5-1.8-5-2-8-.8V5Z" fill="#E6C766"/>
-            <path d="M20 5c-3-1.2-5.5-1-8 .8V19c2.5-1.8 5-2 8-.8V5Z" fill="#C9A227"/>
+       ======================================================= -->
+  <header class="nibf-header" id="nibfHeader">
+    <div class="nibf-container">
+
+      <div class="header-inner">
+
+        <a href="#home" class="brand">
+          <div class="brand-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+              <path d="M4 5.5C4 4.67 4.67 4 5.5 4H10c1.1 0 2 .9 2 2v13c-.7-.63-1.65-1-2.75-1H5.5C4.67 18 4 17.33 4 16.5v-11Z" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M20 5.5C20 4.67 19.33 4 18.5 4H14c-1.1 0-2 .9-2 2v13c.7-.63 1.65-1 2.75-1h3.75c.83 0 1.5-.67 1.5-1.5v-11Z" stroke="currentColor" stroke-width="1.7"/>
+            </svg>
+          </div>
+
+          <div>
+            <div class="brand-name">ইসলামী বইমেলা</div>
+            <span class="brand-en">ISLAMI BOOK FAIR</span>
+          </div>
+        </a>
+
+        <nav class="desktop-nav">
+          <a class="nav-link" href="#home">হোম</a>
+          <a class="nav-link" href="#campaigns">ইভেন্ট ও ক্যাম্পেইন</a>
+          <a class="nav-link" href="#current">বইমেলা</a>
+          <a class="nav-link" href="#publishers">প্রকাশনী</a>
+          <a class="nav-link" href="#books">নতুন বই</a>
+          <a class="nav-link" href="#archive">আর্কাইভ</a>
+        </nav>
+
+        <div class="header-news">
+          <button class="news-btn" data-open-modal="newsModal">
+            <span>✦</span>
+            বিশেষ খবর
+          </button>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
-        </div>
-        <div>
-          <p class="text-lg md:text-xl font-bold leading-tight">ইসলামী বইমেলা</p>
-          <p class="text-[10px] eyebrow uppercase" style="color:#E6C766;">Islami Book Fair</p>
-        </div>
-      </a>
-
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium" aria-label="প্রধান নেভিগেশন">
-        <a href="#nibf-home" class="nav-link">হোম</a>
-        <a href="#nibf-campaigns" class="nav-link">ইভেন্ট ও ক্যাম্পেইন</a>
-        <a href="#nibf-current" class="nav-link">বইমেলা</a>
-        <a href="#nibf-publishers" class="nav-link">প্রকাশনী</a>
-        <a href="#nibf-books" class="nav-link">নতুন বই</a>
-        <a href="#nibf-archive" class="nav-link">আর্কাইভ</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <button id="nibfNewsBtn" class="glow-btn hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold" aria-haspopup="dialog">
-          <span aria-hidden="true">✦</span> বিশেষ খবর
         </button>
-        <button id="nibfMenuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-white/20" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="nibfMobileMenu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-        </button>
+
       </div>
-    </div>
 
-    <div id="nibfMobileMenu" class="mobile-menu lg:hidden border-t border-white/10 px-4">
-      <nav class="flex flex-col py-3 text-sm font-medium" aria-label="মোবাইল নেভিগেশন">
-        <a href="#nibf-home" class="py-2.5 border-b border-white/5">হোম</a>
-        <a href="#nibf-campaigns" class="py-2.5 border-b border-white/5">ইভেন্ট ও ক্যাম্পেইন</a>
-        <a href="#nibf-current" class="py-2.5 border-b border-white/5">বইমেলা</a>
-        <a href="#nibf-publishers" class="py-2.5 border-b border-white/5">প্রকাশনী</a>
-        <a href="#nibf-books" class="py-2.5 border-b border-white/5">নতুন বই</a>
-        <a href="#nibf-archive" class="py-2.5">আর্কাইভ</a>
-        <button id="nibfNewsBtnMobile" class="glow-btn mt-3 mb-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-xs font-bold">✦ বিশেষ খবর</button>
-      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">হোম</a>
+        <a href="#campaigns">ইভেন্ট ও ক্যাম্পেইন</a>
+        <a href="#current">বইমেলা</a>
+        <a href="#publishers">প্রকাশনী</a>
+        <a href="#books">নতুন বই</a>
+        <a href="#archive">আর্কাইভ</a>
+        <a href="#" data-open-modal="newsModal">বিশেষ খবর</a>
+      </div>
+
     </div>
   </header>
 
-  <!-- ============================================================
+
+  <!-- =======================================================
        HERO
-       ============================================================ -->
-  <section id="nibf-home" class="hero islamic-lattice relative text-white px-4 py-20 md:py-28 overflow-hidden">
-    <div class="gold-particle" style="width:6px;height:6px;left:12%;top:70%;animation-duration:9s;"></div>
-    <div class="gold-particle" style="width:4px;height:4px;left:78%;top:65%;animation-duration:11s;animation-delay:2s;"></div>
-    <div class="gold-particle" style="width:5px;height:5px;left:45%;top:80%;animation-duration:8s;animation-delay:1s;"></div>
-    <div class="gold-particle" style="width:3px;height:3px;left:88%;top:30%;animation-duration:10s;animation-delay:3s;"></div>
+       ======================================================= -->
+  <section class="hero" id="home">
 
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center relative z-10">
-      <div class="text-center md:text-left">
-        <span class="nibf-fade inline-flex items-center gap-2 border text-[11px] eyebrow uppercase px-4 py-1.5 rounded-full font-semibold" style="border-color:rgba(230,199,102,.4); background:rgba(230,199,102,.08); color:#E6C766;">
-          <span class="w-1.5 h-1.5 rounded-full" style="background:#E6C766;"></span>
-          Islamic Book Fair Platform
-        </span>
-        <h1 class="nibf-fade d1 text-3xl md:text-5xl font-bold my-6 leading-[1.2]">
-          ইসলামী জ্ঞান, সত্য ও সুন্দরের সর্ববৃহৎ মিলনমেলা
+    <div class="hero-orb"></div>
+
+    <div class="spark"></div>
+    <div class="spark"></div>
+    <div class="spark"></div>
+    <div class="spark"></div>
+
+    <!-- VECTOR BOOK LINE ART -->
+    <div class="book-art-layer">
+
+      <div class="vector-book book-one">
+        <svg viewBox="0 0 300 210">
+          <path d="M150 172 C112 145 72 143 25 154 L25 44 C72 35 112 42 150 67"/>
+          <path d="M150 172 C188 145 228 143 275 154 L275 44 C228 35 188 42 150 67"/>
+          <path d="M150 67 L150 172"/>
+          <path class="page-flip" d="M150 67 C115 48 79 48 45 56 L45 142 C80 134 115 137 150 158"/>
+          <path class="page-flip delay" d="M150 67 C185 48 221 48 255 56 L255 142 C220 134 185 137 150 158"/>
+          <line x1="58" y1="72" x2="128" y2="84"/>
+          <line x1="58" y1="88" x2="128" y2="98"/>
+          <line x1="172" y1="84" x2="242" y2="72"/>
+          <line x1="172" y1="98" x2="242" y2="88"/>
+        </svg>
+      </div>
+
+      <div class="vector-book book-two">
+        <svg viewBox="0 0 300 210">
+          <path d="M150 172 C112 145 72 143 25 154 L25 44 C72 35 112 42 150 67"/>
+          <path d="M150 172 C188 145 228 143 275 154 L275 44 C228 35 188 42 150 67"/>
+          <path d="M150 67 L150 172"/>
+          <path class="page-flip" d="M150 67 C115 48 79 48 45 56 L45 142 C80 134 115 137 150 158"/>
+          <path class="page-flip delay" d="M150 67 C185 48 221 48 255 56 L255 142 C220 134 185 137 150 158"/>
+        </svg>
+      </div>
+
+      <div class="vector-book book-three">
+        <svg viewBox="0 0 300 210">
+          <path d="M150 172 C112 145 72 143 25 154 L25 44 C72 35 112 42 150 67"/>
+          <path d="M150 172 C188 145 228 143 275 154 L275 44 C228 35 188 42 150 67"/>
+          <path d="M150 67 L150 172"/>
+          <path class="page-flip" d="M150 67 C115 48 79 48 45 56 L45 142 C80 134 115 137 150 158"/>
+        </svg>
+      </div>
+
+      <div class="vector-book book-four">
+        <svg viewBox="0 0 300 210">
+          <path d="M150 172 C112 145 72 143 25 154 L25 44 C72 35 112 42 150 67"/>
+          <path d="M150 172 C188 145 228 143 275 154 L275 44 C228 35 188 42 150 67"/>
+          <path d="M150 67 L150 172"/>
+        </svg>
+      </div>
+
+    </div>
+
+
+    <div class="nibf-container">
+
+      <div class="hero-content">
+
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          ISLAMI BOOK FAIR PLATFORM
+        </div>
+
+        <h1 class="hero-title">
+          ইসলামী জ্ঞান,
+          <span>সত্য ও সুন্দরের</span>
+          সর্ববৃহৎ মিলনমেলা।
         </h1>
-        <p class="nibf-fade d2 text-base md:text-lg mb-8 font-light leading-relaxed" style="color:#cfe0d6;">
+
+        <p class="hero-description">
           বই, জ্ঞান, সাহিত্য ও সংস্কৃতির মাধ্যমে একটি আলোকিত সমাজের পথে।
+          ইসলামী বইমেলার বিভিন্ন আয়োজন, প্রকাশনী, নতুন বই ও সর্বশেষ
+          আপডেট—সবকিছু এক জায়গায়।
         </p>
-        <div class="nibf-fade d3 flex flex-wrap justify-center md:justify-start gap-4">
-          <a href="#nibf-current" class="px-7 py-3.5 rounded-xl font-bold text-sm" style="background:linear-gradient(135deg, var(--light-gold), var(--gold)); color:var(--deep-green);">মেলার সময়সূচী দেখুন</a>
-          <a href="#nibf-archive" class="px-7 py-3.5 rounded-xl font-semibold text-sm border" style="border-color:rgba(255,255,255,.35);">বিগত বইমেলা দেখুন</a>
+
+        <div class="hero-actions">
+
+          <a href="#current" class="primary-btn">
+            মেলার সময়সূচী দেখুন
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a href="#archive" class="secondary-btn">
+            বিগত বইমেলা দেখুন
+          </a>
+
         </div>
+
+        <div class="hero-event">
+          <div class="event-live">
+            <span class="event-live-dot"></span>
+            Current Event
+          </div>
+
+          <div class="event-meta">
+            ইসলামী বইমেলা ২০২৬ · ৬–১৩ আগস্ট · বাংলা বাজার, ঢাকা
+          </div>
+        </div>
+
       </div>
 
-      <div class="book-stage nibf-fade d2">
-        <div class="book" aria-hidden="true">
-          <div class="spine"></div>
-          <div class="cover-left"><div class="page-lines"></div></div>
-          <div class="cover-right"><div class="page-lines"></div></div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CURRENT EVENT / LIVE UPDATE
-       ============================================================ -->
-  <section id="nibf-current" class="px-4 py-16" style="background:var(--sec-green);">
-    <div class="max-w-5xl mx-auto reveal">
-      <div class="flex flex-col md:flex-row items-center gap-8 text-white rounded-2xl p-8 md:p-10" style="background:rgba(255,255,255,.05); border:1px solid rgba(230,199,102,.25);">
-        <div class="shrink-0 text-center">
-          <span class="inline-flex items-center gap-2 text-[11px] font-bold uppercase px-3 py-1 rounded-full" style="background:rgba(230,199,102,.15); color:#E6C766;">
-            <span class="w-1.5 h-1.5 rounded-full" style="background:#ff6b6b;"></span> LIVE UPDATE
-          </span>
-          <p id="nibfEventTitle" class="text-2xl font-bold mt-3"></p>
+
+  <!-- =======================================================
+       CURRENT EVENT
+       ======================================================= -->
+  <section class="section current-section reveal" id="current">
+    <div class="nibf-container">
+
+      <div class="current-card">
+
+        <div class="current-grid">
+
+          <div>
+            <div class="live-pill">
+              <span class="event-live-dot"></span>
+              বর্তমানে চলছে
+            </div>
+
+            <h2 class="current-title">
+              ইসলামী বইমেলা ২০২৬
+            </h2>
+
+            <p class="current-description">
+              মেলার সময়সূচি, চলমান ক্যাম্পেইন, প্রতিযোগিতা এবং
+              সর্বশেষ আপডেট এক জায়গায়।
+            </p>
+
+            <a href="#campaigns" class="primary-btn" style="margin-top:20px;background:#fff;color:#0f4c81;border-color:#fff;">
+              আয়োজনগুলো দেখুন
+            </a>
+          </div>
+
+          <div class="event-info-box">
+
+            <div class="event-info-row">
+              <span>◷</span>
+              <span>৬ আগস্ট — ১৩ আগস্ট ২০২৬</span>
+            </div>
+
+            <div class="event-info-row">
+              <span>⌖</span>
+              <span>কওমি মার্কেট, বাংলা বাজার, ঢাকা</span>
+            </div>
+
+            <div class="event-info-row">
+              <span>◉</span>
+              <span>প্রতিদিন সকাল ১০টা — রাত ৮টা</span>
+            </div>
+
+          </div>
+
         </div>
-        <div class="w-px self-stretch hidden md:block" style="background:rgba(255,255,255,.15);"></div>
-        <div class="flex-1">
-          <p class="text-sm mb-1" style="color:#cfe0d6;"><span id="nibfEventDate" class="font-semibold text-white"></span></p>
-          <p class="text-sm mb-3" style="color:#cfe0d6;">📍 <span id="nibfEventLocation"></span></p>
-          <p class="text-sm leading-relaxed" id="nibfEventDesc" style="color:#dcebe2;"></p>
-        </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- ============================================================
+
+  <!-- =======================================================
        CAMPAIGNS
-       ============================================================ -->
-  <section id="nibf-campaigns" class="px-4 py-20 max-w-7xl mx-auto">
-    <div class="mb-12 text-center md:text-left reveal">
-      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--gold);">চলমান আয়োজন</p>
-      <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--deep-green);">চলমান ক্যাম্পেইন ও প্রতিযোগিতা</h2>
+       ======================================================= -->
+  <section class="section" id="campaigns">
+    <div class="nibf-container">
+
+      <div class="section-head reveal">
+        <div class="section-label">Events & Campaigns</div>
+        <h2 class="section-title">চলমান ক্যাম্পেইন ও প্রতিযোগিতা</h2>
+        <p class="section-subtitle">
+          অংশ নিন, জ্ঞান ছড়িয়ে দিন এবং বইকেন্দ্রিক বিভিন্ন
+          আকর্ষণীয় আয়োজনে যুক্ত থাকুন।
+        </p>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="campaign-card reveal">
+          <div class="campaign-image">
+            <div class="campaign-image-label">বই রিভিউ</div>
+          </div>
+          <div class="campaign-content">
+            <span class="badge">প্রতিযোগিতা</span>
+            <h3 class="campaign-title">বই রিভিউ প্রতিযোগিতা</h3>
+            <p class="campaign-text">
+              আপনার পছন্দের বই নিয়ে সুন্দর একটি রিভিউ লিখে অংশ নিন।
+            </p>
+            <a href="#" class="card-link">বিস্তারিত দেখুন →</a>
+          </div>
+        </article>
+
+        <article class="campaign-card reveal">
+          <div class="campaign-image" style="background:linear-gradient(135deg,#174f88,#2563eb);">
+            <div class="campaign-image-label">Book Photography</div>
+          </div>
+          <div class="campaign-content">
+            <span class="badge">ক্যাম্পেইন</span>
+            <h3 class="campaign-title">বই ফটোগ্রাফি</h3>
+            <p class="campaign-text">
+              বইয়ের সঙ্গে আপনার সৃজনশীল মুহূর্ত তুলে ধরুন।
+            </p>
+            <a href="#" class="card-link">বিস্তারিত দেখুন →</a>
+          </div>
+        </article>
+
+        <article class="campaign-card reveal">
+          <div class="campaign-image" style="background:linear-gradient(135deg,#0f4c81,#0b3d2e);">
+            <div class="campaign-image-label">Share & Mention</div>
+          </div>
+          <div class="campaign-content">
+            <span class="badge">বিশেষ আয়োজন</span>
+            <h3 class="campaign-title">Share & Mention</h3>
+            <p class="campaign-text">
+              বন্ধুদের সঙ্গে বইমেলার খবর ছড়িয়ে দিয়ে যুক্ত থাকুন।
+            </p>
+            <a href="#" class="card-link">বিস্তারিত দেখুন →</a>
+          </div>
+        </article>
+
+      </div>
+
     </div>
-    <div id="nibfCampaignGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
   </section>
 
-  <!-- ============================================================
+
+  <!-- =======================================================
        NEW BOOKS
-       ============================================================ -->
-  <section id="nibf-books" class="px-4 py-20" style="background:#F1ECDD;">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-8 text-center md:text-left reveal">
-        <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--gold);">ক্যাটালগ</p>
-        <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--deep-green);">নতুন প্রকাশিত বই</h2>
+       ======================================================= -->
+  <section class="section books-section" id="books">
+    <div class="nibf-container">
+
+      <div class="section-head reveal">
+        <div class="section-label">Books</div>
+        <h2 class="section-title">নতুন প্রকাশিত বই</h2>
+        <p class="section-subtitle">
+          নতুন বই, আলোচিত বই এবং পাঠকদের পছন্দের বইগুলো এক নজরে দেখুন।
+        </p>
       </div>
-      <div class="flex flex-wrap gap-3 mb-8 reveal" id="nibfBookFilters" role="tablist" aria-label="বই ফিল্টার">
-        <button class="pill active px-4 py-1.5 rounded-full text-xs font-semibold" data-filter="সব">সব</button>
-        <button class="pill px-4 py-1.5 rounded-full text-xs font-semibold" data-filter="নতুন">নতুন</button>
-        <button class="pill px-4 py-1.5 rounded-full text-xs font-semibold" data-filter="জনপ্রিয়">জনপ্রিয়</button>
-        <button class="pill px-4 py-1.5 rounded-full text-xs font-semibold" data-filter="আলোচিত">আলোচিত</button>
+
+      <div class="filter-row reveal">
+        <button class="filter-btn active" data-book-filter="all">সব বই</button>
+        <button class="filter-btn" data-book-filter="new">নতুন</button>
+        <button class="filter-btn" data-book-filter="popular">জনপ্রিয়</button>
+        <button class="filter-btn" data-book-filter="featured">আলোচিত</button>
       </div>
-      <div id="nibfBookGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+
+      <div class="book-grid" id="bookGrid">
+
+        <article class="book-card reveal" data-book-type="new">
+          <div class="book-cover">
+            <span>আলোকিত<br>জীবনের পাঠ</span>
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">আলোকিত জীবনের পাঠ</h3>
+            <p class="book-author">লেখক: নমুনা লেখক · প্রকাশনী</p>
+          </div>
+        </article>
+
+        <article class="book-card reveal" data-book-type="popular">
+          <div class="book-cover" style="background:linear-gradient(145deg,#174f88,#0f4c81);">
+            <span>জ্ঞান ও<br>মনন</span>
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">জ্ঞান ও মনন</h3>
+            <p class="book-author">লেখক: নমুনা লেখক · প্রকাশনী</p>
+          </div>
+        </article>
+
+        <article class="book-card reveal" data-book-type="featured">
+          <div class="book-cover" style="background:linear-gradient(145deg,#1e3a8a,#312e81);">
+            <span>সত্যের<br>অন্বেষণে</span>
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">সত্যের অন্বেষণে</h3>
+            <p class="book-author">লেখক: নমুনা লেখক · প্রকাশনী</p>
+          </div>
+        </article>
+
+        <article class="book-card reveal" data-book-type="new">
+          <div class="book-cover" style="background:linear-gradient(145deg,#0f4c81,#0369a1);">
+            <span>ইতিহাসের<br>আয়নায়</span>
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">ইতিহাসের আয়নায়</h3>
+            <p class="book-author">লেখক: নমুনা লেখক · প্রকাশনী</p>
+          </div>
+        </article>
+
+      </div>
+
     </div>
   </section>
 
-  <!-- ============================================================
+
+  <!-- =======================================================
        PUBLISHERS
-       ============================================================ -->
-  <section id="nibf-publishers" class="px-4 py-20 max-w-7xl mx-auto">
-    <div class="mb-8 text-center reveal">
-      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--gold);">অংশগ্রহণকারী</p>
-      <h2 class="text-2xl md:text-3xl font-bold mb-2" style="color:var(--deep-green);">আমাদের প্রকাশনীর তালিকা</h2>
-      <p class="text-sm" style="color:var(--muted);">প্রকাশনীর নাম লিখে খুঁজুন অথবা বিভাগ অনুযায়ী ফিল্টার করুন</p>
-    </div>
+       ======================================================= -->
+  <section class="section" id="publishers">
+    <div class="nibf-container">
 
-    <div class="max-w-2xl mx-auto mb-6 reveal">
-      <input id="nibfPubSearch" type="search" placeholder="প্রকাশনীর নাম লিখে খুঁজুন..." aria-label="প্রকাশনী খুঁজুন"
-        class="w-full px-5 py-3 rounded-xl border text-sm" style="border-color:rgba(11,61,46,.25);">
-    </div>
-    <div class="flex flex-wrap justify-center gap-3 mb-10 reveal" id="nibfPubFilters" role="tablist" aria-label="প্রকাশনী বিভাগ">
-      <button class="pill active px-4 py-1.5 rounded-full text-xs font-semibold" data-cat="সব">সব</button>
-      <button class="pill px-4 py-1.5 rounded-full text-xs font-semibold" data-cat="ইসলামি">ইসলামি</button>
-      <button class="pill px-4 py-1.5 rounded-full text-xs font-semibold" data-cat="শিশু">শিশু</button>
-      <button class="pill px-4 py-1.5 rounded-full text-xs font-semibold" data-cat="গবেষণা">গবেষণা</button>
-      <button class="pill px-4 py-1.5 rounded-full text-xs font-semibold" data-cat="সাহিত্য">সাহিত্য</button>
-      <button class="pill px-4 py-1.5 rounded-full text-xs font-semibold" data-cat="অনুবাদ">অনুবাদ</button>
-    </div>
+      <div class="section-head reveal">
+        <div class="section-label">Publishers</div>
+        <h2 class="section-title">আমাদের প্রকাশনীর তালিকা</h2>
+        <p class="section-subtitle">
+          আপনার পছন্দের প্রকাশনী খুঁজে নিন এবং তাদের বই ও তথ্য সম্পর্কে জানুন।
+        </p>
+      </div>
 
-    <div id="nibfPubGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    <p id="nibfPubEmpty" class="hidden text-center text-sm py-10" style="color:var(--muted);">কোনো প্রকাশনী পাওয়া যায়নি।</p>
+      <div class="search-box reveal">
+        <span class="search-icon">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/>
+            <path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <input
+          type="search"
+          id="publisherSearch"
+          placeholder="প্রকাশনীর নাম লিখে খুঁজুন..."
+        >
+      </div>
+
+      <div class="filter-row reveal">
+        <button class="filter-btn active" data-publisher-filter="all">সব</button>
+        <button class="filter-btn" data-publisher-filter="islamic">ইসলামি</button>
+        <button class="filter-btn" data-publisher-filter="children">শিশু</button>
+        <button class="filter-btn" data-publisher-filter="literature">সাহিত্য</button>
+        <button class="filter-btn" data-publisher-filter="research">গবেষণা</button>
+      </div>
+
+      <div class="publisher-grid" id="publisherGrid">
+
+        <article class="publisher-card reveal" data-category="islamic" data-name="নমুনা প্রকাশনী">
+          <div class="publisher-top">
+            <div class="publisher-logo">ন</div>
+            <div>
+              <h3 class="publisher-name">নমুনা প্রকাশনী</h3>
+              <p class="publisher-category">ইসলামি প্রকাশনা</p>
+            </div>
+          </div>
+          <p class="publisher-description">
+            ইসলামি জ্ঞান, গবেষণা ও মননশীল বই প্রকাশে কাজ করে।
+          </p>
+          <a href="#" class="card-link">প্রকাশনী দেখুন →</a>
+        </article>
+
+        <article class="publisher-card reveal" data-category="literature" data-name="আলোক প্রকাশন">
+          <div class="publisher-top">
+            <div class="publisher-logo">আ</div>
+            <div>
+              <h3 class="publisher-name">আলোক প্রকাশন</h3>
+              <p class="publisher-category">সাহিত্য ও অনুবাদ</p>
+            </div>
+          </div>
+          <p class="publisher-description">
+            মানসম্মত সাহিত্য ও অনুবাদধর্মী বই প্রকাশে নিয়োজিত।
+          </p>
+          <a href="#" class="card-link">প্রকাশনী দেখুন →</a>
+        </article>
+
+        <article class="publisher-card reveal" data-category="children" data-name="শিশু প্রকাশ">
+          <div class="publisher-top">
+            <div class="publisher-logo">শি</div>
+            <div>
+              <h3 class="publisher-name">শিশু প্রকাশ</h3>
+              <p class="publisher-category">শিশুতোষ বই</p>
+            </div>
+          </div>
+          <p class="publisher-description">
+            শিশু-কিশোরদের জন্য জ্ঞানমূলক ও আনন্দদায়ক বই প্রকাশ করে।
+          </p>
+          <a href="#" class="card-link">প্রকাশনী দেখুন →</a>
+        </article>
+
+      </div>
+
+    </div>
   </section>
 
-  <!-- ============================================================
+
+  <!-- =======================================================
        NOTICE BOARD
-       ============================================================ -->
-  <section class="px-4 py-20" style="background:#F1ECDD;">
-    <div class="max-w-4xl mx-auto">
-      <div class="mb-10 text-center md:text-left reveal">
-        <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--gold);">আপডেট</p>
-        <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--deep-green);">সর্বশেষ বিজ্ঞপ্তি</h2>
+       ======================================================= -->
+  <section class="section notice-section" id="notices">
+    <div class="nibf-container">
+
+      <div class="section-head reveal">
+        <div class="section-label">Updates</div>
+        <h2 class="section-title">সর্বশেষ বিজ্ঞপ্তি</h2>
+        <p class="section-subtitle">
+          বইমেলা সম্পর্কিত গুরুত্বপূর্ণ ঘোষণা ও সর্বশেষ খবর।
+        </p>
       </div>
-      <div id="nibfNoticeList" class="space-y-4"></div>
+
+      <div class="notice-grid">
+
+        <article class="notice-card featured reveal">
+          <span class="badge">নতুন আপডেট</span>
+          <div class="notice-date" style="margin-top:12px;">আগস্ট ২০২৬</div>
+          <h3 class="notice-title">
+            ইসলামী বইমেলা ২০২৬-এর সময়সূচি প্রকাশিত হয়েছে
+          </h3>
+          <p class="notice-text">
+            মেলার সময়সূচি, স্থান এবং চলমান আয়োজন সম্পর্কে বিস্তারিত তথ্য এখানে পাওয়া যাবে।
+          </p>
+          <button
+            class="card-link"
+            style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit;"
+            data-open-modal="noticeModal"
+          >
+            বিস্তারিত দেখুন →
+          </button>
+        </article>
+
+        <article class="notice-card reveal">
+          <span class="badge">গুরুত্বপূর্ণ</span>
+          <div class="notice-date" style="margin-top:12px;">সাম্প্রতিক</div>
+          <h3 class="notice-title">
+            চলমান ক্যাম্পেইনে অংশগ্রহণের সুযোগ
+          </h3>
+          <p class="notice-text">
+            বিভিন্ন প্রতিযোগিতা ও ক্যাম্পেইনে অংশ নিতে নির্ধারিত নিয়ম অনুসরণ করুন।
+          </p>
+          <button
+            class="card-link"
+            style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit;"
+            data-open-modal="noticeModal"
+          >
+            বিস্তারিত দেখুন →
+          </button>
+        </article>
+
+      </div>
+
     </div>
   </section>
 
-  <!-- ============================================================
+
+  <!-- =======================================================
        ARCHIVE
-       ============================================================ -->
-  <section id="nibf-archive" class="px-4 py-20 max-w-7xl mx-auto">
-    <div class="mb-12 text-center reveal">
-      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--gold);">আর্কাইভ</p>
-      <h2 class="text-2xl md:text-3xl font-bold mb-2" style="color:var(--deep-green);">আমাদের বইমেলার যাত্রা</h2>
-      <p class="text-sm" style="color:var(--muted);">যেকোনো বছরের কার্ডে চাপ দিলে বিস্তারিত তথ্য দেখতে পারবেন</p>
+       ======================================================= -->
+  <section class="section archive-section" id="archive">
+    <div class="nibf-container">
+
+      <div class="section-head reveal">
+        <div class="section-label">Archive</div>
+        <h2 class="section-title">আমাদের বইমেলার যাত্রা</h2>
+        <p class="section-subtitle">
+          বিভিন্ন বছর ও বিভিন্ন স্থানে অনুষ্ঠিত বইমেলার স্মৃতি, আয়োজন ও তথ্য।
+        </p>
+      </div>
+
+      <div class="archive-grid">
+
+        <a href="#" class="archive-card reveal">
+          <div class="archive-year">২০২৬</div>
+          <div class="archive-name">ইসলামী বইমেলা</div>
+          <div class="archive-place">বাংলা বাজার, ঢাকা</div>
+        </a>
+
+        <a href="#" class="archive-card reveal">
+          <div class="archive-year">২০২৫</div>
+          <div class="archive-name">ইসলামী বইমেলা</div>
+          <div class="archive-place">ঢাকা</div>
+        </a>
+
+        <a href="#" class="archive-card reveal">
+          <div class="archive-year">২০২৪</div>
+          <div class="archive-name">ইসলামী বইমেলা</div>
+          <div class="archive-place">ঢাকা</div>
+        </a>
+
+        <a href="#" class="archive-card reveal">
+          <div class="archive-year">২০২৩</div>
+          <div class="archive-name">ইসলামী বইমেলা</div>
+          <div class="archive-place">বিভিন্ন আয়োজন</div>
+        </a>
+
+        <a href="#" class="archive-card reveal">
+          <div class="archive-year">২০২২</div>
+          <div class="archive-name">ইসলামী বইমেলা</div>
+          <div class="archive-place">আর্কাইভ</div>
+        </a>
+
+      </div>
+
     </div>
-    <div id="nibfArchiveGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5"></div>
   </section>
 
-  <!-- ============================================================
+
+  <!-- =======================================================
        ABOUT
-       ============================================================ -->
-  <section class="px-4 py-20 text-white" style="background:var(--deep-green);">
-    <div class="max-w-5xl mx-auto text-center reveal">
-      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--gold);">পরিচিতি</p>
-      <h2 class="text-2xl md:text-3xl font-bold mb-5">ইসলামী বইমেলা সম্পর্কে</h2>
-      <p class="max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-12" style="color:#cfe0d6;">
-        ইসলামী বইমেলা হলো ইসলামী জ্ঞান, সাহিত্য, সংস্কৃতি, প্রকাশনা ও পাঠাভ্যাসকে কেন্দ্র করে আয়োজিত বিভিন্ন বইমেলার একটি সমন্বিত ডিজিটাল প্ল্যাটফর্ম।
-      </p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div>
-          <p class="counter text-3xl md:text-4xl font-extrabold" style="color:var(--light-gold);" data-target="60" data-suffix="+">60+</p>
-          <p class="text-xs mt-1" style="color:#cfe0d6;">প্রকাশনী</p>
+       ======================================================= -->
+  <section class="section" id="about">
+    <div class="nibf-container">
+
+      <div class="about-grid">
+
+        <div class="reveal">
+
+          <div class="section-label">About Us</div>
+
+          <h2 class="section-title">
+            ইসলামী বইমেলা সম্পর্কে
+          </h2>
+
+          <p class="about-copy">
+            ইসলামী বইমেলা হলো ইসলামী জ্ঞান, সাহিত্য, সংস্কৃতি,
+            প্রকাশনা ও পাঠাভ্যাসকে কেন্দ্র করে আয়োজিত বিভিন্ন
+            বইমেলার একটি সমন্বিত ডিজিটাল প্ল্যাটফর্ম।
+          </p>
+
+          <p class="about-copy">
+            এখানে পাঠকরা বিভিন্ন বইমেলার তথ্য, প্রকাশনী,
+            নতুন বই, ক্যাম্পেইন, প্রতিযোগিতা ও পুরোনো আয়োজনের
+            আর্কাইভ সহজেই খুঁজে পাবেন।
+          </p>
+
+          <a href="#current" class="primary-btn">
+            চলমান আয়োজন দেখুন
+          </a>
+
         </div>
-        <div>
-          <p class="counter text-3xl md:text-4xl font-extrabold" style="color:var(--light-gold);" data-target="1000" data-suffix="+">1000+</p>
-          <p class="text-xs mt-1" style="color:#cfe0d6;">বই</p>
+
+        <div class="about-visual reveal">
+
+          <div class="about-glow"></div>
+
+          <div class="about-book">
+            <div class="page left"></div>
+            <div class="page right"></div>
+            <div class="center"></div>
+          </div>
+
         </div>
-        <div>
-          <p class="counter text-3xl md:text-4xl font-extrabold" style="color:var(--light-gold);" data-target="10000" data-suffix="+">10,000+</p>
-          <p class="text-xs mt-1" style="color:#cfe0d6;">পাঠক</p>
-        </div>
-        <div>
-          <p class="text-3xl md:text-4xl font-extrabold" style="color:var(--light-gold);">Multiple</p>
-          <p class="text-xs mt-1" style="color:#cfe0d6;">Cities</p>
-        </div>
+
       </div>
+
+      <div class="stats">
+
+        <div class="stat reveal">
+          <div class="stat-number" data-counter="60">0+</div>
+          <div class="stat-label">প্রকাশনী</div>
+        </div>
+
+        <div class="stat reveal">
+          <div class="stat-number" data-counter="1000">0+</div>
+          <div class="stat-label">বই</div>
+        </div>
+
+        <div class="stat reveal">
+          <div class="stat-number" data-counter="10000">0+</div>
+          <div class="stat-label">পাঠক</div>
+        </div>
+
+        <div class="stat reveal">
+          <div class="stat-number">Multiple</div>
+          <div class="stat-label">Cities & Events</div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
-  <!-- ============================================================
+
+  <!-- =======================================================
        SOCIAL
-       ============================================================ -->
-  <section class="px-4 py-20 max-w-6xl mx-auto text-center">
-    <div class="reveal">
-      <h2 class="text-2xl md:text-3xl font-bold mb-2" style="color:var(--deep-green);">বইমেলার প্রতিটি আপডেট আপনার হাতের মুঠোয়</h2>
-      <p class="text-sm mb-10" style="color:var(--muted);">আমাদের সাথে যুক্ত থাকতে সোশ্যাল মিডিয়াগুলোতে Follow ও Join করুন।</p>
+       ======================================================= -->
+  <section class="social-section">
+    <div class="nibf-container">
+
+      <div class="section-head reveal">
+        <div class="section-label" style="color:#fbbf24;">Community</div>
+
+        <h2 class="section-title social-title">
+          বইমেলার প্রতিটি আপডেট আপনার হাতের মুঠোয়
+        </h2>
+
+        <p class="section-subtitle social-subtitle">
+          আমাদের সাথে যুক্ত থাকতে সোশ্যাল মিডিয়াগুলোতে
+          Follow ও Join করুন।
+        </p>
+      </div>
+
+      <div class="social-grid">
+
+        <a href="#" class="social-card reveal">
+          <div class="social-icon">
+            <strong>f</strong>
+          </div>
+          <div class="social-name">Facebook</div>
+          <p class="social-description">Official Page</p>
+        </a>
+
+        <a href="#" class="social-card reveal">
+          <div class="social-icon">
+            <strong>▶</strong>
+          </div>
+          <div class="social-name">YouTube</div>
+          <p class="social-description">Watch & Learn</p>
+        </a>
+
+        <a href="#" class="social-card reveal">
+          <div class="social-icon">
+            <strong>W</strong>
+          </div>
+          <div class="social-name">WhatsApp</div>
+          <p class="social-description">Get Updates</p>
+        </a>
+
+        <a href="#" class="social-card reveal">
+          <div class="social-icon">
+            <strong>+</strong>
+          </div>
+          <div class="social-name">Facebook Group</div>
+          <p class="social-description">Join Community</p>
+        </a>
+
+      </div>
+
     </div>
-    <div id="nibfSocialGrid" class="grid grid-cols-2 md:grid-cols-4 gap-5"></div>
   </section>
 
-  <!-- ============================================================
+
+  <!-- =======================================================
        FOOTER
-       ============================================================ -->
-  <footer class="px-4 pt-16 pb-8 text-white" style="background:#082018;">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-      <div>
-        <div class="flex items-center gap-2 mb-3">
-          <span class="footer-book" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 5c3-1.2 5.5-1 8 .8V19c-2.5-1.8-5-2-8-.8V5Z" fill="#E6C766"/><path d="M20 5c-3-1.2-5.5-1-8 .8V19c2.5-1.8 5-2 8-.8V5Z" fill="#C9A227"/></svg>
-          </span>
-          <p class="font-bold">ইসলামী বইমেলা</p>
+       ======================================================= -->
+  <footer class="footer">
+
+    <div class="nibf-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <div class="brand-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+              <path d="M4 5.5C4 4.67 4.67 4 5.5 4H10c1.1 0 2 .9 2 2v13c-.7-.63-1.65-1-2.75-1H5.5C4.67 18 4 17.33 4 16.5v-11Z" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M20 5.5C20 4.67 19.33 4 18.5 4H14c-1.1 0-2 .9-2 2v13c.7-.63 1.65-1 2.75-1h3.75c.83 0 1.5-.67 1.5-1.5v-11Z" stroke="currentColor" stroke-width="1.7"/>
+            </svg>
+          </div>
+
+          <div class="footer-brand-name">
+            ইসলামী বইমেলা
+          </div>
+
+          <p class="footer-description">
+            ইসলামী জ্ঞান, সাহিত্য ও সংস্কৃতির মাধ্যমে
+            পাঠাভ্যাস ও জ্ঞানচর্চাকে আরও সমৃদ্ধ করার
+            একটি সম্মিলিত ডিজিটাল প্ল্যাটফর্ম।
+          </p>
+
         </div>
-        <p class="text-xs leading-relaxed mb-4" style="color:#9fb3a8;">ইসলামী জ্ঞান, সাহিত্য ও সংস্কৃতির জাতীয় ডিজিটাল প্ল্যাটফর্ম।</p>
+
+        <div>
+          <h3 class="footer-title">দ্রুত নেভিগেশন</h3>
+          <a class="footer-link" href="#home">হোম</a>
+          <a class="footer-link" href="#campaigns">ইভেন্ট ও ক্যাম্পেইন</a>
+          <a class="footer-link" href="#books">নতুন বই</a>
+          <a class="footer-link" href="#publishers">প্রকাশনী</a>
+          <a class="footer-link" href="#archive">আর্কাইভ</a>
+        </div>
+
+        <div>
+          <h3 class="footer-title">সহায়তা</h3>
+          <a class="footer-link" href="#about">আমাদের সম্পর্কে</a>
+          <a class="footer-link" href="#">যোগাযোগ</a>
+          <a class="footer-link" href="#">FAQ</a>
+          <a class="footer-link" href="#">Privacy Policy</a>
+          <a class="footer-link" href="#">Terms & Conditions</a>
+        </div>
+
+        <div>
+          <h3 class="footer-title">যোগাযোগ</h3>
+          <span class="footer-link">info@example.com</span>
+          <span class="footer-link">+880 1XXX-XXXXXX</span>
+          <span class="footer-link">বাংলা বাজার, ঢাকা</span>
+        </div>
+
       </div>
-      <div>
-        <p class="text-xs font-bold uppercase mb-4" style="color:var(--gold);">দ্রুত নেভিগেশন</p>
-        <ul class="space-y-2 text-sm" style="color:#cfe0d6;">
-          <li><a href="#nibf-home" class="hover:text-white">হোম</a></li>
-          <li><a href="#nibf-campaigns" class="hover:text-white">ইভেন্ট</a></li>
-          <li><a href="#nibf-books" class="hover:text-white">নতুন বই</a></li>
-          <li><a href="#nibf-publishers" class="hover:text-white">প্রকাশনী</a></li>
-          <li><a href="#nibf-archive" class="hover:text-white">আর্কাইভ</a></li>
-        </ul>
+
+      <div class="footer-bottom">
+
+        <div>
+          © <span id="copyrightYear">2026</span>
+          ইসলামী বইমেলা — সর্বস্বত্ব সংরক্ষিত
+        </div>
+
+        <div class="tiny-book" aria-hidden="true">
+          <div class="tiny-page left"></div>
+          <div class="tiny-page right"></div>
+        </div>
+
       </div>
-      <div>
-        <p class="text-xs font-bold uppercase mb-4" style="color:var(--gold);">সহায়তা</p>
-        <ul class="space-y-2 text-sm" style="color:#cfe0d6;">
-          <li><a href="#" class="hover:text-white">আমাদের সম্পর্কে</a></li>
-          <li><a href="#" class="hover:text-white">যোগাযোগ</a></li>
-          <li><a href="#" class="hover:text-white">FAQ</a></li>
-          <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-white">Terms</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-xs font-bold uppercase mb-4" style="color:var(--gold);">যোগাযোগ</p>
-        <ul class="space-y-2 text-sm" style="color:#cfe0d6;">
-          <li>islamibookfair@gmail.com</li>
-          <li>+৮৮০ ১XXX-XXXXXX</li>
-          <li id="nibfFooterLocation"></li>
-        </ul>
-      </div>
+
     </div>
-    <div class="max-w-7xl mx-auto pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style="border-color:rgba(255,255,255,.1); color:#8ea497;">
-      <p id="nibfCopyright"></p>
-      <p>Designed for the Islamic community</p>
-    </div>
+
   </footer>
 
-  <!-- ============================================================
-       MODALS
-       ============================================================ -->
-  <div id="nibfNewsModal" class="nibf-modal-backdrop fixed inset-0 hidden z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="nibfNewsModalTitle">
-    <div class="nibf-modal-panel bg-white rounded-2xl max-w-md w-full p-7 shadow-2xl">
-      <p class="text-xs font-bold uppercase mb-2" style="color:var(--gold);">বিশেষ খবর</p>
-      <h3 id="nibfNewsModalTitle" class="text-xl font-bold mb-2" style="color:var(--deep-green);">চলমান বইমেলার সময়সূচি প্রকাশিত হয়েছে</h3>
-      <p class="text-xs mb-4" style="color:var(--muted);">১৫ জুলাই ২০২৬</p>
-      <p class="text-sm leading-relaxed mb-6" style="color:var(--text-main);">৬ আগস্ট থেকে ১৩ আগস্ট পর্যন্ত প্রতিদিন সকাল ১০টা থেকে রাত ৯টা পর্যন্ত মেলা প্রাঙ্গণ খোলা থাকবে। স্টল বরাদ্দ সংক্রান্ত সকল তথ্য প্রকাশনী প্যানেলে পাওয়া যাবে।</p>
-      <button class="nibf-modal-close w-full py-3 rounded-xl font-semibold text-sm text-white" style="background:var(--deep-green);">বন্ধ করুন</button>
-    </div>
-  </div>
 
-  <div id="nibfNoticeModal" class="nibf-modal-backdrop fixed inset-0 hidden z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="nibfNoticeModalTitle">
-    <div class="nibf-modal-panel bg-white rounded-2xl max-w-md w-full p-7 shadow-2xl">
-      <p id="nibfNoticeModalCat" class="text-xs font-bold uppercase mb-2" style="color:var(--gold);"></p>
-      <h3 id="nibfNoticeModalTitle" class="text-xl font-bold mb-2" style="color:var(--deep-green);"></h3>
-      <p id="nibfNoticeModalDate" class="text-xs mb-4" style="color:var(--muted);"></p>
-      <p id="nibfNoticeModalDesc" class="text-sm leading-relaxed mb-6" style="color:var(--text-main);"></p>
-      <button class="nibf-modal-close w-full py-3 rounded-xl font-semibold text-sm text-white" style="background:var(--deep-green);">বন্ধ করুন</button>
-    </div>
-  </div>
+  <!-- =======================================================
+       SPECIAL NEWS MODAL
+       ======================================================= -->
+  <div class="modal" id="newsModal" role="dialog" aria-modal="true">
 
-  <div id="nibfPubModal" class="nibf-modal-backdrop fixed inset-0 hidden z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="nibfPubModalTitle">
-    <div class="nibf-modal-panel bg-white rounded-2xl max-w-lg w-full p-7 shadow-2xl">
-      <p id="nibfPubModalCat" class="text-xs font-bold uppercase mb-2" style="color:var(--gold);"></p>
-      <h3 id="nibfPubModalTitle" class="text-2xl font-bold mb-1" style="color:var(--deep-green);"></h3>
-      <p id="nibfPubModalStall" class="text-xs font-semibold px-2.5 py-1 rounded-md inline-block mb-4" style="background:#F1ECDD; color:var(--sec-green);"></p>
-      <p id="nibfPubModalDesc" class="text-sm leading-relaxed mb-6" style="color:var(--text-main);"></p>
-      <div class="flex justify-end gap-3">
-        <button class="nibf-modal-close bg-gray-100 text-gray-700 px-5 py-2.5 rounded-xl text-xs font-semibold">বন্ধ করুন</button>
-        <a id="nibfPubModalLink" href="#" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-white" style="background:var(--deep-green);">ওয়েবসাইটে যান ↗</a>
-      </div>
-    </div>
-  </div>
+    <div class="modal-box">
 
-  <div id="nibfBookModal" class="nibf-modal-backdrop fixed inset-0 hidden z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="nibfBookModalTitle">
-    <div class="nibf-modal-panel bg-white rounded-2xl max-w-md w-full p-7 shadow-2xl">
-      <h3 id="nibfBookModalTitle" class="text-xl font-bold mb-1" style="color:var(--deep-green);"></h3>
-      <p id="nibfBookModalAuthor" class="text-sm mb-4" style="color:var(--muted);"></p>
-      <p class="text-sm mb-1"><span class="font-semibold" style="color:var(--sec-green);">প্রকাশনী:</span> <span id="nibfBookModalPub"></span></p>
-      <p class="text-sm mb-6"><span class="font-semibold" style="color:var(--sec-green);">প্রকাশকাল:</span> <span id="nibfBookModalYear"></span></p>
-      <button class="nibf-modal-close w-full py-3 rounded-xl font-semibold text-sm text-white" style="background:var(--deep-green);">বন্ধ করুন</button>
-    </div>
-  </div>
-
-  <div id="nibfArchiveModal" class="nibf-modal-backdrop fixed inset-0 hidden z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="nibfArchiveModalTitle">
-    <div class="nibf-modal-panel bg-white rounded-2xl max-w-2xl w-full p-7 shadow-2xl max-h-[85vh] overflow-y-auto">
-      <div class="flex items-start justify-between mb-4">
+      <div class="modal-head">
         <div>
-          <p class="text-xs font-bold uppercase mb-1" style="color:var(--gold);">আর্কাইভ</p>
-          <h3 id="nibfArchiveModalTitle" class="text-2xl font-bold" style="color:var(--deep-green);"></h3>
-          <p id="nibfArchiveModalLoc" class="text-xs mt-1" style="color:var(--muted);"></p>
+          <span class="badge">বিশেষ খবর</span>
+          <h2 class="modal-title" style="margin-top:10px;">
+            ইসলামী বইমেলা ২০২৬-এর সর্বশেষ আপডেট
+          </h2>
         </div>
-        <button class="nibf-modal-close text-gray-400 hover:text-gray-700 text-xl leading-none" aria-label="বন্ধ করুন">✕</button>
+
+        <button class="close-modal" data-close-modal>
+          ×
+        </button>
       </div>
-      <p id="nibfArchiveModalDesc" class="text-sm mb-5 leading-relaxed" style="color:var(--text-main);"></p>
-      <div class="grid grid-cols-3 gap-4 mb-6 text-center">
-        <div class="rounded-xl p-3" style="background:#F1ECDD;">
-          <p id="nibfArchivePublishers" class="text-lg font-bold" style="color:var(--deep-green);"></p>
-          <p class="text-[11px]" style="color:var(--muted);">প্রকাশনী</p>
-        </div>
-        <div class="rounded-xl p-3" style="background:#F1ECDD;">
-          <p id="nibfArchiveBooks" class="text-lg font-bold" style="color:var(--deep-green);"></p>
-          <p class="text-[11px]" style="color:var(--muted);">বই</p>
-        </div>
-        <div class="rounded-xl p-3" style="background:#F1ECDD;">
-          <p id="nibfArchivePhotos" class="text-lg font-bold" style="color:var(--deep-green);"></p>
-          <p class="text-[11px]" style="color:var(--muted);">ফাইল ফটো</p>
-        </div>
+
+      <div class="modal-content">
+        ইসলামী বইমেলা ২০২৬-এর মেলা, ক্যাম্পেইন,
+        প্রতিযোগিতা এবং অন্যান্য আয়োজন সম্পর্কে
+        সর্বশেষ তথ্য এখানে প্রকাশ করা হবে।
+        <br><br>
+        বিস্তারিত তথ্য ও নতুন ঘোষণা নিয়মিতভাবে
+        এই প্ল্যাটফর্মে আপডেট করা হবে।
       </div>
-      <p class="text-xs font-bold uppercase mb-2" style="color:var(--sec-green);">ফাইল ফটো</p>
-      <div id="nibfArchiveGallery" class="grid grid-cols-4 gap-2 mb-6"></div>
-      <p class="text-xs font-bold uppercase mb-2" style="color:var(--sec-green);">সেরা বিক্রীত বই</p>
-      <p id="nibfArchiveBestseller" class="text-sm font-semibold mb-6" style="color:var(--deep-green);"></p>
-      <button class="nibf-modal-close w-full py-3 rounded-xl font-semibold text-sm text-white" style="background:var(--deep-green);">বন্ধ করুন</button>
+
     </div>
+
   </div>
+
+
+  <!-- =======================================================
+       NOTICE MODAL
+       ======================================================= -->
+  <div class="modal" id="noticeModal" role="dialog" aria-modal="true">
+
+    <div class="modal-box">
+
+      <div class="modal-head">
+
+        <div>
+          <span class="badge">নোটিশ</span>
+
+          <h2 class="modal-title" style="margin-top:10px;">
+            ইসলামী বইমেলা ২০২৬
+          </h2>
+        </div>
+
+        <button class="close-modal" data-close-modal>
+          ×
+        </button>
+
+      </div>
+
+      <div class="modal-content">
+        মেলার সময়সূচি, আয়োজন, ক্যাম্পেইন ও
+        প্রতিযোগিতা সংক্রান্ত গুরুত্বপূর্ণ তথ্য
+        এখানে প্রকাশ করা হবে।
+        <br><br>
+        সর্বশেষ তথ্যের জন্য ইসলামী বইমেলার
+        অফিসিয়াল প্ল্যাটফর্মের সঙ্গে যুক্ত থাকুন।
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+  <script>
+    (function () {
+
+      "use strict";
+
+      const root = document.getElementById("nibf2026");
+
+      if (!root) return;
+
+
+      /* =====================================================
+         HEADER SCROLL
+         ===================================================== */
+
+      const header = root.querySelector("#nibfHeader");
+
+      function handleHeader() {
+        if (window.scrollY > 40) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      }
+
+      window.addEventListener("scroll", handleHeader, { passive: true });
+      handleHeader();
+
+
+      /* =====================================================
+         MOBILE MENU
+         ===================================================== */
+
+      const mobileBtn = root.querySelector("#mobileMenuBtn");
+      const mobileMenu = root.querySelector("#mobileMenu");
+
+      if (mobileBtn && mobileMenu) {
+
+        mobileBtn.addEventListener("click", function () {
+          mobileMenu.classList.toggle("active");
+        });
+
+        mobileMenu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.remove("active");
+          });
+        });
+
+      }
+
+
+      /* =====================================================
+         SMOOTH SCROLL
+         ===================================================== */
+
+      root.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+          const targetId = link.getAttribute("href");
+
+          if (!targetId || targetId === "#") {
+            event.preventDefault();
+            return;
+          }
+
+          const target = root.querySelector(targetId);
+
+          if (target) {
+            event.preventDefault();
+
+            const headerHeight =
+              header ? header.offsetHeight + 15 : 0;
+
+            const top =
+              target.getBoundingClientRect().top +
+              window.pageYOffset -
+              headerHeight;
+
+            window.scrollTo({
+              top: top,
+              behavior: "smooth"
+            });
+          }
+
+        });
+
+      });
+
+
+      /* =====================================================
+         MODALS
+         ===================================================== */
+
+      root.querySelectorAll("[data-open-modal]").forEach(function (button) {
+
+        button.addEventListener("click", function (event) {
+
+          event.preventDefault();
+
+          const modalId = button.getAttribute("data-open-modal");
+          const modal = root.querySelector("#" + modalId);
+
+          if (modal) {
+            modal.classList.add("active");
+            document.body.style.overflow = "hidden";
+          }
+
+        });
+
+      });
+
+
+      root.querySelectorAll("[data-close-modal]").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+          const modal = button.closest(".modal");
+
+          if (modal) {
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+
+        });
+
+      });
+
+
+      root.querySelectorAll(".modal").forEach(function (modal) {
+
+        modal.addEventListener("click", function (event) {
+
+          if (event.target === modal) {
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+
+        });
+
+      });
+
+
+      document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+          root.querySelectorAll(".modal.active").forEach(function (modal) {
+            modal.classList.remove("active");
+          });
+
+          document.body.style.overflow = "";
+
+        }
+
+      });
+
+
+      /* =====================================================
+         BOOK FILTER
+         ===================================================== */
+
+      const bookButtons =
+        root.querySelectorAll("[data-book-filter]");
+
+      const books =
+        root.querySelectorAll(".book-card");
+
+      bookButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+          bookButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+          });
+
+          button.classList.add("active");
+
+          const filter =
+            button.getAttribute("data-book-filter");
+
+          books.forEach(function (book) {
+
+            const type =
+              book.getAttribute("data-book-type");
+
+            if (filter === "all" || type === filter) {
+              book.style.display = "";
+            } else {
+              book.style.display = "none";
+            }
+
+          });
+
+        });
+
+      });
+
+
+      /* =====================================================
+         PUBLISHER SEARCH + FILTER
+         ===================================================== */
+
+      const publisherSearch =
+        root.querySelector("#publisherSearch");
+
+      const publisherCards =
+        root.querySelectorAll(".publisher-card");
+
+      const publisherButtons =
+        root.querySelectorAll("[data-publisher-filter]");
+
+      let activePublisherFilter = "all";
+
+      function filterPublishers() {
+
+        const searchTerm =
+          publisherSearch
+            ? publisherSearch.value.toLowerCase().trim()
+            : "";
+
+        publisherCards.forEach(function (card) {
+
+          const name =
+            (card.getAttribute("data-name") || "").toLowerCase();
+
+          const category =
+            card.getAttribute("data-category");
+
+          const matchesSearch =
+            name.includes(searchTerm);
+
+          const matchesCategory =
+            activePublisherFilter === "all" ||
+            category === activePublisherFilter;
+
+          card.style.display =
+            matchesSearch && matchesCategory
+              ? ""
+              : "none";
+
+        });
+
+      }
+
+      if (publisherSearch) {
+        publisherSearch.addEventListener(
+          "input",
+          filterPublishers
+        );
+      }
+
+      publisherButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+          publisherButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+          });
+
+          button.classList.add("active");
+
+          activePublisherFilter =
+            button.getAttribute("data-publisher-filter");
+
+          filterPublishers();
+
+        });
+
+      });
+
+
+      /* =====================================================
+         SCROLL REVEAL
+         ===================================================== */
+
+      const revealElements =
+        root.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+
+        const observer =
+          new IntersectionObserver(
+            function (entries, obs) {
+
+              entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                  entry.target.classList.add("visible");
+
+                  obs.unobserve(entry.target);
+
+                }
+
+              });
+
+            },
+            {
+              threshold: 0.12
+            }
+          );
+
+        revealElements.forEach(function (element) {
+          observer.observe(element);
+        });
+
+      } else {
+
+        revealElements.forEach(function (element) {
+          element.classList.add("visible");
+        });
+
+      }
+
+
+      /* =====================================================
+         COUNTER
+         ===================================================== */
+
+      const counters =
+        root.querySelectorAll("[data-counter]");
+
+      let counterStarted = false;
+
+      function runCounters() {
+
+        if (counterStarted) return;
+
+        const stats =
+          root.querySelector(".stats");
+
+        if (!stats) return;
+
+        const rect =
+          stats.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight * .85) {
+
+          counterStarted = true;
+
+          counters.forEach(function (counter) {
+
+            const target =
+              Number(counter.getAttribute("data-counter"));
+
+            let current = 0;
+
+            const increment =
+              Math.max(1, Math.ceil(target / 45));
+
+            const timer =
+              setInterval(function () {
+
+                current += increment;
+
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+
+                counter.textContent =
+                  current.toLocaleString("en-US") + "+";
+
+              }, 25);
+
+          });
+
+        }
+
+      }
+
+      window.addEventListener(
+        "scroll",
+        runCounters,
+        { passive: true }
+      );
+
+      runCounters();
+
+
+      /* =====================================================
+         CURRENT YEAR
+         ===================================================== */
+
+      const currentYear =
+        new Date().getFullYear();
+
+      const yearElement =
+        root.querySelector("#copyrightYear");
+
+      if (yearElement) {
+        yearElement.textContent = currentYear;
+      }
+
+
+      /* =====================================================
+         PREVENT DEMO LINKS
+         ===================================================== */
+
+      root.querySelectorAll('a[href="#"]').forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+
+      });
+
+    })();
+  </script>
 
 </div>
 
-<!-- ================================================================
-     TAILWIND CDN (preflight disabled so it never touches the rest
-     of the WordPress / Elementor page)
-     ================================================================ -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = { corePlugins: { preflight: false } };
-</script>
-
-<!-- ================================================================
-     JAVASCRIPT
-     ================================================================ -->
-<script>
-(function(){
-  "use strict";
-  var DATA = window.ISLAMI_BOOK_FAIR_DATA;
-  var root = document.getElementById('nibf2026');
-  if(!root || !DATA) return;
-
-  /* ---------- helpers ---------- */
-  function $(sel, ctx){ return (ctx||root).querySelector(sel); }
-  function $all(sel, ctx){ return Array.prototype.slice.call((ctx||root).querySelectorAll(sel)); }
-
-  function openModal(modal){
-    modal.classList.remove('hidden'); modal.classList.add('flex');
-    requestAnimationFrame(function(){ modal.classList.add('show'); });
-    document.addEventListener('keydown', escHandler);
-  }
-  function closeModal(modal){
-    modal.classList.remove('show');
-    setTimeout(function(){ modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300);
-    document.removeEventListener('keydown', escHandler);
-  }
-  function escHandler(e){
-    if(e.key === 'Escape'){
-      $all('.nibf-modal-backdrop.show').forEach(closeModal);
-    }
-  }
-  $all('.nibf-modal-backdrop').forEach(function(modal){
-    modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(modal); });
-    $all('.nibf-modal-close', modal).forEach(function(btn){
-      btn.addEventListener('click', function(){ closeModal(modal); });
-    });
-  });
-
-  /* ---------- header scroll + mobile menu ---------- */
-  var header = $('#nibfHeader');
-  window.addEventListener('scroll', function(){
-    header.classList.toggle('scrolled', window.scrollY > 10);
-  });
-  var menuBtn = $('#nibfMenuBtn'), mobileMenu = $('#nibfMobileMenu');
-  menuBtn.addEventListener('click', function(){
-    var open = mobileMenu.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  $all('#nibfMobileMenu a').forEach(function(a){
-    a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); });
-  });
-
-  /* ---------- news modal ---------- */
-  var newsModal = $('#nibfNewsModal');
-  [$('#nibfNewsBtn'), $('#nibfNewsBtnMobile')].forEach(function(btn){
-    if(btn) btn.addEventListener('click', function(){ openModal(newsModal); });
-  });
-
-  /* ---------- smooth scroll ---------- */
-  $all('a[href^="#nibf-"], a[href^="#nibf2026"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = a.getAttribute('href');
-      var target = document.querySelector(id);
-      if(target){
-        e.preventDefault();
-        target.scrollIntoView({ behavior:'smooth', block:'start' });
-      }
-    });
-  });
-
-  /* ---------- current event ---------- */
-  var ce = DATA.currentEvent;
-  $('#nibfEventTitle').textContent = ce.title;
-  $('#nibfEventDate').textContent = ce.startDate + ' — ' + ce.endDate;
-  $('#nibfEventLocation').textContent = ce.location;
-  $('#nibfEventDesc').textContent = ce.description;
-  $('#nibfFooterLocation').textContent = ce.location;
-  $('#nibfCopyright').textContent = '© ' + new Date().getFullYear() + ' ' + DATA.brandName + ' — সর্বস্বত্ব সংরক্ষিত';
-
-  /* ---------- campaigns ---------- */
-  var campGrid = $('#nibfCampaignGrid');
-  DATA.campaigns.forEach(function(c){
-    var el = document.createElement('div');
-    el.className = 'lift-card rounded-2xl p-6 bg-white flex flex-col justify-between';
-    el.style.border = '1px solid rgba(11,61,46,.1)';
-    el.innerHTML =
-      '<div>' +
-        '<div class="flex justify-between items-start mb-4">' +
-          '<span class="text-[11px] font-bold px-3 py-1 rounded-full" style="background:#F1ECDD; color:var(--sec-green);">' + c.badge + '</span>' +
-          '<span class="text-2xl" aria-hidden="true">' + c.icon + '</span>' +
-        '</div>' +
-        '<h3 class="font-bold text-base mb-2" style="color:var(--deep-green);">' + c.title + '</h3>' +
-        '<p class="text-xs leading-relaxed mb-4" style="color:var(--muted);">' + c.description + '</p>' +
-        '<p class="text-[11px] font-semibold" style="color:var(--gold);">সময়সীমা: ' + c.deadline + '</p>' +
-      '</div>' +
-      '<button class="mt-5 text-xs font-bold py-2.5 rounded-lg text-white" style="background:var(--deep-green);">' + c.cta + '</button>';
-    campGrid.appendChild(el);
-  });
-
-  /* ---------- books ---------- */
-  var bookGrid = $('#nibfBookGrid');
-  var bookModal = $('#nibfBookModal');
-  function renderBooks(filter){
-    bookGrid.innerHTML = '';
-    DATA.books.filter(function(b){ return filter === 'সব' || b.tag === filter; }).forEach(function(b){
-      var el = document.createElement('div');
-      el.className = 'lift-card cover-zoom rounded-2xl p-4 bg-white';
-      el.style.border = '1px solid rgba(11,61,46,.1)';
-      el.innerHTML =
-        '<div class="cover-ph h-44 rounded-xl mb-3 flex items-center justify-center text-xs font-semibold border border-dashed" style="background:#F1ECDD; border-color:rgba(201,162,39,.4); color:#9c9484;">[বইয়ের কভার]</div>' +
-        '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full" style="background:#F1ECDD; color:var(--sec-green);">' + b.tag + '</span>' +
-        '<h4 class="font-bold text-sm mt-2" style="color:var(--deep-green);">' + b.title + '</h4>' +
-        '<p class="text-[11px]" style="color:var(--muted);">' + b.author + '</p>' +
-        '<button class="nibf-book-detail mt-3 w-full text-xs font-bold py-2 rounded-lg" style="background:#F1ECDD; color:var(--sec-green);" data-title="' + b.title + '" data-author="' + b.author + '" data-pub="' + b.publisher + '" data-year="' + b.year + '">বিস্তারিত দেখুন</button>';
-      bookGrid.appendChild(el);
-    });
-    $all('.nibf-book-detail', bookGrid).forEach(function(btn){
-      btn.addEventListener('click', function(){
-        $('#nibfBookModalTitle').textContent = btn.dataset.title;
-        $('#nibfBookModalAuthor').textContent = btn.dataset.author;
-        $('#nibfBookModalPub').textContent = btn.dataset.pub;
-        $('#nibfBookModalYear').textContent = btn.dataset.year;
-        openModal(bookModal);
-      });
-    });
-  }
-  renderBooks('সব');
-  $all('#nibfBookFilters .pill').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      $all('#nibfBookFilters .pill').forEach(function(p){ p.classList.remove('active'); });
-      btn.classList.add('active');
-      renderBooks(btn.dataset.filter);
-    });
-  });
-
-  /* ---------- publishers ---------- */
-  var pubGrid = $('#nibfPubGrid');
-  var pubModal = $('#nibfPubModal');
-  var pubEmpty = $('#nibfPubEmpty');
-  var pubSearch = $('#nibfPubSearch');
-  var activeCat = 'সব';
-
-  function renderPublishers(){
-    var query = (pubSearch.value || '').trim().toLowerCase();
-    var list = DATA.publishers.filter(function(p){
-      var matchCat = activeCat === 'সব' || p.category === activeCat;
-      var matchQuery = !query || p.name.toLowerCase().indexOf(query) !== -1;
-      return matchCat && matchQuery;
-    });
-    pubGrid.innerHTML = '';
-    pubEmpty.classList.toggle('hidden', list.length > 0);
-    list.forEach(function(p){
-      var initials = p.name.slice(0,1);
-      var el = document.createElement('div');
-      el.className = 'lift-card rounded-2xl p-6 bg-white flex flex-col justify-between';
-      el.style.border = '1px solid rgba(11,61,46,.1)';
-      el.innerHTML =
-        '<div>' +
-          '<div class="flex items-center gap-4 mb-4">' +
-            '<div class="w-12 h-12 rounded-xl text-white flex items-center justify-center font-bold text-lg" style="background:linear-gradient(135deg, var(--deep-green), var(--sec-green));">' + initials + '</div>' +
-            '<div>' +
-              '<h3 class="font-bold" style="color:var(--deep-green);">' + p.name + '</h3>' +
-              '<span class="text-[11px] font-semibold px-2 py-0.5 rounded" style="background:#F1ECDD; color:var(--sec-green);">স্টল: ' + p.stall + '</span>' +
-            '</div>' +
-          '</div>' +
-          '<p class="text-xs leading-relaxed mb-4" style="color:var(--muted);">' + p.description + '</p>' +
-        '</div>' +
-        '<div class="pt-3 border-t flex justify-between items-center text-xs" style="border-color:rgba(11,61,46,.08);">' +
-          '<span style="color:var(--muted);">বই সংখ্যা: ' + p.books + '+</span>' +
-          '<button class="nibf-pub-detail font-bold" style="color:var(--sec-green);" data-name="' + p.name + '" data-cat="' + p.category + '" data-stall="' + p.stall + '" data-desc="' + p.description + '" data-link="' + p.website + '">বিস্তারিত →</button>' +
-        '</div>';
-      pubGrid.appendChild(el);
-    });
-    $all('.nibf-pub-detail', pubGrid).forEach(function(btn){
-      btn.addEventListener('click', function(){
-        $('#nibfPubModalCat').textContent = btn.dataset.cat;
-        $('#nibfPubModalTitle').textContent = btn.dataset.name;
-        $('#nibfPubModalStall').textContent = 'স্টল নম্বর: ' + btn.dataset.stall;
-        $('#nibfPubModalDesc').textContent = btn.dataset.desc;
-        $('#nibfPubModalLink').href = btn.dataset.link;
-        openModal(pubModal);
-      });
-    });
-  }
-  renderPublishers();
-  pubSearch.addEventListener('input', renderPublishers);
-  $all('#nibfPubFilters .pill').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      $all('#nibfPubFilters .pill').forEach(function(p){ p.classList.remove('active'); });
-      btn.classList.add('active');
-      activeCat = btn.dataset.cat;
-      renderPublishers();
-    });
-  });
-
-  /* ---------- notices ---------- */
-  var noticeList = $('#nibfNoticeList');
-  var noticeModal = $('#nibfNoticeModal');
-  DATA.notices.forEach(function(n){
-    var el = document.createElement('button');
-    el.className = 'lift-card w-full text-left rounded-2xl p-5 bg-white flex items-center justify-between gap-4';
-    el.style.border = '1px solid rgba(11,61,46,.1)';
-    el.innerHTML =
-      '<div>' +
-        '<span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full" style="background:#F1ECDD; color:var(--sec-green);">' + n.category + '</span>' +
-        '<p class="font-semibold text-sm mt-2" style="color:var(--deep-green);">' + n.title + '</p>' +
-        '<p class="text-[11px] mt-1" style="color:var(--muted);">' + n.date + '</p>' +
-      '</div>' +
-      '<span aria-hidden="true" style="color:var(--gold);">→</span>';
-    el.addEventListener('click', function(){
-      $('#nibfNoticeModalCat').textContent = n.category;
-      $('#nibfNoticeModalTitle').textContent = n.title;
-      $('#nibfNoticeModalDate').textContent = n.date;
-      $('#nibfNoticeModalDesc').textContent = n.description;
-      openModal(noticeModal);
-    });
-    noticeList.appendChild(el);
-  });
-
-  /* ---------- archive ---------- */
-  var archiveGrid = $('#nibfArchiveGrid');
-  var archiveModal = $('#nibfArchiveModal');
-  DATA.archive.forEach(function(a){
-    var el = document.createElement('button');
-    el.className = 'lift-card rounded-2xl p-5 text-center bg-white';
-    el.style.border = '1px solid rgba(11,61,46,.1)';
-    el.innerHTML =
-      '<p class="text-2xl md:text-3xl font-extrabold" style="color:var(--deep-green);">' + a.year + '</p>' +
-      '<p class="text-[11px] mt-1 mb-3" style="color:var(--muted);">' + a.location + '</p>' +
-      '<span class="inline-block text-[11px] font-semibold px-3 py-1 rounded-full" style="background:#F1ECDD; color:var(--sec-green);">বিস্তারিত →</span>';
-    el.addEventListener('click', function(){
-      $('#nibfArchiveModalTitle').textContent = a.title;
-      $('#nibfArchiveModalLoc').textContent = '📍 ' + a.location;
-      $('#nibfArchiveModalDesc').textContent = a.description;
-      $('#nibfArchivePublishers').textContent = a.publishers + '+';
-      $('#nibfArchiveBooks').textContent = a.books + '+';
-      $('#nibfArchivePhotos').textContent = a.photos;
-      $('#nibfArchiveBestseller').textContent = '📚 ' + a.bestseller;
-      var gallery = $('#nibfArchiveGallery');
-      gallery.innerHTML = '';
-      for(var i=0;i<8;i++){
-        var ph = document.createElement('div');
-        ph.className = 'h-16 rounded-lg flex items-center justify-center text-[9px] border border-dashed';
-        ph.style.background = '#F1ECDD';
-        ph.style.borderColor = 'rgba(201,162,39,.4)';
-        ph.style.color = '#9c9484';
-        ph.textContent = '[ফটো]';
-        gallery.appendChild(ph);
-      }
-      openModal(archiveModal);
-    });
-    archiveGrid.appendChild(el);
-  });
-
-  /* ---------- social ---------- */
-  var socialGrid = $('#nibfSocialGrid');
-  var socials = [
-    { key:'facebook', name:'Facebook Page', desc:'সর্বশেষ আপডেট পান', icon:'📘' },
-    { key:'youtube', name:'YouTube', desc:'ভিডিও ও লাইভ দেখুন', icon:'▶️' },
-    { key:'whatsapp', name:'WhatsApp', desc:'সরাসরি যোগাযোগ করুন', icon:'💬' },
-    { key:'facebookGroup', name:'Facebook Group', desc:'কমিউনিটিতে যুক্ত হন', icon:'👥' }
-  ];
-  socials.forEach(function(s){
-    var el = document.createElement('a');
-    el.href = DATA.socialLinks[s.key] || '#';
-    el.target = '_blank'; el.rel = 'noopener';
-    el.className = 'lift-card rounded-2xl p-6 bg-white flex flex-col items-center text-center';
-    el.style.border = '1px solid rgba(11,61,46,.1)';
-    el.innerHTML =
-      '<span class="text-3xl mb-3" aria-hidden="true">' + s.icon + '</span>' +
-      '<p class="font-bold text-sm" style="color:var(--deep-green);">' + s.name + '</p>' +
-      '<p class="text-[11px] mt-1" style="color:var(--muted);">' + s.desc + '</p>';
-    socialGrid.appendChild(el);
-  });
-
-  /* ---------- scroll reveal ---------- */
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold:0.12 });
-    $all('.reveal').forEach(function(el){ io.observe(el); });
-  } else {
-    $all('.reveal').forEach(function(el){ el.classList.add('in-view'); });
-  }
-
-  /* ---------- counters ---------- */
-  var counters = $all('.counter');
-  var countersDone = false;
-  function animateCounters(){
-    if(countersDone) return;
-    countersDone = true;
-    counters.forEach(function(el){
-      var target = parseInt(el.dataset.target, 10);
-      var suffix = el.dataset.suffix || '';
-      var start = 0;
-      var duration = 1200;
-      var startTime = null;
-      function step(ts){
-        if(!startTime) startTime = ts;
-        var progress = Math.min((ts - startTime) / duration, 1);
-        var value = Math.floor(progress * target);
-        el.textContent = value.toLocaleString('bn-BD') + suffix;
-        if(progress < 1) requestAnimationFrame(step);
-        else el.textContent = target.toLocaleString('bn-BD') + suffix;
-      }
-      requestAnimationFrame(step);
-    });
-  }
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    countersDone = true; /* keep static values already in markup */
-  } else if('IntersectionObserver' in window && counters.length){
-    var cIo = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting) animateCounters(); });
-    }, { threshold:0.3 });
-    cIo.observe(counters[0].closest('section'));
-  }
-
-})();
-</script>
+</body>
+</html>
