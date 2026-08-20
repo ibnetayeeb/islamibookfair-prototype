@@ -8,30 +8,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* Palette pulled directly from the brand logo: deep navy field, white type, muted slate-blue label chip */
     --navy-950:#081b32;
     --navy-900:#0d3b6e;
+    --navy-850:#0f2f5c;
     --navy-800:#124a86;
     --navy-700:#1a5fa8;
     --navy-600:#2472c4;
+    --sky-400:#6fb3ff;
     --slate-400:#93a8bf;
-    --slate-500:#6f88a3;
-    --slate-600:#546a85;
+    --slate-300:#b9c6d6;
+    --slate-600:#6f88a3;
+    --live-red:#ff5a5f;
     --white:#ffffff;
-    --cream-50:#f6f8fb;
-    --cream-100:#eef2f7;
   }
 
-  *{ scrollbar-width: thin; scrollbar-color: var(--navy-700) var(--cream-100); }
+  *{ scrollbar-width: thin; scrollbar-color: var(--navy-700) var(--navy-950); }
+
+  html{ scroll-behavior:smooth; }
 
   body{
     font-family:'Hind Siliguri',sans-serif;
-    background:var(--cream-50);
-    color:#1f2937;
+    color:#e7edf5;
     -webkit-font-smoothing:antialiased;
+    background: linear-gradient(160deg, var(--navy-950), var(--navy-900), var(--navy-850), var(--navy-900), var(--navy-950));
+    background-size: 320% 320%;
+    animation: auroraShift 26s ease infinite;
+  }
+  @media (prefers-reduced-motion: reduce){ body{ animation:none; } }
+
+  @keyframes auroraShift{
+    0%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    100%{ background-position:0% 50%; }
   }
 
-  /* ---------- Reliable entrance animation (CSS-only, no JS dependency) ---------- */
+  /* ---------- entrance & motion ---------- */
   @media (prefers-reduced-motion: no-preference){
     .fade-in{ animation: fadeUp .7s cubic-bezier(.16,1,.3,1) both; }
     .fade-in.d1{ animation-delay:.08s; }
@@ -40,30 +51,25 @@
     .star-spin{ animation:spin 100s linear infinite; }
     .star-spin-rev{ animation:spinrev 80s linear infinite; }
     .float-slow{ animation:floaty 7s ease-in-out infinite; }
+    .pulse-dot{ animation: pulseDot 1.6s ease-in-out infinite; }
+    .pulse-ring{ animation: pulseRing 1.6s ease-out infinite; }
+    .shimmer-text{ background-size:200% auto; animation:shimmer 5s linear infinite; }
+    .glow-drift{ animation: glowDrift 12s ease-in-out infinite; }
   }
-  /* Content is visible by default (no opacity:0 base state) so nothing can get stuck hidden */
   @keyframes fadeUp{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:translateY(0); } }
   @keyframes spin{ to{ transform:rotate(360deg); } }
   @keyframes spinrev{ to{ transform:rotate(-360deg); } }
   @keyframes floaty{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-10px);} }
+  @keyframes pulseDot{ 0%,100%{ box-shadow:0 0 0 0 rgba(255,90,95,.55);} 70%{ box-shadow:0 0 0 8px rgba(255,90,95,0);} }
+  @keyframes pulseRing{ 0%{ transform:scale(.6); opacity:.7;} 100%{ transform:scale(2.1); opacity:0;} }
+  @keyframes shimmer{ to{ background-position:200% center; } }
+  @keyframes glowDrift{ 0%,100%{ transform:translate(0,0);} 50%{ transform:translate(20px,-14px);} }
 
-  /* ---------- Backgrounds ---------- */
-  .bg-navy-gradient{
-    background:
-      radial-gradient(1000px 500px at 10% -10%, rgba(255,255,255,0.06), transparent 60%),
-      radial-gradient(900px 500px at 110% 15%, rgba(36,114,196,0.35), transparent 55%),
-      linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 50%, var(--navy-800) 100%);
-  }
-  .bg-panel{ background: linear-gradient(180deg, #ffffff 0%, var(--cream-100) 100%); }
   .lattice{
     background-image:
-      linear-gradient(135deg, rgba(255,255,255,0.05) 1px, transparent 1px),
-      linear-gradient(45deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      linear-gradient(135deg, rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(45deg, rgba(255,255,255,0.045) 1px, transparent 1px);
     background-size: 34px 34px;
-  }
-  .slate-noise{
-    background-image: radial-gradient(rgba(18,74,134,0.08) 1px, transparent 1.4px);
-    background-size: 22px 22px;
   }
 
   .star-motif{ filter:drop-shadow(0 0 16px rgba(255,255,255,0.15)); }
@@ -71,10 +77,22 @@
   .divider-line{
     height:1px;
     background:linear-gradient(90deg, transparent, var(--slate-400) 20%, #ffffff 50%, var(--slate-400) 80%, transparent);
-    opacity:.6;
+    opacity:.55;
   }
 
   .eyebrow{ letter-spacing:.22em; }
+
+  .text-shimmer{
+    background:linear-gradient(90deg, #ffffff, var(--sky-400), #ffffff);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  /* ---------- glass section wrappers ---------- */
+  .glass-panel{
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+  }
 
   /* ---------- Nav ---------- */
   .nav-link{ position:relative; }
@@ -84,6 +102,15 @@
   }
   .nav-link:hover::after{ width:100%; }
 
+  /* hot-news badge in header */
+  .hot-badge{
+    position:relative;
+    background:linear-gradient(135deg, rgba(255,90,95,0.14), rgba(255,90,95,0.05));
+    border:1px solid rgba(255,90,95,0.4);
+    transition: transform .3s, box-shadow .3s, background .3s;
+  }
+  .hot-badge:hover{ transform:translateY(-2px); box-shadow:0 10px 20px -8px rgba(255,90,95,0.45); background:rgba(255,90,95,0.18); }
+
   /* ---------- Cards ---------- */
   .card{
     transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s cubic-bezier(.16,1,.3,1), border-color .5s;
@@ -91,8 +118,8 @@
   }
   .card:hover{
     transform:translateY(-10px);
-    box-shadow: 0 30px 45px -18px rgba(13,59,110,0.28), 0 0 0 1px rgba(18,74,134,0.25);
-    border-color: rgba(18,74,134,0.4);
+    box-shadow: 0 30px 45px -18px rgba(4,14,28,0.5), 0 0 0 1px rgba(111,179,255,0.4);
+    border-color: rgba(111,179,255,0.5);
   }
   .card-corner{
     position:absolute; width:22px; height:22px; pointer-events:none;
@@ -100,12 +127,25 @@
   }
   .card:hover .card-corner{ opacity:1; }
 
+  /* year archive cards */
+  .year-card{
+    transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s cubic-bezier(.16,1,.3,1), border-color .4s, background .4s;
+    border:1px solid rgba(255,255,255,0.12);
+    cursor:pointer;
+  }
+  .year-card:hover{
+    transform:translateY(-8px) scale(1.015);
+    border-color: rgba(111,179,255,0.6);
+    box-shadow: 0 26px 40px -16px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.06);
+  }
+
   .btn-primary{
-    background:linear-gradient(135deg, var(--navy-700), var(--navy-900));
+    background:linear-gradient(135deg, var(--navy-600), var(--navy-800));
     color:#ffffff;
     transition: filter .3s, transform .3s, box-shadow .3s;
   }
-  .btn-primary:hover{ filter:brightness(1.15); transform:translateY(-2px); box-shadow:0 12px 24px -8px rgba(13,59,110,0.45); }
+  .btn-primary:hover{ filter:brightness(1.2); transform:translateY(-2px); box-shadow:0 14px 26px -10px rgba(36,114,196,0.55); }
 
   .btn-ghost{
     border:1px solid rgba(255,255,255,0.35);
@@ -116,7 +156,7 @@
 
   /* ---------- Modal ---------- */
   .modal-backdrop{
-    background:rgba(8,27,50,0.72);
+    background:rgba(4,12,24,0.78);
     backdrop-filter: blur(6px);
     opacity:0; transition:opacity .35s ease;
   }
@@ -129,18 +169,32 @@
 
   .sticky-nav{
     backdrop-filter: blur(14px);
-    background:linear-gradient(180deg, rgba(8,27,50,0.94), rgba(13,59,110,0.86));
+    background:linear-gradient(180deg, rgba(6,18,36,0.94), rgba(13,59,110,0.88));
+  }
+
+  .announce-bar{
+    background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(111,179,255,0.10), rgba(255,255,255,0.02));
+    background-size:200% auto;
+    animation: shimmer 7s linear infinite;
   }
 
   ::selection{ background:var(--navy-700); color:#fff; }
+
+  .photo-placeholder{
+    background: repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0 10px, rgba(255,255,255,0.02) 10px 20px);
+    border:1px dashed rgba(255,255,255,0.25);
+  }
 </style>
 </head>
-<body class="bg-panel">
+<body>
 
   <!-- Announcement bar -->
-  <div class="text-xs md:text-sm py-2.5 px-4 border-b" style="background:var(--navy-950); color:#e7edf5; border-color:rgba(255,255,255,0.08);">
+  <div class="announce-bar text-xs md:text-sm py-2.5 px-4 border-b" style="border-color:rgba(255,255,255,0.08);">
     <div class="container mx-auto flex items-center justify-center gap-3 text-center flex-wrap">
-      <span style="color:var(--slate-400);">✦</span>
+      <span class="relative inline-flex w-2 h-2">
+        <span class="pulse-ring absolute inline-flex h-full w-full rounded-full" style="background:var(--live-red);"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 pulse-dot" style="background:var(--live-red);"></span>
+      </span>
       <span class="font-medium">আগামী <span class="font-bold text-white">১০ই সেপ্টেম্বর</span> হতে "জাতীয় ইসলামী বইমেলা" শুরু হওয়ার সম্ভাব্য তারিখ নির্ধারিত হয়েছে</span>
       <button onclick="toggleNoticeModal()" class="ml-1 underline underline-offset-4 decoration-white/40 hover:decoration-white transition shrink-0 text-white font-semibold">বিস্তারিত</button>
     </div>
@@ -148,7 +202,7 @@
 
   <!-- Header -->
   <header class="sticky-nav text-white sticky top-0 z-40 border-b border-white/10">
-    <div class="container mx-auto px-4 py-3.5 flex justify-between items-center">
+    <div class="container mx-auto px-4 py-3.5 flex justify-between items-center gap-4 flex-wrap">
       <div class="flex items-center gap-3">
         <div class="w-11 h-11 rounded-xl flex items-center justify-center border border-white/20 shadow-inner" style="background:rgba(255,255,255,0.06);">
           <svg width="22" height="22" viewBox="0 0 100 100" class="text-white">
@@ -160,17 +214,27 @@
           <p class="text-[10px] eyebrow font-medium uppercase" style="color:var(--slate-400);">সত্য ও সঠিক প্রচারের কারখানা</p>
         </div>
       </div>
-      <nav class="hidden lg:flex gap-8 font-medium text-sm text-white/85">
+
+      <nav class="hidden lg:flex items-center gap-7 font-medium text-sm text-white/85">
         <a href="#home" class="nav-link hover:text-white transition">হোম</a>
         <a href="#events" class="nav-link hover:text-white transition">ইভেন্ট ও ক্যাম্পেইন</a>
+        <a href="#archive" class="nav-link hover:text-white transition">বিগত বইমেলা</a>
         <a href="#publishers" class="nav-link hover:text-white transition">প্রকাশনী তালিকা</a>
         <a href="#books" class="nav-link hover:text-white transition">নতুন বই</a>
       </nav>
+
+      <button onclick="toggleNoticeModal()" class="hot-badge flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold">
+        <span class="relative inline-flex w-2 h-2">
+          <span class="pulse-ring absolute inline-flex h-full w-full rounded-full" style="background:var(--live-red);"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 pulse-dot" style="background:var(--live-red);"></span>
+        </span>
+        <span style="color:#ffb3b5;">বিশেষ খবর</span>
+      </button>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="relative bg-navy-gradient lattice text-white py-24 md:py-32 text-center px-4 overflow-hidden">
+  <section id="home" class="relative lattice text-white py-24 md:py-32 text-center px-4 overflow-hidden">
     <svg class="absolute -top-20 -left-16 w-72 h-72 opacity-[0.10] star-spin star-motif" viewBox="0 0 100 100">
       <path fill="none" stroke="#ffffff" stroke-width="0.6" d="M50 5 L58 35 L88 35 L64 53 L73 83 L50 65 L27 83 L36 53 L12 35 L42 35 Z"/>
       <circle cx="50" cy="50" r="46" fill="none" stroke="#ffffff" stroke-width="0.4"/>
@@ -179,6 +243,8 @@
       <path fill="none" stroke="#ffffff" stroke-width="0.6" d="M50 5 L58 35 L88 35 L64 53 L73 83 L50 65 L27 83 L36 53 L12 35 L42 35 Z"/>
       <circle cx="50" cy="50" r="46" fill="none" stroke="#ffffff" stroke-width="0.4"/>
     </svg>
+    <div class="absolute top-1/3 left-1/4 w-64 h-64 rounded-full glow-drift pointer-events-none" style="background:radial-gradient(circle, rgba(111,179,255,0.18), transparent 70%);"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full glow-drift pointer-events-none" style="background:radial-gradient(circle, rgba(36,114,196,0.2), transparent 70%); animation-delay:3s;"></div>
 
     <div class="relative max-w-4xl mx-auto z-10">
       <span class="fade-in inline-flex items-center gap-2 border text-[11px] eyebrow uppercase px-4 py-1.5 rounded-full font-semibold" style="border-color:rgba(255,255,255,0.3); color:#ffffff; background:rgba(255,255,255,0.08);">
@@ -186,17 +252,17 @@
         অফিশিয়াল প্রমোশনাল পোর্টাল
       </span>
       <h2 class="fade-in d1 text-4xl md:text-6xl font-bold my-7 leading-[1.15]">
-        ইসলামী জ্ঞান, সত্য ও সুন্দরের সর্ববৃহৎ মিলনমেলা
+        ইসলামী জ্ঞান, সত্য ও <span class="text-shimmer shimmer-text italic">সুন্দরের</span> সর্ববৃহৎ মিলনমেলা
       </h2>
-      <p class="fade-in d2 text-base md:text-lg mb-10 max-w-2xl mx-auto font-light leading-relaxed" style="color:#e7edf5;">
+      <p class="fade-in d2 text-base md:text-lg mb-10 max-w-2xl mx-auto font-light leading-relaxed" style="color:var(--slate-300);">
         দেশের শীর্ষস্থানীয় ইসলামী প্রকাশনীগুলোর নতুন বই, প্রতিযোগিতা, প্রেস বার্তা ও অফিশিয়াল আপডেট একসাথে পেতে যুক্ত থাকুন।
       </p>
       <div class="fade-in d3 flex flex-wrap justify-center gap-4">
-        <a href="#books" class="btn-primary font-bold px-8 py-3.5 rounded-xl shadow-lg">
-          নতুন বইয়ের ক্যাটালগ
+        <a href="#events" class="btn-primary font-bold px-8 py-3.5 rounded-xl shadow-lg">
+          মেলার সময়সূচী দেখুন
         </a>
-        <a href="#publishers" class="btn-ghost font-semibold px-8 py-3.5 rounded-xl">
-          প্রকাশনী ডিরেক্টরি
+        <a href="#archive" class="btn-ghost font-semibold px-8 py-3.5 rounded-xl">
+          বিগত বইমেলা দেখুন
         </a>
       </div>
     </div>
@@ -207,52 +273,79 @@
   <!-- Events -->
   <section id="events" class="py-20 container mx-auto px-4">
     <div class="mb-12 text-center md:text-left">
-      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--navy-700);">চলমান আয়োজন</p>
-      <h3 class="text-2xl md:text-3xl font-bold" style="color:var(--navy-900);">অফিশিয়াল ক্যাম্পেইন ও ইভেন্ট</h3>
+      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--sky-400);">চলমান আয়োজন</p>
+      <h3 class="text-2xl md:text-3xl font-bold text-white">অফিশিয়াল ক্যাম্পেইন ও ইভেন্ট</h3>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="card relative bg-white rounded-2xl p-7 shadow-sm flex flex-col justify-between overflow-hidden">
+      <div class="card relative glass-panel rounded-2xl p-7 flex flex-col justify-between overflow-hidden">
         <div class="card-corner top-3 left-3 border-t-2 border-l-2 rounded-tl-lg"></div>
         <div class="card-corner bottom-3 right-3 border-b-2 border-r-2 rounded-br-lg"></div>
         <div>
           <div class="flex justify-between items-start mb-5">
-            <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(18,74,134,0.1); color:var(--navy-800);">ফেসবুক ক্যাম্পেইন</span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(111,179,255,0.14); color:var(--sky-400);">ফেসবুক ক্যাম্পেইন</span>
             <span class="text-2xl">✍️</span>
           </div>
-          <h4 class="text-xl font-bold mb-2" style="color:var(--navy-900);">ইসলামী গ্রন্থ পর্যালোচনা প্রতিযোগিতা</h4>
-          <p class="text-gray-600 text-sm leading-relaxed">আপনার প্রিয় যেকোনো ইসলামী বইয়ের ওপর রিভিউ লিখে আমাদের ফেসবুক পেজে পোস্ট করুন এবং জিতে নিন আকর্ষণীয় বইয়ের সেট।</p>
+          <h4 class="text-xl font-bold mb-2 text-white">ইসলামী গ্রন্থ পর্যালোচনা প্রতিযোগিতা</h4>
+          <p class="text-sm leading-relaxed" style="color:var(--slate-300);">আপনার প্রিয় যেকোনো ইসলামী বইয়ের ওপর রিভিউ লিখে আমাদের ফেসবুক পেজে পোস্ট করুন এবং জিতে নিন আকর্ষণীয় বইয়ের সেট।</p>
         </div>
         <a href="https://facebook.com" target="_blank" class="mt-7 inline-flex items-center justify-center btn-primary font-semibold text-xs py-3 px-4 rounded-lg">
           ফেসবুক পোস্টে অংশ নিন ↗
         </a>
       </div>
 
-      <div class="card relative bg-white rounded-2xl p-7 shadow-sm flex flex-col justify-between overflow-hidden">
+      <div class="card relative glass-panel rounded-2xl p-7 flex flex-col justify-between overflow-hidden">
         <div class="card-corner top-3 left-3 border-t-2 border-l-2 rounded-tl-lg"></div>
         <div class="card-corner bottom-3 right-3 border-b-2 border-r-2 rounded-br-lg"></div>
         <div>
           <div class="flex justify-between items-start mb-5">
-            <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(111,136,163,0.15); color:var(--slate-600);">অফলাইন ইভেন্ট</span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(147,168,191,0.16); color:var(--slate-300);">অফলাইন ইভেন্ট</span>
             <span class="text-2xl">🎨</span>
           </div>
-          <h4 class="text-xl font-bold mb-2" style="color:var(--navy-900);">ইসলামী ক্যালিগ্রাফি প্রদর্শনী</h4>
-          <p class="text-gray-600 text-sm leading-relaxed">মেলা প্রাঙ্গণে অনুষ্ঠিত হতে যাচ্ছে দেশের উদীয়মান তরুণ ক্যালিগ্রাফারদের সরাসরি চিত্রকর্ম প্রদর্শনী ও ওয়ার্কশপ।</p>
+          <h4 class="text-xl font-bold mb-2 text-white">ইসলামী ক্যালিগ্রাফি প্রদর্শনী</h4>
+          <p class="text-sm leading-relaxed" style="color:var(--slate-300);">মেলা প্রাঙ্গণে অনুষ্ঠিত হতে যাচ্ছে দেশের উদীয়মান তরুণ ক্যালিগ্রাফারদের সরাসরি চিত্রকর্ম প্রদর্শনী ও ওয়ার্কশপ।</p>
         </div>
-        <button onclick="toggleNoticeModal()" class="mt-7 inline-flex items-center justify-center font-semibold text-xs py-3 px-4 rounded-lg text-white transition hover:brightness-110" style="background:var(--navy-900);">
+        <button onclick="toggleNoticeModal()" class="mt-7 inline-flex items-center justify-center font-semibold text-xs py-3 px-4 rounded-lg text-white transition hover:brightness-110" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">
           সময়সূচী ও স্থান দেখুন →
         </button>
       </div>
     </div>
   </section>
 
+  <!-- Archive: Past Fairs -->
+  <section id="archive" class="py-20 container mx-auto px-4">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--sky-400);">আর্কাইভ</p>
+      <h3 class="text-2xl md:text-3xl font-bold mb-2 text-white">বিগত বছরের বইমেলা</h3>
+      <p class="text-sm" style="color:var(--slate-300);">যেকোনো বছরের কার্ডে ক্লিক করলে সেই বছরের ফাইল ফটো, বিস্তারিত তথ্য ও সেরা বিক্রীত বই দেখতে পারবেন</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="year-card glass-panel rounded-2xl p-7 text-center" onclick="openArchiveModal('2025')">
+        <p class="text-4xl font-extrabold text-white mb-1">২০২৫</p>
+        <p class="text-xs mb-4" style="color:var(--slate-400);">সর্বশেষ আয়োজন</p>
+        <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(111,179,255,0.14); color:var(--sky-400);">বিস্তারিত দেখুন →</span>
+      </div>
+      <div class="year-card glass-panel rounded-2xl p-7 text-center" onclick="openArchiveModal('2024')">
+        <p class="text-4xl font-extrabold text-white mb-1">২০২৪</p>
+        <p class="text-xs mb-4" style="color:var(--slate-400);">দ্বিতীয় আয়োজন</p>
+        <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(111,179,255,0.14); color:var(--sky-400);">বিস্তারিত দেখুন →</span>
+      </div>
+      <div class="year-card glass-panel rounded-2xl p-7 text-center" onclick="openArchiveModal('2023')">
+        <p class="text-4xl font-extrabold text-white mb-1">২০২৩</p>
+        <p class="text-xs mb-4" style="color:var(--slate-400);">প্রথম আয়োজন</p>
+        <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(111,179,255,0.14); color:var(--sky-400);">বিস্তারিত দেখুন →</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Publishers -->
-  <section id="publishers" class="py-20 slate-noise border-y" style="background:var(--cream-100); border-color:rgba(18,74,134,0.1);">
+  <section id="publishers" class="py-20 glass-panel border-y" style="border-color:rgba(255,255,255,0.08);">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--navy-700);">অংশগ্রহণকারী</p>
-        <h3 class="text-2xl md:text-3xl font-bold mb-2" style="color:var(--navy-900);">মেলায় অংশগ্রহণকারী প্রকাশনীসমূহ</h3>
-        <p class="text-gray-600 text-sm">যেকোনো প্রকাশনীর বিস্তারিত ও প্রকাশিত বইয়ের তালিকা দেখতে কার্ডে টাচ করুন</p>
+        <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--sky-400);">অংশগ্রহণকারী</p>
+        <h3 class="text-2xl md:text-3xl font-bold mb-2 text-white">মেলায় অংশগ্রহণকারী প্রকাশনীসমূহ</h3>
+        <p class="text-sm" style="color:var(--slate-300);">যেকোনো প্রকাশনীর বিস্তারিত ও প্রকাশিত বইয়ের তালিকা দেখতে কার্ডে টাচ করুন</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -319,15 +412,15 @@
   <!-- Books -->
   <section id="books" class="py-20 container mx-auto px-4">
     <div class="mb-12 text-center md:text-left">
-      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--navy-700);">ক্যাটালগ</p>
-      <h3 class="text-2xl md:text-3xl font-bold" style="color:var(--navy-900);">নতুন প্রকাশিত বইয়ের ক্যাটালগ</h3>
-      <p class="text-gray-500 text-sm mt-1">পছন্দের বইয়ে ক্লিক করে সরাসরি সংশ্লিষ্ট প্রকাশনীর পেজে যুক্ত হন</p>
+      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--sky-400);">ক্যাটালগ</p>
+      <h3 class="text-2xl md:text-3xl font-bold text-white">নতুন প্রকাশিত বইয়ের ক্যাটালগ</h3>
+      <p class="text-sm mt-1" style="color:var(--slate-300);">পছন্দের বইয়ে ক্লিক করে সরাসরি সংশ্লিষ্ট প্রকাশনীর পেজে যুক্ত হন</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
       <div class="card bg-white p-4 rounded-2xl shadow-sm flex flex-col justify-between">
         <div>
-          <div class="h-52 rounded-xl mb-4 flex items-center justify-center font-semibold border border-dashed" style="background:var(--cream-100); border-color:rgba(18,74,134,0.25); color:#9ca3af;">
+          <div class="h-52 rounded-xl mb-4 flex items-center justify-center font-semibold border border-dashed" style="background:#f3f6fa; border-color:rgba(18,74,134,0.25); color:#9ca3af;">
             [বইয়ের কভার]
           </div>
           <h4 class="font-bold text-base" style="color:var(--navy-900);">কুরআনের মহামানব</h4>
@@ -341,7 +434,7 @@
 
       <div class="card bg-white p-4 rounded-2xl shadow-sm flex flex-col justify-between">
         <div>
-          <div class="h-52 rounded-xl mb-4 flex items-center justify-center font-semibold border border-dashed" style="background:var(--cream-100); border-color:rgba(18,74,134,0.25); color:#9ca3af;">
+          <div class="h-52 rounded-xl mb-4 flex items-center justify-center font-semibold border border-dashed" style="background:#f3f6fa; border-color:rgba(18,74,134,0.25); color:#9ca3af;">
             [বইয়ের কভার]
           </div>
           <h4 class="font-bold text-base" style="color:var(--navy-900);">ইতিহাসের সত্যপাঠ</h4>
@@ -356,12 +449,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-center text-xs py-12 border-t" style="background:var(--navy-950); border-color:rgba(255,255,255,0.1); color:#9fb3cc;">
+  <footer class="text-center text-xs py-12 border-t" style="border-color:rgba(255,255,255,0.1); color:#9fb3cc;">
     <div class="container mx-auto px-4">
       <svg width="26" height="26" viewBox="0 0 100 100" class="mx-auto mb-4 float-slow text-white">
         <path fill="currentColor" d="M50 2 L61 39 L98 39 L68 61 L79 98 L50 75 L21 98 L32 61 L2 39 L39 39 Z"/>
       </svg>
-      <p class="text-sm font-semibold" style="color:#ffffff;">জাতীয় ইসলামী বইমেলা — সর্বস্বত্ব সংরক্ষিত</p>
+      <p class="text-sm font-semibold text-white">জাতীয় ইসলামী বইমেলা — সর্বস্বত্ব সংরক্ষিত</p>
       <p class="my-2" style="color:var(--slate-400);">সত্য ও সঠিক প্রচারের কারখানা</p>
       <p style="color:#63789a;">ইমেইল: nationalislamicbookfair@gmail.com</p>
     </div>
@@ -392,6 +485,35 @@
     </div>
   </div>
 
+  <!-- Archive Modal -->
+  <div id="archiveModal" class="modal-backdrop fixed inset-0 hidden z-50 items-center justify-center p-4">
+    <div class="modal-panel bg-white rounded-2xl max-w-2xl w-full p-7 shadow-2xl border max-h-[85vh] overflow-y-auto" style="border-color:rgba(18,74,134,0.18);">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <p class="text-xs font-bold uppercase mb-1" style="color:var(--navy-700);">আর্কাইভ</p>
+          <h3 id="archiveYear" class="text-2xl font-bold" style="color:var(--navy-900);">২০২৫ সালের বইমেলা</h3>
+        </div>
+        <button onclick="closeArchiveModal()" class="text-gray-400 hover:text-gray-700 text-xl leading-none">✕</button>
+      </div>
+
+      <p id="archiveDesc" class="text-gray-600 text-sm mb-5 leading-relaxed"></p>
+
+      <div class="mb-6">
+        <p class="text-xs font-bold uppercase mb-2" style="color:var(--slate-600);">ফাইল ফটো</p>
+        <div id="archiveGallery" class="grid grid-cols-3 gap-3"></div>
+      </div>
+
+      <div>
+        <p class="text-xs font-bold uppercase mb-2" style="color:var(--slate-600);">সেরা বিক্রীত বই</p>
+        <div id="archiveBestsellers" class="space-y-2"></div>
+      </div>
+
+      <div class="flex justify-end mt-6">
+        <button onclick="closeArchiveModal()" class="bg-gray-100 text-gray-700 px-5 py-2.5 rounded-xl text-xs font-semibold hover:bg-gray-200 transition">বন্ধ করুন</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     function toggleNoticeModal(){
       const m = document.getElementById('noticeModal');
@@ -413,6 +535,66 @@
     }
     function closePublisherModal(){
       const m = document.getElementById('pubModal');
+      m.classList.remove('show');
+      setTimeout(()=>{ m.classList.add('hidden'); m.classList.remove('flex'); }, 350);
+    }
+
+    const archiveData = {
+      '2025': {
+        title: '২০২৫ সালের বইমেলা',
+        desc: 'সর্বাধিক প্রকাশনী অংশগ্রহণে অনুষ্ঠিত হয় এবারের মেলা। ১৫ দিনব্যাপী আয়োজনে হাজারো দর্শনার্থী অংশ নেন এবং বহু নতুন বইয়ের মোড়ক উন্মোচন হয়।',
+        bestsellers: [
+          { name: 'কুরআনের মহামানব', pub: 'রুহামা পাবলিকেশন' },
+          { name: 'ইতিহাসের সত্যপাঠ', pub: 'সমকালীন প্রকাশন' },
+          { name: 'আত্মার সন্ধানে', pub: 'গার্ডিয়ান পাবলিকেশনস' }
+        ]
+      },
+      '2024': {
+        title: '২০২৪ সালের বইমেলা',
+        desc: 'দ্বিতীয় আয়োজনে অংশগ্রহণকারী প্রকাশনীর সংখ্যা বৃদ্ধি পায় এবং নতুন করে ক্যালিগ্রাফি প্রদর্শনী যুক্ত হয়, যা দর্শনার্থীদের বিশেষ আকর্ষণ ছিল।',
+        bestsellers: [
+          { name: 'পথের দিশা', pub: 'রুহামা পাবলিকেশন' },
+          { name: 'সময়ের ইতিহাস', pub: 'সমকালীন প্রকাশন' }
+        ]
+      },
+      '2023': {
+        title: '২০২৩ সালের বইমেলা',
+        desc: 'জাতীয় ইসলামী বইমেলার প্রথম আয়োজন। সীমিত পরিসরে শুরু হলেও পাঠকদের ব্যাপক সাড়া পাওয়া যায়, যা পরবর্তী আয়োজনগুলোর ভিত্তি তৈরি করে।',
+        bestsellers: [
+          { name: 'জ্ঞানের প্রদীপ', pub: 'গার্ডিয়ান পাবলিকেশনস' }
+        ]
+      }
+    };
+
+    function openArchiveModal(year){
+      const data = archiveData[year];
+      document.getElementById('archiveYear').innerText = data.title;
+      document.getElementById('archiveDesc').innerText = data.desc;
+
+      const gallery = document.getElementById('archiveGallery');
+      gallery.innerHTML = '';
+      for(let i=0;i<6;i++){
+        const div = document.createElement('div');
+        div.className = 'photo-placeholder h-20 rounded-lg flex items-center justify-center text-[10px] text-gray-400';
+        div.innerText = '[ফটো]';
+        gallery.appendChild(div);
+      }
+
+      const list = document.getElementById('archiveBestsellers');
+      list.innerHTML = '';
+      data.bestsellers.forEach((b, i)=>{
+        const row = document.createElement('div');
+        row.className = 'flex items-center justify-between text-sm bg-gray-50 rounded-lg px-3 py-2';
+        row.innerHTML = `<span class="font-semibold" style="color:var(--navy-900)">${i+1}. ${b.name}</span><span class="text-xs" style="color:var(--slate-600)">${b.pub}</span>`;
+        list.appendChild(row);
+      });
+
+      const m = document.getElementById('archiveModal');
+      m.classList.remove('hidden'); m.classList.add('flex');
+      requestAnimationFrame(()=>m.classList.add('show'));
+    }
+    function closeArchiveModal(){
+      const m = document.getElementById('archiveModal');
       m.classList.remove('show');
       setTimeout(()=>{ m.classList.add('hidden'); m.classList.remove('flex'); }, 350);
     }
