@@ -5,23 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>জাতীয় ইসলামী বইমেলা — সত্য ও সঠিক প্রচারের কারখানা</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy-950:#071426;
-    --navy-900:#0a1f3d;
-    --navy-800:#0f2c52;
-    --navy-700:#164a7a;
-    --gold-300:#e8c766;
-    --gold-400:#d9b64a;
-    --gold-500:#c9a227;
-    --gold-600:#a9840f;
-    --teal-500:#0f6a5c;
-    --cream-50:#faf8f3;
-    --cream-100:#f3ede1;
+    /* Palette pulled directly from the brand logo: deep navy field, white type, muted slate-blue label chip */
+    --navy-950:#081b32;
+    --navy-900:#0d3b6e;
+    --navy-800:#124a86;
+    --navy-700:#1a5fa8;
+    --navy-600:#2472c4;
+    --slate-400:#93a8bf;
+    --slate-500:#6f88a3;
+    --slate-600:#546a85;
+    --white:#ffffff;
+    --cream-50:#f6f8fb;
+    --cream-100:#eef2f7;
   }
 
-  *{ scrollbar-width: thin; scrollbar-color: var(--gold-500) var(--navy-900); }
+  *{ scrollbar-width: thin; scrollbar-color: var(--navy-700) var(--cream-100); }
 
   body{
     font-family:'Hind Siliguri',sans-serif;
@@ -30,101 +31,92 @@
     -webkit-font-smoothing:antialiased;
   }
 
-  .font-display{ font-family:'Cormorant Garamond','Hind Siliguri',serif; }
-
-  /* ---------- Motion primitives ---------- */
+  /* ---------- Reliable entrance animation (CSS-only, no JS dependency) ---------- */
   @media (prefers-reduced-motion: no-preference){
-    .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
-    .reveal.in{ opacity:1; transform:translateY(0); }
-    .star-spin{ animation:spin 90s linear infinite; }
-    .star-spin-rev{ animation:spinrev 70s linear infinite; }
+    .fade-in{ animation: fadeUp .7s cubic-bezier(.16,1,.3,1) both; }
+    .fade-in.d1{ animation-delay:.08s; }
+    .fade-in.d2{ animation-delay:.16s; }
+    .fade-in.d3{ animation-delay:.24s; }
+    .star-spin{ animation:spin 100s linear infinite; }
+    .star-spin-rev{ animation:spinrev 80s linear infinite; }
     .float-slow{ animation:floaty 7s ease-in-out infinite; }
-    .shimmer{ background-size:200% auto; animation:shimmer 6s linear infinite; }
   }
+  /* Content is visible by default (no opacity:0 base state) so nothing can get stuck hidden */
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:translateY(0); } }
   @keyframes spin{ to{ transform:rotate(360deg); } }
   @keyframes spinrev{ to{ transform:rotate(-360deg); } }
   @keyframes floaty{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-10px);} }
-  @keyframes shimmer{ to{ background-position:200% center; } }
 
   /* ---------- Backgrounds ---------- */
   .bg-navy-gradient{
     background:
-      radial-gradient(1100px 500px at 15% -10%, rgba(233,199,102,0.14), transparent 60%),
-      radial-gradient(900px 500px at 110% 10%, rgba(15,106,92,0.25), transparent 55%),
-      linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 45%, var(--navy-800) 100%);
+      radial-gradient(1000px 500px at 10% -10%, rgba(255,255,255,0.06), transparent 60%),
+      radial-gradient(900px 500px at 110% 15%, rgba(36,114,196,0.35), transparent 55%),
+      linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 50%, var(--navy-800) 100%);
   }
-  .bg-panel{
-    background: linear-gradient(180deg, #ffffff 0%, var(--cream-100) 100%);
-  }
+  .bg-panel{ background: linear-gradient(180deg, #ffffff 0%, var(--cream-100) 100%); }
   .lattice{
     background-image:
-      linear-gradient(135deg, rgba(201,162,39,0.06) 1px, transparent 1px),
-      linear-gradient(45deg, rgba(201,162,39,0.06) 1px, transparent 1px);
+      linear-gradient(135deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(45deg, rgba(255,255,255,0.05) 1px, transparent 1px);
     background-size: 34px 34px;
   }
-  .gold-noise{
-    background-image: radial-gradient(rgba(201,162,39,0.10) 1px, transparent 1.4px);
+  .slate-noise{
+    background-image: radial-gradient(rgba(18,74,134,0.08) 1px, transparent 1.4px);
     background-size: 22px 22px;
   }
 
-  /* Rotating eight-point star used as the page's signature motif */
-  .rub-star{ filter:drop-shadow(0 0 18px rgba(233,199,102,0.35)); }
+  .star-motif{ filter:drop-shadow(0 0 16px rgba(255,255,255,0.15)); }
 
-  .gold-divider{
+  .divider-line{
     height:1px;
-    background:linear-gradient(90deg, transparent, var(--gold-500) 20%, var(--gold-300) 50%, var(--gold-500) 80%, transparent);
+    background:linear-gradient(90deg, transparent, var(--slate-400) 20%, #ffffff 50%, var(--slate-400) 80%, transparent);
+    opacity:.6;
   }
 
-  .eyebrow{
-    letter-spacing:.22em;
-  }
-
-  .text-gold-grad{
-    background:linear-gradient(90deg, var(--gold-300), var(--gold-500), var(--gold-300));
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
+  .eyebrow{ letter-spacing:.22em; }
 
   /* ---------- Nav ---------- */
   .nav-link{ position:relative; }
   .nav-link::after{
     content:""; position:absolute; left:0; bottom:-6px; width:0; height:1.5px;
-    background:var(--gold-400); transition:width .35s cubic-bezier(.16,1,.3,1);
+    background:var(--white); transition:width .35s cubic-bezier(.16,1,.3,1);
   }
   .nav-link:hover::after{ width:100%; }
 
   /* ---------- Cards ---------- */
   .card{
     transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s cubic-bezier(.16,1,.3,1), border-color .5s;
-    border:1px solid rgba(201,162,39,0.18);
+    border:1px solid rgba(18,74,134,0.12);
   }
   .card:hover{
     transform:translateY(-10px);
-    box-shadow: 0 30px 45px -18px rgba(10,31,61,0.35), 0 0 0 1px rgba(201,162,39,0.35);
-    border-color: rgba(201,162,39,0.55);
+    box-shadow: 0 30px 45px -18px rgba(13,59,110,0.28), 0 0 0 1px rgba(18,74,134,0.25);
+    border-color: rgba(18,74,134,0.4);
   }
   .card-corner{
     position:absolute; width:22px; height:22px; pointer-events:none;
-    border-color: var(--gold-500); opacity:0; transition:opacity .5s;
+    border-color: var(--navy-700); opacity:0; transition:opacity .5s;
   }
   .card:hover .card-corner{ opacity:1; }
 
-  .btn-gold{
-    background:linear-gradient(135deg, var(--gold-300), var(--gold-500));
-    color:var(--navy-950);
+  .btn-primary{
+    background:linear-gradient(135deg, var(--navy-700), var(--navy-900));
+    color:#ffffff;
     transition: filter .3s, transform .3s, box-shadow .3s;
   }
-  .btn-gold:hover{ filter:brightness(1.08); transform:translateY(-2px); box-shadow:0 12px 24px -8px rgba(201,162,39,0.55); }
+  .btn-primary:hover{ filter:brightness(1.15); transform:translateY(-2px); box-shadow:0 12px 24px -8px rgba(13,59,110,0.45); }
 
-  .btn-ghost-gold{
-    border:1px solid rgba(233,199,102,0.45);
-    color:var(--gold-300);
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.35);
+    color:#ffffff;
     transition: background .35s, transform .3s, border-color .35s;
   }
-  .btn-ghost-gold:hover{ background:rgba(233,199,102,0.1); transform:translateY(-2px); border-color:var(--gold-300); }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.1); transform:translateY(-2px); border-color:#ffffff; }
 
   /* ---------- Modal ---------- */
   .modal-backdrop{
-    background:rgba(7,20,38,0.72);
+    background:rgba(8,27,50,0.72);
     backdrop-filter: blur(6px);
     opacity:0; transition:opacity .35s ease;
   }
@@ -137,38 +129,38 @@
 
   .sticky-nav{
     backdrop-filter: blur(14px);
-    background:linear-gradient(180deg, rgba(10,31,61,0.92), rgba(10,31,61,0.82));
+    background:linear-gradient(180deg, rgba(8,27,50,0.94), rgba(13,59,110,0.86));
   }
 
-  ::selection{ background:var(--gold-300); color:var(--navy-950); }
+  ::selection{ background:var(--navy-700); color:#fff; }
 </style>
 </head>
 <body class="bg-panel">
 
   <!-- Announcement bar -->
-  <div class="bg-navy-950 text-cream-50 text-xs md:text-sm py-2.5 px-4 border-b border-gold-500/20" style="background:var(--navy-950); color:#fbf3df;">
-    <div class="container mx-auto flex items-center justify-center gap-3 text-center">
-      <span class="text-gold-300" style="color:var(--gold-300);">✦</span>
-      <span class="font-medium">আগামী <span class="font-bold" style="color:var(--gold-300);">১০ই সেপ্টেম্বর</span> হতে "জাতীয় ইসলামী বইমেলা" শুরু হওয়ার সম্ভাব্য তারিখ নির্ধারিত হয়েছে</span>
-      <button onclick="toggleNoticeModal()" class="ml-1 underline underline-offset-4 decoration-gold-500/60 hover:decoration-gold-300 transition shrink-0" style="color:var(--gold-300);">বিস্তারিত</button>
+  <div class="text-xs md:text-sm py-2.5 px-4 border-b" style="background:var(--navy-950); color:#e7edf5; border-color:rgba(255,255,255,0.08);">
+    <div class="container mx-auto flex items-center justify-center gap-3 text-center flex-wrap">
+      <span style="color:var(--slate-400);">✦</span>
+      <span class="font-medium">আগামী <span class="font-bold text-white">১০ই সেপ্টেম্বর</span> হতে "জাতীয় ইসলামী বইমেলা" শুরু হওয়ার সম্ভাব্য তারিখ নির্ধারিত হয়েছে</span>
+      <button onclick="toggleNoticeModal()" class="ml-1 underline underline-offset-4 decoration-white/40 hover:decoration-white transition shrink-0 text-white font-semibold">বিস্তারিত</button>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="sticky-nav text-white sticky top-0 z-40 border-b border-white/5">
+  <header class="sticky-nav text-white sticky top-0 z-40 border-b border-white/10">
     <div class="container mx-auto px-4 py-3.5 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center border border-gold-500/30 shadow-inner" style="background:linear-gradient(135deg, rgba(233,199,102,0.16), rgba(233,199,102,0.03));">
-          <svg width="22" height="22" viewBox="0 0 100 100" style="color:var(--gold-300);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center border border-white/20 shadow-inner" style="background:rgba(255,255,255,0.06);">
+          <svg width="22" height="22" viewBox="0 0 100 100" class="text-white">
             <path fill="currentColor" d="M50 2 L61 39 L98 39 L68 61 L79 98 L50 75 L21 98 L32 61 L2 39 L39 39 Z"/>
           </svg>
         </div>
         <div>
-          <h1 class="text-lg md:text-xl font-bold leading-tight tracking-wide font-display">জাতীয় ইসলামী বইমেলা</h1>
-          <p class="text-[10px] eyebrow font-medium uppercase" style="color:var(--gold-300);">সত্য ও সঠিক প্রচারের কারখানা</p>
+          <h1 class="text-lg md:text-xl font-bold leading-tight tracking-wide">জাতীয় ইসলামী বইমেলা</h1>
+          <p class="text-[10px] eyebrow font-medium uppercase" style="color:var(--slate-400);">সত্য ও সঠিক প্রচারের কারখানা</p>
         </div>
       </div>
-      <nav class="hidden lg:flex gap-8 font-medium text-sm text-blue-100/90">
+      <nav class="hidden lg:flex gap-8 font-medium text-sm text-white/85">
         <a href="#home" class="nav-link hover:text-white transition">হোম</a>
         <a href="#events" class="nav-link hover:text-white transition">ইভেন্ট ও ক্যাম্পেইন</a>
         <a href="#publishers" class="nav-link hover:text-white transition">প্রকাশনী তালিকা</a>
@@ -179,75 +171,72 @@
 
   <!-- Hero -->
   <section id="home" class="relative bg-navy-gradient lattice text-white py-24 md:py-32 text-center px-4 overflow-hidden">
-    <!-- rotating star ornaments -->
-    <svg class="absolute -top-20 -left-16 w-72 h-72 opacity-[0.12] star-spin rub-star" viewBox="0 0 100 100">
-      <path fill="none" stroke="#e8c766" stroke-width="0.6" d="M50 5 L58 35 L88 35 L64 53 L73 83 L50 65 L27 83 L36 53 L12 35 L42 35 Z"/>
-      <circle cx="50" cy="50" r="46" fill="none" stroke="#e8c766" stroke-width="0.4"/>
+    <svg class="absolute -top-20 -left-16 w-72 h-72 opacity-[0.10] star-spin star-motif" viewBox="0 0 100 100">
+      <path fill="none" stroke="#ffffff" stroke-width="0.6" d="M50 5 L58 35 L88 35 L64 53 L73 83 L50 65 L27 83 L36 53 L12 35 L42 35 Z"/>
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#ffffff" stroke-width="0.4"/>
     </svg>
-    <svg class="absolute -bottom-24 -right-20 w-96 h-96 opacity-[0.10] star-spin-rev rub-star" viewBox="0 0 100 100">
-      <path fill="none" stroke="#e8c766" stroke-width="0.6" d="M50 5 L58 35 L88 35 L64 53 L73 83 L50 65 L27 83 L36 53 L12 35 L42 35 Z"/>
-      <circle cx="50" cy="50" r="46" fill="none" stroke="#e8c766" stroke-width="0.4"/>
+    <svg class="absolute -bottom-24 -right-20 w-96 h-96 opacity-[0.09] star-spin-rev star-motif" viewBox="0 0 100 100">
+      <path fill="none" stroke="#ffffff" stroke-width="0.6" d="M50 5 L58 35 L88 35 L64 53 L73 83 L50 65 L27 83 L36 53 L12 35 L42 35 Z"/>
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#ffffff" stroke-width="0.4"/>
     </svg>
 
     <div class="relative max-w-4xl mx-auto z-10">
-      <span class="inline-flex items-center gap-2 border text-[11px] eyebrow uppercase px-4 py-1.5 rounded-full font-semibold" style="border-color:rgba(233,199,102,0.35); color:var(--gold-300); background:rgba(233,199,102,0.06);">
-        <span class="w-1.5 h-1.5 rounded-full" style="background:var(--gold-300);"></span>
+      <span class="fade-in inline-flex items-center gap-2 border text-[11px] eyebrow uppercase px-4 py-1.5 rounded-full font-semibold" style="border-color:rgba(255,255,255,0.3); color:#ffffff; background:rgba(255,255,255,0.08);">
+        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
         অফিশিয়াল প্রমোশনাল পোর্টাল
       </span>
-      <h2 class="font-display text-4xl md:text-6xl font-semibold my-7 leading-[1.15]">
-        ইসলামী জ্ঞান, সত্য ও <span class="text-gold-grad shimmer italic">সুন্দরের</span> সর্ববৃহৎ মিলনমেলা
+      <h2 class="fade-in d1 text-4xl md:text-6xl font-bold my-7 leading-[1.15]">
+        ইসলামী জ্ঞান, সত্য ও সুন্দরের সর্ববৃহৎ মিলনমেলা
       </h2>
-      <p class="text-base md:text-lg mb-10 text-blue-100/80 max-w-2xl mx-auto font-light leading-relaxed">
+      <p class="fade-in d2 text-base md:text-lg mb-10 max-w-2xl mx-auto font-light leading-relaxed" style="color:#e7edf5;">
         দেশের শীর্ষস্থানীয় ইসলামী প্রকাশনীগুলোর নতুন বই, প্রতিযোগিতা, প্রেস বার্তা ও অফিশিয়াল আপডেট একসাথে পেতে যুক্ত থাকুন।
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#books" class="btn-gold font-bold px-8 py-3.5 rounded-xl shadow-lg">
+      <div class="fade-in d3 flex flex-wrap justify-center gap-4">
+        <a href="#books" class="btn-primary font-bold px-8 py-3.5 rounded-xl shadow-lg">
           নতুন বইয়ের ক্যাটালগ
         </a>
-        <a href="#publishers" class="btn-ghost-gold font-semibold px-8 py-3.5 rounded-xl">
+        <a href="#publishers" class="btn-ghost font-semibold px-8 py-3.5 rounded-xl">
           প্রকাশনী ডিরেক্টরি
         </a>
       </div>
     </div>
 
-    <div class="gold-divider max-w-md mx-auto mt-16 relative z-10"></div>
+    <div class="divider-line max-w-md mx-auto mt-16 relative z-10"></div>
   </section>
 
   <!-- Events -->
   <section id="events" class="py-20 container mx-auto px-4">
-    <div class="reveal mb-12 text-center md:text-left flex items-end gap-4">
-      <div>
-        <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--gold-600);">চলমান আয়োজন</p>
-        <h3 class="text-2xl md:text-3xl font-bold font-display" style="color:var(--navy-900);">অফিশিয়াল ক্যাম্পেইন ও ইভেন্ট</h3>
-      </div>
+    <div class="mb-12 text-center md:text-left">
+      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--navy-700);">চলমান আয়োজন</p>
+      <h3 class="text-2xl md:text-3xl font-bold" style="color:var(--navy-900);">অফিশিয়াল ক্যাম্পেইন ও ইভেন্ট</h3>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="reveal card relative bg-white rounded-2xl p-7 shadow-sm flex flex-col justify-between overflow-hidden">
+      <div class="card relative bg-white rounded-2xl p-7 shadow-sm flex flex-col justify-between overflow-hidden">
         <div class="card-corner top-3 left-3 border-t-2 border-l-2 rounded-tl-lg"></div>
         <div class="card-corner bottom-3 right-3 border-b-2 border-r-2 rounded-br-lg"></div>
         <div>
           <div class="flex justify-between items-start mb-5">
-            <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(15,106,92,0.1); color:var(--teal-500);">ফেসবুক ক্যাম্পেইন</span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(18,74,134,0.1); color:var(--navy-800);">ফেসবুক ক্যাম্পেইন</span>
             <span class="text-2xl">✍️</span>
           </div>
-          <h4 class="text-xl font-bold mb-2 font-display" style="color:var(--navy-900);">ইসলামী গ্রন্থ পর্যালোচনা প্রতিযোগিতা</h4>
+          <h4 class="text-xl font-bold mb-2" style="color:var(--navy-900);">ইসলামী গ্রন্থ পর্যালোচনা প্রতিযোগিতা</h4>
           <p class="text-gray-600 text-sm leading-relaxed">আপনার প্রিয় যেকোনো ইসলামী বইয়ের ওপর রিভিউ লিখে আমাদের ফেসবুক পেজে পোস্ট করুন এবং জিতে নিন আকর্ষণীয় বইয়ের সেট।</p>
         </div>
-        <a href="https://facebook.com" target="_blank" class="mt-7 inline-flex items-center justify-center btn-gold font-semibold text-xs py-3 px-4 rounded-lg">
+        <a href="https://facebook.com" target="_blank" class="mt-7 inline-flex items-center justify-center btn-primary font-semibold text-xs py-3 px-4 rounded-lg">
           ফেসবুক পোস্টে অংশ নিন ↗
         </a>
       </div>
 
-      <div class="reveal card relative bg-white rounded-2xl p-7 shadow-sm flex flex-col justify-between overflow-hidden">
+      <div class="card relative bg-white rounded-2xl p-7 shadow-sm flex flex-col justify-between overflow-hidden">
         <div class="card-corner top-3 left-3 border-t-2 border-l-2 rounded-tl-lg"></div>
         <div class="card-corner bottom-3 right-3 border-b-2 border-r-2 rounded-br-lg"></div>
         <div>
           <div class="flex justify-between items-start mb-5">
-            <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(10,31,61,0.06); color:var(--navy-800);">অফলাইন ইভেন্ট</span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:rgba(111,136,163,0.15); color:var(--slate-600);">অফলাইন ইভেন্ট</span>
             <span class="text-2xl">🎨</span>
           </div>
-          <h4 class="text-xl font-bold mb-2 font-display" style="color:var(--navy-900);">ইসলামী ক্যালিগ্রাফি প্রদর্শনী</h4>
+          <h4 class="text-xl font-bold mb-2" style="color:var(--navy-900);">ইসলামী ক্যালিগ্রাফি প্রদর্শনী</h4>
           <p class="text-gray-600 text-sm leading-relaxed">মেলা প্রাঙ্গণে অনুষ্ঠিত হতে যাচ্ছে দেশের উদীয়মান তরুণ ক্যালিগ্রাফারদের সরাসরি চিত্রকর্ম প্রদর্শনী ও ওয়ার্কশপ।</p>
         </div>
         <button onclick="toggleNoticeModal()" class="mt-7 inline-flex items-center justify-center font-semibold text-xs py-3 px-4 rounded-lg text-white transition hover:brightness-110" style="background:var(--navy-900);">
@@ -258,69 +247,69 @@
   </section>
 
   <!-- Publishers -->
-  <section id="publishers" class="py-20 gold-noise border-y" style="background:var(--cream-100); border-color:rgba(201,162,39,0.15);">
+  <section id="publishers" class="py-20 slate-noise border-y" style="background:var(--cream-100); border-color:rgba(18,74,134,0.1);">
     <div class="container mx-auto px-4">
-      <div class="reveal text-center max-w-2xl mx-auto mb-14">
-        <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--gold-600);">অংশগ্রহণকারী</p>
-        <h3 class="text-2xl md:text-3xl font-bold font-display mb-2" style="color:var(--navy-900);">মেলায় অংশগ্রহণকারী প্রকাশনীসমূহ</h3>
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--navy-700);">অংশগ্রহণকারী</p>
+        <h3 class="text-2xl md:text-3xl font-bold mb-2" style="color:var(--navy-900);">মেলায় অংশগ্রহণকারী প্রকাশনীসমূহ</h3>
         <p class="text-gray-600 text-sm">যেকোনো প্রকাশনীর বিস্তারিত ও প্রকাশিত বইয়ের তালিকা দেখতে কার্ডে টাচ করুন</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="reveal card relative bg-white p-6 rounded-2xl shadow-sm flex flex-col justify-between overflow-hidden">
+        <div class="card relative bg-white p-6 rounded-2xl shadow-sm flex flex-col justify-between overflow-hidden">
           <div class="card-corner top-3 left-3 border-t-2 border-l-2 rounded-tl-lg"></div>
           <div class="card-corner bottom-3 right-3 border-b-2 border-r-2 rounded-br-lg"></div>
           <div>
             <div class="flex items-center gap-4 mb-4">
-              <div class="w-12 h-12 rounded-xl text-white flex items-center justify-center font-bold text-lg shadow-md font-display" style="background:linear-gradient(135deg, var(--navy-800), var(--navy-900));">রু</div>
+              <div class="w-12 h-12 rounded-xl text-white flex items-center justify-center font-bold text-lg shadow-md" style="background:linear-gradient(135deg, var(--navy-800), var(--navy-950));">রু</div>
               <div>
-                <h4 class="text-lg font-bold font-display" style="color:var(--navy-900);">রুহামা পাবলিকেশন</h4>
-                <span class="text-[11px] font-semibold px-2 py-0.5 rounded" style="background:rgba(201,162,39,0.14); color:var(--gold-600);">স্টল: ১২-১৪</span>
+                <h4 class="text-lg font-bold" style="color:var(--navy-900);">রুহামা পাবলিকেশন</h4>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded" style="background:rgba(111,136,163,0.18); color:var(--slate-600);">স্টল: ১২-১৪</span>
               </div>
             </div>
             <p class="text-gray-600 text-xs leading-relaxed mb-4">ইসলামী সাহিত্য, চিন্তা, অনুবাদ ও আত্মশুদ্ধি বিষয়ক প্রকাশনা।</p>
           </div>
           <div class="pt-3 border-t border-gray-100 flex justify-between items-center text-xs">
             <span class="text-gray-400 font-medium">বই সংখ্যা: ১৫০+</span>
-            <button onclick="openPublisherModal('রুহামা পাবলিকেশন', '১২-১৪', 'https://facebook.com')" class="font-bold hover:underline" style="color:var(--gold-600);">বিস্তারিত প্রোফাইল →</button>
+            <button onclick="openPublisherModal('রুহামা পাবলিকেশন', '১২-১৪', 'https://facebook.com')" class="font-bold hover:underline" style="color:var(--navy-700);">বিস্তারিত প্রোফাইল →</button>
           </div>
         </div>
 
-        <div class="reveal card relative bg-white p-6 rounded-2xl shadow-sm flex flex-col justify-between overflow-hidden">
+        <div class="card relative bg-white p-6 rounded-2xl shadow-sm flex flex-col justify-between overflow-hidden">
           <div class="card-corner top-3 left-3 border-t-2 border-l-2 rounded-tl-lg"></div>
           <div class="card-corner bottom-3 right-3 border-b-2 border-r-2 rounded-br-lg"></div>
           <div>
             <div class="flex items-center gap-4 mb-4">
-              <div class="w-12 h-12 rounded-xl text-white flex items-center justify-center font-bold text-lg shadow-md font-display" style="background:linear-gradient(135deg, var(--teal-500), #0a4a40);">সম</div>
+              <div class="w-12 h-12 rounded-xl text-white flex items-center justify-center font-bold text-lg shadow-md" style="background:linear-gradient(135deg, var(--navy-700), var(--navy-900));">সম</div>
               <div>
-                <h4 class="text-lg font-bold font-display" style="color:var(--navy-900);">সমকালীন প্রকাশন</h4>
-                <span class="text-[11px] font-semibold px-2 py-0.5 rounded" style="background:rgba(201,162,39,0.14); color:var(--gold-600);">স্টল: ২৫-২৬</span>
+                <h4 class="text-lg font-bold" style="color:var(--navy-900);">সমকালীন প্রকাশন</h4>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded" style="background:rgba(111,136,163,0.18); color:var(--slate-600);">স্টল: ২৫-২৬</span>
               </div>
             </div>
             <p class="text-gray-600 text-xs leading-relaxed mb-4">গবেষণা, অনুবাদ, ইতিহাস ও দর্শনের নির্ভরযোগ্য বই।</p>
           </div>
           <div class="pt-3 border-t border-gray-100 flex justify-between items-center text-xs">
             <span class="text-gray-400 font-medium">বই সংখ্যা: ৮০+</span>
-            <button onclick="openPublisherModal('সমকালীন প্রকাশন', '২৫-২৬', 'https://facebook.com')" class="font-bold hover:underline" style="color:var(--gold-600);">বিস্তারিত প্রোফাইল →</button>
+            <button onclick="openPublisherModal('সমকালীন প্রকাশন', '২৫-২৬', 'https://facebook.com')" class="font-bold hover:underline" style="color:var(--navy-700);">বিস্তারিত প্রোফাইল →</button>
           </div>
         </div>
 
-        <div class="reveal card relative bg-white p-6 rounded-2xl shadow-sm flex flex-col justify-between overflow-hidden">
+        <div class="card relative bg-white p-6 rounded-2xl shadow-sm flex flex-col justify-between overflow-hidden">
           <div class="card-corner top-3 left-3 border-t-2 border-l-2 rounded-tl-lg"></div>
           <div class="card-corner bottom-3 right-3 border-b-2 border-r-2 rounded-br-lg"></div>
           <div>
             <div class="flex items-center gap-4 mb-4">
-              <div class="w-12 h-12 rounded-xl text-white flex items-center justify-center font-bold text-lg shadow-md font-display" style="background:linear-gradient(135deg, var(--gold-500), var(--gold-600));">গা</div>
+              <div class="w-12 h-12 rounded-xl text-white flex items-center justify-center font-bold text-lg shadow-md" style="background:linear-gradient(135deg, var(--slate-600), var(--navy-900));">গা</div>
               <div>
-                <h4 class="text-lg font-bold font-display" style="color:var(--navy-900);">গার্ডিয়ান পাবলিকেশনস</h4>
-                <span class="text-[11px] font-semibold px-2 py-0.5 rounded" style="background:rgba(201,162,39,0.14); color:var(--gold-600);">স্টল: ০৫-০৭</span>
+                <h4 class="text-lg font-bold" style="color:var(--navy-900);">গার্ডিয়ান পাবলিকেশনস</h4>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded" style="background:rgba(111,136,163,0.18); color:var(--slate-600);">স্টল: ০৫-০৭</span>
               </div>
             </div>
             <p class="text-gray-600 text-xs leading-relaxed mb-4">আন্তর্জাতিক মানের অনুবাদ, চিন্তাধারা ও ক্যারিয়ার সহায়িকা।</p>
           </div>
           <div class="pt-3 border-t border-gray-100 flex justify-between items-center text-xs">
             <span class="text-gray-400 font-medium">বই সংখ্যা: ১২০+</span>
-            <button onclick="openPublisherModal('গার্ডিয়ান পাবলিকেশনস', '০৫-০৭', 'https://facebook.com')" class="font-bold hover:underline" style="color:var(--gold-600);">বিস্তারিত প্রোফাইল →</button>
+            <button onclick="openPublisherModal('গার্ডিয়ান পাবলিকেশনস', '০৫-০৭', 'https://facebook.com')" class="font-bold hover:underline" style="color:var(--navy-700);">বিস্তারিত প্রোফাইল →</button>
           </div>
         </div>
       </div>
@@ -329,37 +318,37 @@
 
   <!-- Books -->
   <section id="books" class="py-20 container mx-auto px-4">
-    <div class="reveal mb-12 text-center md:text-left">
-      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--gold-600);">ক্যাটালগ</p>
-      <h3 class="text-2xl md:text-3xl font-bold font-display" style="color:var(--navy-900);">নতুন প্রকাশিত বইয়ের ক্যাটালগ</h3>
+    <div class="mb-12 text-center md:text-left">
+      <p class="eyebrow text-xs font-bold uppercase mb-2" style="color:var(--navy-700);">ক্যাটালগ</p>
+      <h3 class="text-2xl md:text-3xl font-bold" style="color:var(--navy-900);">নতুন প্রকাশিত বইয়ের ক্যাটালগ</h3>
       <p class="text-gray-500 text-sm mt-1">পছন্দের বইয়ে ক্লিক করে সরাসরি সংশ্লিষ্ট প্রকাশনীর পেজে যুক্ত হন</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="reveal card bg-white p-4 rounded-2xl shadow-sm flex flex-col justify-between">
+      <div class="card bg-white p-4 rounded-2xl shadow-sm flex flex-col justify-between">
         <div>
-          <div class="h-52 rounded-xl mb-4 flex items-center justify-center font-semibold border border-dashed" style="background:var(--cream-100); border-color:rgba(201,162,39,0.35); color:#9ca3af;">
+          <div class="h-52 rounded-xl mb-4 flex items-center justify-center font-semibold border border-dashed" style="background:var(--cream-100); border-color:rgba(18,74,134,0.25); color:#9ca3af;">
             [বইয়ের কভার]
           </div>
-          <h4 class="font-bold text-base font-display" style="color:var(--navy-900);">কুরআনের মহামানব</h4>
+          <h4 class="font-bold text-base" style="color:var(--navy-900);">কুরআনের মহামানব</h4>
           <p class="text-xs text-gray-500 mt-0.5">ড. আলী আল-সাল্লাবী</p>
-          <p class="text-[11px] font-semibold mt-2" style="color:var(--gold-600);">প্রকাশনী: রুহামা পাবলিকেশন</p>
+          <p class="text-[11px] font-semibold mt-2" style="color:var(--navy-700);">প্রকাশনী: রুহামা পাবলিকেশন</p>
         </div>
-        <a href="https://facebook.com" target="_blank" class="mt-4 block text-center text-xs font-bold py-2.5 rounded-xl transition" style="background:rgba(201,162,39,0.1); color:var(--gold-600);" onmouseover="this.style.background='var(--gold-500)';this.style.color='#fff'" onmouseout="this.style.background='rgba(201,162,39,0.1)';this.style.color='var(--gold-600)'">
+        <a href="https://facebook.com" target="_blank" class="mt-4 block text-center text-xs font-bold py-2.5 rounded-xl transition" style="background:rgba(18,74,134,0.08); color:var(--navy-700);" onmouseover="this.style.background='var(--navy-800)';this.style.color='#fff'" onmouseout="this.style.background='rgba(18,74,134,0.08)';this.style.color='var(--navy-700)'">
           প্রকাশনীর পেজে দেখুন 🔗
         </a>
       </div>
 
-      <div class="reveal card bg-white p-4 rounded-2xl shadow-sm flex flex-col justify-between">
+      <div class="card bg-white p-4 rounded-2xl shadow-sm flex flex-col justify-between">
         <div>
-          <div class="h-52 rounded-xl mb-4 flex items-center justify-center font-semibold border border-dashed" style="background:var(--cream-100); border-color:rgba(201,162,39,0.35); color:#9ca3af;">
+          <div class="h-52 rounded-xl mb-4 flex items-center justify-center font-semibold border border-dashed" style="background:var(--cream-100); border-color:rgba(18,74,134,0.25); color:#9ca3af;">
             [বইয়ের কভার]
           </div>
-          <h4 class="font-bold text-base font-display" style="color:var(--navy-900);">ইতিহাসের সত্যপাঠ</h4>
+          <h4 class="font-bold text-base" style="color:var(--navy-900);">ইতিহাসের সত্যপাঠ</h4>
           <p class="text-xs text-gray-500 mt-0.5">ড. রাগেব সারজানি</p>
-          <p class="text-[11px] font-semibold mt-2" style="color:var(--gold-600);">প্রকাশনী: সমকালীন প্রকাশন</p>
+          <p class="text-[11px] font-semibold mt-2" style="color:var(--navy-700);">প্রকাশনী: সমকালীন প্রকাশন</p>
         </div>
-        <a href="https://facebook.com" target="_blank" class="mt-4 block text-center text-xs font-bold py-2.5 rounded-xl transition" style="background:rgba(201,162,39,0.1); color:var(--gold-600);" onmouseover="this.style.background='var(--gold-500)';this.style.color='#fff'" onmouseout="this.style.background='rgba(201,162,39,0.1)';this.style.color='var(--gold-600)'">
+        <a href="https://facebook.com" target="_blank" class="mt-4 block text-center text-xs font-bold py-2.5 rounded-xl transition" style="background:rgba(18,74,134,0.08); color:var(--navy-700);" onmouseover="this.style.background='var(--navy-800)';this.style.color='#fff'" onmouseout="this.style.background='rgba(18,74,134,0.08)';this.style.color='var(--navy-700)'">
           প্রকাশনীর পেজে দেখুন 🔗
         </a>
       </div>
@@ -367,38 +356,38 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-center text-xs py-12 border-t" style="background:var(--navy-950); border-color:rgba(233,199,102,0.15); color:#9fb3cc;">
+  <footer class="text-center text-xs py-12 border-t" style="background:var(--navy-950); border-color:rgba(255,255,255,0.1); color:#9fb3cc;">
     <div class="container mx-auto px-4">
-      <svg width="26" height="26" viewBox="0 0 100 100" class="mx-auto mb-4 float-slow" style="color:var(--gold-300);">
+      <svg width="26" height="26" viewBox="0 0 100 100" class="mx-auto mb-4 float-slow text-white">
         <path fill="currentColor" d="M50 2 L61 39 L98 39 L68 61 L79 98 L50 75 L21 98 L32 61 L2 39 L39 39 Z"/>
       </svg>
-      <p class="text-sm font-semibold" style="color:#e7edf5;">জাতীয় ইসলামী বইমেলা — সর্বস্বত্ব সংরক্ষিত</p>
-      <p class="my-2" style="color:var(--gold-300);">সত্য ও সঠিক প্রচারের কারখানা</p>
+      <p class="text-sm font-semibold" style="color:#ffffff;">জাতীয় ইসলামী বইমেলা — সর্বস্বত্ব সংরক্ষিত</p>
+      <p class="my-2" style="color:var(--slate-400);">সত্য ও সঠিক প্রচারের কারখানা</p>
       <p style="color:#63789a;">ইমেইল: nationalislamicbookfair@gmail.com</p>
     </div>
   </footer>
 
   <!-- Notice Modal -->
   <div id="noticeModal" class="modal-backdrop fixed inset-0 hidden z-50 items-center justify-center p-4">
-    <div class="modal-panel bg-white rounded-2xl max-w-md w-full p-7 text-center shadow-2xl border" style="border-color:rgba(201,162,39,0.25);">
-      <svg width="34" height="34" viewBox="0 0 100 100" class="mx-auto mb-3" style="color:var(--gold-500);">
+    <div class="modal-panel bg-white rounded-2xl max-w-md w-full p-7 text-center shadow-2xl border" style="border-color:rgba(18,74,134,0.18);">
+      <svg width="34" height="34" viewBox="0 0 100 100" class="mx-auto mb-3" style="color:var(--navy-800);">
         <path fill="currentColor" d="M50 2 L61 39 L98 39 L68 61 L79 98 L50 75 L21 98 L32 61 L2 39 L39 39 Z"/>
       </svg>
-      <h3 class="text-xl font-bold mb-2 font-display" style="color:var(--navy-900);">মেলার বিশেষ বিজ্ঞপ্তি</h3>
+      <h3 class="text-xl font-bold mb-2" style="color:var(--navy-900);">মেলার বিশেষ বিজ্ঞপ্তি</h3>
       <p class="text-gray-600 text-sm mb-6 leading-relaxed">আগামী ১০ই সেপ্টেম্বর হতে জাতীয় ইসলামী বইমেলা শুরু হওয়ার প্রস্তুতি চলছে। স্টল বরাদ্দ সংক্রান্ত যাবতীয় তথ্যের জন্য অফিশিয়াল পেজে চোখ রাখুন।</p>
-      <button onclick="toggleNoticeModal()" class="btn-gold px-6 py-2.5 rounded-xl font-semibold text-xs shadow">বন্ধ করুন</button>
+      <button onclick="toggleNoticeModal()" class="btn-primary px-6 py-2.5 rounded-xl font-semibold text-xs shadow">বন্ধ করুন</button>
     </div>
   </div>
 
   <!-- Publisher Modal -->
   <div id="pubModal" class="modal-backdrop fixed inset-0 hidden z-50 items-center justify-center p-4">
-    <div class="modal-panel bg-white rounded-2xl max-w-lg w-full p-7 shadow-2xl border" style="border-color:rgba(201,162,39,0.25);">
-      <h3 id="modalPubName" class="text-2xl font-bold mb-1 font-display" style="color:var(--navy-900);">প্রকাশনীর নাম</h3>
-      <p id="modalPubStall" class="text-xs font-semibold px-2.5 py-1 rounded-md inline-block mb-4" style="background:rgba(201,162,39,0.14); color:var(--gold-600);">স্টল নম্বর</p>
+    <div class="modal-panel bg-white rounded-2xl max-w-lg w-full p-7 shadow-2xl border" style="border-color:rgba(18,74,134,0.18);">
+      <h3 id="modalPubName" class="text-2xl font-bold mb-1" style="color:var(--navy-900);">প্রকাশনীর নাম</h3>
+      <p id="modalPubStall" class="text-xs font-semibold px-2.5 py-1 rounded-md inline-block mb-4" style="background:rgba(111,136,163,0.18); color:var(--slate-600);">স্টল নম্বর</p>
       <p class="text-gray-600 text-sm mb-7 leading-relaxed">এই প্রকাশনীর প্রকাশিত সকল বইয়ের ক্যাটালগ ও বিস্তারিত জানতে তাদের মূল ফেসবুক পেজ অথবা অনলাইন শপে ভিজিট করুন।</p>
       <div class="flex justify-end gap-3">
         <button onclick="closePublisherModal()" class="bg-gray-100 text-gray-700 px-5 py-2.5 rounded-xl text-xs font-semibold hover:bg-gray-200 transition">বন্ধ করুন</button>
-        <a id="modalPubLink" href="#" target="_blank" class="btn-gold px-5 py-2.5 rounded-xl text-xs font-semibold shadow">অফিশিয়াল পেজে যান ↗</a>
+        <a id="modalPubLink" href="#" target="_blank" class="btn-primary px-5 py-2.5 rounded-xl text-xs font-semibold shadow">অফিশিয়াল পেজে যান ↗</a>
       </div>
     </div>
   </div>
@@ -427,17 +416,6 @@
       m.classList.remove('show');
       setTimeout(()=>{ m.classList.add('hidden'); m.classList.remove('flex'); }, 350);
     }
-
-    // Scroll-reveal
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach((e, i)=>{
-        if(e.isIntersecting){
-          setTimeout(()=> e.target.classList.add('in'), i * 60);
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>
 </html>
