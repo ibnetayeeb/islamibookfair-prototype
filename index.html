@@ -4,563 +4,4215 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="ইসলামী বইমেলা — ইসলামী জ্ঞান, সত্য ও সুন্দরের মিলনমেলা">
-<title>ইসলামী বইমেলা</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{fontFamily:{bn:['Hind Siliguri','sans-serif'],display:['Noto Serif Bengali','serif']}}}}</script>
+<title>ইসলামী বইমেলা | ISLAMI BOOK FAIR</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-#nibf2026{--b:#03256c;--b2:#00296b;--c:#38bdf8;--m:#5eead4;--w:#fff;--ink:#0f172a;font-family:'Hind Siliguri',sans-serif;color:var(--ink);overflow:hidden}
-#nibf2026 *{box-sizing:border-box}
-#nibf2026 a{text-decoration:none}
-#nibf2026 .d{font-family:'Noto Serif Bengali',serif}
-#nibf2026 .con{width:min(1180px,calc(100% - 28px));margin:auto}
-#nibf2026 .sec{padding:82px 0}
-#nibf2026 .ey{display:inline-flex;gap:9px;align-items:center;color:#0874b9;font-size:12px;font-weight:700;letter-spacing:.13em}
-#nibf2026 .ey:before{content:'';width:30px;height:2px;background:var(--c)}
-#nibf2026 .st{font-size:clamp(32px,4.5vw,58px);font-weight:800;line-height:1.18;margin:9px 0}
-.hd{position:fixed;z-index:50;top:12px;left:0;right:0;pointer-events:none}
-.head{pointer-events:auto;min-height:74px;border-radius:20px;padding:9px 12px 9px 16px;display:flex;align-items:center;background:linear-gradient(100deg,rgba(3,37,108,.97),rgba(0,41,107,.94));box-shadow:0 18px 45px #00143845;backdrop-filter:blur(14px)}
-.brand{display:flex;gap:11px;align-items:center;color:#fff;min-width:225px}
-.logo{width:43px;height:43px;border-radius:12px;display:grid;place-items:center;color:var(--c);border:1px solid #38bdf84d;background:#ffffff0d;font-size:20px}
-.bn{font-family:'Noto Serif Bengali',serif;font-size:22px;font-weight:800;line-height:1}
-.en{font-size:8px;letter-spacing:.23em;opacity:.7;margin-top:4px}
-.nav{display:flex;align-items:center;justify-content:center;gap:2px;flex:1}
-.nav a,.special{color:#fff;padding:11px 12px;border-radius:11px;font-size:14px;font-weight:600;transition:.25s}
-.nav a:hover{background:#38bdf81f;transform:translateY(-2px);color:#fff}
-.special{border:1px solid #5eead466;background:linear-gradient(135deg,#0891b2,#2563eb);cursor:pointer;animation:pulse 2.3s infinite}
-.special:hover{box-shadow:0 0 28px #38bdf866;transform:translateY(-2px)}
-@keyframes pulse{50%{box-shadow:0 0 25px #38bdf833}}
-.hamb{display:none;background:#ffffff12;color:#fff;border:1px solid #ffffff22;border-radius:11px;width:42px;height:42px}
-.hero{min-height:790px;display:flex;align-items:center;position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 80% 25%,#38bdf82c,transparent 28%),radial-gradient(circle at 15% 80%,#5eead41c,transparent 30%),linear-gradient(135deg,#03256c,#00296b 55%,#031d55)}
-.hero:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:52px 52px}
-.hc{position:relative;z-index:4;max-width:760px;padding-top:90px}
-.hero h1{font-family:'Noto Serif Bengali',serif;font-size:clamp(43px,6.4vw,82px);line-height:1.14;font-weight:800;margin:16px 0}
-.hero h1 span{color:#67e8f9}
-.hero p{font-size:18px;line-height:1.9;color:#ffffffd4;max-width:650px}
-.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:51px;padding:0 21px;border-radius:14px;font-weight:700;border:1px solid transparent;transition:.25s;cursor:pointer}
-.btn:hover{transform:translateY(-4px) scale(1.02)}
-.btn:active{transform:translateY(1px) scale(.98)}
-.primary{color:#03256c;background:linear-gradient(135deg,#67e8f9,#38bdf8);box-shadow:0 14px 32px #38bdf840}
-.ghost{color:#fff;border-color:#ffffff3b;background:#ffffff0d}
-.ghost:hover{background:#ffffff18}
-.trust{display:flex;gap:22px;margin-top:28px;color:#ffffffa8;font-size:14px}
-.trust b{color:#fff}
-.books{position:absolute;inset:0;pointer-events:none}
-.lb{position:absolute;width:112px;height:82px;color:#fff;opacity:.28;animation:float 10s ease-in-out infinite}
-.lb svg{width:100%;height:100%}
-.pg{transform-origin:50% 100%;animation:page 4.5s ease-in-out infinite}
-.pg.r{animation-delay:.3s}
-@keyframes page{50%{transform:rotateY(-28deg)}}
-@keyframes float{50%{transform:translateY(-22px) rotate(4deg)}}
-.lb:nth-child(1){left:5%;top:24%}.lb:nth-child(2){left:24%;top:13%;transform:scale(.7)}.lb:nth-child(3){left:45%;top:17%;transform:scale(.85)}.lb:nth-child(4){right:7%;top:22%;transform:scale(1.1)}.lb:nth-child(5){right:25%;top:48%;transform:scale(.7)}.lb:nth-child(6){left:4%;top:65%;transform:scale(.9)}.lb:nth-child(7){left:28%;top:70%;transform:scale(.65)}.lb:nth-child(8){left:54%;top:72%}.lb:nth-child(9){right:5%;top:68%;transform:scale(.8)}.lb:nth-child(10){right:37%;top:34%;transform:scale(.6)}.lb:nth-child(11){left:16%;top:44%;transform:scale(.58)}.lb:nth-child(12){right:15%;top:45%;transform:scale(.62)}
-.orb{position:absolute;border-radius:50%;filter:blur(2px)}
-.o1{width:420px;height:420px;right:-120px;top:180px;background:#38bdf81a}
-.o2{width:320px;height:320px;left:-110px;bottom:-80px;background:#5eead414}
-.card{background:#fff;border:1px solid #0f4c8118;border-radius:21px;box-shadow:0 12px 40px #03256c12;transition:.3s}
-.card:hover{transform:translateY(-7px);box-shadow:0 22px 55px #03256c20;border-color:#38bdf84d}
-.soft{background:#f6faff}
-.campaign{color:#fff;padding:38px;border-radius:28px;background:linear-gradient(135deg,#03256c,#075985 65%,#0891b2);box-shadow:0 22px 60px #03256c38;position:relative;overflow:hidden}
-.campaign:after{content:'';position:absolute;width:330px;height:330px;right:-100px;top:-140px;border:1px solid #ffffff22;border-radius:50%;box-shadow:0 0 0 50px #ffffff05,0 0 0 100px #ffffff03}
-.campaign h3{font-size:clamp(28px,3vw,43px);line-height:1.25;margin:7px 0;font-weight:800}
-.campaign p{color:#ffffffbd;max-width:760px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.stat{padding:27px 23px}
-.stat b{font-size:36px;color:#0b4fa2}
-.stat span{display:block;color:#64748b}
-.about{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
-.visual{min-height:380px;border-radius:30px;display:grid;place-items:center;background:linear-gradient(145deg,#03256c,#0b4fa2);position:relative;overflow:hidden}
-.visual:before,.visual:after{content:'';position:absolute;border:1px solid #ffffff22;border-radius:50%;width:480px;height:480px}
-.visual:after{width:310px;height:310px}
-.openbook{width:330px;height:210px;position:relative;z-index:2;filter:drop-shadow(0 25px 28px #0003)}
-.openbook i, .openbook span{position:absolute;top:12px;width:50%;height:185px;background:#fff}
-.openbook .l{left:0;border-radius:10px 4px 4px 10px;transform:skewY(-4deg)}
-.openbook .r{right:0;border-radius:4px 10px 10px 4px;transform:skewY(4deg)}
-.openbook span:after{content:'';position:absolute;inset:28px 24px;background:repeating-linear-gradient(#03256c1a 0 2px,transparent 2px 13px)}
-.openbook i{left:50%;width:2px;background:#38bdf8;z-index:3}
-.archive{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.year{min-height:190px;padding:20px;color:#fff;border-radius:21px;background:linear-gradient(145deg,#03256c,#0b4fa2);display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden;cursor:pointer;border:none;text-align:left;width:100%;transition:.3s}
-.year:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(3,37,108,0.3)}
-.year:before{content:'';position:absolute;width:180px;height:180px;right:-70px;top:-70px;border:1px solid #ffffff24;border-radius:50%}
-.year b{font-size:28px;color:#67e8f9}
-.year strong{font-family:'Noto Serif Bengali',serif;font-size:16px;line-height:1.3;margin-top:4px}
-.dirtop{display:flex;justify-content:space-between;align-items:end;gap:20px}
-.search{height:52px;min-width:330px;border:1px solid #dbeafe;border-radius:14px;padding:0 16px;outline:0;font:inherit}
-.search:focus{border-color:#38bdf8;box-shadow:0 0 0 4px #38bdf81f}
-.pubs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
-.pub{padding:19px;display:flex;gap:12px;align-items:center}
-.pi{width:44px;height:44px;border-radius:12px;background:#eff6ff;color:#075985;display:grid;place-items:center;font-weight:800}
-.booksgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
-.cover{height:260px;margin:10px;border-radius:16px;padding:21px;display:flex;align-items:end;color:#fff;background:linear-gradient(145deg,#03256c,#0b4fa2);position:relative;overflow:hidden}
-.cover:before{content:'';position:absolute;inset:12px;border:1px solid #ffffff2d;border-radius:10px}
-.cover span{position:relative;font-family:'Noto Serif Bengali',serif;font-size:21px;font-weight:800;line-height:1.35}
-.bi{padding:8px 20px 21px}
-.bi strong{font-family:'Noto Serif Bengali',serif;font-size:17px}
-.bi small{display:block;color:#64748b;margin-top:4px}
-.noticegrid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
-.notice{padding:24px}
-.nr{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid #e5eef8}
-.nr:last-child{border:0}
-.date{min-width:62px;height:56px;border-radius:12px;background:#eff6ff;color:#075985;text-align:center;padding-top:6px;font-weight:800}
-.date small{display:block;font-size:10px;color:#64748b}
-.social{background:linear-gradient(135deg,#03256c,#075985);color:#fff;padding:72px 0}
-.socialgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
-.sc{padding:22px;border:1px solid #ffffff1c;background:#ffffff0a;border-radius:18px;color:#fff;transition:.3s}
-.sc:hover{transform:translateY(-6px);background:#ffffff12}
-.si{width:44px;height:44px;border-radius:12px;background:#38bdf81c;color:#67e8f9;display:grid;place-items:center;font-weight:800;margin-bottom:13px}
-.footer{background:#021b4c;color:#fff;padding-top:60px}
-.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:45px}
-.footer h4{margin-bottom:13px}
-.footer p,.footer a{color:#ffffff9c;font-size:14px}
-.footer a{display:block;margin:7px 0;transition:.2s}
-.footer a:hover{color:#67e8f9;transform:translateX(3px)}
-.copy{border-top:1px solid #ffffff1a;padding:22px 0;color:#ffffff8f;font-size:13px;display:flex;justify-content:space-between;gap:15px}
-.fbook{display:inline-block;width:50px;height:25px;vertical-align:middle;margin-right:6px;position:relative}
-.fbook:before,.fbook:after{content:'';position:absolute;top:2px;width:23px;height:21px;border:1px solid #67e8f999;animation:fb 3s infinite}
-.fbook:before{left:1px;transform-origin:right}
-.fbook:after{right:1px;transform-origin:left}
-@keyframes fb{50%{transform:rotateY(28deg)}}
-.modal{position:fixed;inset:0;z-index:999;background:#010e28c7;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(11px)}
-.modal.open{display:flex}
-.stage{width:min(860px,100%);perspective:1700px}
-.mb{position:relative;transform-style:preserve-3d;transform:rotateX(8deg) scale(.55);opacity:0}
-.modal.open .mb{animation:bookopen 1.2s cubic-bezier(.2,.8,.2,1) forwards}
-@keyframes bookopen{0%{transform:rotateX(8deg) rotateY(-14deg) scale(.55);opacity:0}55%{transform:rotateX(2deg) scale(1.02);opacity:1}100%{transform:none;opacity:1}}
-.pages{display:grid;grid-template-columns:1fr 1fr;min-height:440px}
-.page{background:linear-gradient(135deg,#fff,#effaff);padding:40px 35px;box-shadow:0 20px 50px #0003;overflow-y:auto;max-height:80vh}
-.page:first-child{border-radius:17px 4px 4px 17px;transform:skewY(-1deg)}
-.page:last-child{border-radius:4px 17px 17px 4px;transform:skewY(1deg)}
-.page h3{font-family:'Noto Serif Bengali',serif;color:#03256c;font-size:clamp(20px,3vw,30px);line-height:1.25;font-weight:800}
-.page p{color:#475569;line-height:1.7;font-size:14.5px;margin-top:10px}
-.close{position:absolute;z-index:3;right:15px;top:15px;width:42px;height:42px;border:0;border-radius:50%;background:#03256c;color:#fff;font-size:22px;cursor:pointer}
-.close:hover{transform:rotate(90deg);background:#075985}
-.modal .k{color:#0284c7;font-size:11px;font-weight:800;letter-spacing:.12em}
-.divi{height:1px;background:#dbeafe;margin:12px 0}
-@media(max-width:1050px){.nav a{padding:10px 8px;font-size:13px}.pubs{grid-template-columns:repeat(3,1fr)}.booksgrid{grid-template-columns:repeat(3,1fr)}.archive{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:820px){.hamb{display:block;margin-left:auto}.nav{display:none;position:absolute;top:calc(100% + 7px);left:0;right:0;flex-direction:column;align-items:stretch;background:#03256cf8;border:1px solid #ffffff1c;border-radius:16px;padding:8px}.nav.open{display:flex}.nav a,.special{text-align:center;width:100%}.stats{grid-template-columns:repeat(2,1fr)}.about,.noticegrid{grid-template-columns:1fr}.archive{grid-template-columns:repeat(2,1fr)}.pubs{grid-template-columns:repeat(2,1fr)}.booksgrid{grid-template-columns:repeat(2,1fr)}.socialgrid{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:repeat(2,1fr)}.pages{grid-template-columns:1fr}}
-@media(max-width:560px){.con{width:calc(100% - 22px)}.sec{padding:62px 0}.brand{min-width:0}.bn{font-size:18px}.en{font-size:7px}.hero{min-height:720px}.hc{padding-top:80px}.hero h1{font-size:42px}.hero p{font-size:16px}.actions .btn{width:100%}.trust{display:grid;grid-template-columns:1fr 1fr;gap:8px}.campaign{padding:27px 21px}.stats,.archive,.pubs,.booksgrid,.socialgrid{grid-template-columns:1fr}.dirtop{display:block}.search{width:100%;min-width:0;margin-top:16px}.visual{min-height:300px}.openbook{transform:scale(.8)}.copy{display:block;text-align:center}.copy span{display:block;margin-top:8px}.lb{opacity:.22}}
-@media(prefers-reduced-motion:reduce){#nibf2026 *{animation:none!important;transition:none!important}}
+/* =========================================================
+   ISLAMI BOOK FAIR — FINAL MASTER VERSION
+   WordPress / Elementor Safe
+   ALL CSS ISOLATED INSIDE #nibf2026
+========================================================= */
+
+#nibf2026,
+#nibf2026 *{
+  box-sizing:border-box;
+}
+
+#nibf2026{
+  --navy:#03256c;
+  --navy2:#00296b;
+  --blue:#0756bd;
+  --cyan:#38bdf8;
+  --cyan2:#67e8f9;
+  --mint:#5eead4;
+  --ink:#0f172a;
+  --muted:#64748b;
+  --soft:#f5f9ff;
+  --white:#ffffff;
+  --line:#dbeafe;
+  --shadow:0 20px 60px rgba(2,37,108,.12);
+
+  width:100%;
+  max-width:100%;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:#fff;
+  color:var(--ink);
+  font-family:"Hind Siliguri","Noto Sans Bengali",sans-serif;
+  line-height:1.7;
+}
+
+#nibf2026 a{
+  text-decoration:none;
+  color:inherit;
+}
+
+#nibf2026 button,
+#nibf2026 input{
+  font:inherit;
+}
+
+#nibf2026 button{
+  cursor:pointer;
+}
+
+#nibf2026 .nibf-container{
+  width:min(1180px,calc(100% - 36px));
+  margin:auto;
+}
+
+#nibf2026 .nibf-section{
+  padding:90px 0;
+}
+
+#nibf2026 .nibf-section-head{
+  max-width:780px;
+  margin:0 auto 35px;
+}
+
+#nibf2026 .nibf-section-head.centered{
+  text-align:center;
+}
+
+#nibf2026 .nibf-label{
+  display:inline-block;
+  margin-bottom:7px;
+  color:#0284c7;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+#nibf2026 .nibf-section-head h2{
+  margin:0 0 10px;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:clamp(30px,4vw,44px);
+  line-height:1.3;
+  font-weight:800;
+}
+
+#nibf2026 .nibf-section-head p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+#nibf2026 .nibf-header{
+  position:sticky;
+  top:12px;
+  z-index:1000;
+  width:min(1180px,calc(100% - 24px));
+  margin:12px auto -80px;
+}
+
+#nibf2026 .nibf-nav-wrap{
+  min-height:72px;
+  padding:10px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:20px;
+  background:rgba(3,37,108,.92);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 18px 50px rgba(0,0,0,.18);
+}
+
+#nibf2026 .nibf-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  flex-shrink:0;
+}
+
+#nibf2026 .nibf-brand-icon{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  background:linear-gradient(135deg,#38bdf8,#5eead4);
+  box-shadow:0 0 25px rgba(56,189,248,.3);
+}
+
+#nibf2026 .nibf-brand-icon svg{
+  width:30px;
+  fill:none;
+  stroke:#03256c;
+  stroke-width:3;
+  stroke-linejoin:round;
+}
+
+#nibf2026 .nibf-brand strong{
+  display:block;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:20px;
+  line-height:1.1;
+}
+
+#nibf2026 .nibf-brand small{
+  display:block;
+  font-family:Arial,sans-serif;
+  font-size:8px;
+  letter-spacing:2px;
+  color:#a5f3fc;
+}
+
+#nibf2026 .nibf-nav{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+#nibf2026 .nibf-nav>a,
+#nibf2026 .nibf-nav>button{
+  padding:9px 10px;
+  border:0;
+  border-radius:10px;
+  background:none;
+  color:#e0f2fe;
+  font-size:13px;
+  transition:.3s ease;
+  white-space:nowrap;
+}
+
+#nibf2026 .nibf-nav>a:hover{
+  background:rgba(103,232,249,.13);
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+#nibf2026 .nibf-news-btn{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#0ea5e9,#06b6d4)!important;
+  color:#fff!important;
+  box-shadow:
+    0 0 0 rgba(56,189,248,0),
+    0 8px 25px rgba(56,189,248,.22);
+  animation:nibfNewsPulse 3s infinite;
+}
+
+#nibf2026 .nibf-news-btn::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
+  transform:skewX(-20deg);
+  animation:nibfShine 3.5s infinite;
+}
+
+#nibf2026 .nibf-star{
+  display:inline-block;
+  margin-right:4px;
+  animation:nibfStar 1.7s ease-in-out infinite;
+}
+
+#nibf2026 .nibf-menu-btn{
+  display:none;
+  width:43px;
+  height:43px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:12px;
+  background:rgba(255,255,255,.06);
+  padding:0;
+}
+
+#nibf2026 .nibf-menu-btn span{
+  display:block;
+  width:20px;
+  height:2px;
+  margin:4px auto;
+  border-radius:3px;
+  background:#fff;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+#nibf2026 .nibf-hero{
+  position:relative;
+  min-height:720px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  color:#fff;
+  background:
+    radial-gradient(circle at 80% 45%,rgba(56,189,248,.22),transparent 25%),
+    radial-gradient(circle at 20% 80%,rgba(94,234,212,.10),transparent 28%),
+    linear-gradient(135deg,#021b50,#03256c 50%,#001b4f);
+}
+
+#nibf2026 .nibf-grid-bg{
+  position:absolute;
+  inset:0;
+  opacity:.08;
+  background-image:
+    linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px);
+  background-size:42px 42px;
+}
+
+#nibf2026 .nibf-orb{
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  filter:blur(3px);
+}
+
+#nibf2026 .nibf-orb-a{
+  width:280px;
+  height:280px;
+  right:4%;
+  top:20%;
+  background:rgba(56,189,248,.10);
+}
+
+#nibf2026 .nibf-orb-b{
+  width:180px;
+  height:180px;
+  left:7%;
+  bottom:5%;
+  background:rgba(94,234,212,.08);
+}
+
+#nibf2026 .nibf-floating-books{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+}
+
+#nibf2026 .fb{
+  position:absolute;
+  width:60px;
+  height:40px;
+  opacity:.45;
+  transform:rotate(var(--r));
+  animation:nibfBookFloat var(--d) ease-in-out var(--delay) infinite alternate;
+  filter:drop-shadow(0 0 7px rgba(103,232,249,.18));
+}
+
+#nibf2026 .fb::before,
+#nibf2026 .fb::after{
+  content:"";
+  position:absolute;
+  bottom:4px;
+  width:29px;
+  height:34px;
+  border:1.25px solid rgba(255,255,255,.8);
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.08),
+    rgba(56,189,248,.03)
+  );
+}
+
+#nibf2026 .fb::before{
+  left:0;
+  border-right:0;
+  border-radius:5px 0 0 6px;
+  transform:skewY(-9deg);
+  transform-origin:right center;
+  animation:nibfMiniPageL 3.6s ease-in-out infinite;
+}
+
+#nibf2026 .fb::after{
+  right:0;
+  border-left:0;
+  border-radius:0 5px 6px 0;
+  transform:skewY(9deg);
+  transform-origin:left center;
+  animation:nibfMiniPageR 3.6s ease-in-out infinite;
+}
+
+#nibf2026 .fb-spine{
+  position:absolute;
+  left:50%;
+  bottom:4px;
+  width:2px;
+  height:34px;
+  background:rgba(255,255,255,.65);
+  transform:translateX(-50%);
+  z-index:2;
+}
+
+#nibf2026 .f1{left:6%;top:18%;--r:-13deg;--d:5.4s;--delay:-1s}
+#nibf2026 .f2{left:18%;top:34%;--r:8deg;--d:4.6s;--delay:-2s;transform:scale(.72)}
+#nibf2026 .f3{left:29%;top:12%;--r:-4deg;--d:6s;--delay:-3s;transform:scale(.62)}
+#nibf2026 .f4{left:39%;top:54%;--r:11deg;--d:5.1s;--delay:-1.5s;transform:scale(.78)}
+#nibf2026 .f5{left:51%;top:19%;--r:-7deg;--d:4.4s;--delay:-3.5s;transform:scale(.68)}
+#nibf2026 .f6{left:60%;top:72%;--r:9deg;--d:5.8s;--delay:-2.2s;transform:scale(.65)}
+#nibf2026 .f7{left:72%;top:11%;--r:-10deg;--d:4.8s;--delay:-.5s;transform:scale(.74)}
+#nibf2026 .f8{right:5%;top:29%;--r:7deg;--d:5.3s;--delay:-2.8s;transform:scale(.86)}
+#nibf2026 .f9{right:8%;top:71%;--r:-6deg;--d:4.9s;--delay:-1.8s;transform:scale(.58)}
+#nibf2026 .f10{left:10%;top:77%;--r:14deg;--d:5.7s;--delay:-4s;transform:scale(.62)}
+#nibf2026 .f11{left:34%;top:80%;--r:-7deg;--d:4.7s;--delay:-1.3s;transform:scale(.72)}
+#nibf2026 .f12{right:23%;top:79%;--r:-12deg;--d:5.2s;--delay:-2.6s;transform:scale(.56)}
+
+#nibf2026 .nibf-hero-inner{
+  position:relative;
+  z-index:5;
+  min-height:720px;
+  display:grid;
+  grid-template-columns:1.04fr .96fr;
+  align-items:center;
+  padding-top:70px;
+}
+
+#nibf2026 .nibf-hero-copy{
+  position:relative;
+  z-index:10;
+}
+
+#nibf2026 .nibf-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#a5f3fc;
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+#nibf2026 .nibf-eyebrow span{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#67e8f9;
+  box-shadow:0 0 15px #67e8f9;
+  animation:nibfDot 2s infinite;
+}
+
+#nibf2026 .nibf-hero h1{
+  max-width:700px;
+  margin:0 0 22px;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:clamp(42px,5.5vw,72px);
+  line-height:1.15;
+  letter-spacing:-1.5px;
+}
+
+#nibf2026 .nibf-hero h1 span{
+  color:#67e8f9;
+  text-shadow:0 0 35px rgba(56,189,248,.25);
+}
+
+#nibf2026 .nibf-hero-copy>p{
+  max-width:650px;
+  margin:0;
+  color:#cbd5e1;
+  font-size:17px;
+  line-height:1.9;
+}
+
+#nibf2026 .nibf-hero-actions,
+#nibf2026 .nibf-action-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+#nibf2026 .nibf-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:48px;
+  padding:11px 20px;
+  border-radius:13px;
+  border:1px solid transparent;
+  font-weight:700;
+  transition:.3s ease;
+}
+
+#nibf2026 .nibf-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 35px rgba(0,0,0,.15);
+}
+
+#nibf2026 .nibf-btn-primary{
+  color:#03256c;
+  background:linear-gradient(135deg,#67e8f9,#38bdf8);
+  box-shadow:0 10px 30px rgba(56,189,248,.2);
+}
+
+#nibf2026 .nibf-btn-ghost{
+  color:#fff;
+  border-color:rgba(255,255,255,.25);
+  background:rgba(255,255,255,.06);
+}
+
+#nibf2026 .nibf-btn-light{
+  color:#03256c;
+  background:#fff;
+}
+
+#nibf2026 .nibf-trust{
+  display:flex;
+  gap:32px;
+  margin-top:44px;
+}
+
+#nibf2026 .nibf-trust div{position:relative}
+
+#nibf2026 .nibf-trust div+div::before{
+  content:"";
+  position:absolute;
+  width:1px;
+  height:35px;
+  left:-16px;
+  top:8px;
+  background:rgba(255,255,255,.18);
+}
+
+#nibf2026 .nibf-trust b{
+  display:block;
+  color:#fff;
+}
+
+#nibf2026 .nibf-trust span{
+  font-size:12px;
+  color:#93c5fd;
+}
+
+/* BIG BOOK */
+#nibf2026 .nibf-hero-book-area{
+  position:relative;
+  height:560px;
+  display:grid;
+  place-items:center;
+}
+
+#nibf2026 .nibf-big-book{
+  position:relative;
+  width:390px;
+  height:250px;
+  display:flex;
+  z-index:5;
+  transform:perspective(1000px) rotateX(7deg) rotateY(-7deg);
+  animation:nibfBigBookFloat 5s ease-in-out infinite;
+  filter:drop-shadow(0 35px 30px rgba(0,0,0,.35));
+}
+
+#nibf2026 .nibf-book-page{
+  position:relative;
+  width:50%;
+  height:100%;
+  overflow:hidden;
+  background:linear-gradient(135deg,#fff,#e0f2fe);
+  box-shadow:inset 0 0 30px rgba(56,189,248,.12);
+}
+
+#nibf2026 .nibf-book-page.left-page{
+  border-radius:12px 3px 3px 12px;
+  transform-origin:right center;
+  animation:nibfPageL 4s ease-in-out infinite;
+}
+
+#nibf2026 .nibf-book-page.right-page{
+  border-radius:3px 12px 12px 3px;
+  transform-origin:left center;
+  animation:nibfPageR 4s ease-in-out infinite;
+}
+
+#nibf2026 .nibf-book-page i{
+  display:block;
+  width:65%;
+  height:3px;
+  margin:32px auto 0;
+  border-radius:10px;
+  background:#bae6fd;
+}
+
+#nibf2026 .nibf-book-page i+i{
+  width:75%;
+  margin-top:17px;
+}
+
+#nibf2026 .nibf-book-page i+i+i{
+  width:55%;
+}
+
+#nibf2026 .nibf-book-spine{
+  width:5px;
+  background:linear-gradient(#bae6fd,#38bdf8,#bae6fd);
+  z-index:6;
+}
+
+#nibf2026 .nibf-book-glow{
+  position:absolute;
+  width:350px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(103,232,249,.28);
+  filter:blur(50px);
+  animation:nibfGlow 3s ease-in-out infinite;
+}
+
+#nibf2026 .nibf-particles{
+  position:absolute;
+  inset:0;
+  z-index:7;
+  pointer-events:none;
+}
+
+#nibf2026 .nibf-particle{
+  position:absolute;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#a5f3fc;
+  box-shadow:0 0 10px #38bdf8,0 0 20px rgba(103,232,249,.7);
+  animation:nibfParticle 3.5s linear infinite;
+}
+
+/* =========================================================
+   CAMPAIGN
+========================================================= */
+
+#nibf2026 .nibf-campaign-section{
+  background:#f7fbff;
+}
+
+#nibf2026 .nibf-campaign-card{
+  position:relative;
+  overflow:hidden;
+  padding:42px;
+  border-radius:28px;
+  color:#fff;
+  background:linear-gradient(135deg,#021b50,#03256c 55%,#075985);
+  box-shadow:var(--shadow);
+}
+
+#nibf2026 .nibf-campaign-glow{
+  position:absolute;
+  width:300px;
+  height:300px;
+  right:-80px;
+  top:-120px;
+  border-radius:50%;
+  background:rgba(103,232,249,.15);
+  filter:blur(8px);
+}
+
+#nibf2026 .nibf-campaign-content{
+  position:relative;
+  z-index:2;
+  max-width:850px;
+}
+
+#nibf2026 .nibf-chip,
+#nibf2026 .nibf-status{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:999px;
+  color:#a5f3fc;
+  background:rgba(103,232,249,.1);
+  border:1px solid rgba(103,232,249,.2);
+  font-size:11px;
+  font-weight:800;
+}
+
+#nibf2026 .nibf-campaign-card h3{
+  margin:13px 0 10px;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:36px;
+}
+
+#nibf2026 .nibf-campaign-card p{
+  color:#dbeafe;
+}
+
+#nibf2026 .nibf-campaign-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+}
+
+#nibf2026 .nibf-campaign-meta span{
+  padding:8px 12px;
+  border-radius:10px;
+  background:rgba(255,255,255,.07);
+  font-size:13px;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+#nibf2026 .nibf-stats-section{
+  padding:0 0 90px;
+  background:#f7fbff;
+}
+
+#nibf2026 .nibf-stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+#nibf2026 .nibf-stat{
+  padding:28px;
+  text-align:center;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 10px 35px rgba(2,37,108,.06);
+  transition:.3s;
+}
+
+#nibf2026 .nibf-stat:hover{
+  transform:translateY(-7px);
+  border-color:#7dd3fc;
+  box-shadow:0 20px 45px rgba(2,37,108,.12);
+}
+
+#nibf2026 .nibf-stat strong{
+  display:block;
+  color:var(--navy);
+  font-size:31px;
+}
+
+#nibf2026 .nibf-stat span{
+  color:var(--muted);
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+#nibf2026 .nibf-about{
+  background:#fff;
+}
+
+#nibf2026 .nibf-about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:70px;
+}
+
+#nibf2026 .nibf-about h2{
+  margin:0 0 18px;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:42px;
+}
+
+#nibf2026 .nibf-about p{
+  color:var(--muted);
+}
+
+#nibf2026 .nibf-about-book{
+  position:relative;
+  height:360px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-radius:30px;
+  background:radial-gradient(circle,#dffbff,#eef8ff 45%,#fff);
+}
+
+#nibf2026 .nibf-small-book{
+  position:relative;
+  width:260px;
+  height:170px;
+  display:flex;
+  filter:drop-shadow(0 25px 20px rgba(2,37,108,.15));
+  animation:nibfBigBookFloat 5s infinite;
+}
+
+#nibf2026 .nibf-small-book div{
+  width:50%;
+  border:1px solid #bae6fd;
+  background:#fff;
+}
+
+#nibf2026 .nibf-small-book div:first-child{
+  border-radius:10px 2px 2px 10px;
+}
+
+#nibf2026 .nibf-small-book div:last-child{
+  border-radius:2px 10px 10px 2px;
+}
+
+#nibf2026 .nibf-about-light{
+  position:absolute;
+  width:220px;
+  height:100px;
+  border-radius:50%;
+  background:rgba(56,189,248,.25);
+  filter:blur(40px);
+}
+
+/* =========================================================
+   CURRENT FAIR
+========================================================= */
+
+#nibf2026 .nibf-current-section{
+  background:#f7fbff;
+}
+
+#nibf2026 .nibf-current-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+#nibf2026 .nibf-current-card,
+#nibf2026 .nibf-countdown-card{
+  padding:35px;
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+#nibf2026 .nibf-current-card{
+  border:1px solid var(--line);
+  background:#fff;
+}
+
+#nibf2026 .nibf-current-card h3{
+  margin:13px 0 25px;
+  font-family:"Noto Serif Bengali",serif;
+  color:var(--navy);
+  font-size:31px;
+}
+
+#nibf2026 .nibf-info-row{
+  padding:16px 0;
+  border-bottom:1px solid #e2e8f0;
+}
+
+#nibf2026 .nibf-info-row span{
+  display:block;
+  color:#64748b;
+  font-size:12px;
+}
+
+#nibf2026 .nibf-info-row strong{
+  display:block;
+  margin-top:3px;
+}
+
+#nibf2026 .nibf-note{
+  margin-top:20px;
+  color:#64748b;
+  font-size:13px;
+}
+
+#nibf2026 .nibf-countdown-card{
+  color:#fff;
+  background:linear-gradient(135deg,#021b50,#03256c,#075985);
+}
+
+#nibf2026 .nibf-count-label{
+  color:#a5f3fc;
+  font-size:12px;
+}
+
+#nibf2026 .nibf-countdown-card h3{
+  margin:14px 0 25px;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:27px;
+}
+
+#nibf2026 .nibf-countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+#nibf2026 .nibf-countdown div{
+  padding:15px 8px;
+  text-align:center;
+  border:1px solid rgba(165,243,252,.15);
+  border-radius:15px;
+  background:rgba(255,255,255,.08);
+  transition:.3s;
+}
+
+#nibf2026 .nibf-countdown div:hover{
+  transform:translateY(-4px);
+  background:rgba(103,232,249,.1);
+}
+
+#nibf2026 .nibf-countdown strong{
+  display:block;
+  color:#a5f3fc;
+  font-size:30px;
+}
+
+#nibf2026 .nibf-countdown span{
+  color:#cbd5e1;
+  font-size:11px;
+}
+
+#nibf2026 .nibf-countdown-card small{
+  display:block;
+  margin-top:18px;
+  color:#cbd5e1;
+}
+
+/* current fair animation */
+#nibf2026 .nibf-current-decor{
+  position:relative;
+  height:75px;
+  max-width:930px;
+  margin:0 auto 20px;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+#nibf2026 .nibf-current-mini-book{
+  position:absolute;
+  width:48px;
+  height:34px;
+  opacity:.36;
+  animation:nibfCurrentBookFloat var(--d) ease-in-out var(--delay) infinite alternate;
+}
+
+#nibf2026 .nibf-current-mini-book::before,
+#nibf2026 .nibf-current-mini-book::after{
+  content:"";
+  position:absolute;
+  bottom:2px;
+  width:23px;
+  height:29px;
+  border:1px solid #0ea5e9;
+  background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(2,37,108,.02));
+}
+
+#nibf2026 .nibf-current-mini-book::before{
+  left:1px;
+  border-right:0;
+  border-radius:4px 0 0 5px;
+  transform:skewY(-8deg);
+}
+
+#nibf2026 .nibf-current-mini-book::after{
+  right:1px;
+  border-left:0;
+  border-radius:0 4px 5px 0;
+  transform:skewY(8deg);
+}
+
+#nibf2026 .nibf-current-mini-book .spine{
+  position:absolute;
+  left:50%;
+  bottom:2px;
+  width:2px;
+  height:29px;
+  transform:translateX(-50%);
+  background:#38bdf8;
+}
+
+#nibf2026 .cb1{left:4%;--d:4.5s;--delay:-.7s;transform:scale(.65)}
+#nibf2026 .cb2{left:20%;--d:5.2s;--delay:-1.8s;transform:scale(.82)}
+#nibf2026 .cb3{left:36%;--d:4.8s;--delay:-2.5s;transform:scale(.55)}
+#nibf2026 .cb4{left:54%;--d:5.5s;--delay:-1.1s;transform:scale(.78)}
+#nibf2026 .cb5{left:70%;--d:4.6s;--delay:-3s;transform:scale(.62)}
+#nibf2026 .cb6{left:86%;--d:5.9s;--delay:-2s;transform:scale(.7)}
+#nibf2026 .cb7{left:11%;top:36px;--d:5.1s;--delay:-3.3s;transform:scale(.48)}
+#nibf2026 .cb8{left:63%;top:32px;--d:4.7s;--delay:-.8s;transform:scale(.52)}
+
+/* =========================================================
+   ARCHIVE
+========================================================= */
+
+#nibf2026 .nibf-archive-section{
+  background:#fff;
+}
+
+#nibf2026 .nibf-year-title{
+  margin:36px 0 15px;
+  color:var(--navy);
+  font-size:24px;
+  font-weight:800;
+}
+
+#nibf2026 .nibf-archive-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+#nibf2026 .nibf-archive-card{
+  min-height:165px;
+  padding:24px;
+  text-align:left;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(145deg,#fff,#f5faff);
+  color:var(--ink);
+  box-shadow:0 10px 30px rgba(2,37,108,.05);
+  transition:.3s;
+}
+
+#nibf2026 .nibf-archive-card:hover{
+  transform:translateY(-6px);
+  border-color:#38bdf8;
+  box-shadow:0 18px 45px rgba(2,37,108,.12);
+}
+
+#nibf2026 .nibf-archive-card span{
+  color:#0284c7;
+  font-size:11px;
+  font-weight:800;
+}
+
+#nibf2026 .nibf-archive-card strong{
+  display:block;
+  margin:8px 0 16px;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:18px;
+  line-height:1.5;
+}
+
+#nibf2026 .nibf-archive-card em{
+  color:#0284c7;
+  font-size:13px;
+  font-style:normal;
+  font-weight:700;
+}
+
+/* =========================================================
+   PUBLISHERS
+========================================================= */
+
+#nibf2026 .nibf-publishers-section{
+  background:#f7fbff;
+}
+
+#nibf2026 .nibf-search{
+  max-width:650px;
+  margin:0 auto 28px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 17px;
+  border:1px solid #cbd5e1;
+  border-radius:15px;
+  background:#fff;
+  box-shadow:0 8px 25px rgba(2,37,108,.05);
+}
+
+#nibf2026 .nibf-search>span{
+  color:#0284c7;
+  font-size:22px;
+}
+
+#nibf2026 .nibf-search input{
+  width:100%;
+  outline:0;
+  border:0;
+  background:transparent;
+  color:#0f172a;
+}
+
+#nibf2026 .nibf-publisher-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+#nibf2026 .nibf-publisher-card{
+  min-height:77px;
+  padding:15px;
+  text-align:left;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#fff;
+  color:#0f172a;
+  transition:.3s;
+}
+
+#nibf2026 .nibf-publisher-card:hover{
+  transform:translateY(-4px);
+  border-color:#38bdf8;
+  box-shadow:0 12px 30px rgba(2,37,108,.1);
+}
+
+#nibf2026 .nibf-publisher-card small{
+  display:block;
+  margin-bottom:4px;
+  color:#0284c7;
+  font-size:10px;
+}
+
+#nibf2026 .nibf-publisher-card strong{
+  font-size:14px;
+  line-height:1.5;
+}
+
+#nibf2026 .nibf-no-result{
+  display:none;
+  padding:30px;
+  text-align:center;
+  color:#64748b;
+}
+
+/* =========================================================
+   BOOKS
+========================================================= */
+
+#nibf2026 .nibf-books-section{
+  background:#fff;
+}
+
+#nibf2026 .nibf-book-filters{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  margin-bottom:30px;
+}
+
+#nibf2026 .nibf-book-filters button{
+  padding:9px 18px;
+  border:1px solid #bae6fd;
+  border-radius:999px;
+  color:#075985;
+  background:#f0f9ff;
+  transition:.3s;
+}
+
+#nibf2026 .nibf-book-filters button:hover,
+#nibf2026 .nibf-book-filters button.active{
+  border-color:#0284c7;
+  color:#fff;
+  background:linear-gradient(135deg,#0284c7,#06b6d4);
+  box-shadow:0 8px 25px rgba(14,165,233,.22);
+  transform:translateY(-2px);
+}
+
+#nibf2026 .nibf-book-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+#nibf2026 .nibf-book-card{
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#fff;
+  transition:.35s;
+  cursor:pointer;
+}
+
+#nibf2026 .nibf-book-card:hover{
+  transform:translateY(-7px);
+  border-color:#38bdf8;
+  box-shadow:0 20px 45px rgba(2,37,108,.12);
+}
+
+#nibf2026 .nibf-cover{
+  height:250px;
+  display:grid;
+  place-items:center;
+  padding:25px;
+  background:linear-gradient(145deg,#03256c,#075985);
+}
+
+#nibf2026 .nibf-cover-book{
+  width:125px;
+  height:175px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:15px;
+  border-radius:4px 9px 9px 4px;
+  color:#fff;
+  text-align:center;
+  background:linear-gradient(135deg,#0f4c81,#0284c7);
+  box-shadow:12px 15px 25px rgba(0,0,0,.3);
+  font-family:"Noto Serif Bengali",serif;
+  transition:.4s;
+}
+
+#nibf2026 .nibf-book-card:hover .nibf-cover-book{
+  transform:scale(1.05) rotate(-1deg);
+}
+
+#nibf2026 .nibf-cover-book small{
+  margin-top:10px;
+  color:#a5f3fc;
+  font-family:"Hind Siliguri",sans-serif;
+  font-size:9px;
+}
+
+#nibf2026 .nibf-book-info{
+  padding:18px;
+}
+
+#nibf2026 .nibf-book-info h3{
+  margin:0 0 4px;
+  color:var(--navy);
+  font-family:"Noto Serif Bengali",serif;
+  font-size:18px;
+  line-height:1.5;
+}
+
+#nibf2026 .nibf-book-info p{
+  margin:0;
+  color:#64748b;
+  font-size:13px;
+}
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+#nibf2026 .nibf-notice-section{
+  background:#f7fbff;
+}
+
+#nibf2026 .nibf-notice-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+#nibf2026 .nibf-notice-card{
+  padding:25px;
+  text-align:left;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#fff;
+  transition:.3s;
+}
+
+#nibf2026 .nibf-notice-card:hover{
+  transform:translateY(-5px);
+  border-color:#38bdf8;
+  box-shadow:0 15px 35px rgba(2,37,108,.1);
+}
+
+#nibf2026 .nibf-notice-card span{
+  color:#0284c7;
+  font-size:10px;
+  font-weight:800;
+}
+
+#nibf2026 .nibf-notice-card strong{
+  display:block;
+  margin:8px 0 14px;
+  font-size:18px;
+}
+
+#nibf2026 .nibf-notice-card small{
+  color:#0284c7;
+}
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+#nibf2026 .nibf-social-section{
+  padding:90px 0;
+  color:#fff;
+  background:linear-gradient(135deg,#021b50,#03256c,#075985);
+}
+
+#nibf2026 .nibf-social-section .nibf-label{
+  color:#67e8f9;
+}
+
+#nibf2026 .nibf-social-section .nibf-section-head h2{
+  color:#fff;
+}
+
+#nibf2026 .nibf-social-section .nibf-section-head p{
+  color:#cbd5e1;
+}
+
+#nibf2026 .nibf-social-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+#nibf2026 .nibf-social-card{
+  padding:22px;
+  display:grid;
+  grid-template-columns:45px 1fr;
+  column-gap:12px;
+  border:1px solid rgba(165,243,252,.15);
+  border-radius:18px;
+  background:rgba(255,255,255,.06);
+  transition:.3s;
+}
+
+#nibf2026 .nibf-social-card:hover{
+  transform:translateY(-5px);
+  border-color:#67e8f9;
+  background:rgba(103,232,249,.1);
+}
+
+#nibf2026 .nibf-social-card b{
+  grid-row:span 2;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,#38bdf8,#5eead4);
+  color:#03256c;
+  font-size:20px;
+}
+
+#nibf2026 .nibf-social-card span{
+  font-weight:800;
+}
+
+#nibf2026 .nibf-social-card small{
+  color:#94a3b8;
+}
+
+#nibf2026 .nibf-official{
+  max-width:650px;
+  margin:50px auto 0;
+  padding:30px;
+  text-align:center;
+  border:1px solid rgba(165,243,252,.15);
+  border-radius:22px;
+  background:rgba(255,255,255,.05);
+}
+
+#nibf2026 .nibf-official>span{
+  color:#67e8f9;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+#nibf2026 .nibf-official h3{
+  margin:8px 0 0;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:27px;
+}
+
+#nibf2026 .nibf-official strong{
+  color:#67e8f9;
+}
+
+#nibf2026 .nibf-official p{
+  color:#cbd5e1;
+  font-size:13px;
+}
+
+#nibf2026 .nibf-official>a{
+  display:inline-block;
+  margin-top:8px;
+  color:#67e8f9;
+  font-size:13px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+#nibf2026 .nibf-footer{
+  padding:65px 0 0;
+  color:#cbd5e1;
+  background:#011538;
+}
+
+#nibf2026 .nibf-footer-grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr 1.2fr;
+  gap:35px;
+  padding-bottom:50px;
+}
+
+#nibf2026 .nibf-footer-brand{
+  color:#fff;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:25px;
+  font-weight:800;
+}
+
+#nibf2026 .nibf-footer p{
+  max-width:360px;
+  color:#94a3b8;
+  font-size:13px;
+}
+
+#nibf2026 .nibf-footer h4{
+  margin:0 0 14px;
+  color:#fff;
+}
+
+#nibf2026 .nibf-footer a,
+#nibf2026 .nibf-footer span{
+  display:block;
+  margin:6px 0;
+  color:#94a3b8;
+  font-size:13px;
+  transition:.25s;
+}
+
+#nibf2026 .nibf-footer a:hover{
+  color:#67e8f9;
+  transform:translateX(4px);
+}
+
+#nibf2026 .nibf-footer-bottom{
+  padding:18px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.07);
+  color:#64748b;
+  font-size:12px;
+}
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+#nibf2026 .nibf-modal{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+  background:rgba(1,12,35,.78);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+}
+
+#nibf2026 .nibf-modal.open{
+  opacity:1;
+  visibility:visible;
+}
+
+#nibf2026 .nibf-modal-book{
+  position:relative;
+  width:min(920px,100%);
+  max-height:92vh;
+  overflow:auto;
+  border-radius:25px;
+  background:#fff;
+  box-shadow:0 35px 100px rgba(0,0,0,.4);
+  transform:perspective(1000px) rotateX(5deg) scale(.92);
+  transition:.4s cubic-bezier(.2,.8,.2,1);
+}
+
+#nibf2026 .nibf-modal.open .nibf-modal-book{
+  transform:perspective(1000px) rotateX(0) scale(1);
+}
+
+#nibf2026 .nibf-modal-page{
+  padding:44px 46px;
+  background:
+    linear-gradient(rgba(2,37,108,.022) 1px,transparent 1px),
+    #fff;
+  background-size:100% 32px;
+}
+
+#nibf2026 .nibf-close{
+  position:absolute;
+  top:15px;
+  right:15px;
+  z-index:3;
+  width:40px;
+  height:40px;
+  border:1px solid #dbeafe;
+  border-radius:50%;
+  background:#fff;
+  color:#03256c;
+  font-size:25px;
+  line-height:1;
+  transition:.25s;
+}
+
+#nibf2026 .nibf-close:hover{
+  background:#03256c;
+  color:#fff;
+  transform:rotate(90deg);
+}
+
+#nibf2026 .nibf-modal-year{
+  color:#0284c7;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+#nibf2026 .nibf-modal-page h2{
+  margin:8px 0 16px;
+  color:#03256c;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:clamp(28px,4vw,42px);
+  line-height:1.35;
+}
+
+#nibf2026 .nibf-modal-page h3{
+  margin:28px 0 6px;
+  color:#075985;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:20px;
+}
+
+#nibf2026 .nibf-modal-page p{
+  margin:8px 0;
+  color:#475569;
+  font-size:14px;
+  line-height:1.95;
+}
+
+#nibf2026 .nibf-divider{
+  width:80px;
+  height:2px;
+  margin-bottom:25px;
+  background:linear-gradient(90deg,#38bdf8,#5eead4);
+}
+
+#nibf2026 .nibf-info-box{
+  margin:18px 0;
+  padding:18px;
+  border:1px solid #dbeafe;
+  border-radius:16px;
+  background:#f7fbff;
+}
+
+#nibf2026 .nibf-info-box strong{
+  color:#03256c;
+}
+
+#nibf2026 .nibf-archive-cta{
+  margin-top:35px;
+  padding:25px;
+  border-radius:18px;
+  color:#fff;
+  background:linear-gradient(135deg,#03256c,#075985);
+}
+
+#nibf2026 .nibf-archive-cta strong{
+  color:#fff;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:18px;
+}
+
+#nibf2026 .nibf-archive-cta p{
+  color:#cbd5e1;
+  font-size:13px;
+}
+
+#nibf2026 .nibf-archive-cta a{
+  display:inline-flex;
+  padding:10px 15px;
+  border-radius:10px;
+  background:#67e8f9;
+  color:#03256c;
+  font-size:13px;
+  font-weight:800;
+}
+
+#nibf2026 .nibf-highlight{
+  padding:20px;
+  border:1px solid #bae6fd;
+  border-radius:18px;
+  background:linear-gradient(135deg,#effcff,#f0f9ff);
+}
+
+#nibf2026 .nibf-highlight strong{
+  display:block;
+  color:#03256c;
+  font-family:"Noto Serif Bengali",serif;
+  font-size:20px;
+}
+
+#nibf2026 .nibf-news-row{
+  margin:12px 0;
+  padding:16px;
+  border:1px solid #dbeafe;
+  border-radius:15px;
+  background:#f8fcff;
+}
+
+#nibf2026 .nibf-news-row small{
+  display:block;
+  color:#0284c7;
+}
+
+#nibf2026 .nibf-news-row strong{
+  display:block;
+  color:#03256c;
+  font-size:18px;
+}
+
+#nibf2026 .nibf-pub-grid-inside{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+#nibf2026 .nibf-pub-grid-inside div{
+  padding:15px;
+  border:1px solid #e2e8f0;
+  border-radius:14px;
+  background:#f8fafc;
+}
+
+#nibf2026 .nibf-pub-grid-inside span{
+  display:block;
+  color:#64748b;
+  font-size:11px;
+}
+
+#nibf2026 .nibf-pub-grid-inside strong{
+  display:block;
+  margin-top:2px;
+  color:#03256c;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes nibfBookFloat{
+  from{transform:translateY(8px) rotate(var(--r))}
+  to{transform:translateY(-16px) rotate(calc(var(--r) + 4deg))}
+}
+
+@keyframes nibfBigBookFloat{
+  0%,100%{transform:perspective(1000px) rotateX(7deg) rotateY(-7deg) translateY(0)}
+  50%{transform:perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-14px)}
+}
+
+@keyframes nibfPageL{
+  0%,100%{transform:rotateY(0)}
+  50%{transform:rotateY(-8deg)}
+}
+
+@keyframes nibfPageR{
+  0%,100%{transform:rotateY(0)}
+  50%{transform:rotateY(8deg)}
+}
+
+@keyframes nibfMiniPageL{
+  0%,100%{transform:skewY(-9deg)}
+  50%{transform:skewY(-3deg) rotateY(-18deg)}
+}
+
+@keyframes nibfMiniPageR{
+  0%,100%{transform:skewY(9deg)}
+  50%{transform:skewY(3deg) rotateY(18deg)}
+}
+
+@keyframes nibfGlow{
+  0%,100%{opacity:.55;transform:scale(.9)}
+  50%{opacity:1;transform:scale(1.08)}
+}
+
+@keyframes nibfParticle{
+  0%{transform:translate(0,0) scale(.5);opacity:0}
+  15%{opacity:1}
+  70%{opacity:.8}
+  100%{transform:translate(var(--x),var(--y)) scale(.15);opacity:0}
+}
+
+@keyframes nibfCurrentBookFloat{
+  from{transform:translateY(8px) rotate(-7deg)}
+  to{transform:translateY(-11px) rotate(5deg)}
+}
+
+@keyframes nibfStar{
+  0%,100%{transform:scale(.8);filter:brightness(1)}
+  45%{transform:scale(1.3);filter:brightness(2.2) drop-shadow(0 0 8px #fff)}
+  60%{transform:scale(.95);filter:brightness(1.2)}
+}
+
+@keyframes nibfNewsPulse{
+  0%,100%{box-shadow:0 0 0 rgba(56,189,248,0),0 8px 25px rgba(56,189,248,.22)}
+  50%{box-shadow:0 0 22px rgba(56,189,248,.35),0 10px 30px rgba(56,189,248,.25)}
+}
+
+@keyframes nibfShine{
+  0%{left:-100%}
+  55%,100%{left:150%}
+}
+
+@keyframes nibfDot{
+  0%,100%{transform:scale(.8);opacity:.7}
+  50%{transform:scale(1.3);opacity:1}
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+  #nibf2026 .nibf-nav>a{
+    padding:8px 6px;
+    font-size:12px;
+  }
+
+  #nibf2026 .nibf-publisher-grid,
+  #nibf2026 .nibf-book-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:800px){
+  #nibf2026 .nibf-menu-btn{
+    display:block;
+  }
+
+  #nibf2026 .nibf-nav{
+    position:absolute;
+    left:0;
+    right:0;
+    top:78px;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    padding:12px;
+    border-radius:18px;
+    background:#03256c;
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-10px);
+    transition:.3s;
+  }
+
+  #nibf2026 .nibf-nav.open{
+    opacity:1;
+    visibility:visible;
+    transform:none;
+  }
+
+  #nibf2026 .nibf-nav>a,
+  #nibf2026 .nibf-nav>button{
+    text-align:center;
+  }
+
+  #nibf2026 .nibf-hero-inner{
+    grid-template-columns:1fr;
+    padding-top:100px;
+  }
+
+  #nibf2026 .nibf-hero{
+    min-height:auto;
+  }
+
+  #nibf2026 .nibf-hero-book-area{
+    height:390px;
+    transform:scale(.82);
+  }
+
+  #nibf2026 .nibf-stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  #nibf2026 .nibf-about-grid,
+  #nibf2026 .nibf-current-grid{
+    grid-template-columns:1fr;
+  }
+
+  #nibf2026 .nibf-archive-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  #nibf2026 .nibf-publisher-grid,
+  #nibf2026 .nibf-book-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  #nibf2026 .nibf-social-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  #nibf2026 .nibf-footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:560px){
+  #nibf2026 .nibf-container{
+    width:calc(100% - 24px);
+  }
+
+  #nibf2026 .nibf-header{
+    width:calc(100% - 12px);
+    margin-top:6px;
+  }
+
+  #nibf2026 .nibf-brand strong{
+    font-size:17px;
+  }
+
+  #nibf2026 .nibf-hero h1{
+    font-size:39px;
+  }
+
+  #nibf2026 .nibf-hero-copy>p{
+    font-size:15px;
+  }
+
+  #nibf2026 .nibf-hero-actions,
+  #nibf2026 .nibf-action-row{
+    flex-direction:column;
+  }
+
+  #nibf2026 .nibf-btn{
+    width:100%;
+  }
+
+  #nibf2026 .nibf-trust{
+    gap:15px;
+    justify-content:space-between;
+  }
+
+  #nibf2026 .nibf-trust b{
+    font-size:13px;
+  }
+
+  #nibf2026 .nibf-trust span{
+    font-size:10px;
+  }
+
+  #nibf2026 .nibf-hero-book-area{
+    height:300px;
+    transform:scale(.67);
+  }
+
+  #nibf2026 .f7,
+  #nibf2026 .f8,
+  #nibf2026 .f9,
+  #nibf2026 .f10,
+  #nibf2026 .f11,
+  #nibf2026 .f12{
+    display:none;
+  }
+
+  #nibf2026 .nibf-section{
+    padding:65px 0;
+  }
+
+  #nibf2026 .nibf-campaign-card{
+    padding:28px 20px;
+  }
+
+  #nibf2026 .nibf-campaign-card h3{
+    font-size:28px;
+  }
+
+  #nibf2026 .nibf-stats-grid,
+  #nibf2026 .nibf-archive-grid,
+  #nibf2026 .nibf-publisher-grid,
+  #nibf2026 .nibf-book-grid,
+  #nibf2026 .nibf-social-grid,
+  #nibf2026 .nibf-notice-grid,
+  #nibf2026 .nibf-footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  #nibf2026 .nibf-current-card,
+  #nibf2026 .nibf-countdown-card{
+    padding:25px 20px;
+  }
+
+  #nibf2026 .nibf-countdown strong{
+    font-size:24px;
+  }
+
+  #nibf2026 .nibf-modal{
+    padding:8px;
+  }
+
+  #nibf2026 .nibf-modal-book{
+    max-height:94vh;
+    border-radius:18px;
+  }
+
+  #nibf2026 .nibf-modal-page{
+    padding:35px 20px 26px;
+  }
+
+  #nibf2026 .nibf-pub-grid-inside{
+    grid-template-columns:1fr;
+  }
+
+  #nibf2026 .nibf-current-decor{
+    height:58px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  #nibf2026 *,
+  #nibf2026 *::before,
+  #nibf2026 *::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.001ms!important;
+  }
+}
 </style>
-</head>
-<body>
+
 <div id="nibf2026">
-  <div class="hd">
-    <div class="con">
-      <header class="head">
-        <a class="brand" href="#home">
-          <span class="logo">▤</span>
-          <span>
-            <span class="bn block">ইসলামী বইমেলা</span>
-            <span class="en block">ISLAMI BOOK FAIR</span>
-          </span>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="nibf-header">
+  <div class="nibf-nav-wrap">
+
+    <a href="#nibf-home" class="nibf-brand">
+      <span class="nibf-brand-icon">
+        <svg viewBox="0 0 64 48" aria-hidden="true">
+          <path d="M4 9c10-5 19-3 28 4v29C23 35 14 34 4 39V9Z"/>
+          <path d="M60 9c-10-5-19-3-28 4v29c9-7 18-8 28-3V9Z"/>
+          <path d="M32 13v29"/>
+        </svg>
+      </span>
+      <span>
+        <strong>ইসলামী বইমেলা</strong>
+        <small>ISLAMI BOOK FAIR</small>
+      </span>
+    </a>
+
+    <button class="nibf-menu-btn" type="button" aria-label="মেনু খুলুন" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nibf-nav">
+      <a href="#nibf-home">হোম</a>
+      <a href="#nibf-campaign">ইভেন্ট ও ক্যাম্পেইন</a>
+      <a href="#nibf-current">বইমেলা</a>
+      <a href="#nibf-publishers">প্রকাশনী</a>
+      <a href="#nibf-books">নতুন বই</a>
+      <a href="#nibf-archive">আর্কাইভ</a>
+      <button class="nibf-news-btn" type="button" data-modal="nibf-special-news">
+        <span class="nibf-star">✦</span> বিশেষ খবর
+      </button>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+<!-- HERO -->
+<section class="nibf-hero" id="nibf-home">
+
+  <div class="nibf-grid-bg"></div>
+  <div class="nibf-orb nibf-orb-a"></div>
+  <div class="nibf-orb nibf-orb-b"></div>
+
+  <div class="nibf-floating-books" aria-hidden="true">
+    <span class="fb f1"><span class="fb-spine"></span></span>
+    <span class="fb f2"><span class="fb-spine"></span></span>
+    <span class="fb f3"><span class="fb-spine"></span></span>
+    <span class="fb f4"><span class="fb-spine"></span></span>
+    <span class="fb f5"><span class="fb-spine"></span></span>
+    <span class="fb f6"><span class="fb-spine"></span></span>
+    <span class="fb f7"><span class="fb-spine"></span></span>
+    <span class="fb f8"><span class="fb-spine"></span></span>
+    <span class="fb f9"><span class="fb-spine"></span></span>
+    <span class="fb f10"><span class="fb-spine"></span></span>
+    <span class="fb f11"><span class="fb-spine"></span></span>
+    <span class="fb f12"><span class="fb-spine"></span></span>
+  </div>
+
+  <div class="nibf-container nibf-hero-inner">
+
+    <div class="nibf-hero-copy">
+
+      <div class="nibf-eyebrow">
+        <span></span>
+        জ্ঞান • সাহিত্য • সংস্কৃতি
+      </div>
+
+      <h1>
+        ইসলামী জ্ঞান,
+        <span>সত্য</span> ও সুন্দরের
+        সর্ববৃহৎ মিলনমেলা।
+      </h1>
+
+      <p>
+        বই, জ্ঞান, সাহিত্য ও সংস্কৃতির মাধ্যমে একটি আলোকিত সমাজের পথে—
+        বিভিন্ন ইসলামী বইমেলা, প্রকাশনী, নতুন বই, ক্যাম্পেইন ও আয়োজনকে
+        এক প্ল্যাটফর্মে যুক্ত করার উদ্যোগ।
+      </p>
+
+      <div class="nibf-hero-actions">
+        <a href="#nibf-current" class="nibf-btn nibf-btn-primary">
+          মেলার সময়সূচী দেখুন →
         </a>
-        <nav class="nav" id="nav">
-          <a href="#home">হোম</a>
-          <a href="#campaign">ইভেন্ট ও ক্যাম্পেইন</a>
-          <a href="#fair">বইমেলা</a>
-          <a href="#publishers">প্রকাশনী</a>
-          <a href="#new-books">নতুন বই</a>
-          <a href="#archive">আর্কাইভ</a>
-          <button class="special" data-open>✦ বিশেষ খবর</button>
-        </nav>
-        <button class="hamb" id="hamb">☰</button>
-      </header>
+        <a href="#nibf-archive" class="nibf-btn nibf-btn-ghost">
+          বিগত বইমেলা দেখুন ↗
+        </a>
+      </div>
+
+      <div class="nibf-trust">
+        <div>
+          <b>বই</b>
+          <span>জ্ঞানের আলো</span>
+        </div>
+        <div>
+          <b>প্রকাশনী</b>
+          <span>সৃজনের সঙ্গী</span>
+        </div>
+        <div>
+          <b>পাঠক</b>
+          <span>আমাদের প্রাণ</span>
+        </div>
+      </div>
+
     </div>
+
+    <div class="nibf-hero-book-area" aria-hidden="true">
+
+      <div class="nibf-book-glow"></div>
+      <div class="nibf-particles" id="nibfParticles"></div>
+
+      <div class="nibf-big-book">
+        <div class="nibf-book-page left-page">
+          <i></i><i></i><i></i><i></i>
+        </div>
+
+        <div class="nibf-book-spine"></div>
+
+        <div class="nibf-book-page right-page">
+          <i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
-  <section class="hero" id="home">
-    <div class="books">
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-      <div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>
-    </div>
-    <div class="orb o1"></div>
-    <div class="orb o2"></div>
-    <div class="con">
-      <div class="hc">
-        <div class="ey" style="color:#7dd3fc">ISLAMI BOOK FAIR PLATFORM</div>
-        <h1>ইসলামী জ্ঞান, <span>সত্য</span> ও সুন্দরের সর্ববৃহৎ মিলনমেলা।</h1>
-        <p>বই, জ্ঞান, সাহিত্য ও সংস্কৃতির মাধ্যমে একটি আলোকিত সমাজের পথে—বিভিন্ন ইসলামী বইমেলা, প্রকাশনী, নতুন বই, ক্যাম্পেইন ও আয়োজনকে এক প্ল্যাটফর্মে যুক্ত করার উদ্যোগ।</p>
-        <div class="actions">
-          <a href="#fair" class="btn primary">মেলার সময়সূচী দেখুন →</a>
-          <a href="#archive" class="btn ghost">বিগত বইমেলা দেখুন ↗</a>
-        </div>
-        <div class="trust">
-          <span><b>বই</b> — জ্ঞানের আলো</span>
-          <span><b>প্রকাশনী</b> — সৃজনের সঙ্গী</span>
-          <span><b>পাঠক</b> — আমাদের প্রাণ</span>
-        </div>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <section class="sec" id="campaign">
-    <div class="con">
-      <div class="campaign">
-        <div style="color:#a5f3fc;font-size:12px;font-weight:700;letter-spacing:.12em">UPCOMING FAIR • ২০২৬</div>
-        <h3>আসন্ন ইসলামী বইমেলা ২০২৬</h3>
-        <p>সম্ভাব্য তারিখ: ৯/১০ সেপ্টেম্বর ২০২৬ | স্থান: বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট। বিস্তারিত জানতে চোখ রাখুন!</p>
-        <div class="actions">
-          <button class="btn primary" data-archive="upcoming-2026">বিস্তারিত জানুন →</button>
-          <button class="btn ghost" data-open>বিশেষ খবর পড়ুন</button>
+
+<!-- CAMPAIGN -->
+<section class="nibf-section nibf-campaign-section" id="nibf-campaign">
+  <div class="nibf-container">
+
+    <div class="nibf-section-head centered">
+      <span class="nibf-label">CURRENT</span>
+      <h2>চলমান আয়োজন ও ক্যাম্পেইন</h2>
+      <p>
+        বর্তমানে চলমান বইমেলা, প্রতিযোগিতা, বিশেষ ছাড়, কুপন
+        ও অন্যান্য আয়োজনের আপডেট এখানে প্রকাশিত হবে।
+      </p>
+    </div>
+
+    <article class="nibf-campaign-card">
+      <div class="nibf-campaign-glow"></div>
+
+      <div class="nibf-campaign-content">
+
+        <span class="nibf-chip">COMING SOON • ২০২৬</span>
+
+        <h3>ইসলামী বইমেলা ২০২৬</h3>
+
+        <p>
+          আমাদের সবার কাঙ্ক্ষিত ইসলামী বইমেলা ২০২৬ শুরু হতে যাচ্ছে ইনশাআল্লাহ।
+          সম্ভাব্য আয়োজনকে ঘিরে প্রস্তুত থাকুন এবং বইমেলার সকল আপডেটের সঙ্গে যুক্ত থাকুন।
+        </p>
+
+        <div class="nibf-campaign-meta">
+          <span>সম্ভাব্য তারিখ: <b>৯/১০ সেপ্টেম্বর ২০২৬</b></span>
+          <span>স্থান: <b>বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট</b></span>
         </div>
+
+        <div class="nibf-action-row">
+          <a href="#nibf-current" class="nibf-btn nibf-btn-primary">চলমান মেলা দেখুন →</a>
+          <button class="nibf-btn nibf-btn-light" data-modal="nibf-special-news">বিশেষ খবর পড়ুন</button>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- STATS -->
+<section class="nibf-stats-section">
+  <div class="nibf-container nibf-stats-grid">
+    <div class="nibf-stat"><strong>60+</strong><span>প্রকাশনী</span></div>
+    <div class="nibf-stat"><strong>1,000+</strong><span>বই</span></div>
+    <div class="nibf-stat"><strong>10,000+</strong><span>পাঠক</span></div>
+    <div class="nibf-stat"><strong>Multiple</strong><span>শহর ও আয়োজন</span></div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="nibf-section nibf-about" id="nibf-about">
+  <div class="nibf-container nibf-about-grid">
+
+    <div>
+      <span class="nibf-label">ABOUT US</span>
+
+      <h2>ইসলামী বইমেলা সম্পর্কে</h2>
+
+      <p>
+        ইসলামী বইমেলা হলো ইসলামী জ্ঞান, সাহিত্য, সংস্কৃতি, প্রকাশনা ও
+        পাঠাভ্যাসকে কেন্দ্র করে আয়োজিত বিভিন্ন বইমেলার একটি সমন্বিত
+        ডিজিটাল প্ল্যাটফর্ম।
+      </p>
+
+      <p>
+        এখানে পাঠকরা বিভিন্ন বইমেলার তথ্য, প্রকাশনী, নতুন বই,
+        ক্যাম্পেইন, প্রতিযোগিতা ও পুরোনো আয়োজনের আর্কাইভ সহজেই
+        খুঁজে পাবেন।
+      </p>
+
+      <a href="#nibf-current" class="nibf-btn nibf-btn-primary">
+        চলমান আয়োজন দেখুন →
+      </a>
+    </div>
+
+    <div class="nibf-about-book">
+      <div class="nibf-about-light"></div>
+      <div class="nibf-small-book">
+        <div></div><div></div>
       </div>
     </div>
-  </section>
 
-  <section>
-    <div class="con">
-      <div class="stats">
-        <div class="card stat"><b>60+</b><span>প্রকাশনী</span></div>
-        <div class="card stat"><b>1,000+</b><span>বই</span></div>
-        <div class="card stat"><b>10,000+</b><span>পাঠক</span></div>
-        <div class="card stat"><b>Multiple</b><span>শহর ও আয়োজন</span></div>
-      </div>
+  </div>
+</section>
+
+
+<!-- CURRENT FAIR -->
+<section class="nibf-section nibf-current-section" id="nibf-current">
+  <div class="nibf-container">
+
+    <div class="nibf-section-head centered">
+      <span class="nibf-label">CURRENT FAIR</span>
+      <h2>চলমান বইমেলা</h2>
+      <p>আমাদের পরবর্তী কাঙ্ক্ষিত আয়োজনের প্রস্তুতি শুরু হয়েছে ইনশাআল্লাহ।</p>
     </div>
-  </section>
 
-  <section class="sec soft" id="about">
-    <div class="con">
-      <div class="about">
-        <div>
-          <div class="ey">ABOUT US</div>
-          <h2 class="st d">ইসলামী বইমেলা সম্পর্কে</h2>
-          <p class="text-slate-500 text-lg">ইসলামী বইমেলা হলো ইসলামী জ্ঞান, সাহিত্য, সংস্কৃতি, প্রকাশনা ও পাঠাভ্যাসকে কেন্দ্র করে আয়োজিত বিভিন্ন বইমেলার একটি সমন্বিত ডিজিটাল প্ল্যাটফর্ম।</p>
-          <p class="mt-5 text-slate-600 leading-8">এখানে পাঠকরা বিভিন্ন বইমেলার তথ্য, প্রকাশনী, নতুন বই, ক্যাম্পেইন, প্রতিযোগিতা ও পুরোনো আয়োজনের আর্কাইভ সহজেই খুঁজে পাবেন।</p>
-          <a href="#fair" class="btn primary mt-7">চলমান আয়োজন দেখুন →</a>
-        </div>
-        <div class="visual">
-          <div class="openbook">
-            <span class="l"></span>
-            <span class="r"></span>
-            <i></i>
-          </div>
-        </div>
-      </div>
+    <div class="nibf-current-decor" aria-hidden="true">
+
+      <span class="nibf-current-mini-book cb1"><i class="spine"></i></span>
+      <span class="nibf-current-mini-book cb2"><i class="spine"></i></span>
+      <span class="nibf-current-mini-book cb3"><i class="spine"></i></span>
+      <span class="nibf-current-mini-book cb4"><i class="spine"></i></span>
+      <span class="nibf-current-mini-book cb5"><i class="spine"></i></span>
+      <span class="nibf-current-mini-book cb6"><i class="spine"></i></span>
+      <span class="nibf-current-mini-book cb7"><i class="spine"></i></span>
+      <span class="nibf-current-mini-book cb8"><i class="spine"></i></span>
+
     </div>
-  </section>
 
-  <section class="sec" id="fair">
-    <div class="con">
-      <div class="ey">CURRENT FAIR</div>
-      <h2 class="st d">চলমান বইমেলা</h2>
-      <p class="text-slate-500 text-lg">বর্তমান আয়োজনের সময়সূচী, স্থান ও প্রয়োজনীয় তথ্য এক নজরে দেখুন।</p>
-      <div class="grid md:grid-cols-3 gap-5 mt-9">
-        <div class="card p-7">
-          <b class="text-sky-600">সময়</b>
-          <div class="text-3xl font-bold mt-2">৬–১৩ আগস্ট ২০২৬</div>
-          <p class="text-slate-500">প্রতিদিন সকাল ১০:০০টা — রাত ৮:০০টা</p>
+    <div class="nibf-current-grid">
+
+      <article class="nibf-current-card">
+
+        <span class="nibf-status">COMING SOON</span>
+
+        <h3>ইসলামী বইমেলা ২০২৬</h3>
+
+        <div class="nibf-info-row">
+          <span>সম্ভাব্য তারিখ</span>
+          <strong>৯/১০ সেপ্টেম্বর ২০২৬</strong>
         </div>
-        <div class="card p-7">
-          <b class="text-sky-600">স্থান</b>
-          <div class="text-3xl font-bold mt-2">কওমি মার্কেট</div>
-          <p class="text-slate-500">বাংলাবাজার, ঢাকা</p>
+
+        <div class="nibf-info-row">
+          <span>স্থান</span>
+          <strong>বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট</strong>
         </div>
-        <div class="card p-7">
-          <b class="text-sky-600">অংশগ্রহণ</b>
-          <div class="text-3xl font-bold mt-2">৬০+ প্রকাশনী</div>
-          <p class="text-slate-500">বিভিন্ন প্রকাশনীর ইসলামী বই</p>
+
+        <p class="nibf-note">
+          এটি সম্ভাব্য তারিখ। চূড়ান্ত ঘোষণা হলে তথ্য ও কাউন্টডাউন আপডেট করা হবে।
+        </p>
+
+      </article>
+
+
+      <article class="nibf-countdown-card">
+
+        <span class="nibf-count-label">
+          সম্ভাব্য উদ্বোধনী তারিখ: ৯/১০ সেপ্টেম্বর ২০২৬
+        </span>
+
+        <h3>ইসলামী বইমেলা ২০২৬ শুরু হতে বাকি</h3>
+
+        <div class="nibf-countdown">
+          <div><strong id="nibfDays">00</strong><span>দিন</span></div>
+          <div><strong id="nibfHours">00</strong><span>ঘণ্টা</span></div>
+          <div><strong id="nibfMinutes">00</strong><span>মিনিট</span></div>
+          <div><strong id="nibfSeconds">00</strong><span>সেকেন্ড</span></div>
         </div>
-      </div>
+
+        <small>তারিখ পরিবর্তন হলে কাউন্টডাউন আপডেট করা যাবে।</small>
+
+      </article>
+
     </div>
-  </section>
 
-  <!-- আর্কাইভ ও বিগত মেলা সেকশন -->
-  <section class="sec soft" id="archive">
-    <div class="con">
-      <div class="ey">ARCHIVE & PAST FAIRS</div>
-      <h2 class="st d">বইমেলার সম্পূর্ণ আর্কাইভ</h2>
-      <p class="text-slate-500 text-lg">আপনার দেওয়া তথ্য অনুযায়ী বিভিন্ন বিশ্ববিদ্যালয়, জেলা ও জাতীয় পর্যায়ে অনুষ্ঠিত মেলাগুলোর বিবরণ দেখতে যেকোনো কার্ডে ক্লিক করুন।</p>
-      
-      <div class="archive mt-9">
-        <button class="year" data-archive="upcoming-2026"><b>২০২৬</b><strong>ইসলামী বইমেলা ২০২৬ (Coming Soon)</strong></button>
-        <button class="year" data-archive="qawmi-2026"><b>২০২৬</b><strong>কওমি মার্কেট ইসলামী বইমেলা</strong></button>
-        <button class="year" data-archive="ekushey-2026"><b>২০২৬</b><strong>অমর একুশে বইমেলা</strong></button>
-        <button class="year" data-archive="osman-2026"><b>২০২৬</b><strong>শহীদ ওসমান হাদি স্মৃতি বইমেলা</strong></button>
-        
-        <button class="year" data-archive="du-2025"><b>২০২৫</b><strong>ঢাবি শীতকালীন বইমেলা সিজন-২</strong></button>
-        <button class="year" data-archive="mym-2025"><b>২০২৫</b><strong>ময়মনসিংহ ইসলামী বইমেলা</strong></button>
-        <button class="year" data-archive="kuet-2025"><b>২০২৫</b><strong>কুয়েট (KUET) বইমেলা</strong></button>
-        <button class="year" data-archive="feni-2025"><b>২০২৫</b><strong>ফেনী ইসলামী বইমেলা</strong></button>
-        
-        <button class="year" data-archive="net-2025"><b>২০২৫</b><strong>নেত্রকোনা ইসলামী বইমেলা</strong></button>
-        <button class="year" data-archive="bra-2025"><b>২০২৫</b><strong>ব্রাহ্মণবাড়িয়া ইসলামী বইমেলা</strong></button>
-        <button class="year" data-archive="kish-2025"><b>২০২৫</b><strong>কিশোরগঞ্জ ইসলামী বইমেলা</strong></button>
-        <button class="year" data-archive="alo-2025"><b>২০২৫</b><strong>আলোকায়ন ইসলামী বইমেলা</strong></button>
-        
-        <button class="year" data-archive="raj-2025"><b>২০২৫</b><strong>রাজশাহী বিশ্ববিদ্যালয় বইমেলা</strong></button>
-        <button class="year" data-archive="bijoy-2025"><b>২০২৫</b><strong>বিজয় বইমেলা</strong></button>
-        <button class="year" data-archive="khulna-2025"><b>২০২৫</b><strong>খুলনা ইসলামী বইমেলা</strong></button>
-      </div>
+  </div>
+</section>
+
+
+<!-- ARCHIVE -->
+<section class="nibf-section nibf-archive-section" id="nibf-archive">
+  <div class="nibf-container">
+
+    <div class="nibf-section-head centered">
+      <span class="nibf-label">ARCHIVE</span>
+      <h2>আমাদের বইমেলার যাত্রা</h2>
+      <p>
+        দেশের বিভিন্ন প্রান্তে অনুষ্ঠিত আমাদের বইমেলা ও বিশেষ আয়োজনগুলোর
+        ইতিহাস, অভিজ্ঞতা ও স্মৃতি এক জায়গায়।
+      </p>
     </div>
-  </section>
 
-  <section class="sec" id="publishers">
-    <div class="con">
-      <div class="dirtop">
-        <div>
-          <div class="ey">PUBLISHERS</div>
-          <h2 class="st d">আমাদের প্রকাশনীর তালিকা</h2>
-          <p class="text-slate-500 text-lg">প্রকাশনীর নাম লিখে দ্রুত খুঁজে দেখুন।</p>
-        </div>
-        <input id="search" class="search" placeholder="প্রকাশনী খুঁজুন…">
-      </div>
-      <div class="pubs" id="pubs">
-        <div class="card pub" data-name="মাকতাবাতুল আযহার"><div class="pi">ম</div><div><strong>মাকতাবাতুল আযহার</strong><small class="block text-slate-500">ঢাকা</small></div></div>
-        <div class="card pub" data-name="সিয়ান পাবলিকেশন"><div class="pi">স</div><div><strong>সিয়ান পাবলিকেশন</strong><small class="block text-slate-500">ঢাকা</small></div></div>
-        <div class="card pub" data-name="রাহনুমা প্রকাশনী"><div class="pi">র</div><div><strong>রাহনুমা প্রকাশনী</strong><small class="block text-slate-500">ঢাকা</small></div></div>
-        <div class="card pub" data-name="আস-সুন্নাহ পাবলিকেশন"><div class="pi">আ</div><div><strong>আস-সুন্নাহ পাবলিকেশন</strong><small class="block text-slate-500">ঢাকা</small></div></div>
-        <div class="card pub" data-name="কালান্তর প্রকাশনী"><div class="pi">ক</div><div><strong>কালান্তর প্রকাশনী</strong><small class="block text-slate-500">ঢাকা</small></div></div>
-        <div class="card pub" data-name="গার্ডিয়ান পাবলিকেশন্স"><div class="pi">গ</div><div><strong>গার্ডিয়ান পাবলিকেশন্স</strong><small class="block text-slate-500">ঢাকা</small></div></div>
-        <div class="card pub" data-name="ইসলামিক ফাউন্ডেশন"><div class="pi">ই</div><div><strong>ইসলামিক ফাউন্ডেশন</strong><small class="block text-slate-500">ঢাকা</small></div></div>
-        <div class="card pub" data-name="অন্বেষা প্রকাশন"><div class="pi">অ</div><div><strong>অন্বেষা প্রকাশন</strong><small class="block text-slate-500">ঢাকা</small></div></div>
-      </div>
-      <p id="none" class="hidden text-center text-slate-500 py-8">কোনো প্রকাশনী পাওয়া যায়নি।</p>
+
+    <div class="nibf-year-title">২০২৬</div>
+
+    <div class="nibf-archive-grid">
+
+      <button class="nibf-archive-card" data-modal="archive-hadi">
+        <span>২০২৬</span>
+        <strong>শহীদ ওসমান হাদি স্মৃতি বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-ekushey">
+        <span>২০২৬</span>
+        <strong>অমর একুশে বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-qawmi">
+        <span>২০২৬</span>
+        <strong>কওমি মার্কেট ইসলামী বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
     </div>
-  </section>
 
-  <section class="sec soft" id="new-books">
-    <div class="con">
-      <div class="ey">BOOKS</div>
-      <h2 class="st d">নতুন প্রকাশিত বই</h2>
-      <p class="text-slate-500 text-lg">নতুন বই, আলোচিত বই এবং পাঠকদের পছন্দের বইগুলো এক নজরে দেখুন।</p>
-      <div class="flex flex-wrap gap-2 mt-7 mb-6" id="filters">
-        <button class="btn primary f" data-f="all">সব বই</button>
-        <button class="btn ghost text-slate-700 border-slate-200 bg-white f" data-f="new">নতুন</button>
-        <button class="btn ghost text-slate-700 border-slate-200 bg-white f" data-f="popular">জনপ্রিয়</button>
-        <button class="btn ghost text-slate-700 border-slate-200 bg-white f" data-f="featured">আলোচিত</button>
-      </div>
-      <div class="booksgrid" id="bookgrid">
-        <article class="card" data-cat="new"><div class="cover" style="background:linear-gradient(145deg,#03256c,#0b4fa2)"><span>আলোকিত<br>জীবনের পাঠ</span></div><div class="bi"><strong>আলোকিত জীবনের পাঠ</strong><small>ইসলামী জীবন ও আত্মশুদ্ধি</small></div></article>
-        <article class="card" data-cat="popular"><div class="cover" style="background:linear-gradient(145deg,#075985,#0e7490)"><span>জ্ঞান ও<br>মনন</span></div><div class="bi"><strong>জ্ঞান ও মনন</strong><small>জ্ঞানচর্চা ও চিন্তার জগৎ</small></div></article>
-        <article class="card" data-cat="featured"><div class="cover" style="background:linear-gradient(145deg,#172554,#1d4ed8)"><span>সত্যের<br>অন্বেষণে</span></div><div class="bi"><strong>সত্যের অন্বেষণে</strong><small>আকীদা, বিশ্বাস ও জীবন</small></div></article>
-        <article class="card" data-cat="new"><div class="cover" style="background:linear-gradient(145deg,#164e63,#0369a1)"><span>ইতিহাসের<br>আয়নায়</span></div><div class="bi"><strong>ইতিহাসের আয়নায়</strong><small>ইসলামী ইতিহাস ও সভ্যতা</small></div></article>
-      </div>
+
+    <div class="nibf-year-title">২০২৫</div>
+
+    <div class="nibf-archive-grid">
+
+      <button class="nibf-archive-card" data-modal="archive-international">
+        <span>২০২৫</span>
+        <strong>আন্তর্জাতিক ইসলামী বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-rawah">
+        <span>২০২৫</span>
+        <strong>রাওয়া বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-du">
+        <span>২০২৫</span>
+        <strong>ঢাকা বিশ্ববিদ্যালয় শীতকালীন বইমেলা সিজন–২</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-mymensingh">
+        <span>২০২৫</span>
+        <strong>ময়মনসিংহ ইসলামী বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-kuet">
+        <span>২০২৫</span>
+        <strong>খুলনা প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয় (KUET) বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-feni">
+        <span>২০২৫</span>
+        <strong>ফেনী ইসলামী বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-netrokona">
+        <span>২০২৫</span>
+        <strong>নেত্রকোনা ইসলামী বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-brahmanbaria">
+        <span>২০২৫</span>
+        <strong>ব্রাহ্মণবাড়িয়া ইসলামী বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-kishoreganj">
+        <span>২০২৫</span>
+        <strong>কিশোরগঞ্জ ইসলামী বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-alokayan">
+        <span>২০২৫</span>
+        <strong>আলোকায়ন ইসলামী বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-ru">
+        <span>২০২৫</span>
+        <strong>রাজশাহী বিশ্ববিদ্যালয় বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-bijoy">
+        <span>২০২৫</span>
+        <strong>বিজয় বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
+      <button class="nibf-archive-card" data-modal="archive-khulna">
+        <span>২০২৫</span>
+        <strong>খুলনা ইসলামী বইমেলা</strong>
+        <em>বিস্তারিত দেখুন →</em>
+      </button>
+
     </div>
-  </section>
 
-  <section class="sec" id="notices">
-    <div class="con">
-      <div class="noticegrid">
-        <div>
-          <div class="ey">NOTICE BOARD</div>
-          <h2 class="st d">নোটিশ ও সর্বশেষ আপডেট</h2>
-          <p class="text-slate-500 text-lg">বইমেলা, প্রকাশনী, প্রতিযোগিতা ও অন্যান্য গুরুত্বপূর্ণ ঘোষণাগুলো এখানে পাওয়া যাবে।</p>
-        </div>
-        <div class="card notice">
-          <div class="nr"><div class="date">২০<small>আগস্ট</small></div><div><strong>ওয়েবসাইটের নতুন সংস্করণ</strong><p class="text-sm text-slate-500">নতুন ফিচার ও আর্কাইভ যুক্ত করা হয়েছে।</p></div></div>
-          <div class="nr"><div class="date">১৩<small>আগস্ট</small></div><div><strong>চলমান বইমেলার সমাপনী</strong><p class="text-sm text-slate-500">মেলার শেষ দিনের সময়সূচী ও আপডেট দেখুন।</p></div></div>
-          <div class="nr"><div class="date">০৬<small>আগস্ট</small></div><div><strong>বইমেলা উদ্বোধন</strong><p class="text-sm text-slate-500">নতুন আয়োজনের আনুষ্ঠানিক যাত্রা শুরু।</p></div></div>
-        </div>
-      </div>
+  </div>
+</section>
+
+
+<!-- PUBLISHERS -->
+<section class="nibf-section nibf-publishers-section" id="nibf-publishers">
+  <div class="nibf-container">
+
+    <div class="nibf-section-head centered">
+      <span class="nibf-label">PUBLISHERS</span>
+      <h2>আমাদের প্রকাশনীর তালিকা</h2>
+      <p>প্রকাশনীর নাম লিখে দ্রুত খুঁজে দেখুন।</p>
     </div>
-  </section>
 
-  <section class="social">
-    <div class="con">
-      <div class="ey" style="color:#7dd3fc">COMMUNITY</div>
-      <h2 class="st d" style="color:#fff">বইমেলার প্রতিটি আপডেট আপনার হাতের মুঠোয়</h2>
-      <p style="color:#ffffffb8;font-size:17px">আমাদের সাথে যুক্ত থাকতে সোশ্যাল মিডিয়াগুলোতে Follow & Join করুন।</p>
-      <div class="socialgrid">
-        <a class="sc" href="#"><div class="si">f</div><strong>Facebook</strong><p>বইমেলার নিয়মিত আপডেট</p></a>
-        <a class="sc" href="#"><div class="si">▶</div><strong>YouTube</strong><p>ভিডিও ও আয়োজনের মুহূর্ত</p></a>
-        <a class="sc" href="#"><div class="si">W</div><strong>WhatsApp</strong><p>ঘোষণা ও জরুরি আপডেট</p></a>
-        <a class="sc" href="#"><div class="si">+</div><strong>Community</strong><p>পাঠক ও বইপ্রেমীদের কমিউনিটি</p></a>
-      </div>
+    <div class="nibf-search">
+      <span>⌕</span>
+      <input
+        id="nibfPublisherSearch"
+        type="search"
+        placeholder="প্রকাশনীর নাম লিখুন..."
+        aria-label="প্রকাশনী খুঁজুন"
+      >
     </div>
-  </section>
 
-  <footer class="footer">
-    <div class="con">
-      <div class="fg">
-        <div>
-          <div class="flex items-center gap-3 mb-4"><span class="logo">▤</span><strong class="d text-2xl">ইসলামী বইমেলা</strong></div>
-          <p class="max-w-sm leading-7">ইসলামী জ্ঞান, সাহিত্য, প্রকাশনা ও পাঠাভ্যাসকে একত্রিত করে বইমেলার তথ্যকে সবার কাছে সহজে পৌঁছে দেওয়ার একটি ডিজিটাল প্ল্যাটফর্ম।</p>
-        </div>
-        <div><h4>দ্রুত নেভিগেশন</h4><a href="#home">হোম</a><a href="#campaign">ইভেন্ট ও ক্যাম্পেইন</a><a href="#archive">আর্কাইভ</a><a href="#new-books">নতুন বই</a></div>
-        <div><h4>তথ্য</h4><a href="#about">আমাদের সম্পর্কে</a><a href="#publishers">প্রকাশনী</a><a href="#notices">নোটিশ বোর্ড</a><a href="#fair">চলমান বইমেলা</a></div>
-        <div><h4>যোগাযোগ</h4><p>ঢাকা, বাংলাদেশ</p><p>ইমেইল: info@example.com</p><p>ফোন: +880 0000-000000</p></div>
-      </div>
-      <div class="copy">
-        <span><i class="fbook"></i>© ২০২৬ ইসলামী বইমেলা — সর্বস্বত্ব সংরক্ষিত</span>
-        <span>Fast • Responsive • WordPress/Elementor friendly</span>
-      </div>
+    <div id="nibfPublisherGrid" class="nibf-publisher-grid"></div>
+
+    <div id="nibfNoPublisher" class="nibf-no-result">
+      কোনো প্রকাশনী পাওয়া যায়নি।
     </div>
-  </footer>
 
-  <!-- মডাল উইন্ডো -->
-  <div class="modal" id="modal" role="dialog" aria-modal="true">
-    <div class="stage">
-      <div class="mb">
-        <button class="close" id="close">×</button>
-        <div class="pages">
-          <div class="page">
-            <div class="k" id="modalCategory">ARCHIVE DETAILS</div>
-            <h3 class="mt-3" id="modalTitle">মেলার শিরোনাম</h3>
-            <div class="divi"></div>
-            <p id="modalDesc1">এখানে মেলার বিস্তারিত বিবরণ প্রদর্শিত হবে।</p>
-          </div>
-          <div class="page">
-            <div class="k">ADDITIONAL INFO</div>
-            <h3 class="mt-3" id="modalTitle2">বিশেষ আকর্ষণ ও সাফল্য</h3>
-            <div class="divi"></div>
-            <p id="modalDesc2">এই আয়োজনের বিশেষ মুহূর্ত, পাঠক সমাগম এবং প্রকাশনা সংক্রান্ত তথ্য।</p>
-            <a href="#archive" class="btn primary mt-5" id="modalGo">আর্কাইভ এ ফিরে যান</a>
-          </div>
-        </div>
-      </div>
+  </div>
+</section>
+
+
+<!-- BOOKS -->
+<section class="nibf-section nibf-books-section" id="nibf-books">
+  <div class="nibf-container">
+
+    <div class="nibf-section-head centered">
+      <span class="nibf-label">BOOKS</span>
+      <h2>নতুন প্রকাশিত বই</h2>
+      <p>
+        নতুন বই, আলোচিত বই এবং পাঠকদের পছন্দের বইগুলো এক নজরে দেখুন।
+      </p>
+    </div>
+
+    <div class="nibf-book-filters">
+      <button class="active" data-filter="all">সব বই</button>
+      <button data-filter="new">নতুন</button>
+      <button data-filter="popular">জনপ্রিয়</button>
+      <button data-filter="featured">আলোচিত</button>
+    </div>
+
+    <div id="nibfBookGrid" class="nibf-book-grid"></div>
+
+  </div>
+</section>
+
+
+<!-- NOTICE -->
+<section class="nibf-section nibf-notice-section" id="nibf-notices">
+  <div class="nibf-container">
+
+    <div class="nibf-section-head centered">
+      <span class="nibf-label">NOTICE BOARD</span>
+      <h2>নোটিশ ও সর্বশেষ আপডেট</h2>
+      <p>বইমেলা সম্পর্কিত গুরুত্বপূর্ণ ঘোষণা ও সর্বশেষ খবর।</p>
+    </div>
+
+    <div class="nibf-notice-grid">
+
+      <button class="nibf-notice-card" data-modal="notice-coming">
+        <span>সর্বশেষ</span>
+        <strong>ইসলামী বইমেলা ২০২৬ — সম্ভাব্য আয়োজনের ঘোষণা</strong>
+        <small>বিস্তারিত পড়ুন →</small>
+      </button>
+
+      <button class="nibf-notice-card" data-modal="notice-archive">
+        <span>আর্কাইভ</span>
+        <strong>বিগত বইমেলাগুলোর তথ্য ও অভিজ্ঞতা</strong>
+        <small>বিস্তারিত পড়ুন →</small>
+      </button>
+
     </div>
   </div>
+</section>
+
+
+<!-- SOCIAL -->
+<section class="nibf-social-section" id="nibf-social">
+  <div class="nibf-container">
+
+    <div class="nibf-section-head centered">
+      <span class="nibf-label">STAY CONNECTED</span>
+      <h2>বইমেলার প্রতিটি আপডেট আপনার হাতের মুঠোয়</h2>
+      <p>আমাদের সাথে যুক্ত থাকতে সোশ্যাল মিডিয়াগুলোতে Follow &amp; Join করুন।</p>
+    </div>
+
+    <div class="nibf-social-grid">
+
+      <a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer" class="nibf-social-card">
+        <b>f</b><span>Facebook Page</span><small>Official Page</small>
+      </a>
+
+      <a href="https://facebook.com/groups/nationalislamicbookfair/" target="_blank" rel="noopener noreferrer" class="nibf-social-card">
+        <b>f</b><span>Facebook Group</span><small>Join Community</small>
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029VbCqbbQ4SpkBRGFpsM2Z" target="_blank" rel="noopener noreferrer" class="nibf-social-card">
+        <b>W</b><span>WhatsApp Channel</span><small>Follow Updates</small>
+      </a>
+
+      <a href="https://t.me/nationalislamicbookfair" target="_blank" rel="noopener noreferrer" class="nibf-social-card">
+        <b>✈</b><span>Telegram</span><small>Join Channel</small>
+      </a>
+
+      <a href="https://youtube.com/@nationalislamicbookfair" target="_blank" rel="noopener noreferrer" class="nibf-social-card">
+        <b>▶</b><span>YouTube</span><small>Watch Videos</small>
+      </a>
+
+      <a href="https://www.instagram.com/nationalislamicbookfair" target="_blank" rel="noopener noreferrer" class="nibf-social-card">
+        <b>◎</b><span>Instagram</span><small>Follow Us</small>
+      </a>
+
+    </div>
+
+    <div class="nibf-official">
+      <span>অফিসিয়াল সনাক্তকরণ</span>
+      <h3>ইসলামী বইমেলা</h3>
+      <strong>@nationalislamicbookfair</strong>
+      <p>এই মাধ্যমগুলো ছাড়া অন্য কোনো পেজ, গ্রুপ বা চ্যানেল আমাদের প্রতিনিধিত্ব করে না।</p>
+      <a href="mailto:nationalislamicbookfair@gmail.com">
+        nationalislamicbookfair@gmail.com
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="nibf-footer">
+
+  <div class="nibf-container nibf-footer-grid">
+
+    <div>
+      <div class="nibf-footer-brand">ইসলামী বইমেলা</div>
+      <p>
+        ইসলামী জ্ঞান, সাহিত্য, সংস্কৃতি ও পাঠাভ্যাসকে কেন্দ্র করে
+        বিভিন্ন বইমেলা ও আয়োজনকে এক প্ল্যাটফর্মে যুক্ত করার উদ্যোগ।
+      </p>
+    </div>
+
+    <div>
+      <h4>দ্রুত নেভিগেশন</h4>
+      <a href="#nibf-home">হোম</a>
+      <a href="#nibf-campaign">ইভেন্ট ও ক্যাম্পেইন</a>
+      <a href="#nibf-archive">আর্কাইভ</a>
+      <a href="#nibf-books">নতুন বই</a>
+    </div>
+
+    <div>
+      <h4>তথ্য</h4>
+      <a href="#nibf-about">আমাদের সম্পর্কে</a>
+      <a href="#nibf-publishers">প্রকাশনী</a>
+      <a href="#nibf-notices">নোটিশ বোর্ড</a>
+      <a href="#nibf-current">চলমান বইমেলা</a>
+    </div>
+
+    <div>
+      <h4>যোগাযোগ</h4>
+      <span>ঢাকা, বাংলাদেশ</span>
+      <a href="mailto:nationalislamicbookfair@gmail.com">
+        nationalislamicbookfair@gmail.com
+      </a>
+    </div>
+
+  </div>
+
+  <div class="nibf-footer-bottom">
+    © ২০২৬ ইসলামী বইমেলা • All Rights Reserved
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     ARCHIVE MODALS
+========================================================= -->
+
+
+<!-- INTERNATIONAL 2025 -->
+<div class="nibf-modal" id="archive-international" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>আন্তর্জাতিক ইসলামী বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>তারিখ:</strong> ১৩ সেপ্টেম্বর – ১৮ অক্টোবর ২০২৫<br>
+<strong>স্থান:</strong> জাতীয় মসজিদ বায়তুল মোকাররমের পূর্ব গেইট সংলগ্ন বিস্তৃত প্রাঙ্গণ
 </div>
 
+<h3>মেলার পরিচিতি</h3>
+<p>
+১৩ সেপ্টেম্বর ২০২৫ শনিবার বিকেলে আসরের নামাজের পর বহু প্রতীক্ষিত
+আন্তর্জাতিক ইসলামী বইমেলা ২০২৫-এর আনুষ্ঠানিক যাত্রা শুরু হয়।
+দীর্ঘ প্রস্তুতি, পরিশ্রম, দোয়া ও প্রত্যাশার মধ্য দিয়ে শুরু হওয়া
+এই আয়োজন ধীরে ধীরে পাঠক, লেখক, প্রকাশক, স্বেচ্ছাসেবক ও বইপ্রেমীদের
+এক বিশাল মিলনস্থলে পরিণত হয়।
+</p>
+
+<h3>অংশগ্রহণ ও পরিসর</h3>
+<p>
+এবারের বইমেলায় ৯০টিরও বেশি প্রকাশনা প্রতিষ্ঠান অংশগ্রহণ করে।
+দেশের শীর্ষস্থানীয় প্রকাশনার পাশাপাশি আন্তর্জাতিক কয়েকটি প্রতিষ্ঠানের
+অংশগ্রহণও ছিল বিশেষ আকর্ষণ। লেবাননের বৈরুতভিত্তিক মুআসসাসাতুর
+রিসালাহ আলামিয়্যাহর অংশগ্রহণের বিষয়টিও বিশেষভাবে আলোচিত হয়।
+</p>
+
+<h3>বিশেষ আকর্ষণ</h3>
+<p>
+শতাধিক দেশি-বিদেশি প্রকাশনার উপস্থিতির পাশাপাশি শিশুদের আলাদা চত্বর,
+মহিলাদের কর্নার, লিটল ম্যাগাজিন কর্নার, লেখক কর্নার, মিডিয়া কর্নার,
+ইনফরমেশন কর্নার এবং চা-কফি ও ফুড কর্নার ছিল। বিশাল মঞ্চে লেখক,
+প্রকাশক, পাঠক ও অতিথিদের নিয়ে আলোচনা, সাংস্কৃতিক আয়োজন ও নতুন বইয়ের
+মোড়ক উন্মোচনও অনুষ্ঠিত হয়।
+</p>
+
+<h3>Aswat Zone ও প্রতিযোগিতা</h3>
+<p>
+Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই রিভিউ, কুইজ প্রতিযোগিতা,
+সীরাত প্রতিযোগিতা ও নানা আলোচনা অনুষ্ঠিত হয়। মেলাকে প্রাণবন্ত করতে
+হাদিয়া ক্যাম্পেইন ও সীরাত কুইজসহ বিভিন্ন বিশেষ কর্মসূচি নেওয়া হয়।
+</p>
+
+<h3>সময় বৃদ্ধি</h3>
+<p>
+পূর্বনির্ধারিত শেষ তারিখ ১২ অক্টোবর থাকলেও পাঠকদের ভালোবাসা,
+আগ্রহ ও অনুরোধের কারণে মেলার সময়সীমা বাড়িয়ে ১৮ অক্টোবর ২০২৫ পর্যন্ত
+করা হয়। মেলা প্রতিদিন সকাল ১০টা থেকে রাত ১০টা পর্যন্ত চলেছে।
+শেষ সময়েও অনলাইনে আন্তর্জাতিক ইসলামী বইমেলা প্রতিযোগিতা এবং
+মেলা প্রাঙ্গণে সীরাত কুইজের আয়োজন ছিল।
+</p>
+
+<h3>শেষ দিনের অনুভূতি</h3>
+<p>
+১৮ অক্টোবর শেষ দিনে দুপুর থেকে মেলায় উপস্থিত হয়ে পাঠকদের ভিড়,
+হাসি-আনন্দ ও বইয়ের ঘ্রাণে সময় কেমন গলে যায় তা বোঝাই যায়নি।
+রাত সাড়ে দশটার দিকে গুছিয়ে বের হওয়ার কথা উঠলে ঘড়ির দিকে তাকিয়ে
+উপলব্ধি হয়—দীর্ঘ এক মাসের পথচলার শেষ সময় চলে এসেছে।
+</p>
+
+<h3>সমাপনী ও উত্তরাধিকার</h3>
+<p>
+শেষ দিনে পাঠকদের ভালোবাসা, আসা-যাওয়া ও প্রাণবন্ত উপস্থিতিতে
+আয়োজকরা সন্তুষ্ট ও কৃতজ্ঞ ছিলেন। মেলা শেষ হলেও মেলার অভিজ্ঞতা,
+শিক্ষা, কুইজ প্রতিযোগিতা ও বরেণ্যদের সাক্ষাৎকার ধারাবাহিকভাবে
+তুলে ধরার পরিকল্পনা করা হয়। পুরো বাংলাদেশজুড়ে ইসলামী বইমেলার
+নতুন কর্মযাত্রার প্রত্যয়ও প্রকাশ করা হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- RAWAH 2025 -->
+<div class="nibf-modal" id="archive-rawah" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>রাওয়া বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়কাল:</strong> ৩০, ৩১ অক্টোবর ও ১ নভেম্বর ২০২৫<br>
+<strong>স্থান:</strong> রাওয়া কনভেনশন হল (হেলমেট), দ্বিতীয় তলা, ভিআইপি রোড, মহাখালী, ঢাকা
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+রাওয়া বইমেলা ২০২৫ ছিল তিন দিনব্যাপী একটি বিশেষ ইসলামী বইমেলা।
+৩০ অক্টোবর, ৩১ অক্টোবর ও ১ নভেম্বর—এই তিন দিন বই, জ্ঞান ও ইসলামী
+সাহিত্যের আলোকে পাঠক ও বইপ্রেমীদের একত্রিত করার চেষ্টা করা হয়।
+</p>
+
+<h3>আয়োজনের উদ্দেশ্য</h3>
+<p>
+এই আয়োজনকে সারা বাংলাদেশে ইসলামী বই ও জ্ঞানের আলো ছড়িয়ে দেওয়ার
+একটি সুন্দর সূচনা হিসেবে দেখা হয়। ধীরে ধীরে দেশের বিভিন্ন প্রান্তে
+বইমেলার মাধ্যমে পাঠক, প্রকাশক ও বইপ্রেমীদের একত্রিত করার প্রত্যয়
+এই আয়োজনের সঙ্গে যুক্ত ছিল।
+</p>
+
+<h3>মেলার পরিবেশ ও অভিজ্ঞতা</h3>
+<p>
+তিন দিনব্যাপী এই আয়োজন পাঠকদের জন্য বই দেখা, পছন্দের বই সংগ্রহ
+এবং বইকে কেন্দ্র করে সময় কাটানোর সুযোগ তৈরি করে। আয়োজকদের আন্তরিকতা
+ও পরিকল্পনার মাধ্যমে এই ছোট কিন্তু অর্থবহ আয়োজনটি সফলভাবে সম্পন্ন হয়।
+</p>
+
+<h3>সমাপনী</h3>
+<p>
+১ নভেম্বর মেলা শেষ হয়। সমাপনী ঘোষণার সময় এটিকে বৃহত্তর পথচলার
+একটি সুন্দর সূচনা হিসেবে উল্লেখ করা হয়। পরবর্তী আয়োজন হিসেবে
+ঢাকা বিশ্ববিদ্যালয় শীতকালীন বইমেলা সিজন–২ এবং বৃহত্তর ময়মনসিংহ
+ইসলামী বইমেলার খবরও দেওয়া হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- DU WINTER 2025 -->
+<div class="nibf-modal" id="archive-du" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>ঢাকা বিশ্ববিদ্যালয় শীতকালীন বইমেলা সিজন–২ — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> প্রতিদিন সকাল ১০টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ৬, ৭, ৮ ও ৯ নভেম্বর ২০২৫<br>
+<strong>স্থান:</strong> পায়রা চত্বর, টিএসসি, ঢাকা বিশ্ববিদ্যালয়
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+ঢাকা বিশ্ববিদ্যালয় দাওয়া সার্কেল কর্তৃক আয়োজিত শীতকালীন বইমেলা
+সিজন–২ ছিল জ্ঞান, চিন্তা ও সৃজনশীলতার সমন্বয়ে সাজানো চার দিনব্যাপী
+একটি প্রাণবন্ত আয়োজন।
+</p>
+
+<h3>বিশেষ আয়োজন</h3>
+<p>
+ফ্রি গাছ বিতরণ, কুইজ প্রতিযোগিতা ও পুরস্কার বিতরণ, বিনামূল্যে
+কফি কর্নারসহ নানা আকর্ষণীয় আয়োজন ছিল। মেলা প্রাঙ্গণে সীরাত কুইজ
+এবং অনলাইনে “ঢাকা বিশ্ববিদ্যালয় বইমেলা প্রতিযোগিতা – ১” চলেছে।
+</p>
+
+<h3>উদ্বোধন ও প্রথম দিন</h3>
+<p>
+প্রথম দিনেই পাঠকরা আগ্রহ ও উৎসাহ নিয়ে মেলায় উপস্থিত হন। উদ্বোধনী
+অনুষ্ঠানে উর্ধ্বতন শিক্ষক ও প্রফেসরগণ উপস্থিত থেকে আয়োজন ঘুরে
+দেখেন ও প্রশংসা করেন। পাঠকরা বই কেনা, হাদিয়া দেওয়া, ফ্রি কফি
+উপভোগ, গাছ সংগ্রহসহ নানা আয়োজনে অংশ নেন।
+</p>
+
+<h3>সমাপনী ও মূল্যায়ন</h3>
+<p>
+সমাপনী দিনে অফিস, আদালত ও বিশ্ববিদ্যালয়ের নিয়মিত কার্যক্রম চলমান
+থাকা সত্ত্বেও ভালো পাঠকসমাগম হয়। আয়োজকদের মতে এটি পূর্বের
+যেকোনোবারের তুলনায় বৃহৎ, সুসংগঠিত ও ব্যতিক্রমধর্মী আয়োজন ছিল।
+ভবিষ্যতে আরও সুন্দর, সুশৃঙ্খল ও পরিপূর্ণ ব্যবস্থাপনায় মেলা
+আয়োজনের প্রত্যাশা তৈরি হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- MYMENSINGH 2025 -->
+<div class="nibf-modal" id="archive-mymensingh" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>ময়মনসিংহ ইসলামী বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> প্রতিদিন সকাল ১০টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ১৩–২২ নভেম্বর ২০২৫<br>
+<strong>স্থান:</strong> টাউন হল প্রাঙ্গণ, ময়মনসিংহ
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+ইত্তেফাকুল উলামা বৃহত্তর মোমেনশাহীর পৃষ্ঠপোষকতায় এবং সীরাত কেন্দ্রের
+আয়োজনে অনুষ্ঠিত ময়মনসিংহ ইসলামী বইমেলা ২০২৫ ছিল দশ দিনব্যাপী
+বৃহৎ একটি ইসলামী বইমেলা। দেশের ৬০টিরও বেশি ইসলামী প্রকাশনা
+প্রতিষ্ঠান অংশ নেয়। মিশর, বৈরুত ও পাকিস্তানের সুনামধন্য আরবি ও
+উর্দু প্রকাশনা প্রতিষ্ঠানের বিশেষ অংশগ্রহণও ছিল।
+</p>
+
+<h3>বিশেষ আয়োজন</h3>
+<p>
+প্রতিদিন মঞ্চে প্রখ্যাত আলেমদের আলোচনা, লেখক-পাঠক আড্ডা, জিজ্ঞাসা
+পর্ব ও জনপ্রিয় শিল্পীদের নাশিদ সন্ধ্যা অনুষ্ঠিত হয়। শীর্ষ আলেম,
+লেখক, সাহিত্যিক, গবেষক, শায়েখ, সাংবাদিক ও ইসলামী স্কলারদের
+উপস্থিতি আয়োজনকে সমৃদ্ধ করে।
+</p>
+
+<h3>নারী ও শিশুদের জন্য আয়োজন</h3>
+<p>
+নারীদের জন্য প্রতিদিন সকাল ১০টা থেকে বেলা ১২টা পর্যন্ত বিশেষ
+সময় রাখা হয়। শিশুদের জন্যও ছিল পাঠ-সংক্রান্ত আকর্ষণীয় কার্যক্রম
+ও মনোমুগ্ধকর আয়োজন।
+</p>
+
+<h3>উদ্বোধন</h3>
+<p>
+১৩ নভেম্বর বিকেল ৪টায় উদ্বোধনের মাধ্যমে মেলার আনুষ্ঠানিক সূচনা হয়।
+ময়মনসিংহের বিভিন্ন স্তরের আলেম-উলামা, লেখক, গবেষক, সাংবাদিক,
+সাহিত্যিক ও অসংখ্য পাঠকের উপস্থিতিতে উদ্বোধনী অনুষ্ঠান সম্পন্ন হয়।
+</p>
+
+<h3>সমাপনী</h3>
+<p>
+১০ দিনব্যাপী মেলার সমাপ্তিতে আয়োজকদের পরিশ্রম ও আন্তরিকতার জন্য
+কৃতজ্ঞতা জানানো হয়। আয়োজনটি পূর্বের তুলনায় আরও সুসংগঠিত,
+পরিপূর্ণ ও বিস্তৃত ছিল এবং ভবিষ্যতে শহর থেকে শহরে ইসলামী
+বইমেলার এই পথচলা অব্যাহত রাখার প্রত্যয় প্রকাশ করা হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- KUET 2025 -->
+<div class="nibf-modal" id="archive-kuet" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>খুলনা প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয় (KUET) বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> সকাল ১০টা – রাত ৮টা<br>
+<strong>সময়কাল:</strong> ১৬–২৩ নভেম্বর ২০২৫<br>
+<strong>স্থান:</strong> KUET অডিটোরিয়াম ও SWC প্রাঙ্গণ
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+ইলম, চিন্তা ও অনুপ্রেরণার মিলনমেলা হিসেবে খুলনা প্রকৌশল ও প্রযুক্তি
+বিশ্ববিদ্যালয় ক্যাম্পাসে আয়োজিত KUET বইমেলা ২০২৫ ছিল বিশ্ববিদ্যালয়ের
+শিক্ষার্থী ও পাঠকদের কাছে বই, সাহিত্য ও ইসলামী গ্রন্থকে আরও কাছে
+নিয়ে যাওয়ার একটি বিশেষ আয়োজন।
+</p>
+
+<h3>উদ্বোধন</h3>
+<p>
+উদ্বোধনী অনুষ্ঠানের মাধ্যমে বই উৎসবের আনুষ্ঠানিক সূচনা হয়। বিভিন্ন
+অনুষদের সম্মানিত শিক্ষক, বিশিষ্ট ব্যক্তিবর্গ ও আমন্ত্রিত অতিথিরা
+উপস্থিত ছিলেন। প্রথম দিন থেকেই প্রাণবন্ত পরিবেশ ও পাঠকসমাগম
+আয়োজনকে সমৃদ্ধ করে।
+</p>
+
+<h3>বিশেষ অভিজ্ঞতা</h3>
+<p>
+প্রতিদিন শিক্ষক, লেখক ও বিশেষ অতিথিদের উপস্থিতি, পাঠক, লেখক,
+সাহিত্যিক, সম্পাদক, সাংবাদিক ও উদ্যোক্তাদের অংশগ্রহণ এবং আলোচনার
+মাধ্যমে মেলার পরিবেশ আরও প্রাণবন্ত হয়।
+</p>
+
+<h3>সমাপনী</h3>
+<p>
+২৩ নভেম্বর মেলা সমাপ্ত হয়। এবারের আয়োজনকে আগের তুলনায় অধিক
+সুশৃঙ্খল, পরিকল্পিত ও বৈচিত্র্যময় হিসেবে মূল্যায়ন করা হয়। সামনে
+আরও সুন্দর আয়োজনের প্রত্যয়ও ব্যক্ত করা হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- FENI 2025 -->
+<div class="nibf-modal" id="archive-feni" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>ফেনী ইসলামী বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> সকাল ৯টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ২–৬ ডিসেম্বর ২০২৫<br>
+<strong>স্থান:</strong> কেন্দ্রীয় শহিদ মিনার চত্বর, ফেনী
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+ফেনী সাহিত্য ফোরামের উদ্যোগে আয়োজিত পাঁচ দিনব্যাপী ফেনী ইসলামী
+বইমেলা ২০২৫ ছিল বই, সাহিত্য ও ইসলামী জ্ঞানচর্চার একটি বিশেষ আয়োজন।
+দেশের ২০টিরও বেশি সুনামধন্য প্রকাশনা প্রতিষ্ঠান এতে অংশগ্রহণ করে।
+</p>
+
+<h3>বিশেষ আকর্ষণ</h3>
+<p>
+উদ্বোধনী অনুষ্ঠান, কবি সম্মেলন ও বিজয়ের কবিতা পাঠ, সীরাত সাহিত্য
+সম্মেলন ও কুইজ প্রতিযোগিতা, তারুণ্য সম্মেলন, হামদ-নাত, নাশিদ
+এবং সাংস্কৃতিক সন্ধ্যা ছিল মেলার প্রধান আকর্ষণ।
+</p>
+
+<h3>মেলার অভিজ্ঞতা</h3>
+<p>
+পাঠকসমাগম, আয়োজকদের আন্তরিকতা ও নানান অনুষ্ঠানে পুরো মেলা
+প্রাণবন্ত ও আনন্দমুখর থাকে। পাশাপাশি ইসলামী প্রকাশনাগুলোর
+অংশগ্রহণ আরও বাড়ানোর এবং ইসলামী সাহিত্যকে আরও গুরুত্ব দিয়ে
+উপস্থাপনের প্রত্যাশা ব্যক্ত করা হয়।
+</p>
+
+<h3>সমাপনী</h3>
+<p>
+৬ ডিসেম্বর আয়োজন সফলভাবে শেষ হয়। আয়োজকদের ধন্যবাদ জানিয়ে
+ভবিষ্যতে আরও উন্নত ও ভারসাম্যপূর্ণ আয়োজনের প্রত্যাশা রাখা হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- NETROKONA 2025 -->
+<div class="nibf-modal" id="archive-netrokona" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>নেত্রকোনা ইসলামী বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> সকাল ১০টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ২–৬ ডিসেম্বর ২০২৫<br>
+<strong>স্থান:</strong> কালেক্টর মাঠ, মোক্তার পাড়া, নেত্রকোনা
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+নেত্রকোনা ইসলামী বইমেলা ২০২৫ নতুনত্ব, নান্দনিকতা ও আধ্যাত্মিক
+আবহে ভরপুর একটি আয়োজন হিসেবে অনুষ্ঠিত হয়। দূর-দূরান্তের পাঠকদের
+জন্য এটি জ্ঞান, সংস্কৃতি ও ইসলামী সাহিত্যচর্চার এক অসাধারণ
+মিলনমেলায় পরিণত হয়।
+</p>
+
+<h3>মেলার পরিবেশ ও অভিজ্ঞতা</h3>
+<p>
+শুরুদিনের উৎসাহ, পাঠকদের আগ্রহ, নান্দনিক সাজসজ্জা ও ভিন্নধর্মী
+পরিবেশ পুরো মেলায় একটি আলাদা আবেদন তৈরি করে। দূর-দূরান্ত থেকে
+আসা পাঠকদের পদচারণায় আয়োজনটি প্রাণবন্ত হয়ে ওঠে।
+</p>
+
+<h3>সমাপনী</h3>
+<p>
+৬ ডিসেম্বর বইমেলা আনুষ্ঠানিকভাবে শেষ হয়। আয়োজকদের সুন্দর ও
+অর্থবহ উদ্যোগের প্রতি কৃতজ্ঞতা জানিয়ে ভবিষ্যতে আরও বড়,
+জাঁকজমকপূর্ণ ও সুসংগঠিত আয়োজনের প্রত্যাশা ব্যক্ত করা হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- BRAHMANBARIA 2025 -->
+<div class="nibf-modal" id="archive-brahmanbaria" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>ব্রাহ্মণবাড়িয়া ইসলামী বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> সকাল ৯টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ১৭–২২ ডিসেম্বর ২০২৫<br>
+<strong>স্থান:</strong> পৌর মুক্তমঞ্চ, ব্রাহ্মণবাড়িয়া
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+ভাদুঘর ক্বওমী ছাত্র কল্যাণ ঐক্য পরিষদের আয়োজনে অনুষ্ঠিত ছয় দিনব্যাপী
+ব্রাহ্মণবাড়িয়া ইসলামী বইমেলা ২০২৫ ছিল জ্ঞানচর্চা, সাহিত্যপ্রেম ও
+আধ্যাত্মিকতার একটি সুন্দর আয়োজন।
+</p>
+
+<h3>উদ্বোধন</h3>
+<p>
+উদ্বোধনী অনুষ্ঠানে বিশিষ্ট আলেম-উলামা, সাংবাদিক, লেখক, গবেষক ও
+বিপুল সংখ্যক পাঠকের উপস্থিতি মেলার গুরুত্ব ও গ্রহণযোগ্যতাকে
+আরও স্পষ্ট করে।
+</p>
+
+<h3>বিশেষ আকর্ষণ</h3>
+<p>
+কুইজ প্রতিযোগিতা, নাশিদ পর্ব, আকর্ষণীয় পুরস্কার এবং বিভিন্ন
+ধরনের বইয়ে বিশেষ মূল্যছাড় ছিল মেলার প্রধান আকর্ষণ। পরিবার-পরিজন
+নিয়ে সময় কাটানোর মতো পরিবেশও তৈরি করা হয়।
+</p>
+
+<h3>মেলার লক্ষ্য</h3>
+<p>
+জ্ঞানচর্চা, দাওয়াহ ও ইসলামী সংস্কৃতির একটি সুন্দর মিলনমেলা
+উপহার দেওয়ার চেষ্টা ছিল আয়োজকদের অন্যতম উদ্দেশ্য।
+</p>
+
+<h3>সমাপনী</h3>
+<p>
+২২ ডিসেম্বর মেলা সমাপ্ত হয় এবং আয়োজকদের পরিশ্রম ও সহযোগিতার
+জন্য কৃতজ্ঞতা জানানো হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- KISHOREGANJ 2025 -->
+<div class="nibf-modal" id="archive-kishoreganj" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>কিশোরগঞ্জ ইসলামী বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> সকাল ১১টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ১০–১৬ ডিসেম্বর ২০২৫<br>
+<strong>স্থান:</strong> মুক্তমঞ্চ, কিশোরগঞ্জ
+</div>
+
+<h3>ঐতিহাসিক সূচনা</h3>
+<p>
+কিশোরগঞ্জে এর আগে পূর্ণাঙ্গ ও সুসংগঠিত ইসলামী বইমেলার বড় আয়োজন
+হয়নি। সেই দিক থেকে টিম “আক্বাবাহ-Aqabah” আয়োজিত কিশোরগঞ্জ
+ইসলামী বইমেলা ২০২৫ ছিল একটি নতুন ও সাহসী সূচনা।
+</p>
+
+<h3>আয়োজন ও কর্মসূচি</h3>
+<p>
+লেখক, আলেম-উলামা এবং গজল ও সাংস্কৃতিক পরিবেশনা মেলার সৌন্দর্য
+ও প্রাণ আরও বাড়িয়ে দেয়। আয়োজক টিম নানা ধরনের কার্যক্রম ও
+ব্যবস্থাপনার মাধ্যমে প্রতিদিন মেলাকে জমিয়ে রাখার চেষ্টা করে।
+</p>
+
+<h3>অভিজ্ঞতা</h3>
+<p>
+প্রথম আয়োজন হওয়া সত্ত্বেও প্রতিদিন উল্লেখযোগ্য পাঠক উপস্থিতি
+ছিল। পাঠক, ক্রেতা ও বিক্রেতা—সকলেই এই প্রথম ইসলামী বইমেলার
+পরিবেশ উপভোগ করেন। আয়োজকদের পরিশ্রম ও নিষ্ঠা পুরো আয়োজনজুড়ে
+স্পষ্টভাবে প্রতিফলিত হয়।
+</p>
+
+<h3>সমাপনী</h3>
+<p>
+১৬ ডিসেম্বর মেলা শেষ হয়। ভবিষ্যতে আরও বিস্তৃত ও বৃহত্তর পরিসরে
+কিশোরগঞ্জ ইসলামী বইমেলা আয়োজনের প্রত্যাশা তৈরি হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ALOKAYAN 2025 -->
+<div class="nibf-modal" id="archive-alokayan" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>আলোকায়ন ইসলামী বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> সকাল ৯টা – রাত ৮টা<br>
+<strong>সময়কাল:</strong> ১৩–১৪ ডিসেম্বর ২০২৫<br>
+<strong>স্থান:</strong> মারকাযুন নাহদা, প্লট-৭৪, রোড-০৩, ব্লক-সি, আফতাবনগর, বাড্ডা, ঢাকা
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+ত্বালিবা মাহফিলকে কেন্দ্র করে ঢাকার আফতাবনগরে আয়োজিত আলোকায়ন
+ইসলামী বইমেলা ছিল দুই দিনের একটি বিশেষ আয়োজন। পুরো এলাকায়
+মনোরম পরিবেশ ও নান্দনিক আলোকায়ন তৈরি করা হয় এবং মেলাটি
+শুধুমাত্র নারীদের অংশগ্রহণের জন্য সীমাবদ্ধ ছিল।
+</p>
+
+<h3>বিশেষ আয়োজন</h3>
+<p>
+দেশের ৩৫টিরও বেশি প্রকাশনীর মানসম্মত বই বিশেষ ছাড়ে পাওয়া যায়।
+একই সঙ্গে প্রয়োজনীয় ও ক্রাফট সামগ্রীর বিভিন্ন স্টল ছিল,
+যেগুলো নারী উদ্যোক্তারা পরিচালনা করেন।
+</p>
+
+<h3>মেলার পরিবেশ</h3>
+<p>
+বোনেরা বোনদের কাছ থেকেই পছন্দের বই ও প্রয়োজনীয় পণ্য সংগ্রহের
+সুযোগ পান। সৌহার্দ্যপূর্ণ দেখা-সাক্ষাৎ, আনন্দমাখা মিলনমেলা এবং
+স্বাচ্ছন্দ্যময় পরিবেশ ছিল এই আয়োজনের বিশেষ বৈশিষ্ট্য।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- RAJSHAHI 2025 -->
+<div class="nibf-modal" id="archive-ru" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>রাজশাহী বিশ্ববিদ্যালয় বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> সকাল ১০টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ১১–১৮ ডিসেম্বর ২০২৫<br>
+<strong>স্থান:</strong> শহিদুল্লাহ কলা ভবন চত্বর, রাজশাহী বিশ্ববিদ্যালয়
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+রাজশাহী বিশ্ববিদ্যালয় বইমেলা ২০২৫ ছিল জ্ঞান, সাহিত্য ও সংস্কৃতির
+একটি প্রাণবন্ত মিলনমেলা। বিশ্ববিদ্যালয় প্রাঙ্গণে পাঠক, শিক্ষার্থী
+ও বইপ্রেমীদের জন্য এই আয়োজন উন্মুক্ত ছিল।
+</p>
+
+<h3>উদ্বোধন</h3>
+<p>
+উদ্বোধনী অনুষ্ঠানে বিশ্ববিদ্যালয়ের মাননীয় উপাচার্য, সম্মানিত
+প্রফেসরবৃন্দ, বিভিন্ন অনুষদের শিক্ষক প্রতিনিধি ও অতিথিবৃন্দ
+উপস্থিত ছিলেন। তাঁদের উপস্থিতিতে উদ্বোধনী মুহূর্ত আরও বর্ণিল
+ও তাৎপর্যপূর্ণ হয়ে ওঠে।
+</p>
+
+<h3>আয়োজনের অভিজ্ঞতা</h3>
+<p>
+বিভিন্ন ধরনের বই দেখা, নতুন প্রকাশনা সম্পর্কে জানা এবং বইয়ের
+সঙ্গে সময় কাটানোর সুযোগ বিশ্ববিদ্যালয়ের পাঠকদের জন্য আয়োজনটিকে
+অর্থবহ করে তোলে।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- BIJOY 2025 -->
+<div class="nibf-modal" id="archive-bijoy" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>বিজয় বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> দুপুর ২:৩০টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ১০–২২ ডিসেম্বর ২০২৫<br>
+<strong>স্থান:</strong> বাংলা একাডেমি প্রাঙ্গণ
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+বাংলা একাডেমি প্রাঙ্গণে আয়োজিত বিজয় বইমেলা ২০২৫ ছিল একটি সাধারণ
+বইমেলা। তবে ইসলামপ্রেমী পাঠকদের জন্য এটি বিশেষভাবে গুরুত্বপূর্ণ
+হয়ে ওঠে, কারণ অনেক ইসলামী প্রকাশনা সক্রিয়ভাবে এতে অংশ নেয়।
+</p>
+
+<h3>উদ্বোধন</h3>
+<p>
+জনপ্রিয় লেখক, গবেষক, শিল্পী, সাহিত্যিক ও সংস্কৃতি অঙ্গনের
+পরিচিত ব্যক্তিদের উপস্থিতিতে উদ্বোধনী অনুষ্ঠান প্রাণবন্ত
+ও উৎসবমুখর হয়।
+</p>
+
+<h3>ইসলামী প্রকাশনীর অংশগ্রহণ</h3>
+<p>
+একই মেলায় সাধারণ বইয়ের পাশাপাশি চমৎকার ইসলামী বই সংগ্রহের
+সুযোগ ইসলামপ্রেমী পাঠকদের জন্য একটি গুরুত্বপূর্ণ সুবিধা তৈরি
+করে। নতুন ও মানসম্মত ইসলামী প্রকাশনাগুলোও পাঠকের সামনে আসে।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- KHULNA 2025 -->
+<div class="nibf-modal" id="archive-khulna" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৫ • ARCHIVE</span>
+<h2>খুলনা ইসলামী বইমেলা — ২০২৫</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> সকাল ১০টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ১৫–২০ ডিসেম্বর ২০২৫<br>
+<strong>স্থান:</strong> লায়ন্স স্কুল এন্ড কলেজ, গল্লামারি, খুলনা
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+আদ-দীন শপের উদ্যোগে আয়োজিত খুলনা ইসলামী বইমেলা ২০২৫ ছিল
+অন্যান্য বারের তুলনায় আরও বৃহৎ, সুশৃঙ্খল ও জমজমাট একটি আয়োজন।
+এবারের মেলায় ৩০টিরও বেশি মানসম্মত প্রকাশনা প্রতিষ্ঠান অংশগ্রহণ করে।
+</p>
+
+<h3>উদ্বোধন</h3>
+<p>
+স্থানীয় বুজুর্গ আলেম-উলামা, শীর্ষস্থানীয় নেতৃত্ব ও বিশিষ্ট
+ব্যক্তিবর্গের পাশাপাশি খুলনা জেলার বিভিন্ন প্রান্ত থেকে আলোচক,
+চিন্তক, সাংবাদিক, শিক্ষক ও পাঠকদের উপস্থিতিতে উদ্বোধন অনুষ্ঠান
+প্রাণবন্ত ও অর্থবহ হয়।
+</p>
+
+<h3>বিশেষ আকর্ষণ</h3>
+<p>
+সীরাত কুইজ প্রতিযোগিতা, ফরমের মাধ্যমে সুশৃঙ্খল কুইজ, মেলায়
+লাইভ কুইজ, লেখক ও বিশিষ্ট ব্যক্তিদের আলোচনা, নাশিদ এবং শিশু-কিশোরদের
+পাঠচক্রসহ নানা কার্যক্রম ছিল। শীতের রাতের কথা বিবেচনায় মাহফিলের
+আদলে মাটিতে খড়সহ আরামদায়ক বসার ব্যবস্থাও করা হয়।
+</p>
+
+<h3>মেলার অভিজ্ঞতা</h3>
+<p>
+প্রতিদিন পাঠক, লেখক, সাহিত্যিক, সম্পাদক, সাংবাদিক ও উদ্যোক্তাদের
+উপস্থিতি স্টলগুলোকে প্রাণবন্ত করে। তাঁদের আলোচনা, পরামর্শ ও
+উৎসাহ আয়োজকদের জন্য অনুপ্রেরণাদায়ক ছিল।
+</p>
+
+<h3>সমাপনী</h3>
+<p>
+২০ ডিসেম্বর মেলা সমাপ্ত হয়। আয়োজনের দায়িত্বে থাকা সকলের প্রতি
+কৃতজ্ঞতা ও দোয়া জানিয়ে ভবিষ্যতে আরও বৃহৎ ও প্রভাবশালী খুলনা
+ইসলামী বইমেলার প্রত্যাশা ব্যক্ত করা হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- HADI 2026 -->
+<div class="nibf-modal" id="archive-hadi" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৬ • ARCHIVE</span>
+<h2>শহীদ ওসমান হাদি স্মৃতি বইমেলা — ২০২৬</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> সকাল ৯টা – রাত ৯টা<br>
+<strong>সময়কাল:</strong> ১৮–২২ জানুয়ারি ২০২৬<br>
+<strong>স্থান:</strong> পায়রা চত্বর, টিএসসি, ঢাকা বিশ্ববিদ্যালয়
+</div>
+
+<h3>বিশেষ ও তাৎপর্যপূর্ণ আয়োজন</h3>
+<p>
+শহীদ ওসমান হাদি স্মৃতি বইমেলা ২০২৬ ছিল একটি বিশেষ স্মৃতি ও
+চেতনা কেন্দ্রিক আয়োজন। ঢাকা বিশ্ববিদ্যালয় কেন্দ্রীয় ছাত্র সংসদ
+(ডাকসু) ও ঢাকা বিশ্ববিদ্যালয় তরুণ কলাম লেখক ফোরামের উদ্যোগে
+আয়োজিত এ মেলা বইয়ের প্রদর্শনীর পাশাপাশি আয়োজকদের ভাষ্যে স্মৃতি,
+প্রতিবাদ, আগ্রাসনবিরোধী চেতনা ও ন্যায়বিচারের আকাঙ্ক্ষাকে সামনে
+আনার একটি সাংস্কৃতিক মঞ্চ হয়ে ওঠে।
+</p>
+
+<h3>উদ্বোধন</h3>
+<p>
+১৮ জানুয়ারি দুপুর ৩টায় উদ্বোধনী অনুষ্ঠান অনুষ্ঠিত হয়। শহীদ
+ওসমান হাদি ভাইয়ের পরিবারের সদস্যবৃন্দ, ঢাকা বিশ্ববিদ্যালয়ের
+উপাচার্য অধ্যাপক ড. নিয়াজ আহমদ খান, ডাকসু সহ-সভাপতি আবু সাদেক
+কায়েমসহ সম্পাদক, সহকর্মী, সাংবাদিক, লেখক, গবেষক, চিকিৎসক,
+ইনকিলাব মঞ্চের সদস্য ও অসংখ্য শুভাকাঙ্ক্ষী উপস্থিত ছিলেন।
+</p>
+
+<h3>বিশেষ আয়োজন</h3>
+<p>
+নাশিদ, কাওয়ালি, ক্বাসিদা, সাংস্কৃতিক নাটক, প্রতিবাদী সাংস্কৃতিক
+পরিবেশনা এবং আগ্রাসনবিরোধী আলোচনা মেলাপ্রাঙ্গণকে সচেতনতা ও
+প্রতিরোধের একটি জীবন্ত কেন্দ্রে পরিণত করে। তরুণদের অংশগ্রহণ
+ও বুদ্ধিবৃত্তিক আলোচনা আয়োজনকে আরও তাৎপর্যপূর্ণ করে।
+</p>
+
+<h3>সমাপনী ও চেতনা</h3>
+<p>
+২২ জানুয়ারি মেলার আনুষ্ঠানিক সমাপ্তি ঘটে। মেলা শেষ হলেও শহীদ
+ওসমান হাদি ভাইয়ের স্মৃতি, ন্যায়বিচারের আকাঙ্ক্ষা এবং তাঁর
+চেতনা অব্যাহত রাখার প্রত্যয় এই আয়োজনের গুরুত্বপূর্ণ উত্তরাধিকার
+হিসেবে থেকে যায়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- EKUSHEY 2026 -->
+<div class="nibf-modal" id="archive-ekushey" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৬ • ARCHIVE</span>
+<h2>অমর একুশে বইমেলা — ২০২৬</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়কাল:</strong> ২৬ ফেব্রুয়ারি – ১৫ মার্চ ২০২৬<br>
+<strong>স্থান:</strong> সোহরাওয়ার্দী উদ্যান ও বাংলা একাডেমি প্রাঙ্গণ
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+২৬ ফেব্রুয়ারি উদ্বোধনী অনুষ্ঠানের মধ্য দিয়ে শুরু হয় অমর একুশে
+বইমেলা ২০২৬। ভাষা, সাহিত্য ও জ্ঞানের এই জাতীয় মিলনমেলা প্রতি
+বছরের মতো এবারও পাঠক, লেখক ও প্রকাশকদের একত্র করে।
+</p>
+
+<h3>রমাদানের বিশেষ আবহ</h3>
+<p>
+এবারের বইমেলা পবিত্র রমাদান মাসে অনুষ্ঠিত হওয়ায় পরিবেশে একটি
+ভিন্ন আবহ তৈরি হয়। রমাদান ইবাদত, সংযম ও আত্মশুদ্ধির মাস হলেও
+উপকারী জ্ঞান অর্জন, ভালো বই পড়া এবং ইসলামী শিক্ষা সম্পর্কে
+জানাকেও আখিরাতের জন্য কল্যাণকর কাজ হিসেবে তুলে ধরা হয়।
+</p>
+
+<h3>সময়সূচি</h3>
+<p>
+ছুটির দিন ছাড়া প্রতিদিন বেলা ২টা থেকে রাত ৯টা এবং ছুটির দিনে
+সকাল ১১টা থেকে রাত ৯টা পর্যন্ত মেলা খোলা ছিল। রাত সাড়ে ৮টার
+পর নতুন করে মেলা প্রাঙ্গণে প্রবেশের সুযোগ ছিল না।
+</p>
+
+<h3>ইসলামী প্রকাশনীর অংশগ্রহণ</h3>
+<p>
+প্রায় ৪০টিরও বেশি ইসলামী প্রকাশনা প্রতিষ্ঠান এবারের মেলায়
+অংশ নেয়। নতুন, মানসম্মত ও সৃজনশীল ইসলামী বই ও পাণ্ডুলিপি নিয়ে
+প্রকাশনাগুলো পাঠকের সামনে উপস্থিত ছিল।
+</p>
+
+<h3>পাঠক অভিজ্ঞতা</h3>
+<p>
+রমাদানের কারণে পাঠকসংখ্যা তুলনামূলক কম দেখা গেলেও রোজা রেখে
+অনেক পাঠকের মেলায় উপস্থিতি ছিল প্রশংসনীয়। বই কিনুন বা না কিনুন—
+মেলায় এসে বই ঘেঁটে দেখা, নতুন প্রকাশনা সম্পর্কে জানা এবং
+বন্ধু-ছোট ভাইবোন-আত্মীয়দের সঙ্গে নিয়ে বইয়ের জগতে সময় কাটানোর
+আহ্বান জানানো হয়।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- QAWMI 2026 -->
+<div class="nibf-modal" id="archive-qawmi" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">২০২৬ • ARCHIVE</span>
+<h2>কওমি মার্কেট ইসলামী বইমেলা — ২০২৬</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-info-box">
+<strong>সময়:</strong> প্রতিদিন সকাল ১০টা – রাত ৮টা<br>
+<strong>সময়কাল:</strong> ৬–১৩ আগস্ট ২০২৬<br>
+<strong>স্থান:</strong> কওমি মার্কেট, ৩৭/১ প্যারীদাস রোড, বাংলাবাজার, ঢাকা-১১০০
+</div>
+
+<h3>মেলার পরিচিতি</h3>
+<p>
+আল্লাহ তাআলার অশেষ রহমতে কওমি মার্কেট ইসলামী বইমেলা ২০২৬
+দীর্ঘ এক সপ্তাহব্যাপী একটি ছাদের নিচে অসংখ্য বই, লেখক, পাঠক,
+প্রকাশক ও বইপ্রেমীদের নিয়ে সুন্দর ও সুশৃঙ্খলভাবে সম্পন্ন হয়।
+ইসলামী জ্ঞানচর্চা, পাঠাভ্যাস গড়ে তোলা এবং মানসম্মত ইসলামী বই
+পাঠকের হাতে পৌঁছে দেওয়াই ছিল এর মূল লক্ষ্য।
+</p>
+
+<h3>উদ্বোধনী অনুষ্ঠান</h3>
+<p>
+বাদ আসর উদ্বোধনী অনুষ্ঠানের মাধ্যমে মেলা শুরু হয়। প্রধান অতিথি
+হিসেবে উপস্থিত ছিলেন বিশিষ্ট সাহিত্যিক মুহাম্মাদ যাইনুল আবেদীন।
+এছাড়াও দেশের বিশিষ্ট আলেমে দ্বীন, অতিথিবৃন্দ, লেখক, পাঠক,
+প্রকাশক ও শুভাকাঙ্ক্ষীরা উপস্থিত ছিলেন।
+</p>
+
+<h3>অংশগ্রহণ ও বিশেষ আকর্ষণ</h3>
+<p>
+৬০টিরও বেশি স্বনামধন্য প্রকাশনা প্রতিষ্ঠান অংশ নেয়। হাজার হাজার
+নতুন ও জনপ্রিয় ইসলামী বইয়ের পাশাপাশি ছিল বিশেষ মূল্যছাড়, কুপনের
+মাধ্যমে লক্ষাধিক টাকার বই জয়ের সুযোগ, ৪ দিনব্যাপী কুইজ ও সাহিত্য
+আয়োজন, প্রতিদিন ২০ জন বিজয়ীর জন্য আকর্ষণীয় পুরস্কার, দেশবরেণ্য
+লেখক-সম্পাদক-গবেষকদের সঙ্গে মতবিনিময় এবং নতুন বইয়ের মোড়ক উন্মোচন।
+</p>
+
+<h3>মেলার অভিজ্ঞতা</h3>
+<p>
+প্রতিদিনের আয়োজন, কুইজ, লেখক-পাঠক মিলনমেলা, আকর্ষণীয় অফার এবং
+সুন্দর পরিবেশ মিলিয়ে এবারের মেলা ছিল বিশেষ। তবে আয়োজকদের প্রত্যাশা
+ছিল আরও বেশি পাঠকের পদচারণা। এরপরও পাওয়া সাড়া ও সহযোগিতার জন্য
+আল্লাহর দরবারে শুকরিয়া জানানো হয়।
+</p>
+
+<h3>র‍্যাফেল ড্র ও সমাপনী</h3>
+<p>
+মেলার অন্যতম বিশেষ আকর্ষণ ছিল কুপন অফার। দীর্ঘদিন ধরে জমা হওয়া
+কুপন থেকে র‍্যাফেল ড্র অনুষ্ঠিত হয় এবং বিজয়ীদের হাতে হাজার হাজার
+টাকা সমমূল্যের মূল্যবান বই ও উপহারসামগ্রী তুলে দেওয়া হয়।
+১৩ আগস্ট মেলার সমাপ্তি ঘোষণা করা হয়।
+</p>
+
+<h3>পরবর্তী প্রত্যয়</h3>
+<p>
+আয়োজক, স্বেচ্ছাসেবক, প্রকাশক, লেখক, পাঠক ও শুভাকাঙ্ক্ষীসহ সংশ্লিষ্ট
+সবার প্রতি কৃতজ্ঞতা জানিয়ে বলা হয়—মেলা শেষ হলেও পথচলা শেষ হয়নি।
+বরং এখান থেকেই আরও সুন্দর কিছু করার নতুন প্রত্যয় শুরু হবে এবং
+সামনে বৃহত্তর ইসলামী বইমেলার প্রত্যাশা থাকবে।
+</p>
+
+<div class="nibf-archive-cta">
+<strong>আরও বিস্তারিত জানতে</strong>
+<p>এই মেলার আরও বিস্তারিত আপডেট ও আর্কাইভ দেখতে আমাদের অফিসিয়াল Facebook Page-এ ভিজিট করুন।</p>
+<a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer">Facebook Page ভিজিট করুন →</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- SPECIAL NEWS -->
+<div class="nibf-modal" id="nibf-special-news" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">✦ SPECIAL NEWS • ২০২৬</span>
+<h2>ইসলামী বইমেলা ২০২৬</h2>
+<div class="nibf-divider"></div>
+
+<div class="nibf-highlight">
+<strong>আলহামদুলিল্লাহ সুম্মা আলহামদুলিল্লাহ!</strong>
+<p>আমাদের সবার কাঙ্ক্ষিত ইসলামী বইমেলা ২০২৬ শুরু হতে যাচ্ছে ইনশাআল্লাহ।</p>
+</div>
+
+<div class="nibf-news-row">
+<small>সম্ভাব্য তারিখ</small>
+<strong>৯/১০ সেপ্টেম্বর ২০২৬</strong>
+</div>
+
+<div class="nibf-news-row">
+<small>স্থান</small>
+<strong>বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট</strong>
+</div>
+
+<h3>সবাই প্রস্তুত তো?</h3>
+<p>
+পোস্টটি রিঅ্যাক্ট, কমেন্ট ও শেয়ার করে বইপ্রেমীদের কাছে খবরটি পৌঁছে দিন।
+ইনশাআল্লাহ দেখা হবে বইমেলায়।
+</p>
+
+<p class="nibf-note">
+তারিখটি বর্তমানে সম্ভাব্য। চূড়ান্ত ঘোষণা হলে ওয়েবসাইটের তথ্য
+ও কাউন্টডাউন আপডেট করা হবে।
+</p>
+
+</div>
+</div>
+</div>
+
+
+<!-- NOTICE -->
+<div class="nibf-modal" id="notice-coming" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+<span class="nibf-modal-year">NOTICE</span>
+<h2>ইসলামী বইমেলা ২০২৬ — সম্ভাব্য আয়োজনের ঘোষণা</h2>
+<div class="nibf-divider"></div>
+<p>
+আমাদের সবার কাঙ্ক্ষিত ইসলামী বইমেলা ২০২৬ শুরু হতে যাচ্ছে ইনশাআল্লাহ।
+সম্ভাব্য তারিখ ৯/১০ সেপ্টেম্বর ২০২৬ এবং স্থান বায়তুল মোকাররম
+জাতীয় মসজিদের পূর্ব গেট।
+</p>
+<p>
+চূড়ান্ত ঘোষণা ও পরিবর্তিত তথ্য অফিসিয়াল মাধ্যমে জানানো হবে।
+</p>
+</div>
+</div>
+</div>
+
+<div class="nibf-modal" id="notice-archive" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+<span class="nibf-modal-year">NOTICE</span>
+<h2>বিগত বইমেলাগুলোর তথ্য ও অভিজ্ঞতা</h2>
+<div class="nibf-divider"></div>
+<p>
+আমাদের Archive বিভাগে বিভিন্ন সময়ে আয়োজিত ইসলামী বইমেলা ও
+বইকেন্দ্রিক আয়োজনের তথ্য সংরক্ষণ করা হয়েছে। প্রতিটি মেলার
+নাম নির্বাচন করে বিস্তারিত বিবরণ পড়ুন।
+</p>
+</div>
+</div>
+</div>
+
+
+<!-- PUBLISHER MODAL -->
+<div class="nibf-modal" id="nibf-publisher-modal" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">PUBLISHER PROFILE</span>
+<h2 id="nibfPubTitle">প্রকাশনীর নাম</h2>
+<div class="nibf-divider"></div>
+
+<h3>প্রকাশনীর পরিচিতি</h3>
+<p>
+এই অংশে পরবর্তীতে প্রকাশনীর ইতিহাস, পরিচিতি, প্রকাশনার ধরন
+ও অন্যান্য তথ্য যুক্ত করা যাবে।
+</p>
+
+<div class="nibf-pub-grid-inside">
+<div>
+<span>মেলায় অংশগ্রহণ</span>
+<strong>পরবর্তীতে যুক্ত হবে</strong>
+</div>
+<div>
+<span>স্টল নম্বর</span>
+<strong>পরবর্তীতে যুক্ত হবে</strong>
+</div>
+</div>
+
+<h3>এই মেলায় আনা বই</h3>
+<p>
+প্রকাশনীর নতুন, নির্বাচিত ও বিশেষ বইয়ের তালিকা ভবিষ্যতে এখানে
+যুক্ত করা যাবে।
+</p>
+
+<h3>যোগাযোগ</h3>
+<p>
+Website, Facebook, Contact ও অন্যান্য তথ্য ভবিষ্যতে এখানে
+যুক্ত করা যাবে।
+</p>
+
+</div>
+</div>
+</div>
+
+
+<!-- BOOK MODAL -->
+<div class="nibf-modal" id="nibf-book-modal" aria-hidden="true">
+<div class="nibf-modal-book" role="dialog" aria-modal="true">
+<button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+<div class="nibf-modal-page">
+
+<span class="nibf-modal-year">BOOK DETAILS</span>
+<h2 id="nibfBookTitle">বইয়ের নাম</h2>
+<div class="nibf-divider"></div>
+
+<p><strong>লেখক:</strong> <span id="nibfBookAuthor">লেখকের নাম</span></p>
+<p><strong>প্রকাশনী:</strong> পরবর্তীতে যুক্ত হবে</p>
+<p><strong>মূল্য:</strong> পরবর্তীতে যুক্ত হবে</p>
+
+<h3>বইয়ের বিস্তারিত</h3>
+<p>
+বইটির পূর্ণ বিবরণ, সূচিপত্র, রিভিউ, ভিডিও ও অন্যান্য তথ্য
+এখানে ভবিষ্যতে যুক্ত করা যাবে।
+</p>
+
+</div>
+</div>
+</div>
+
+
+<!-- JAVASCRIPT -->
 <script>
 (function(){
-  const r=document.getElementById('nibf2026'),nav=r.querySelector('#nav'),ham=r.querySelector('#hamb'),modal=r.querySelector('#modal');
-  ham.onclick=()=>{nav.classList.toggle('open');ham.setAttribute('aria-expanded',nav.classList.contains('open'))};
-  r.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{let t=r.querySelector(a.getAttribute('href'));if(t){e.preventDefault();nav.classList.remove('open');scrollTo({top:t.offsetTop-95,behavior:'smooth'})}});
-  
-  // স্পেশাল নিউজ মডাল ওপেন
-  r.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{
-    document.getElementById('modalCategory').innerText = "SPECIAL NEWS • ২০২৬";
-    document.getElementById('modalTitle').innerText = "ইসলামী বইমেলার বিশেষ খবর";
-    document.getElementById('modalDesc1').innerText = "বইমেলা, নতুন বই, প্রকাশনী, ক্যাম্পেইন ও গুরুত্বপূর্ণ ঘোষণার সর্বশেষ তথ্য এই অংশে প্রকাশ করা হবে।";
-    document.getElementById('modalTitle2').innerText = "পাঠকের জন্য নতুন আয়োজন";
-    document.getElementById('modalDesc2').innerText = "চলমান আয়োজনের সময়সূচী, নতুন প্রকাশিত বই, প্রতিযোগিতা ও বিশেষ কার্যক্রম সম্পর্কে বিস্তারিত জানতে নিয়মিত ওয়েবসাইট অনুসরণ করুন।";
-    modal.classList.add('open');document.body.style.overflow='hidden';
-  });
 
-  // আর্কাইভ মেলাসমূহের বিস্তারিত ডাটা
-  const archiveData = {
-    "upcoming-2026": {
-      cat: "UPCOMING • ২০২৬",
-      title: "ইসলামী বইমেলা ২০২৬ (Coming Soon)",
-      desc1: "সম্ভাব্য তারিখ: ৯/১০ সেপ্টেম্বর ২০২৬। স্থান: বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট। এই মেলাটি ঘিরে বইপ্রেমী ও পাঠকদের মাঝে ব্যাপক উৎসাহ ও উদ্দীপনা লক্ষ্য করা যাচ্ছে।",
-      desc2: "দেশের শীর্ষস্থানীয় কওমি ও ইসলামী প্রকাশনাগুলো এতে অংশ নেওয়ার প্রস্তুতি নিচ্ছে। নতুন বইয়ের মোড়ক উন্মোচন এবং বিশেষ ছাড়ের ব্যবস্থা থাকবে।"
-    },
-    "qawmi-2026": {
-      cat: "FAIR • ২০২৬",
-      title: "কওমি মার্কেট ইসলামী বইমেলা ২০২৬",
-      desc1: "বাংলাবাজারের কওমি মার্কেট প্রাঙ্গণে আয়োজিত এই মেলায় মাদরাসা শিক্ষার্থী, আলেম-উলামা এবং সাধারণ পাঠকদের উপচে পড়া ভিড় লক্ষ্য করা গেছে।",
-      desc2: "বাংলাবাজারের ঐতিহ্যবাহী প্রকাশনাগুলোর স্বতঃস্ফূর্ত অংশগ্রহণে মেলাটি জমজমাট হয়ে ওঠে।"
-    },
-    "ekushey-2026": {
-      cat: "NATIONAL • ২০২৬",
-      title: "অমর একুশে বইমেলা ২০২৬",
-      desc1: "জাতীয় শহীদ দিবস ও আন্তর্জাতিক মাতৃভাষা দিবস উপলক্ষে আয়োজিত অমর একুশে বইমেলায় ইসলামী সাহিত্য ও গবেষণামূলক বইয়ের স্টলগুলো বিশেষ আকর্ষণ কেড়েছিল।",
-      desc2: "বিভিন্ন নতুন লেখকের মননশীল ও ইসলামিক ইতিহাসভিত্তিক গ্রন্থ প্রকাশিত হয়।"
-    },
-    "osman-2026": {
-      cat: "MEMORIAL • ২০২৬",
-      title: "শহীদ ওসমান হাদি স্মৃতি বইমেলা ২০২৬",
-      desc1: "শহীদ ওসমান হাদির স্মরণে আয়োজিত এই বিশেষ বইমেলায় জ্ঞানচর্চা ও ত্যাগের মহিমান্বিত ইতিহাস নিয়ে আলোচনা সভা অনুষ্ঠিত হয়।",
-      desc2: "তরুণ প্রজন্মের মাঝে ইসলামী আন্দোলন ও সঠিক ইতিহাস তুলে ধরতে এই মেলাটি অনন্য ভূমিকা পালন করে।"
-    },
-    "du-2025": {
-      cat: "UNIVERSITY • ২০২৫",
-      title: "ঢাকা বিশ্ববিদ্যালয় শীতকালীন বইমেলা সিজন-২",
-      desc1: "ঢাকা বিশ্ববিদ্যালয় ক্যাম্পাসে আয়োজিত এই সিজন-২ মেলায় শিক্ষক, শিক্ষার্থী ও গবেষকদের ব্যাপক উপস্থিতি ছিল।",
-      desc2: "শিক্ষার্থীদের বুদ্ধিবৃত্তিক খোরাক মেটাতে ইসলামী সাহিত্য ও চিন্তাধারার বইয়ের পসরা সাজিয়েছিল নামী প্রকাশনীগুলো।"
-    },
-    "mym-2025": {
-      cat: "REGIONAL • ২০২৫",
-      title: "ময়মনসিংহ ইসলামী বইমেলা ২০২৫",
-      desc1: "ময়মনসিংহ অঞ্চলে ইসলামী সাহিত্য ও সংস্কৃতির প্রসারে আয়োজিত এই মেলায় স্থানীয় পাঠকদের অভূতপূর্ব সাড়া পাওয়া যায়।",
-      desc2: "দিনব্যাপী সেমিনার ও প্রখ্যাত আলেমদের উপস্থিতিতে মেলাটি প্রাণবন্ত হয়ে ওঠে।"
-    },
-    "kuet-2025": {
-      cat: "UNIVERSITY • ২০২৫",
-      title: "খুলনা প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয় (KUET) বইমেলা",
-      desc1: "কুয়েট ক্যাম্পাসের প্রকৌশলী ও শিক্ষার্থীদের মাঝে ইসলামী ও বিজ্ঞানভিত্তিক সাহিত্য পৌঁছে দিতে এই মেলার আয়োজন করা হয়।",
-      desc2: "প্রযুক্তি ও বিশ্বাসের মেলবন্ধনে রচিত বইগুলোর প্রতি তরুণ প্রকৌশলীদের আগ্রহ ছিল লক্ষণীয়।"
-    },
-    "feni-2025": {
-      cat: "REGIONAL • ২০২৫",
-      title: "ফেনী ইসলামী বইমেলা ২০২৫",
-      desc1: "ফেনী জেলায় আয়োজিত এই বইমেলাটি স্থানীয় বইপ্রেমীদের মিলনমেলায় পরিণত হয়েছিল।",
-      desc2: "বিভিন্ন মাদরাসার ছাত্র ও যুবসমাজ স্বতঃস্ফূর্তভাবে মেলায় অংশ নেয় এবং প্রচুর বই সংগ্রহ করে।"
-    },
-    "net-2025": {
-      cat: "REGIONAL • ২০২৫",
-      title: "নেত্রকোনা ইসলামী বইমেলা ২০২৫",
-      desc1: "নেত্রকোনায় ইসলামী জ্ঞানচর্চাকে আরও প্রসারিত করার উদ্দেশ্যে এই মেলার সফল সমাপ্তি ঘটে।",
-      desc2: "সুলভ মূল্যে খাঁটি ইসলামী সাহিত্য সাধারণ মানুষের দোরগোড়ায় পৌঁছে দেওয়া হয়।"
-    },
-    "bra-2025": {
-      cat: "REGIONAL • ২০২৫",
-      title: "ব্রাহ্মণবাড়িয়া ইসলামী বইমেলা ২০২৫",
-      desc1: "আউলিয়া ও মাদরাসার জনপদ ব্রাহ্মণবাড়িয়ায় আয়োজিত এই মেলাটি ঐতিহ্যের ধারাবাহিকতা বজায় রেখে অত্যন্ত সফলভাবে সম্পন্ন হয়।",
-      desc2: "নবীণ ও প্রবীণ লেখকদের বইয়ের সমাহার মেলাকে এক অনন্য উচ্চতা দেয়।"
-    },
-    "kish-2025": {
-      cat: "REGIONAL • ২০২৫",
-      title: "কিশোরগঞ্জ ইসলামী বইমেলা ২০২৫",
-      desc1: "কিশোরগঞ্জ জেলার পাঠকদের দীর্ঘদিনের চাহিদার কথা মাথায় রেখে এই বিশেষ বইমেলার আয়োজন করা হয়।",
-      desc2: "কিশোর-কিশোরী ও যুবকদের উপযোগী ইসলামিক বইয়ের ব্যাপক চাহিদা দেখা যায়।"
-    },
-    "alo-2025": {
-      cat: "SPECIAL • ২০২৫",
-      title: "আলোকায়ন ইসলামী বইমেলা ২০২৫",
-      desc1: "সমাজকে কুসংস্কার ও অজ্ঞতা থেকে মুক্ত করে আলোর পথে নিয়ে যাওয়ার প্রত্যয়ে 'আলোকায়ন' শিরোনামে এই মেলা অনুষ্ঠিত হয়।",
-      desc2: "মননশীল ও আত্মশুদ্ধিমূলক বইয়ের পাঠকদের জন্য এটি ছিল একটি আদর্শ আয়োজন।"
-    },
-    "raj-2025": {
-      cat: "UNIVERSITY • ২০২৫",
-      title: "রাজশাহী বিশ্ববিদ্যালয় বইমেলা ২০২৫",
-      desc1: "রাজশাহী বিশ্ববিদ্যালয়ের প্রাঙ্গণে আয়োজিত এই মেলায় উত্তরবঙ্গের বিভিন্ন প্রান্ত থেকে বইপ্রেমীরা ছুটে আসেন।",
-      desc2: "বিশ্ববিদ্যালয়ের শিক্ষার্থীদের মাঝে ইসলামি ইতিহাস ও গবেষণামূলক বইয়ের ভালো চাহিদা লক্ষ্য করা যায়।"
-    },
-    "bijoy-2025": {
-      cat: "NATIONAL • ২০২৫",
-      title: "বিজয় বইমেলা ২০২৫",
-      desc1: "বিজয় দিবস ও স্বাধীনতার চেতনাকে ধারণ করে আয়োজিত এই বিশেষ বইমেলায় দেশের ঐতিহ্য ও ইসলামী সংস্কৃতির মেলবন্ধন ঘটে।",
-      desc2: "মুক্তিযুদ্ধ ও ইসলামী ইতিহাসের ওপরে রচিত বিভিন্ন গ্রন্থের বিশেষ প্রদর্শনী হয়।"
-    },
-    "khulna-2025": {
-      cat: "REGIONAL • ২০২৫",
-      title: "খুলনা ইসলামী বইমেলা ২০২৫",
-      desc1: "খুলনা মহানগরীতে আয়োজিত এই মেলা দক্ষিণাঞ্চলের পাঠকদের মাঝে ইসলামী বইয়ের প্রতি ভালোবাসার এক অনন্য দৃষ্টান্ত স্থাপন করে।",
-      desc2: "বিখ্যাত প্রকাশনাগুলোর আকর্ষণীয় ডিসকাউন্ট পাঠকদের মন জয় করে নেয়।"
+  "use strict";
+
+  const root=document.getElementById("nibf2026");
+  if(!root)return;
+
+  /* =====================================================
+     HERO LIGHT PARTICLES
+  ====================================================== */
+
+  const particleBox=root.querySelector("#nibfParticles");
+
+  if(particleBox){
+
+    for(let i=0;i<38;i++){
+
+      const p=document.createElement("span");
+
+      p.className="nibf-particle";
+
+      p.style.left=(42+Math.random()*16)+"%";
+      p.style.top=(45+Math.random()*12)+"%";
+
+      p.style.setProperty("--x",(Math.random()*190-95)+"px");
+      p.style.setProperty("--y",(-90-Math.random()*300)+"px");
+
+      p.style.animationDelay=(-Math.random()*4)+"s";
+      p.style.animationDuration=(2.8+Math.random()*3)+"s";
+
+      p.style.width=(2+Math.random()*3)+"px";
+      p.style.height=p.style.width;
+
+      particleBox.appendChild(p);
     }
-  };
+  }
 
-  r.querySelectorAll('[data-archive]').forEach(btn => {
-    btn.onclick = () => {
-      const key = btn.dataset.archive;
-      const data = archiveData[key];
-      if(data){
-        document.getElementById('modalCategory').innerText = data.cat;
-        document.getElementById('modalTitle').innerText = data.title;
-        document.getElementById('modalDesc1').innerText = data.desc1;
-        document.getElementById('modalTitle2').innerText = "বিশেষ আকর্ষণ ও তথ্য";
-        document.getElementById('modalDesc2').innerText = data.desc2;
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
+
+  /* =====================================================
+     MOBILE MENU
+  ====================================================== */
+
+  const menuBtn=root.querySelector(".nibf-menu-btn");
+  const nav=root.querySelector(".nibf-nav");
+
+  if(menuBtn && nav){
+
+    menuBtn.addEventListener("click",function(){
+
+      const open=nav.classList.toggle("open");
+
+      menuBtn.setAttribute("aria-expanded",String(open));
+
+    });
+
+    nav.querySelectorAll("a").forEach(function(a){
+
+      a.addEventListener("click",function(){
+
+        nav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded","false");
+
+      });
+
+    });
+
+  }
+
+
+  /* =====================================================
+     SMOOTH SCROLL
+  ====================================================== */
+
+  root.querySelectorAll('a[href^="#"]').forEach(function(link){
+
+    link.addEventListener("click",function(e){
+
+      const selector=link.getAttribute("href");
+
+      if(!selector || selector==="#")return;
+
+      const target=root.querySelector(selector);
+
+      if(target){
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
+
       }
-    };
+
+    });
+
   });
 
-  r.querySelector('#close').onclick=()=>{modal.classList.remove('open');document.body.style.overflow=''};
-  modal.onclick=e=>{if(e.target===modal){modal.classList.remove('open');document.body.style.overflow=''}};
-  document.onkeydown=e=>{if(e.key==='Escape'){modal.classList.remove('open');document.body.style.overflow=''}};
-  
-  const s=r.querySelector('#search'),cards=[...r.querySelectorAll('#pubs [data-name]')];
-  const none=r.querySelector('#none');
-  s.oninput=()=>{let q=s.value.toLowerCase(),n=0;cards.forEach(c=>{let ok=c.dataset.name.toLowerCase().includes(q);c.style.display=ok?'':'none';if(ok)n++});none.classList.toggle('hidden',n>0)};
-  
-  const fs=[...r.querySelectorAll('.f')],bs=[...r.querySelectorAll('#bookgrid [data-cat]')];
-  fs.forEach(f=>f.onclick=()=>{fs.forEach(x=>x.className='btn ghost text-slate-700 border-slate-200 bg-white f');f.className='btn primary f';let v=f.dataset.f;bs.forEach(b=>b.style.display=v==='all'||b.dataset.cat===v?'':'none')})
-})()
+
+  /* =====================================================
+     MODAL SYSTEM
+  ====================================================== */
+
+  let activeModal=null;
+  let oldOverflow="";
+
+  function openModal(id){
+
+    const modal=root.querySelector("#"+id);
+
+    if(!modal)return;
+
+    if(activeModal){
+      closeModal(activeModal);
+    }
+
+    activeModal=modal;
+
+    oldOverflow=document.documentElement.style.overflow;
+
+    document.documentElement.style.overflow="hidden";
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+
+    const close=modal.querySelector(".nibf-close");
+
+    if(close){
+      setTimeout(function(){
+        close.focus();
+      },50);
+    }
+
+  }
+
+  function closeModal(modal){
+
+    if(!modal)return;
+
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+
+    if(activeModal===modal){
+
+      activeModal=null;
+
+      document.documentElement.style.overflow=oldOverflow;
+
+    }
+
+  }
+
+  root.querySelectorAll("[data-modal]").forEach(function(trigger){
+
+    trigger.addEventListener("click",function(){
+
+      openModal(
+        trigger.getAttribute("data-modal")
+      );
+
+    });
+
+  });
+
+  root.querySelectorAll(".nibf-close").forEach(function(button){
+
+    button.addEventListener("click",function(){
+
+      closeModal(
+        button.closest(".nibf-modal")
+      );
+
+    });
+
+  });
+
+  root.querySelectorAll(".nibf-modal").forEach(function(modal){
+
+    modal.addEventListener("click",function(e){
+
+      if(e.target===modal){
+
+        closeModal(modal);
+
+      }
+
+    });
+
+  });
+
+  document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape" && activeModal){
+
+      closeModal(activeModal);
+
+    }
+
+  });
+
+
+  /* =====================================================
+     COUNTDOWN
+     Target: 10 September 2026
+  ====================================================== */
+
+  const countdownTarget=
+    new Date("2026-09-10T00:00:00+06:00").getTime();
+
+  function updateCountdown(){
+
+    let diff=countdownTarget-Date.now();
+
+    const days=root.querySelector("#nibfDays");
+    const hours=root.querySelector("#nibfHours");
+    const mins=root.querySelector("#nibfMinutes");
+    const secs=root.querySelector("#nibfSeconds");
+
+    if(!days)return;
+
+    if(diff<=0){
+
+      days.textContent="00";
+      hours.textContent="00";
+      mins.textContent="00";
+      secs.textContent="00";
+
+      return;
+
+    }
+
+    const d=Math.floor(diff/86400000);
+
+    diff%=86400000;
+
+    const h=Math.floor(diff/3600000);
+
+    diff%=3600000;
+
+    const m=Math.floor(diff/60000);
+
+    diff%=60000;
+
+    const s=Math.floor(diff/1000);
+
+    days.textContent=String(d).padStart(2,"0");
+    hours.textContent=String(h).padStart(2,"0");
+    mins.textContent=String(m).padStart(2,"0");
+    secs.textContent=String(s).padStart(2,"0");
+
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown,1000);
+
+
+  /* =====================================================
+     PUBLISHER LIST
+  ====================================================== */
+
+  const publishers=[
+
+    "ইসলামিক ফাউন্ডেশন বাংলাদেশ",
+    "রাহনুমা প্রকাশনী",
+    "বাংলাদেশ ইসলামিক ল' রিসার্চ এন্ড লিগ্যাল এইড",
+    "মাকতাবাতুল খিদমাহ",
+    "মক্তব প্রকাশন",
+    "দারুল আরকাম",
+    "ইত্তিহাদ পাবলিকেশন",
+    "মাকতাবাতুস সালাফ",
+    "গার্ডিয়ান পাবলিকেশন্স",
+    "সুকুন পাবলিশিং",
+    "আল যিহান পাবলিকেশন",
+    "সিরাত পাবলিকেশন",
+    "পড় প্রকাশ",
+    "নাশাত পাবলিকেশন",
+    "রিফায়িন পাবলিকেশন",
+    "ফুলদানী প্রকাশনী",
+    "রাইয়ান প্রকাশন",
+    "আকীক প্রকাশনী",
+    "সাবাহ পাবলিকেশন",
+    "পুনরায় প্রকাশন",
+    "সন্দীপন প্রকাশন",
+    "আলোকিত প্রকাশনী",
+    "আস সুন্নাহ পাবলিকেশন",
+    "সবুজপত্র প্রকাশনী",
+    "কাতেবিন",
+    "দারুল ইলম",
+    "কানন প্রকাশন",
+    "আকীল পাবলিকেশন",
+    "মাকতাবাতুল আযহার",
+    "তালবিয়া প্রকাশন",
+    "সিয়ান পাবলিকেশন লিঃ",
+    "বইপল্লী",
+    "মারকাযুত দাওয়াহ প্রকাশনী",
+    "মাকতাবাতুত দাওয়াহ",
+    "মাকতাবাতুল মদিনাহ",
+    "মাকতাবাতুল হাসান",
+
+    "চেতনা প্রকাশ",
+    "মাকতাবাতুল আমজাদ",
+
+    "আশরাফিয়া বুক হাউজ",
+    "প্রচ্ছদ প্রকাশন",
+    "ওয়াফি পাবলিকেশন",
+    "ফাতিহ প্রকাশন",
+
+    "কালান্তর প্রকাশনী",
+    "বুখারা পাবলিকেশন",
+
+    "ফাউন্টেন প্রকাশন",
+    "হাসানাহ পাবলিকেশন",
+    "আল-রিহাব পাবলিকেশন্স",
+    "মাকতাবাতুল বায়ান",
+    "নন্দন",
+    "বর্ণালী বুক স্কোর",
+    "মাকতাবাতুল কুরআন",
+    "সিজদাহ পাবলিকেশন",
+    "মাকতাবাতুল আশরাফ",
+    "সোজলার পাবলিকেশন",
+    "আধুনিক প্রকাশনী",
+    "শব্দতরু পাবলিকেশন",
+
+    "আহসান পাবলিকেশন",
+    "মক্কা পাবলিকেশন",
+
+    "মেশক প্রকাশন",
+    "ইহদা পাবলিকেশন",
+    "বইঘর",
+    "উমেদ প্রকাশ",
+    "তারুণ্য প্রকাশন",
+    "মাকতাবাতুন নূর",
+
+    "প্রত্যাশা",
+    "আবরণ প্রকাশন",
+
+    "নবপ্রকাশ",
+    "মাকতাবাতুস সাহাবা",
+
+    "পথিক প্রকাশন",
+    "সাবিল পাবলিকেশন",
+
+    "মুজাহিদ প্রকাশনী",
+    "ওয়াহিদিয়া লাইব্রেরী",
+    "সমকালীন প্রকাশন",
+    "লিটল উম্মাহ",
+    "স্কলারস পাবলিকেশন",
+    "ফিউচার উম্মাহ পাবলিকেশন",
+    "টুনটুন বুকস",
+    "আতফাল",
+    "শিশু কানন",
+    "অন্যরকম পাবলিকেশন",
+
+    "আইসিএস পাবলিকেশন",
+    "মুনলাইট পাবলিকেশন",
+
+    "সত্যায়ন প্রকাশন",
+    "পেনফিল্ড পাবলিকেশন",
+    "মুহাম্মদ পাবলিকেশন",
+    "হাদিস ফাউন্ডেশন বাংলাদেশ",
+    "ইলান নূর এডিফিকেশন",
+    "মাকতাবাতুল আসলাফ",
+    "বিশ্বকল্যাণ পাবলিকেশন",
+    "ইলহাম",
+    "পরিশুদ্ধি প্রকাশন",
+    "প্রয়াস প্রকাশন",
+    "মাকতাবাতুল ফুরকান",
+    "বি আই আই টি",
+    "রুহামা পাবলিকেশন"
+
+  ];
+
+
+  const publisherGrid=
+    root.querySelector("#nibfPublisherGrid");
+
+  const publisherSearch=
+    root.querySelector("#nibfPublisherSearch");
+
+  const noPublisher=
+    root.querySelector("#nibfNoPublisher");
+
+  const pubTitle=
+    root.querySelector("#nibfPubTitle");
+
+
+  function renderPublishers(query=""){
+
+    publisherGrid.innerHTML="";
+
+    const q=query
+      .trim()
+      .toLocaleLowerCase("bn-BD");
+
+    const list=
+      publishers.filter(function(name){
+
+        return name
+          .toLocaleLowerCase("bn-BD")
+          .includes(q);
+
+      });
+
+    noPublisher.style.display=
+      list.length ? "none" : "block";
+
+
+    list.forEach(function(name){
+
+      const button=
+        document.createElement("button");
+
+      button.type="button";
+
+      button.className=
+        "nibf-publisher-card";
+
+      button.innerHTML=
+        "<small>প্রকাশনী</small>"+
+        "<strong>"+name+"</strong>";
+
+      button.addEventListener("click",function(){
+
+        pubTitle.textContent=name;
+
+        openModal("nibf-publisher-modal");
+
+      });
+
+      publisherGrid.appendChild(button);
+
+    });
+
+  }
+
+
+  renderPublishers();
+
+
+  publisherSearch.addEventListener("input",function(){
+
+    renderPublishers(this.value);
+
+  });
+
+
+  /* =====================================================
+     BOOKS
+  ====================================================== */
+
+  const books=[
+
+    {
+      title:"আলোকিত জীবনের পাঠ",
+      author:"লেখকের নাম",
+      cat:"ইসলামী জীবন ও আত্মশুদ্ধি",
+      type:"new"
+    },
+
+    {
+      title:"সীরাতের আলো",
+      author:"লেখকের নাম",
+      cat:"সীরাত ও ইতিহাস",
+      type:"popular"
+    },
+
+    {
+      title:"হাদীসের নির্বাচিত শিক্ষা",
+      author:"লেখকের নাম",
+      cat:"হাদীস",
+      type:"featured"
+    },
+
+    {
+      title:"কুরআনের সঙ্গে জীবন",
+      author:"লেখকের নাম",
+      cat:"কুরআন ও তাফসীর",
+      type:"new"
+    },
+
+    {
+      title:"আত্মশুদ্ধির পথ",
+      author:"লেখকের নাম",
+      cat:"আত্মশুদ্ধি",
+      type:"popular"
+    },
+
+    {
+      title:"ইসলামী পরিবার",
+      author:"লেখকের নাম",
+      cat:"পরিবার ও সমাজ",
+      type:"featured"
+    },
+
+    {
+      title:"শিশুদের জন্য ইসলামী গল্প",
+      author:"লেখকের নাম",
+      cat:"শিশু-কিশোর",
+      type:"new"
+    },
+
+    {
+      title:"জীবনের প্রয়োজনীয় ফিকহ",
+      author:"লেখকের নাম",
+      cat:"ফিকহ",
+      type:"popular"
+    }
+
+  ];
+
+
+  const bookGrid=
+    root.querySelector("#nibfBookGrid");
+
+  const bookTitle=
+    root.querySelector("#nibfBookTitle");
+
+  const bookAuthor=
+    root.querySelector("#nibfBookAuthor");
+
+
+  function renderBooks(filter="all"){
+
+    bookGrid.innerHTML="";
+
+    books
+      .filter(function(book){
+
+        return filter==="all" ||
+               book.type===filter;
+
+      })
+      .forEach(function(book){
+
+        const card=
+          document.createElement("article");
+
+        card.className=
+          "nibf-book-card";
+
+        card.innerHTML=
+
+          '<div class="nibf-cover">'+
+
+            '<div class="nibf-cover-book">'+
+              '<span>'+book.title+'</span>'+
+              '<small>ইসলামী বইমেলা</small>'+
+            '</div>'+
+
+          '</div>'+
+
+          '<div class="nibf-book-info">'+
+            '<h3>'+book.title+'</h3>'+
+            '<p>লেখক: '+book.author+'</p>'+
+            '<p>'+book.cat+'</p>'+
+          '</div>';
+
+
+        card.addEventListener("click",function(){
+
+          bookTitle.textContent=
+            book.title;
+
+          bookAuthor.textContent=
+            book.author;
+
+          openModal("nibf-book-modal");
+
+        });
+
+
+        bookGrid.appendChild(card);
+
+      });
+
+  }
+
+
+  renderBooks();
+
+
+  root.querySelectorAll(
+    ".nibf-book-filters button"
+  ).forEach(function(btn){
+
+    btn.addEventListener("click",function(){
+
+      root.querySelectorAll(
+        ".nibf-book-filters button"
+      ).forEach(function(b){
+
+        b.classList.remove("active");
+
+      });
+
+      btn.classList.add("active");
+
+      renderBooks(
+        btn.dataset.filter
+      );
+
+    });
+
+  });
+
+
+})();
 </script>
+
+</div>
 </body>
 </html>
