@@ -6,2167 +6,326 @@
 <meta name="description" content="ইসলামী বইমেলা — ইসলামী জ্ঞান, সত্য ও সুন্দরের মিলনমেলা">
 <title>ইসলামী বইমেলা</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{fontFamily:{
+bn:['Hind Siliguri','sans-serif'],display:['Noto Serif Bengali','serif']
+}}}}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-#nibf2026{--b:#03256c;--b2:#00296b;--c:#38bdf8;--m:#5eead4;--ink:#0f172a;font-family:'Hind Siliguri',sans-serif;color:var(--ink);overflow:hidden}
-#nibf2026 *{box-sizing:border-box} #nibf2026 a{text-decoration:none} #nibf2026 .d{font-family:'Noto Serif Bengali',serif}
-#nibf2026 .con{width:min(1180px,calc(100% - 28px));margin:auto} #nibf2026 .sec{padding:82px 0}
-#nibf2026 .ey{display:inline-flex;gap:9px;align-items:center;color:#0874b9;font-size:12px;font-weight:700;letter-spacing:.13em}
-#nibf2026 .ey:before{content:'';width:30px;height:2px;background:var(--c)} #nibf2026 .st{font-size:clamp(32px,4.5vw,58px);font-weight:800;line-height:1.18;margin:9px 0}
-#nibf2026 .hd{position:fixed;z-index:100;top:12px;left:0;right:0;pointer-events:none}
-#nibf2026 .head{pointer-events:auto;min-height:74px;border-radius:20px;padding:9px 12px 9px 16px;display:flex;align-items:center;background:linear-gradient(100deg,rgba(3,37,108,.97),rgba(0,41,107,.94));box-shadow:0 18px 45px #00143845;backdrop-filter:blur(14px)}
-#nibf2026 .brand{display:flex;gap:11px;align-items:center;color:#fff;min-width:225px} #nibf2026 .logo{width:43px;height:43px;border-radius:12px;display:grid;place-items:center;color:var(--c);border:1px solid #38bdf84d;background:#ffffff0d;font-size:20px}
-#nibf2026 .bn{font-family:'Noto Serif Bengali',serif;font-size:22px;font-weight:800;line-height:1} #nibf2026 .en{font-size:8px;letter-spacing:.23em;opacity:.7;margin-top:4px}
-#nibf2026 .nav{display:flex;align-items:center;justify-content:center;gap:2px;flex:1} #nibf2026 .nav a,#nibf2026 .special{color:#fff;padding:11px 12px;border-radius:11px;font-size:14px;font-weight:600;transition:.25s}
-#nibf2026 .nav a:hover{background:#38bdf81f;transform:translateY(-2px)} #nibf2026 .special{border:1px solid #5eead466;background:linear-gradient(135deg,#0891b2,#2563eb);cursor:pointer}
-#nibf2026 .hamb{display:none;background:#ffffff12;color:#fff;border:1px solid #ffffff22;border-radius:11px;width:42px;height:42px}
-#nibf2026 .hero{min-height:790px;display:flex;align-items:center;position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 80% 25%,#38bdf82c,transparent 28%),radial-gradient(circle at 15% 80%,#5eead41c,transparent 30%),linear-gradient(135deg,#03256c,#00296b 55%,#031d55)}
-#nibf2026 .hero:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:52px 52px}
-#nibf2026 .hc{position:relative;z-index:4;max-width:760px;padding-top:90px} #nibf2026 .hero h1{font-family:'Noto Serif Bengali',serif;font-size:clamp(43px,6.4vw,82px);line-height:1.14;font-weight:800;margin:16px 0}
-#nibf2026 .hero h1 span{color:#67e8f9} #nibf2026 .hero p{font-size:18px;line-height:1.9;color:#ffffffd4;max-width:650px}
-#nibf2026 .actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px} #nibf2026 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:51px;padding:0 21px;border-radius:14px;font-weight:700;border:1px solid transparent;transition:.25s;cursor:pointer}
-#nibf2026 .primary{color:#03256c;background:linear-gradient(135deg,#67e8f9,#38bdf8);box-shadow:0 14px 32px #38bdf840} #nibf2026 .ghost{color:#fff;border-color:#ffffff3b;background:#ffffff0d}
-#nibf2026 .trust{display:flex;gap:22px;margin-top:28px;color:#ffffffa8;font-size:14px} #nibf2026 .trust b{color:#fff}
-#nibf2026 .books{position:absolute;inset:0;pointer-events:none;opacity:.28} #nibf2026 .lb{position:absolute;width:112px;height:82px;animation:nibfFloat 10s ease-in-out infinite}
-#nibf2026 .lb svg{width:100%;height:100%} @keyframes nibfFloat{50%{transform:translateY(-22px) rotate(4deg)}}
-#nibf2026 .lb:nth-child(1){left:5%;top:24%} #nibf2026 .lb:nth-child(2){left:24%;top:13%;transform:scale(.7)} #nibf2026 .lb:nth-child(3){left:45%;top:17%;transform:scale(.85)} #nibf2026 .lb:nth-child(4){right:7%;top:22%;transform:scale(1.1)}
-#nibf2026 .lb:nth-child(5){right:25%;top:48%;transform:scale(.7)} #nibf2026 .lb:nth-child(6){left:4%;top:65%;transform:scale(.9)} #nibf2026 .lb:nth-child(7){left:28%;top:70%;transform:scale(.65)} #nibf2026 .lb:nth-child(8){left:54%;top:72%} #nibf2026 .lb:nth-child(9){right:5%;top:68%;transform:scale(.8)} #nibf2026 .lb:nth-child(10){right:37%;top:34%;transform:scale(.6)}
-#nibf2026 .card{background:#fff;border:1px solid #0f4c8118;border-radius:21px;box-shadow:0 12px 40px #03256c12;transition:.3s} #nibf2026 .card:hover{transform:translateY(-7px);box-shadow:0 22px 55px #03256c20;border-color:#38bdf84d}
-#nibf2026 .soft{background:#f6faff} #nibf2026 .campaign{color:#fff;padding:38px;border-radius:28px;background:linear-gradient(135deg,#03256c,#075985 65%,#0891b2);box-shadow:0 22px 60px #03256c38}
-#nibf2026 .campaign h3{font-size:clamp(28px,3vw,43px);line-height:1.25;margin:7px 0;font-weight:800} #nibf2026 .campaign p{color:#ffffffbd;max-width:760px}
-#nibf2026 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px} #nibf2026 .stat{padding:27px 23px} #nibf2026 .stat b{font-size:36px;color:#0b4fa2} #nibf2026 .stat span{display:block;color:#64748b}
-#nibf2026 .about{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center} #nibf2026 .visual{min-height:380px;border-radius:30px;display:grid;place-items:center;background:linear-gradient(145deg,#03256c,#0b4fa2);position:relative;overflow:hidden}
-#nibf2026 .openbook{width:330px;height:210px;position:relative;filter:drop-shadow(0 25px 28px #0003)} #nibf2026 .openbook span{position:absolute;top:12px;width:50%;height:185px;background:#fff}
-#nibf2026 .openbook .l{left:0;border-radius:10px 4px 4px 10px;transform:skewY(-4deg)} #nibf2026 .openbook .r{right:0;border-radius:4px 10px 10px 4px;transform:skewY(4deg)} #nibf2026 .openbook i{position:absolute;left:50%;top:12px;width:2px;height:185px;background:#38bdf8;z-index:3}
-#nibf2026 .archive{display:grid;grid-template-columns:repeat(5,1fr);gap:15px} #nibf2026 .year{min-height:225px;padding:23px;color:#fff;border-radius:21px;background:linear-gradient(145deg,#03256c,#0b4fa2);display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden;cursor:pointer;border:0;text-align:left}
-#nibf2026 .year b{font-size:34px;color:#67e8f9} #nibf2026 .year strong{font-family:'Noto Serif Bengali',serif;font-size:18px} #nibf2026 .year span{color:#ffffffa8;font-size:13px}
-#nibf2026 .dirtop{display:flex;justify-content:space-between;align-items:end;gap:20px} #nibf2026 .search{height:52px;min-width:330px;border:1px solid #dbeafe;border-radius:14px;padding:0 16px;outline:0;font:inherit}
-#nibf2026 .pubs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px} #nibf2026 .nibf-pub-card{padding:19px;display:flex;gap:12px;align-items:center;text-align:left;border:1px solid #0f4c8118;border-radius:21px;background:#fff;box-shadow:0 12px 40px #03256c12;transition:.3s;cursor:pointer;font:inherit;color:#0f172a}
-#nibf2026 .nibf-pub-card:hover{transform:translateY(-6px);border-color:#38bdf84d;box-shadow:0 22px 55px #03256c20} #nibf2026 .nibf-pi{width:44px;height:44px;border-radius:12px;background:#eff6ff;color:#075985;display:grid;place-items:center;font-weight:800;flex:0 0 auto}
-#nibf2026 .nibf-pub-card strong{display:block;font-size:15px;line-height:1.35} #nibf2026 .nibf-pub-card small{display:block;color:#64748b;margin-top:3px}
-#nibf2026 .booksgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px} #nibf2026 .cover{height:260px;margin:10px;border-radius:16px;padding:21px;display:flex;align-items:end;color:#fff;background:linear-gradient(145deg,#03256c,#0b4fa2);position:relative;overflow:hidden}
-#nibf2026 .cover span{position:relative;font-family:'Noto Serif Bengali',serif;font-size:21px;font-weight:800;line-height:1.35} #nibf2026 .bi{padding:8px 20px 21px} #nibf2026 .bi strong{font-family:'Noto Serif Bengali',serif;font-size:17px} #nibf2026 .bi small{display:block;color:#64748b;margin-top:4px}
-#nibf2026 .noticegrid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px} #nibf2026 .notice{padding:24px} #nibf2026 .nr{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid #e5eef8;cursor:pointer}
-#nibf2026 .nr:last-child{border:0} #nibf2026 .date{min-width:62px;height:56px;border-radius:12px;background:#eff6ff;color:#075985;text-align:center;padding-top:6px;font-weight:800}
-#nibf2026 .date small{display:block;font-size:10px;color:#64748b} #nibf2026 .social{background:linear-gradient(135deg,#03256c,#075985);color:#fff;padding:72px 0}
-#nibf2026 .socialgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px} #nibf2026 .sc{padding:22px;border:1px solid #ffffff1c;background:#ffffff0a;border-radius:18px;color:#fff;transition:.3s}
-#nibf2026 .si{width:44px;height:44px;border-radius:12px;background:#38bdf81c;color:#67e8f9;display:grid;place-items:center;font-weight:800;margin-bottom:13px}
-#nibf2026 .footer{background:#021b4c;color:#fff;padding-top:60px} #nibf2026 .fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:45px}
-#nibf2026 .footer h4{margin-bottom:13px} #nibf2026 .footer p,#nibf2026 .footer a{color:#ffffff9c;font-size:14px} #nibf2026 .footer a{display:block;margin:7px 0}
-#nibf2026 .copy{border-top:1px solid #ffffff1a;padding:22px 0;color:#ffffff8f;font-size:13px;display:flex;justify-content:space-between;gap:15px}
-/* FLIPBOOK MODALS */
-#nibf2026 .nibf-modal{position:fixed;inset:0;z-index:9999;background:#010e28d9;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(11px);overflow:auto}
-#nibf2026 .nibf-modal.is-open{display:flex} #nibf2026 .nibf-flipbook{width:min(900px,100%);position:relative;perspective:1800px;animation:nibfBookIn .55s ease both}
-@keyframes nibfBookIn{from{opacity:0;transform:translateY(25px) rotateX(8deg) scale(.94)}to{opacity:1;transform:none}}
-#nibf2026 .nibf-pages{display:grid;grid-template-columns:1fr 1fr;min-height:440px;box-shadow:0 30px 80px #0007}
-#nibf2026 .nibf-page{background:linear-gradient(135deg,#fff,#effaff);padding:44px 38px;min-height:440px;position:relative}
-#nibf2026 .nibf-page:first-child{border-radius:18px 4px 4px 18px;transform:skewY(-.7deg)} #nibf2026 .nibf-page:last-child{border-radius:4px 18px 18px 4px;transform:skewY(.7deg)}
-#nibf2026 .nibf-page h3{font-family:'Noto Serif Bengali',serif;color:#03256c;font-size:clamp(25px,3.5vw,40px);line-height:1.3;font-weight:800;margin:12px 0}
-#nibf2026 .nibf-page p{color:#475569;line-height:1.9;margin:8px 0} #nibf2026 .nibf-k{color:#0284c7;font-size:11px;font-weight:800;letter-spacing:.12em}
-#nibf2026 .nibf-line{height:1px;background:#dbeafe;margin:18px 0} #nibf2026 .nibf-close{position:absolute;right:-14px;top:-14px;width:44px;height:44px;border:0;border-radius:50%;background:#03256c;color:#fff;font-size:25px;cursor:pointer;z-index:10;box-shadow:0 8px 25px #0004}
-#nibf2026 .nibf-logo-placeholder{width:72px;height:72px;border-radius:18px;background:#eff6ff;color:#075985;display:grid;place-items:center;font-size:30px;font-weight:800;margin-top:18px}
-#nibf2026 .nibf-links{display:flex;gap:10px;margin-top:18px} #nibf2026 .nibf-links a{padding:9px 14px;border-radius:10px;background:#03256c;color:#fff;font-size:13px}
-@media(max-width:1050px){#nibf2026 .nav a{padding:10px 8px;font-size:13px}#nibf2026 .pubs{grid-template-columns:repeat(3,1fr)}#nibf2026 .booksgrid{grid-template-columns:repeat(3,1fr)}#nibf2026 .archive{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:820px){#nibf2026 .hamb{display:block;margin-left:auto}#nibf2026 .nav{display:none;position:absolute;top:calc(100% + 7px);left:0;right:0;flex-direction:column;align-items:stretch;background:#03256cf8;border:1px solid #ffffff1c;border-radius:16px;padding:8px}#nibf2026 .nav.open{display:flex}#nibf2026 .nav a,#nibf2026 .special{text-align:center;width:100%}#nibf2026 .stats{grid-template-columns:repeat(2,1fr)}#nibf2026 .about,#nibf2026 .noticegrid{grid-template-columns:1fr}#nibf2026 .archive{grid-template-columns:repeat(2,1fr)}#nibf2026 .pubs{grid-template-columns:repeat(2,1fr)}#nibf2026 .booksgrid{grid-template-columns:repeat(2,1fr)}#nibf2026 .socialgrid{grid-template-columns:repeat(2,1fr)}#nibf2026 .fg{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){#nibf2026 .con{width:calc(100% - 22px)}#nibf2026 .sec{padding:62px 0}#nibf2026 .bn{font-size:18px}#nibf2026 .hero{min-height:720px}#nibf2026 .hero h1{font-size:42px}#nibf2026 .hero p{font-size:16px}#nibf2026 .actions .btn{width:100%}#nibf2026 .trust{display:grid;grid-template-columns:1fr 1fr;gap:8px}#nibf2026 .stats,#nibf2026 .archive,#nibf2026 .pubs,#nibf2026 .booksgrid,#nibf2026 .socialgrid{grid-template-columns:1fr 1fr}#nibf2026 .dirtop{display:block}#nibf2026 .search{width:100%;min-width:0;margin-top:16px}#nibf2026 .pages{grid-template-columns:1fr;min-height:auto}#nibf2026 .nibf-page{min-height:0;padding:30px 22px}#nibf2026 .nibf-page:first-child,#nibf2026 .nibf-page:last-child{transform:none}#nibf2026 .nibf-close{right:5px;top:5px}}
+#nibf2026{--blue:#03256c;--blue2:#00296b;--sky:#38bdf8;--mint:#5eead4;--cyan:#67e8f9;--ink:#0f172a;font-family:'Hind Siliguri',sans-serif;color:var(--ink);overflow:hidden}
+#nibf2026 *{box-sizing:border-box}#nibf2026 a{text-decoration:none}.d{font-family:'Noto Serif Bengali',serif}
+.con{width:min(1180px,calc(100% - 28px));margin:auto}.sec{padding:82px 0}
+.ey{display:inline-flex;gap:9px;align-items:center;color:#0874b9;font-size:12px;font-weight:700;letter-spacing:.13em}
+.ey:before{content:'';width:30px;height:2px;background:var(--sky)}
+.st{font-size:clamp(32px,4.5vw,58px);font-weight:800;line-height:1.18;margin:9px 0}
+
+.hd{position:fixed;z-index:50;top:12px;left:0;right:0;pointer-events:none}.head{pointer-events:auto;min-height:74px;border-radius:20px;padding:9px 12px 9px 16px;display:flex;align-items:center;background:linear-gradient(100deg,rgba(3,37,108,.97),rgba(0,41,107,.94));box-shadow:0 18px 45px #00143845;backdrop-filter:blur(14px)}
+.brand{display:flex;gap:11px;align-items:center;color:#fff;min-width:225px}.logo{width:43px;height:43px;border-radius:12px;display:grid;place-items:center;color:var(--cyan);border:1px solid #38bdf84d;background:#ffffff0d;font-size:20px}.bn{font-family:'Noto Serif Bengali',serif;font-size:22px;font-weight:800;line-height:1}.en{font-size:8px;letter-spacing:.23em;opacity:.7;margin-top:4px}
+.nav{display:flex;align-items:center;justify-content:center;gap:2px;flex:1}.nav a,.special{color:#fff;padding:11px 12px;border-radius:11px;font-size:14px;font-weight:600;transition:.25s}.nav a:hover{background:#38bdf81f;transform:translateY(-2px)}
+.special{border:1px solid #5eead466;background:linear-gradient(135deg,#0891b2,#2563eb);cursor:pointer;position:relative;box-shadow:0 0 18px #38bdf855,0 0 35px #5eead422;animation:specialGlow 2s ease-in-out infinite}
+.special .spark{display:inline-block;animation:spark 1.2s ease-in-out infinite}.special:hover{box-shadow:0 0 24px #67e8f9aa,0 0 48px #38bdf866;transform:translateY(-2px)}
+@keyframes specialGlow{50%{box-shadow:0 0 28px #67e8f988,0 0 55px #38bdf844}}@keyframes spark{0%,100%{opacity:.65;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.45) rotate(18deg);filter:drop-shadow(0 0 7px #fff)}}
+.hamb{display:none;background:#ffffff12;color:#fff;border:1px solid #ffffff22;border-radius:11px;width:42px;height:42px}
+
+.hero{min-height:790px;display:flex;align-items:center;position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 80% 25%,#38bdf82c,transparent 28%),radial-gradient(circle at 15% 80%,#5eead41c,transparent 30%),linear-gradient(135deg,#03256c,#00296b 55%,#031d55)}
+.hero:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:52px 52px}
+.hc{position:relative;z-index:4;max-width:760px;padding-top:90px}.hero h1{font-family:'Noto Serif Bengali',serif;font-size:clamp(43px,6.4vw,82px);line-height:1.14;font-weight:800;margin:16px 0}.hero h1 span{color:var(--cyan)}.hero p{font-size:18px;line-height:1.9;color:#ffffffd4;max-width:650px}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:51px;padding:0 21px;border-radius:14px;font-weight:700;border:1px solid transparent;transition:.25s;cursor:pointer}.btn:hover{transform:translateY(-4px) scale(1.02)}.btn:active{transform:translateY(1px) scale(.98)}
+.primary{color:#03256c;background:linear-gradient(135deg,#67e8f9,#38bdf8);box-shadow:0 14px 32px #38bdf840}.ghost{color:#fff;border-color:#ffffff3b;background:#ffffff0d}.ghost:hover{background:#ffffff18}
+.trust{display:flex;gap:22px;margin-top:28px;color:#ffffffa8;font-size:14px}.trust b{color:#fff}
+
+/* Hero floating books */
+.books{position:absolute;inset:0;pointer-events:none}.lb{position:absolute;width:112px;height:82px;color:#fff;opacity:.30;animation:floatBook 8s ease-in-out infinite}.lb svg{width:100%;height:100%}.pg{transform-origin:50% 100%;animation:page 4.5s ease-in-out infinite}.pg.r{animation-delay:.3s}
+@keyframes page{50%{transform:rotateY(-28deg)}}@keyframes floatBook{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(4deg)}}
+.lb:nth-child(1){left:4%;top:22%}.lb:nth-child(2){left:17%;top:12%;transform:scale(.65);animation-delay:-2s}.lb:nth-child(3){left:34%;top:15%;transform:scale(.8);animation-delay:-4s}.lb:nth-child(4){right:7%;top:20%;transform:scale(1.05);animation-delay:-1s}.lb:nth-child(5){right:22%;top:47%;transform:scale(.65);animation-delay:-3s}.lb:nth-child(6){left:3%;top:63%;transform:scale(.85);animation-delay:-5s}.lb:nth-child(7){left:25%;top:69%;transform:scale(.6);animation-delay:-1.5s}.lb:nth-child(8){left:48%;top:73%;animation-delay:-3.5s}.lb:nth-child(9){right:4%;top:66%;transform:scale(.8);animation-delay:-6s}.lb:nth-child(10){right:34%;top:32%;transform:scale(.58);animation-delay:-2.5s}.lb:nth-child(11){left:11%;top:43%;transform:scale(.55);animation-delay:-4.5s}.lb:nth-child(12){right:13%;top:42%;transform:scale(.6);animation-delay:-5.5s}
+
+/* Large magical book */
+.heroBook{position:absolute;z-index:2;right:7%;top:30%;width:300px;height:220px;filter:drop-shadow(0 28px 35px #0007);animation:heroBookFloat 6s ease-in-out infinite;pointer-events:none}
+.heroBook .pageL,.heroBook .pageR{position:absolute;top:25px;width:50%;height:170px;background:linear-gradient(145deg,#fff,#dff8ff);box-shadow:inset 0 0 20px #38bdf833}.heroBook .pageL{left:0;border-radius:18px 4px 4px 18px;transform:skewY(-5deg) rotate(-1deg)}.heroBook .pageR{right:0;border-radius:4px 18px 18px 4px;transform:skewY(5deg) rotate(1deg)}.heroBook .spine{position:absolute;z-index:4;left:50%;top:26px;width:4px;height:168px;background:#38bdf8;box-shadow:0 0 14px #67e8f9}
+.heroBook .pageL:after,.heroBook .pageR:after{content:'';position:absolute;inset:28px 22px;background:repeating-linear-gradient(#03256c22 0 2px,transparent 2px 13px)}
+.heroBook .light{position:absolute;width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 8px #67e8f9,0 0 20px #38bdf8;opacity:0;animation:lightFly 3.2s ease-out infinite}
+.heroBook .l1{left:42%;top:37%;--dx:-70px;--dy:-110px}.heroBook .l2{left:51%;top:48%;--dx:75px;--dy:-125px;animation-delay:.7s}.heroBook .l3{left:35%;top:54%;--dx:-115px;--dy:-45px;animation-delay:1.3s}.heroBook .l4{left:59%;top:58%;--dx:110px;--dy:-55px;animation-delay:1.8s}.heroBook .l5{left:47%;top:34%;--dx:20px;--dy:-145px;animation-delay:2.2s}.heroBook .l6{left:40%;top:60%;--dx:-65px;--dy:-10px;animation-delay:2.6s}
+@keyframes heroBookFloat{50%{transform:translateY(-14px) rotate(1deg)}}@keyframes lightFly{0%{opacity:0;transform:translate(0,0) scale(.5)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.15)}}
+.orb{position:absolute;border-radius:50%;filter:blur(2px)}.o1{width:420px;height:420px;right:-120px;top:180px;background:#38bdf81a}.o2{width:320px;height:320px;left:-110px;bottom:-80px;background:#5eead414}
+
+.card{background:#fff;border:1px solid #0f4c8118;border-radius:21px;box-shadow:0 12px 40px #03256c12;transition:.35s}.card:hover{transform:translateY(-7px);box-shadow:0 22px 55px #03256c20;border-color:#38bdf84d}
+.soft{background:#f6faff}.campaign{color:#fff;padding:38px;border-radius:28px;background:linear-gradient(135deg,#03256c,#075985 65%,#0891b2);box-shadow:0 22px 60px #03256c38;position:relative;overflow:hidden}.campaign:after{content:'';position:absolute;width:330px;height:330px;right:-100px;top:-140px;border:1px solid #ffffff22;border-radius:50%;box-shadow:0 0 0 50px #ffffff05,0 0 0 100px #ffffff03}.campaign h3{font-size:clamp(28px,3vw,43px);line-height:1.25;margin:7px 0;font-weight:800}.campaign p{color:#ffffffbd;max-width:760px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat{padding:27px 23px}.stat b{font-size:36px;color:#0b4fa2}.stat span{display:block;color:#64748b}
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}.visual{min-height:380px;border-radius:30px;display:grid;place-items:center;background:linear-gradient(145deg,#03256c,#0b4fa2);position:relative;overflow:hidden}.visual:before,.visual:after{content:'';position:absolute;border:1px solid #ffffff22;border-radius:50%;width:480px;height:480px}.visual:after{width:310px;height:310px}
+.openbook{width:330px;height:210px;position:relative;z-index:2;filter:drop-shadow(0 25px 28px #0003)}.openbook i,.openbook span{position:absolute;top:12px;width:50%;height:185px;background:#fff}.openbook .l{left:0;border-radius:10px 4px 4px 10px;transform:skewY(-4deg)}.openbook .r{right:0;border-radius:4px 10px 10px 4px;transform:skewY(4deg)}.openbook span:after{content:'';position:absolute;inset:28px 24px;background:repeating-linear-gradient(#03256c1a 0 2px,transparent 2px 13px)}.openbook i{left:50%;width:2px;background:#38bdf8;z-index:3}
+.archive{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}.year{min-height:225px;padding:23px;color:#fff;border-radius:21px;background:linear-gradient(145deg,#03256c,#0b4fa2);display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden;transition:.4s;cursor:pointer}.year:before{content:'';position:absolute;width:180px;height:180px;right:-70px;top:-70px;border:1px solid #ffffff24;border-radius:50%}.year:hover{transform:translateY(-10px) rotateX(3deg);box-shadow:0 20px 45px #03256c35}.year b{font-size:34px;color:#67e8f9}.year strong{font-family:'Noto Serif Bengali',serif;font-size:18px}.year span{color:#ffffffa8;font-size:13px}
+.dirtop{display:flex;justify-content:space-between;align-items:end;gap:20px}.search{height:52px;min-width:330px;border:1px solid #dbeafe;border-radius:14px;padding:0 16px;outline:0;font:inherit}.search:focus{border-color:#38bdf8;box-shadow:0 0 0 4px #38bdf81f}
+.pubs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.pub{padding:19px;display:flex;gap:12px;align-items:center;cursor:pointer}.pi{width:44px;height:44px;border-radius:12px;background:#eff6ff;color:#075985;display:grid;place-items:center;font-weight:800}.pub:hover .pi{animation:iconPulse 1s infinite}@keyframes iconPulse{50%{transform:scale(1.08);box-shadow:0 0 0 7px #38bdf812}}
+.booksgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.cover{height:260px;margin:10px;border-radius:16px;padding:21px;display:flex;align-items:end;color:#fff;background:linear-gradient(145deg,#03256c,#0b4fa2);position:relative;overflow:hidden}.cover:before{content:'';position:absolute;inset:12px;border:1px solid #ffffff2d;border-radius:10px}.cover span{position:relative;font-family:'Noto Serif Bengali',serif;font-size:21px;font-weight:800;line-height:1.35}.bi{padding:8px 20px 21px}.bi strong{font-family:'Noto Serif Bengali',serif;font-size:17px}.bi small{display:block;color:#64748b;margin-top:4px}.bookcard{cursor:pointer}.bookcard:hover .cover{box-shadow:0 0 28px #38bdf833;transform:scale(1.015)}
+.noticegrid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.notice{padding:24px}.nr{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid #e5eef8;cursor:pointer;transition:.25s}.nr:hover{transform:translateX(5px)}.nr:last-child{border:0}.date{min-width:62px;height:56px;border-radius:12px;background:#eff6ff;color:#075985;text-align:center;padding-top:6px;font-weight:800}.date small{display:block;font-size:10px;color:#64748b}
+.social{background:linear-gradient(135deg,#03256c,#075985);color:#fff;padding:72px 0}.socialgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.sc{padding:22px;border:1px solid #ffffff1c;background:#ffffff0a;border-radius:18px;color:#fff;transition:.35s}.sc:hover{transform:translateY(-9px) scale(1.02);background:#ffffff12;box-shadow:0 18px 35px #0003}.si{width:44px;height:44px;border-radius:12px;background:#38bdf81c;color:#67e8f9;display:grid;place-items:center;font-weight:800;margin-bottom:13px}
+.footer{background:#021b4c;color:#fff;padding-top:60px}.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:45px}.footer h4{margin-bottom:13px}.footer p,.footer a{color:#ffffff9c;font-size:14px}.footer a{display:block;margin:7px 0;transition:.2s}.footer a:hover{color:#67e8f9;transform:translateX(3px)}.copy{border-top:1px solid #ffffff1a;padding:22px 0;color:#ffffff8f;font-size:13px;display:flex;justify-content:space-between;gap:15px}.fbook{display:inline-block;width:50px;height:25px;vertical-align:middle;margin-right:6px;position:relative}.fbook:before,.fbook:after{content:'';position:absolute;top:2px;width:23px;height:21px;border:1px solid #67e8f999;animation:fb 3s infinite}.fbook:before{left:1px;transform-origin:right}.fbook:after{right:1px;transform-origin:left}@keyframes fb{50%{transform:rotateY(28deg)}}
+
+/* Universal flipbook modal */
+.modal{position:fixed;inset:0;z-index:999;background:#010e28d9;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(11px)}.modal.open{display:flex}.stage{width:min(900px,100%);perspective:1700px;max-height:92vh;overflow:auto}.mb{position:relative;transform-style:preserve-3d;transform:rotateX(8deg) scale(.55);opacity:0}.modal.open .mb{animation:bookopen 1.2s cubic-bezier(.2,.8,.2,1) forwards}@keyframes bookopen{0%{transform:rotateX(8deg) rotateY(-14deg) scale(.55);opacity:0}55%{transform:rotateX(2deg) scale(1.02);opacity:1}100%{transform:none;opacity:1}}
+.pages{display:grid;grid-template-columns:1fr 1fr;min-height:430px}.page{background:linear-gradient(135deg,#fff,#effaff);padding:45px 40px;box-shadow:0 20px 50px #0003}.page:first-child{border-radius:17px 4px 4px 17px;transform:skewY(-1deg)}.page:last-child{border-radius:4px 17px 17px 4px;transform:skewY(1deg)}.page h3{font-family:'Noto Serif Bengali',serif;color:#03256c;font-size:clamp(25px,4vw,42px);line-height:1.25;font-weight:800}.page p{color:#475569;line-height:1.9}.close{position:absolute;z-index:3;right:15px;top:15px;width:42px;height:42px;border:0;border-radius:50%;background:#03256c;color:#fff;font-size:22px;cursor:pointer;transition:.3s}.close:hover{transform:rotate(90deg);background:#075985}.modal .k{color:#0284c7;font-size:11px;font-weight:800;letter-spacing:.12em}.divi{height:1px;background:#dbeafe;margin:20px 0}
+.modalContent{min-height:220px}.placeholder{border:2px dashed #bae6fd;border-radius:16px;padding:25px;text-align:center;color:#64748b;background:#f8fdff}.placeholder strong{display:block;color:#075985;margin-bottom:6px}
+.countdown{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.cd{min-width:74px;padding:12px 10px;border-radius:14px;text-align:center;background:#ffffff12;border:1px solid #67e8f955;box-shadow:0 0 20px #38bdf822}.cd b{display:block;font-size:25px;color:#67e8f9;line-height:1}.cd small{color:#ffffffa8}
+.fairCard{position:relative;overflow:hidden;padding:30px;border-radius:25px;color:#fff;background:linear-gradient(135deg,#03256c,#075985,#0891b2);box-shadow:0 25px 60px #03256c30}.fairCard:after{content:'';position:absolute;width:260px;height:260px;border:1px solid #ffffff22;border-radius:50%;right:-100px;top:-90px}
+.noticeBadge{display:inline-block;padding:5px 10px;border-radius:999px;background:#e0f2fe;color:#0369a1;font-size:12px;font-weight:700}
+
+@media(max-width:1050px){.nav a{padding:10px 8px;font-size:13px}.pubs{grid-template-columns:repeat(3,1fr)}.booksgrid{grid-template-columns:repeat(3,1fr)}.archive{grid-template-columns:repeat(3,1fr)}.heroBook{right:2%;opacity:.7}}
+@media(max-width:820px){.hamb{display:block;margin-left:auto}.nav{display:none;position:absolute;top:calc(100% + 7px);left:0;right:0;flex-direction:column;align-items:stretch;background:#03256cf8;border:1px solid #ffffff1c;border-radius:16px;padding:8px}.nav.open{display:flex}.nav a,.special{text-align:center;width:100%}.stats{grid-template-columns:repeat(2,1fr)}.about,.noticegrid{grid-template-columns:1fr}.archive{grid-template-columns:repeat(2,1fr)}.pubs{grid-template-columns:repeat(2,1fr)}.booksgrid{grid-template-columns:repeat(2,1fr)}.socialgrid{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:repeat(2,1fr)}.heroBook{width:230px;right:-35px;top:42%;opacity:.45}}
+@media(max-width:560px){.con{width:calc(100% - 22px)}.sec{padding:62px 0}.brand{min-width:0}.bn{font-size:18px}.en{font-size:7px}.hero{min-height:720px}.hc{padding-top:80px}.hero h1{font-size:42px}.hero p{font-size:16px}.actions .btn{width:100%}.trust{display:grid;grid-template-columns:1fr 1fr;gap:8px}.campaign{padding:27px 21px}.stats,.archive,.pubs,.booksgrid,.socialgrid{grid-template-columns:1fr 1fr}.dirtop{display:block}.search{width:100%;min-width:0;margin-top:16px}.visual{min-height:300px}.openbook{transform:scale(.8)}.pages{grid-template-columns:1fr;min-height:0}.page{padding:30px 22px}.page:first-child,.page:last-child{border-radius:14px;transform:none}.page h3{font-size:24px}.page p{font-size:14px;line-height:1.7}.copy{display:block;text-align:center}.copy span{display:block;margin-top:8px}.lb{opacity:.22}.lb:nth-child(2),.lb:nth-child(5),.lb:nth-child(7),.lb:nth-child(10),.lb:nth-child(11){display:none}.heroBook{width:190px;right:-45px;top:48%;opacity:.32}.cd{min-width:65px}.cd b{font-size:21px}}
+@media(prefers-reduced-motion:reduce){#nibf2026 *{animation:none!important;transition:none!important}}
 </style>
 </head>
+
 <body>
 <div id="nibf2026">
+
+<!-- HEADER -->
 <div class="hd"><div class="con"><header class="head">
 <a class="brand" href="#home"><span class="logo">▤</span><span><span class="bn block">ইসলামী বইমেলা</span><span class="en block">ISLAMI BOOK FAIR</span></span></a>
-<nav class="nav" id="nibfNav">
+<nav class="nav" id="nav">
 <a href="#home">হোম</a><a href="#campaign">ইভেন্ট ও ক্যাম্পেইন</a><a href="#fair">বইমেলা</a><a href="#publishers">প্রকাশনী</a><a href="#new-books">নতুন বই</a><a href="#archive">আর্কাইভ</a>
-<button class="special" type="button" data-nibf-open="special-news">✦ বিশেষ খবর</button></nav>
-<button class="hamb" id="nibfHamb" type="button">☰</button>
+<button class="special" data-open="special"><span class="spark">✦</span> বিশেষ খবর</button>
+</nav><button class="hamb" id="hamb" aria-label="Menu">☰</button>
 </header></div></div>
 
+<!-- HERO -->
 <section class="hero" id="home">
-<div class="books"><div class="lb"><svg viewBox="0 0 120 88" fill="none"><path d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor"/><path d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor"/></svg></div></div>
-<div class="con"><div class="hc"><div class="ey" style="color:#7dd3fc">ISLAMI BOOK FAIR PLATFORM</div>
+<div class="books">
+<!-- repeated decorative books -->
+<script>
+for(let i=0;i<12;i++)document.write(`<div class="lb"><svg viewBox="0 0 120 88" fill="none"><path class="pg l" d="M60 76C46 67 27 68 9 74V18c18-6 37-5 51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path class="pg r" d="M60 76c14-9 33-8 51-2V18c-18-6-37-5-51 4v54Z" stroke="currentColor" stroke-width="1.4"/><path d="M60 22v54M18 31h35M67 31h35M18 43h35M67 43h35" stroke="currentColor" stroke-width=".9"/></svg></div>`)
+</script>
+</div>
+<div class="heroBook">
+<div class="pageL"></div><div class="pageR"></div><div class="spine"></div>
+<i class="light l1"></i><i class="light l2"></i><i class="light l3"></i><i class="light l4"></i><i class="light l5"></i><i class="light l6"></i>
+</div>
+<div class="orb o1"></div><div class="orb o2"></div>
+<div class="con"><div class="hc">
+<div class="ey" style="color:#7dd3fc">ISLAMI BOOK FAIR PLATFORM</div>
 <h1>ইসলামী জ্ঞান, <span>সত্য</span> ও সুন্দরের সর্ববৃহৎ মিলনমেলা।</h1>
 <p>বই, জ্ঞান, সাহিত্য ও সংস্কৃতির মাধ্যমে একটি আলোকিত সমাজের পথে—বিভিন্ন ইসলামী বইমেলা, প্রকাশনী, নতুন বই, ক্যাম্পেইন ও আয়োজনকে এক প্ল্যাটফর্মে যুক্ত করার উদ্যোগ।</p>
 <div class="actions"><a href="#fair" class="btn primary">মেলার সময়সূচী দেখুন →</a><a href="#archive" class="btn ghost">বিগত বইমেলা দেখুন ↗</a></div>
-<div class="trust"><span><b>বই</b> — জ্ঞানের আলো</span><span><b>প্রকাশনী</b> — সৃজনের সঙ্গী</span><span><b>পাঠক</b> — আমাদের প্রাণ</span></div></div></div>
+<div class="trust"><span><b>বই</b> — জ্ঞানের আলো</span><span><b>প্রকাশনী</b> — সৃজনের সঙ্গী</span><span><b>পাঠক</b> — আমাদের প্রাণ</span></div>
+</div></div>
 </section>
 
-<section class="sec" id="campaign"><div class="con"><div class="campaign"><div style="color:#a5f3fc;font-size:12px;font-weight:700;letter-spacing:.12em">CURRENT EVENT • ২০২৬</div><h3>চলমান আয়োজন ও ক্যাম্পেইন</h3><p>বর্তমানে চলমান বইমেলা, প্রতিযোগিতা, বিশেষ ছাড়, কুপন ও অন্যান্য আয়োজনের আপডেট এখানে প্রকাশিত হবে।</p><div class="actions"><a href="#fair" class="btn primary">চলমান মেলা দেখুন →</a><button class="btn ghost" type="button" data-nibf-open="special-news">বিশেষ খবর পড়ুন</button></div></div></div></section>
+<!-- CAMPAIGN -->
+<section class="sec" id="campaign"><div class="con"><div class="campaign">
+<div style="color:#a5f3fc;font-size:12px;font-weight:700;letter-spacing:.12em">CURRENT EVENT • ২০২৬</div>
+<h3>চলমান আয়োজন ও ক্যাম্পেইন</h3>
+<p>ইসলামী বইমেলা ২০২৬-এর সম্ভাব্য আয়োজন, বিশেষ খবর, সময়সূচী, কাউন্টডাউন ও অন্যান্য গুরুত্বপূর্ণ আপডেট এখানে পাওয়া যাবে।</p>
+<div class="actions"><a href="#fair" class="btn primary">চলমান মেলা দেখুন →</a><button class="btn ghost" data-open="special">বিশেষ খবর পড়ুন</button></div>
+</div></div></section>
 
-<section><div class="con"><div class="stats"><div class="card stat"><b>60+</b><span>প্রকাশনী</span></div><div class="card stat"><b>1,000+</b><span>বই</span></div><div class="card stat"><b>10,000+</b><span>পাঠক</span></div><div class="card stat"><b>Multiple</b><span>শহর ও আয়োজন</span></div></div></div></section>
+<section><div class="con"><div class="stats">
+<div class="card stat"><b>60+</b><span>প্রকাশনী</span></div><div class="card stat"><b>1,000+</b><span>বই</span></div><div class="card stat"><b>10,000+</b><span>পাঠক</span></div><div class="card stat"><b>Multiple</b><span>শহর ও আয়োজন</span></div>
+</div></div></section>
 
-<section class="sec soft" id="about"><div class="con"><div class="about"><div><div class="ey">ABOUT US</div><h2 class="st d">ইসলামী বইমেলা সম্পর্কে</h2><p class="text-slate-500 text-lg">ইসলামী বইমেলা হলো ইসলামী জ্ঞান, সাহিত্য, সংস্কৃতি, প্রকাশনা ও পাঠাভ্যাসকে কেন্দ্র করে আয়োজিত বিভিন্ন বইমেলার একটি সমন্বিত ডিজিটাল প্ল্যাটফর্ম।</p><p class="mt-5 text-slate-600 leading-8">এখানে পাঠকরা বিভিন্ন বইমেলার তথ্য, প্রকাশনী, নতুন বই, ক্যাম্পেইন, প্রতিযোগিতা ও পুরোনো আয়োজনের আর্কাইভ সহজেই খুঁজে পাবেন।</p></div>
-<div class="visual"><div class="openbook"><span class="l"></span><span class="r"></span><i></i></div></div></div></div></section>
+<!-- ABOUT -->
+<section class="sec soft" id="about"><div class="con"><div class="about">
+<div><div class="ey">ABOUT US</div><h2 class="st d">ইসলামী বইমেলা সম্পর্কে</h2><p class="text-slate-500 text-lg">ইসলামী বইমেলা হলো ইসলামী জ্ঞান, সাহিত্য, সংস্কৃতি, প্রকাশনা ও পাঠাভ্যাসকে কেন্দ্র করে আয়োজিত বিভিন্ন বইমেলার একটি সমন্বিত ডিজিটাল প্ল্যাটফর্ম।</p><p class="mt-5 text-slate-600 leading-8">এখানে পাঠকরা বিভিন্ন বইমেলার তথ্য, প্রকাশনী, নতুন বই, ক্যাম্পেইন, প্রতিযোগিতা ও পুরোনো আয়োজনের আর্কাইভ সহজেই খুঁজে পাবেন।</p><a href="#fair" class="btn primary mt-7">চলমান আয়োজন দেখুন →</a></div>
+<div class="visual"><div class="openbook"><span class="l"></span><span class="r"></span><i></i></div></div>
+</div></div></section>
 
-<section class="sec" id="fair"><div class="con"><div class="ey">CURRENT FAIR</div><h2 class="st d">চলমান বইমেলা</h2><p class="text-slate-500 text-lg">বর্তমান আয়োজনের সময়সূচী, স্থান ও প্রয়োজনীয় তথ্য এক নজরে দেখুন।</p>
-<div class="grid md:grid-cols-3 gap-5 mt-9"><div class="card p-7"><b class="text-sky-600">সময়</b><div class="text-3xl font-bold mt-2">৬–১৩ আগস্ট ২০২৬</div><p class="text-slate-500">প্রতিদিন সকাল ১০:০০টা — রাত ৮:০০টা</p></div><div class="card p-7"><b class="text-sky-600">স্থান</b><div class="text-3xl font-bold mt-2">কওমি মার্কেট</div><p class="text-slate-500">বাংলাবাজার, ঢাকা</p></div><div class="card p-7"><b class="text-sky-600">অংশগ্রহণ</b><div class="text-3xl font-bold mt-2">৬০+ প্রকাশনী</div><p class="text-slate-500">বিভিন্ন প্রকাশনীর ইসলামী বই</p></div></div></div></section>
+<!-- CURRENT FAIR -->
+<section class="sec" id="fair"><div class="con"><div class="ey">CURRENT FAIR</div><h2 class="st d">চলমান বইমেলা</h2><p class="text-slate-500 text-lg">ইসলামী বইমেলা ২০২৬ — সম্ভাব্য সময়, স্থান ও কাউন্টডাউন।</p>
+<div class="fairCard mt-9">
+<div style="color:#a5f3fc;font-size:12px;font-weight:700;letter-spacing:.12em">ISLAMI BOOK FAIR 2026</div>
+<h3 class="d text-3xl md:text-5xl font-extrabold mt-2">ইসলামী বইমেলা ২০২৬</h3>
+<p class="mt-3 text-white/80">সম্ভাব্য তারিখ: <b class="text-white">৯/১০ সেপ্টেম্বর ২০২৬</b></p>
+<p class="text-white/80">স্থান: <b class="text-white">বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট</b></p>
+<div class="countdown" id="countdown">
+<div class="cd"><b id="dd">--</b><small>দিন</small></div><div class="cd"><b id="hh">--</b><small>ঘণ্টা</small></div><div class="cd"><b id="mm">--</b><small>মিনিট</small></div><div class="cd"><b id="ss">--</b><small>সেকেন্ড</small></div>
+</div>
+<p class="text-white/60 text-sm mt-4">* তারিখটি সম্ভাব্য; চূড়ান্ত ঘোষণা পরিবর্তিত হতে পারে।</p>
+</div></div></section>
 
-<section class="sec soft" id="archive"><div class="con"><div class="ey">ARCHIVE</div><h2 class="st d">আমাদের বইমেলার যাত্রা</h2><p class="text-slate-500 text-lg">বিভিন্ন বছর ও বিভিন্ন স্থানে অনুষ্ঠিত বইমেলার স্মৃতি, আয়োজন ও তথ্য।</p>
+<!-- ARCHIVE -->
+<section class="sec soft" id="archive"><div class="con"><div class="ey">ARCHIVE</div><h2 class="st d">আমাদের বইমেলার যাত্রা</h2><p class="text-slate-500 text-lg">প্রতিটি বছর ক্লিক করলে ফ্লিপবুক স্টাইলের বিস্তারিত পপআপ খুলবে।</p>
 <div class="archive mt-9">
-<button class="year" type="button" data-nibf-open="modal-2026"><b>২০২৬</b><strong>ইসলামী বইমেলা</strong><span>বাংলা বাজার, ঢাকা</span></button>
-<button class="year" type="button" data-nibf-open="modal-2025"><b>২০২৫</b><strong>ইসলামী বইমেলা</strong><span>ঢাকা</span></button>
-<button class="year" type="button" data-nibf-open="modal-2024"><b>২০২৪</b><strong>ইসলামী বইমেলা</strong><span>ঢাকা</span></button>
-<button class="year" type="button" data-nibf-open="modal-2023"><b>২০২৩</b><strong>ইসলামী বইমেলা</strong><span>বিভিন্ন আয়োজন</span></button>
-<button class="year" type="button" data-nibf-open="modal-2022"><b>২০২২</b><strong>ইসলামী বইমেলা</strong><span>আর্কাইভ</span></button>
+<button class="year" data-open="archive-2026"><b>২০২৬</b><strong>ইসলামী বইমেলা</strong><span>বায়তুল মোকাররম, ঢাকা</span></button>
+<button class="year" data-open="archive-2025"><b>২০২৫</b><strong>ইসলামী বইমেলা</strong><span>ঢাকা</span></button>
+<button class="year" data-open="archive-2024"><b>২০২৪</b><strong>ইসলামী বইমেলা</strong><span>ঢাকা</span></button>
+<button class="year" data-open="archive-2023"><b>২০২৩</b><strong>ইসলামী বইমেলা</strong><span>বিভিন্ন আয়োজন</span></button>
+<button class="year" data-open="archive-2022"><b>২০২২</b><strong>ইসলামী বইমেলা</strong><span>আর্কাইভ</span></button>
 </div></div></section>
 
-<section class="sec" id="publishers"><div class="con"><div class="dirtop"><div><div class="ey">PUBLISHERS</div><h2 class="st d">আমাদের প্রকাশনীর তালিকা</h2><p class="text-slate-500 text-lg">প্রকাশনীর নাম লিখে দ্রুত খুঁজে দেখুন। প্রতিটি নামে চাপ দিলে বিস্তারিত Flipbook খুলবে।</p></div><input id="nibfSearch" class="search" placeholder="প্রকাশনী খুঁজুন…"></div>
-<div class="pubs" id="nibfPubs"><button class="nibf-pub-card" type="button" data-nibf-open="pub-1">
-      <span class="nibf-pi">ই</span><span><strong>ইসলামিক ফাউন্ডেশন বাংলাদেশ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-2">
-      <span class="nibf-pi">র</span><span><strong>রাহনুমা প্রকাশনী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-3">
-      <span class="nibf-pi">ব</span><span><strong>বাংলাদেশ ইসলামিক ল' রিসার্চ এন্ড লিগ্যাল এইড</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-4">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুল খিদমাহ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-5">
-      <span class="nibf-pi">ম</span><span><strong>মক্তব প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-6">
-      <span class="nibf-pi">দ</span><span><strong>দারুল আরকাম</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-7">
-      <span class="nibf-pi">ই</span><span><strong>ইত্তিহাদ পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-8">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুস সালাফ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-9">
-      <span class="nibf-pi">গ</span><span><strong>গার্ডিয়ান পাবলিকেশন্স</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-10">
-      <span class="nibf-pi">স</span><span><strong>সুকুন পাবলিশিং</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-11">
-      <span class="nibf-pi">আ</span><span><strong>আল যিহান পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-12">
-      <span class="nibf-pi">স</span><span><strong>সিরাত পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-13">
-      <span class="nibf-pi">প</span><span><strong>পড় প্রকাশ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-14">
-      <span class="nibf-pi">ন</span><span><strong>নাশাত পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-15">
-      <span class="nibf-pi">র</span><span><strong>রিফায়িন পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-16">
-      <span class="nibf-pi">ফ</span><span><strong>ফুলদানী প্রকাশনী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-17">
-      <span class="nibf-pi">র</span><span><strong>রাইয়ান প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-18">
-      <span class="nibf-pi">আ</span><span><strong>আকীক প্রকাশনী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-19">
-      <span class="nibf-pi">স</span><span><strong>সাবাহ পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-20">
-      <span class="nibf-pi">প</span><span><strong>পুনরায় প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-21">
-      <span class="nibf-pi">স</span><span><strong>সন্দীপন প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-22">
-      <span class="nibf-pi">আ</span><span><strong>আলোকিত প্রকাশনী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-23">
-      <span class="nibf-pi">আ</span><span><strong>আস সুন্নাহ পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-24">
-      <span class="nibf-pi">স</span><span><strong>সবুজপত্র প্রকাশনী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-25">
-      <span class="nibf-pi">ক</span><span><strong>কাতেবিন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-26">
-      <span class="nibf-pi">দ</span><span><strong>দারুল ইলম</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-27">
-      <span class="nibf-pi">ক</span><span><strong>কানন প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-28">
-      <span class="nibf-pi">আ</span><span><strong>আকীল পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-29">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুল আযহার</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-30">
-      <span class="nibf-pi">ত</span><span><strong>তালবিয়া প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-31">
-      <span class="nibf-pi">স</span><span><strong>সিয়ান পাবলিকেশন লিঃ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-32">
-      <span class="nibf-pi">ব</span><span><strong>বইপল্লী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-33">
-      <span class="nibf-pi">ম</span><span><strong>মারকাযুত দাওয়াহ প্রকাশনী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-34">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুত দাওয়াহ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-35">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুল মদিনাহ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-36">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুল হাসান</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-37">
-      <span class="nibf-pi">চ</span><span><strong>চেতনা প্রকাশ ও মাকতাবাতুল আমজাদ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-38">
-      <span class="nibf-pi">আ</span><span><strong>আশরাফিয়া বুক হাউজ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-39">
-      <span class="nibf-pi">প</span><span><strong>প্রচ্ছদ প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-40">
-      <span class="nibf-pi">ও</span><span><strong>ওয়াফি পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-41">
-      <span class="nibf-pi">ফ</span><span><strong>ফাতিহ প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-42">
-      <span class="nibf-pi">ক</span><span><strong>কালান্তর প্রকাশনী ও বুখারা পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-43">
-      <span class="nibf-pi">ফ</span><span><strong>ফাউন্টেন প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-44">
-      <span class="nibf-pi">হ</span><span><strong>হাসানাহ পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-45">
-      <span class="nibf-pi">আ</span><span><strong>আল-রিহাব পাবলিকেশন্স</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-46">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুল বায়ান</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-47">
-      <span class="nibf-pi">ন</span><span><strong>নন্দন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-48">
-      <span class="nibf-pi">ব</span><span><strong>বর্ণালী বুক স্কোর</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-49">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুল কুরআন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-50">
-      <span class="nibf-pi">স</span><span><strong>সিজদাহ পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-51">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুল আশরাফ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-52">
-      <span class="nibf-pi">স</span><span><strong>সোজলার পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-53">
-      <span class="nibf-pi">আ</span><span><strong>আধুনিক প্রকাশনী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-54">
-      <span class="nibf-pi">শ</span><span><strong>শব্দতরু পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-55">
-      <span class="nibf-pi">আ</span><span><strong>আহসান পাবলিকেশন ও মক্কা পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-56">
-      <span class="nibf-pi">ম</span><span><strong>মেশক প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-57">
-      <span class="nibf-pi">ই</span><span><strong>ইহদা পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-58">
-      <span class="nibf-pi">ব</span><span><strong>বইঘর</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-59">
-      <span class="nibf-pi">উ</span><span><strong>উমেদ প্রকাশ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-60">
-      <span class="nibf-pi">ত</span><span><strong>তারুণ্য প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-61">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুন নূর</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-62">
-      <span class="nibf-pi">প</span><span><strong>প্রত্যাশা ও আবরণ প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-63">
-      <span class="nibf-pi">ন</span><span><strong>নবপ্রকাশ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-64">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুস সাহাবা</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-65">
-      <span class="nibf-pi">প</span><span><strong>পথিক প্রকাশন ও সাবিল পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-66">
-      <span class="nibf-pi">ম</span><span><strong>মুজাহিদ প্রকাশনী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-67">
-      <span class="nibf-pi">ও</span><span><strong>ওয়াহিদিয়া লাইব্রেরী</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-68">
-      <span class="nibf-pi">স</span><span><strong>সমকালীন প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-69">
-      <span class="nibf-pi">ল</span><span><strong>লিটল উম্মাহ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-70">
-      <span class="nibf-pi">স</span><span><strong>স্কলারস পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-71">
-      <span class="nibf-pi">ফ</span><span><strong>ফিউচার উম্মাহ পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-72">
-      <span class="nibf-pi">ট</span><span><strong>টুনটুন বুকস</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-73">
-      <span class="nibf-pi">আ</span><span><strong>আতফাল</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-74">
-      <span class="nibf-pi">শ</span><span><strong>শিশু কানন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-75">
-      <span class="nibf-pi">অ</span><span><strong>অন্যরকম পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-76">
-      <span class="nibf-pi">আ</span><span><strong>আইসিএস পাবলিকেশন ও মুনলাইট পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-77">
-      <span class="nibf-pi">স</span><span><strong>সত্যায়ন প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-78">
-      <span class="nibf-pi">প</span><span><strong>পেনফিল্ড পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-79">
-      <span class="nibf-pi">ম</span><span><strong>মুহাম্মদ পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-80">
-      <span class="nibf-pi">হ</span><span><strong>হাদিস ফাউন্ডেশন বাংলাদেশ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-81">
-      <span class="nibf-pi">ই</span><span><strong>ইলান নূর এডিফিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-82">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুল আসলাফ</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-83">
-      <span class="nibf-pi">ব</span><span><strong>বিশ্বকল্যাণ পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-84">
-      <span class="nibf-pi">ই</span><span><strong>ইলহাম</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-85">
-      <span class="nibf-pi">প</span><span><strong>পরিশুদ্ধি প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-86">
-      <span class="nibf-pi">প</span><span><strong>প্রয়াস প্রকাশন</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-87">
-      <span class="nibf-pi">ম</span><span><strong>মাকতাবাতুল ফুরকান</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-88">
-      <span class="nibf-pi">ব</span><span><strong>বি আই আই টি</strong><small>প্রকাশনী</small></span>
-    </button>
-<button class="nibf-pub-card" type="button" data-nibf-open="pub-89">
-      <span class="nibf-pi">র</span><span><strong>রুহামা পাবলিকেশন</strong><small>প্রকাশনী</small></span>
-    </button></div><p id="nibfNone" style="display:none;text-align:center;color:#64748b;padding:32px">কোনো প্রকাশনী পাওয়া যায়নি।</p></div></section>
+<!-- PUBLISHERS -->
+<section class="sec" id="publishers"><div class="con"><div class="dirtop"><div><div class="ey">PUBLISHERS</div><h2 class="st d">আমাদের প্রকাশনীর তালিকা</h2><p class="text-slate-500 text-lg">প্রকাশনীর নামে চাপ দিলে বিস্তারিত ফ্লিপবুক পপআপ খুলবে।</p></div><input id="search" class="search" placeholder="প্রকাশনী খুঁজুন…"></div>
+<div class="pubs" id="pubs">
+<script>
+const publishers=[
+"ইসলামিক ফাউন্ডেশন বাংলাদেশ","রাহনুমা প্রকাশনী","বাংলাদেশ ইসলামিক ল' রিসার্চ এন্ড লিগ্যাল এইড","মাকতাবাতুল খিদমাহ","মক্তব প্রকাশন","দারুল আরকাম","ইত্তিহাদ পাবলিকেশন","মাকতাবাতুস সালাফ","গার্ডিয়ান পাবলিকেশন্স","সুকুন পাবলিশিং","আল যিহান পাবলিকেশন","সিরাত পাবলিকেশন","পড় প্রকাশ","নাশাত পাবলিকেশন","রিফায়িন পাবলিকেশন","ফুলদানী প্রকাশনী","রাইয়ান প্রকাশন","আকীক প্রকাশনী","সাবাহ পাবলিকেশন","পুনরায় প্রকাশন","সন্দীপন প্রকাশন","আলোকিত প্রকাশনী","আস সুন্নাহ পাবলিকেশন","সবুজপত্র প্রকাশনী","কাতেবিন","দারুল ইলম","কানন প্রকাশন","আকীল পাবলিকেশন","মাকতাবাতুল আযহার","তালবিয়া প্রকাশন","সিয়ান পাবলিকেশন লিঃ","বইপল্লী","মারকাযুত দাওয়াহ প্রকাশনী","মাকতাবাতুত দাওয়াহ","মাকতাবাতুল মদিনাহ","মাকতাবাতুল হাসান","চেতনা প্রকাশ ও মাকতাবাতুল আমজাদ","আশরাফিয়া বুক হাউজ","প্রচ্ছদ প্রকাশন","ওয়াফি পাবলিকেশন","ফাতিহ প্রকাশন","কালান্তর প্রকাশনী ও বুখারা পাবলিকেশন","ফাউন্টেন প্রকাশন","হাসানাহ পাবলিকেশন","আল-রিহাব পাবলিকেশন্স","মাকতাবাতুল বায়ান","নন্দন","বর্ণালী বুক স্কোর","মাকতাবাতুল কুরআন","সিজদাহ পাবলিকেশন","মাকতাবাতুল আশরাফ","সোজলার পাবলিকেশন","আধুনিক প্রকাশনী","শব্দতরু পাবলিকেশন","আহসান পাবলিকেশন ও মক্কা পাবলিকেশন","মেশক প্রকাশন","ইহদা পাবলিকেশন","বইঘর","উমেদ প্রকাশ","তারুণ্য প্রকাশন","মাকতাবাতুন নূর","প্রত্যাশা ও আবরণ প্রকাশন","নবপ্রকাশ","মাকতাবাতুস সাহাবা","পথিক প্রকাশন ও সাবিল পাবলিকেশন","মুজাহিদ প্রকাশনী","ওয়াহিদিয়া লাইব্রেরী","সমকালীন প্রকাশন","লিটল উম্মাহ","স্কলারস পাবলিকেশন","ফিউচার উম্মাহ পাবলিকেশন","টুনটুন বুকস","আতফাল","শিশু কানন","অন্যরকম পাবলিকেশন","আইসিএস পাবলিকেশন ও মুনলাইট পাবলিকেশন","সত্যায়ন প্রকাশন","পেনফিল্ড পাবলিকেশন","মুহাম্মদ পাবলিকেশন","হাদিস ফাউন্ডেশন বাংলাদেশ","ইলান নূর এডিফিকেশন","মাকতাবাতুল আসলাফ","বিশ্বকল্যাণ পাবলিকেশন","ইলহাম","পরিশুদ্ধি প্রকাশন","প্রয়াস প্রকাশন","মাকতাবাতুল ফুরকান","বি আই আই টি","রুহামা পাবলিকেশন"];
+publishers.forEach((name,i)=>document.write(`<button class="card pub" data-name="${name.replaceAll('"','&quot;')}" data-pub="${i}"><div class="pi">${name[0]}</div><div><strong>${name}</strong><small class="block text-slate-500">প্রকাশনী</small></div></button>`));
+</script>
+</div><p id="none" class="hidden text-center text-slate-500 py-8">কোনো প্রকাশনী পাওয়া যায়নি।</p></div></section>
 
-<section class="sec soft" id="new-books"><div class="con"><div class="ey">BOOKS</div><h2 class="st d">নতুন প্রকাশিত বই</h2><p class="text-slate-500 text-lg">প্রতিটি বইতে চাপ দিলে বিস্তারিত Flipbook খুলবে।</p>
-<div class="flex flex-wrap gap-2 mt-7 mb-6" id="nibfFilters"><button class="btn primary nibf-filter" data-filter="all">সব বই</button><button class="btn ghost text-slate-700 border-slate-200 bg-white nibf-filter" data-filter="new">নতুন</button><button class="btn ghost text-slate-700 border-slate-200 bg-white nibf-filter" data-filter="popular">জনপ্রিয়</button><button class="btn ghost text-slate-700 border-slate-200 bg-white nibf-filter" data-filter="featured">আলোচিত</button></div>
-<div class="booksgrid">
-<button class="card text-left border-0" type="button" data-book-cat="new" data-nibf-open="book-1"><div class="cover"><span>আলোকিত<br>জীবনের পাঠ</span></div><div class="bi"><strong>আলোকিত জীবনের পাঠ</strong><small>ইসলামী জীবন ও আত্মশুদ্ধি</small></div></button>
-<button class="card text-left border-0" type="button" data-book-cat="popular" data-nibf-open="book-2"><div class="cover" style="background:linear-gradient(145deg,#075985,#0e7490)"><span>জ্ঞান ও<br>মনন</span></div><div class="bi"><strong>জ্ঞান ও মনন</strong><small>জ্ঞানচর্চা ও চিন্তার জগৎ</small></div></button>
-<button class="card text-left border-0" type="button" data-book-cat="featured" data-nibf-open="book-3"><div class="cover" style="background:linear-gradient(145deg,#172554,#1d4ed8)"><span>সত্যের<br>অন্বেষণে</span></div><div class="bi"><strong>সত্যের অন্বেষণে</strong><small>আকীদা, বিশ্বাস ও জীবন</small></div></button>
-<button class="card text-left border-0" type="button" data-book-cat="new" data-nibf-open="book-4"><div class="cover" style="background:linear-gradient(145deg,#164e63,#0369a1)"><span>ইতিহাসের<br>আয়নায়</span></div><div class="bi"><strong>ইতিহাসের আয়নায়</strong><small>ইসলামী ইতিহাস ও সভ্যতা</small></div></button>
+<!-- NEW BOOKS -->
+<section class="sec soft" id="new-books"><div class="con"><div class="ey">BOOKS</div><h2 class="st d">নতুন প্রকাশিত বই</h2><p class="text-slate-500 text-lg">বইয়ের কার্ডে চাপ দিলে বিস্তারিত ফ্লিপবুক খুলবে।</p>
+<div class="flex flex-wrap gap-2 mt-7 mb-6" id="filters">
+<button class="btn primary f" data-f="all">সব বই</button><button class="btn ghost text-white border-sky-700 bg-sky-800 f" data-f="new">নতুন</button><button class="btn ghost text-white border-blue-700 bg-blue-900 f" data-f="popular">জনপ্রিয়</button><button class="btn ghost text-white border-cyan-700 bg-cyan-800 f" data-f="featured">আলোচিত</button>
+</div>
+<div class="booksgrid" id="bookgrid">
+<article class="card bookcard" data-cat="new" data-open="book-1"><div class="cover"><span>আলোকিত<br>জীবনের পাঠ</span></div><div class="bi"><strong>আলোকিত জীবনের পাঠ</strong><small>লেখক: লেখকের নাম এখানে</small></div></article>
+<article class="card bookcard" data-cat="popular" data-open="book-2"><div class="cover" style="background:linear-gradient(145deg,#075985,#0e7490)"><span>জ্ঞান ও<br>মনন</span></div><div class="bi"><strong>জ্ঞান ও মনন</strong><small>লেখক: লেখকের নাম এখানে</small></div></article>
+<article class="card bookcard" data-cat="featured" data-open="book-3"><div class="cover" style="background:linear-gradient(145deg,#172554,#1d4ed8)"><span>সত্যের<br>অন্বেষণে</span></div><div class="bi"><strong>সত্যের অন্বেষণে</strong><small>লেখক: লেখকের নাম এখানে</small></div></article>
+<article class="card bookcard" data-cat="new" data-open="book-4"><div class="cover" style="background:linear-gradient(145deg,#164e63,#0369a1)"><span>ইতিহাসের<br>আয়নায়</span></div><div class="bi"><strong>ইতিহাসের আয়নায়</strong><small>লেখক: লেখকের নাম এখানে</small></div></article>
 </div></div></section>
 
-<section class="sec" id="notices"><div class="con"><div class="noticegrid"><div><div class="ey">NOTICE BOARD</div><h2 class="st d">নোটিশ ও সর্বশেষ আপডেট</h2><p class="text-slate-500 text-lg">প্রতিটি নোটিশে চাপ দিলে বিস্তারিত Flipbook খুলবে।</p></div>
+<!-- NOTICE -->
+<section class="sec" id="notices"><div class="con"><div class="noticegrid">
+<div><div class="ey">NOTICE BOARD</div><h2 class="st d">নোটিশ ও সর্বশেষ আপডেট</h2><p class="text-slate-500 text-lg">প্রতিটি নোটিশে চাপ দিলে বিস্তারিত ফ্লিপবুক খুলবে।</p></div>
 <div class="card notice">
-<button class="nr" type="button" data-nibf-open="notice-1"><div class="date">২০<small>আগস্ট</small></div><div><strong>ওয়েবসাইটের নতুন সংস্করণ</strong><p class="text-sm text-slate-500">নতুন ফিচার ও আর্কাইভ যুক্ত করা হয়েছে।</p></div></button>
-<button class="nr" type="button" data-nibf-open="notice-2"><div class="date">১৩<small>আগস্ট</small></div><div><strong>চলমান বইমেলার সমাপনী</strong><p class="text-sm text-slate-500">মেলার শেষ দিনের সময়সূচী ও আপডেট দেখুন।</p></div></button>
-<button class="nr" type="button" data-nibf-open="notice-3"><div class="date">০৬<small>আগস্ট</small></div><div><strong>বইমেলা উদ্বোধন</strong><p class="text-sm text-slate-500">নতুন আয়োজনের আনুষ্ঠানিক যাত্রা শুরু।</p></div></button>
+<div class="nr" data-open="notice-1"><div class="date">২০<small>আগস্ট</small></div><div><strong>ওয়েবসাইটের নতুন সংস্করণ</strong><p class="text-sm text-slate-500">নতুন ফিচার ও আর্কাইভ যুক্ত করা হয়েছে।</p></div></div>
+<div class="nr" data-open="notice-2"><div class="date">১৩<small>আগস্ট</small></div><div><strong>চলমান বইমেলার সমাপনী</strong><p class="text-sm text-slate-500">মেলার শেষ দিনের সময়সূচী ও আপডেট দেখুন।</p></div></div>
+<div class="nr" data-open="notice-3"><div class="date">০৬<small>আগস্ট</small></div><div><strong>বইমেলা উদ্বোধন</strong><p class="text-sm text-slate-500">নতুন আয়োজনের আনুষ্ঠানিক যাত্রা শুরু।</p></div></div>
 </div></div></div></section>
 
-<section class="social"><div class="con"><div class="ey" style="color:#7dd3fc">COMMUNITY</div><h2 class="st d" style="color:#fff">বইমেলার প্রতিটি আপডেট আপনার হাতের মুঠোয়</h2><p style="color:#ffffffb8;font-size:17px">আমাদের সাথে যুক্ত থাকতে সোশ্যাল মিডিয়াগুলোতে Follow & Join করুন।</p>
+<!-- SOCIAL -->
+<section class="social"><div class="con"><div class="ey" style="color:#7dd3fc">COMMUNITY</div><h2 class="st d" style="color:#fff">বইমেলার প্রতিটি আপডেট আপনার হাতের মুঠোয়</h2><p style="color:#ffffffb8;font-size:17px">আমাদের সকল কার্যক্রম, বইমেলার খবর, সময়সূচি, লাইভ ভিডিও ও অফিসিয়াল নোটিশ সবার আগে পেতে যুক্ত থাকুন আমাদের অফিসিয়াল প্ল্যাটফর্মগুলোতে।</p>
 <div class="socialgrid">
-<a class="sc" href="#" onclick="return false"><div class="si">f</div><strong>Facebook</strong><p>বইমেলার নিয়মিত আপডেট</p></a>
-<a class="sc" href="#" onclick="return false"><div class="si">▶</div><strong>YouTube</strong><p>ভিডিও ও আয়োজনের মুহূর্ত</p></a>
-<a class="sc" href="#" onclick="return false"><div class="si">W</div><strong>WhatsApp</strong><p>ঘোষণা ও জরুরি আপডেট</p></a>
-<a class="sc" href="#" onclick="return false"><div class="si">+</div><strong>Community</strong><p>পাঠক ও বইপ্রেমীদের কমিউনিটি</p></a>
+<a class="sc" href="https://www.facebook.com/NationalIslamicBookFair" target="_blank"><div class="si">f</div><strong>Facebook Page</strong><p>বইমেলার নিয়মিত আপডেট</p></a>
+<a class="sc" href="https://facebook.com/groups/nationalislamicbookfair/" target="_blank"><div class="si">👥</div><strong>Facebook Group</strong><p>বইপ্রেমীদের কমিউনিটি</p></a>
+<a class="sc" href="https://whatsapp.com/channel/0029VbCqbbQ4SpkBRGFpsM2Z" target="_blank"><div class="si">W</div><strong>WhatsApp</strong><p>ঘোষণা ও জরুরি আপডেট</p></a>
+<a class="sc" href="https://t.me/nationalislamicbookfair" target="_blank"><div class="si">✈</div><strong>Telegram</strong><p>অফিসিয়াল চ্যানেল</p></a>
+<a class="sc" href="https://youtube.com/@nationalislamicbookfair" target="_blank"><div class="si">▶</div><strong>YouTube</strong><p>ভিডিও ও লাইভ আয়োজন</p></a>
+<a class="sc" href="https://www.instagram.com/nationalislamicbookfair" target="_blank"><div class="si">◎</div><strong>Instagram</strong><p>ছবি ও আয়োজনের মুহূর্ত</p></a>
+<a class="sc" href="mailto:nationalislamicbookfair@gmail.com"><div class="si">@</div><strong>Official Email</strong><p>nationalislamicbookfair@gmail.com</p></a>
+<a class="sc" href="#" data-open="platform"><div class="si">+</div><strong>সকল প্ল্যাটফর্ম</strong><p>অফিসিয়াল পরিচয় ও লিংক</p></a>
 </div></div></section>
 
-<footer class="footer"><div class="con"><div class="fg"><div><div class="flex items-center gap-3 mb-4"><span class="logo">▤</span><strong class="d text-2xl">ইসলামী বইমেলা</strong></div><p class="max-w-sm leading-7">ইসলামী জ্ঞান, সাহিত্য, প্রকাশনা ও পাঠাভ্যাসকে একত্রিত করে বইমেলার তথ্যকে সবার কাছে সহজে পৌঁছে দেওয়ার একটি ডিজিটাল প্ল্যাটফর্ম।</p></div>
+<!-- FOOTER -->
+<footer class="footer"><div class="con"><div class="fg">
+<div><div class="flex items-center gap-3 mb-4"><span class="logo">▤</span><strong class="d text-2xl">ইসলামী বইমেলা</strong></div><p class="max-w-sm leading-7">ইসলামী জ্ঞান, সাহিত্য, প্রকাশনা ও পাঠাভ্যাসকে একত্রিত করে বইমেলার তথ্যকে সবার কাছে সহজে পৌঁছে দেওয়ার একটি ডিজিটাল প্ল্যাটফর্ম।</p></div>
 <div><h4>দ্রুত নেভিগেশন</h4><a href="#home">হোম</a><a href="#campaign">ইভেন্ট ও ক্যাম্পেইন</a><a href="#archive">আর্কাইভ</a><a href="#new-books">নতুন বই</a></div>
 <div><h4>তথ্য</h4><a href="#about">আমাদের সম্পর্কে</a><a href="#publishers">প্রকাশনী</a><a href="#notices">নোটিশ বোর্ড</a><a href="#fair">চলমান বইমেলা</a></div>
-<div><h4>যোগাযোগ</h4><p>ঢাকা, বাংলাদেশ</p><p>ইমেইল: info@example.com</p><p>ফোন: +880 0000-000000</p></div></div>
-<div class="copy"><span>© ২০২৬ ইসলামী বইমেলা — সর্বস্বত্ব সংরক্ষিত</span><span>Fast • Responsive • WordPress/Elementor friendly</span></div></div></footer>
+<div><h4>যোগাযোগ</h4><p>ঢাকা, বাংলাদেশ</p><p>ইমেইল: nationalislamicbookfair@gmail.com</p><p>অফিসিয়াল ইউজারনেম: @nationalislamicbookfair</p></div>
+</div><div class="copy"><span><i class="fbook"></i>© ২০২৬ ইসলামী বইমেলা — সর্বস্বত্ব সংরক্ষিত</span><span>Fast • Responsive • WordPress/Elementor friendly</span></div></div></footer>
 
-<!-- ARCHIVE MODALS -->
-<div class="nibf-modal" id="modal-2026" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">ARCHIVE • ২০২৬</span><h3>ইসলামী বইমেলা ২০২৬</h3><div class="nibf-line"></div><p>এখানে ২০২৬ সালের বইমেলার সম্পূর্ণ ইতিহাস, আয়োজন, ছবি ও ভিডিও যোগ করা যাবে।</p></section><section class="nibf-page"><span class="nibf-k">DETAILS</span><h3>বিস্তারিত</h3><div class="nibf-line"></div><p>স্থান, সময়, প্রকাশনী, বই, বিশেষ আয়োজন ও অন্যান্য তথ্য এখানে যুক্ত হবে।</p></section></div></div></div>
-<div class="nibf-modal" id="modal-2025" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">ARCHIVE • ২০২৫</span><h3>ইসলামী বইমেলা ২০২৫</h3><div class="nibf-line"></div><p>২০২৫ সালের আয়োজনের বিস্তারিত এখানে যুক্ত হবে।</p></section><section class="nibf-page"><span class="nibf-k">DETAILS</span><h3>বিস্তারিত</h3><div class="nibf-line"></div><p>ছবি, ভিডিও, প্রকাশনী ও বইয়ের তথ্য এখানে যোগ করা যাবে।</p></section></div></div></div>
-<div class="nibf-modal" id="modal-2024" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">ARCHIVE • ২০২৪</span><h3>ইসলামী বইমেলা ২০২৪</h3><div class="nibf-line"></div><p>২০২৪ সালের আয়োজনের বিস্তারিত এখানে যুক্ত হবে।</p></section><section class="nibf-page"><span class="nibf-k">DETAILS</span><h3>বিস্তারিত</h3><div class="nibf-line"></div><p>ছবি, ভিডিও, প্রকাশনী ও বইয়ের তথ্য এখানে যোগ করা যাবে।</p></section></div></div></div>
-<div class="nibf-modal" id="modal-2023" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">ARCHIVE • ২০২৩</span><h3>ইসলামী বইমেলা ২০২৩</h3><div class="nibf-line"></div><p>২০২৩ সালের আয়োজনের বিস্তারিত এখানে যুক্ত হবে।</p></section><section class="nibf-page"><span class="nibf-k">DETAILS</span><h3>বিস্তারিত</h3><div class="nibf-line"></div><p>ছবি, ভিডিও, প্রকাশনী ও বইয়ের তথ্য এখানে যোগ করা যাবে।</p></section></div></div></div>
-<div class="nibf-modal" id="modal-2022" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">ARCHIVE • ২০২২</span><h3>ইসলামী বইমেলা ২০২২</h3><div class="nibf-line"></div><p>২০২২ সালের আয়োজনের বিস্তারিত এখানে যুক্ত হবে।</p></section><section class="nibf-page"><span class="nibf-k">DETAILS</span><h3>বিস্তারিত</h3><div class="nibf-line"></div><p>ছবি, ভিডিও, প্রকাশনী ও বইয়ের তথ্য এখানে যোগ করা যাবে।</p></section></div></div></div>
+<!-- MODALS: Special + Archive + Publishers + Books + Notices + Social -->
+<div class="modal" id="modal-special" role="dialog" aria-modal="true"><div class="stage"><div class="mb"><button class="close" data-close>×</button><div class="pages">
+<div class="page"><div class="k">SPECIAL NEWS • ২০২৬</div><h3 class="mt-3">ইসলামী বইমেলা ২০২৬ শুরু হতে যাচ্ছে</h3><div class="divi"></div><p><b>আলহামদুলিল্লাহ সুম্মা আলহামদুলিল্লাহ!</b></p><p>আমাদের সবার কাঙ্ক্ষিত ইসলামী বইমেলা ২০২৬ শুরু হতে যাচ্ছে ইনশাআল্লাহ।</p><p><b>সম্ভাব্য তারিখ:</b> ৯/১০ সেপ্টেম্বর ২০২৬</p><p><b>স্থান:</b> বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট</p></div>
+<div class="page"><div class="k">LATEST UPDATE</div><h3 class="mt-3">ইনশাআল্লাহ দেখা হবে বইমেলায়</h3><div class="divi"></div><p>বইপ্রেমী, পাঠক, লেখক ও প্রকাশনী—সবাই প্রস্তুত তো?</p><p>চূড়ান্ত সময়সূচী ও বিস্তারিত ঘোষণা অফিসিয়াল প্ল্যাটফর্মগুলোতে প্রকাশ করা হবে।</p><a href="#fair" class="btn primary mt-5" data-close-go>বইমেলার তথ্য দেখুন →</a></div>
+</div></div></div></div>
 
-<!-- SPECIAL / BOOK / NOTICE MODALS -->
-<div class="nibf-modal" id="special-news" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">SPECIAL NEWS • ২০২৬</span><h3>ইসলামী বইমেলার বিশেষ খবর</h3><div class="nibf-line"></div><p>বইমেলা, নতুন বই, প্রকাশনী, ক্যাম্পেইন ও গুরুত্বপূর্ণ ঘোষণার সর্বশেষ তথ্য এখানে প্রকাশ করা হবে।</p></section><section class="nibf-page"><span class="nibf-k">LATEST UPDATE</span><h3>পাঠকের জন্য নতুন আয়োজন</h3><div class="nibf-line"></div><p>এখানে বিস্তারিত লেখা, ছবি, ভিডিও ও প্রয়োজনীয় লিংক যুক্ত করা যাবে।</p></section></div></div></div>
+<script>
+const archiveData={
+2026:["২০২৬","ইসলামী বইমেলা ২০২৬","বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট","পরবর্তী তথ্য, ছবি, প্রকাশনী, বই ও আয়োজন এখানে যুক্ত করা হবে।"],
+2025:["২০২৫","ইসলামী বইমেলা ২০২৫","ঢাকা","পুরোনো আয়োজনের বিস্তারিত তথ্য, ছবি ও স্মৃতি এখানে যুক্ত করা হবে।"],
+2024:["২০২৪","ইসলামী বইমেলা ২০২৪","ঢাকা","পুরোনো আয়োজনের বিস্তারিত তথ্য, ছবি ও স্মৃতি এখানে যুক্ত করা হবে।"],
+2023:["২০২৩","ইসলামী বইমেলা ২০২৩","বিভিন্ন আয়োজন","পুরোনো আয়োজনের বিস্তারিত তথ্য, ছবি ও স্মৃতি এখানে যুক্ত করা হবে।"],
+2022:["২০২২","ইসলামী বইমেলা ২০২২","আর্কাইভ","পুরোনো আয়োজনের বিস্তারিত তথ্য, ছবি ও স্মৃতি এখানে যুক্ত করা হবে।"]
+};
+Object.entries(archiveData).forEach(([y,v])=>{
+document.write(`<div class="modal" id="modal-archive-${y}" role="dialog" aria-modal="true"><div class="stage"><div class="mb"><button class="close" data-close>×</button><div class="pages"><div class="page"><div class="k">ARCHIVE • ${v[0]}</div><h3 class="mt-3">${v[1]}</h3><div class="divi"></div><p><b>স্থান:</b> ${v[2]}</p><div class="placeholder modalContent mt-5"><strong>এই অংশটি ফাঁকা রাখা হয়েছে</strong>পরবর্তীতে এখানে বিস্তারিত লেখা, ছবি, ভিডিও, লিংক, স্টল/প্রকাশনী তথ্য ইত্যাদি যুক্ত করতে পারবেন।</div></div><div class="page"><div class="k">DETAILS</div><h3 class="mt-3">আর্কাইভের বিস্তারিত</h3><div class="divi"></div><p>${v[3]}</p><div class="placeholder mt-5">ছবি / গ্যালারি / ভিডিও / লিংক এখানে যুক্ত হবে</div></div></div></div></div></div>`)
+});
+</script>
 
-<div class="nibf-modal" id="book-1" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">BOOK • NEW</span><h3>আলোকিত জীবনের পাঠ</h3><div class="nibf-line"></div><p>লেখক, প্রকাশনী, বইয়ের পরিচিতি ও ছবি এখানে যোগ করা যাবে।</p></section><section class="nibf-page"><span class="nibf-k">BOOK DETAILS</span><h3>বইয়ের তথ্য</h3><div class="nibf-line"></div><p>মূল্য, পৃষ্ঠা, ISBN, কেনার লিংক, রিভিউ ও অন্যান্য তথ্য এখানে যুক্ত হবে।</p></section></div></div></div>
-<div class="nibf-modal" id="book-2" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">BOOK • POPULAR</span><h3>জ্ঞান ও মনন</h3><div class="nibf-line"></div><p>বইটির বিস্তারিত পরিচিতি এখানে যোগ করা যাবে।</p></section><section class="nibf-page"><span class="nibf-k">BOOK DETAILS</span><h3>বিস্তারিত</h3><div class="nibf-line"></div><p>মূল্য, প্রকাশনী, ছবি ও কেনার লিংক এখানে যুক্ত হবে।</p></section></div></div></div>
-<div class="nibf-modal" id="book-3" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">BOOK • FEATURED</span><h3>সত্যের অন্বেষণে</h3><div class="nibf-line"></div><p>বইটির বিস্তারিত পরিচিতি এখানে যোগ করা যাবে।</p></section><section class="nibf-page"><span class="nibf-k">BOOK DETAILS</span><h3>বিস্তারিত</h3><div class="nibf-line"></div><p>মূল্য, প্রকাশনী, ছবি ও কেনার লিংক এখানে যুক্ত হবে।</p></section></div></div></div>
-<div class="nibf-modal" id="book-4" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">BOOK • NEW</span><h3>ইতিহাসের আয়নায়</h3><div class="nibf-line"></div><p>বইটির বিস্তারিত পরিচিতি এখানে যোগ করা যাবে।</p></section><section class="nibf-page"><span class="nibf-k">BOOK DETAILS</span><h3>বিস্তারিত</h3><div class="nibf-line"></div><p>মূল্য, প্রকাশনী, ছবি ও কেনার লিংক এখানে যুক্ত হবে।</p></section></div></div></div>
+<div class="modal" id="modal-publisher" role="dialog"><div class="stage"><div class="mb"><button class="close" data-close>×</button><div class="pages"><div class="page"><div class="k">PUBLISHER PROFILE</div><h3 id="pubTitle" class="mt-3">প্রকাশনীর নাম</h3><div class="divi"></div><div class="placeholder"><strong>লোগো এখানে</strong>প্রকাশনীর লোগো পরে যুক্ত করা হবে।</div><p class="mt-5"><b>মেলা:</b> এখানে সংশ্লিষ্ট মেলার নাম ও স্টল নম্বর যুক্ত হবে।</p></div><div class="page"><div class="k">PUBLISHER DETAILS</div><h3 class="mt-3">বিস্তারিত তথ্য</h3><div class="divi"></div><p>এই জায়গায় প্রকাশনীর পরিচিতি, মেলায় আনা বই, বিশেষ অফার, ছবি, ভিডিও, ওয়েবসাইট ও সোশ্যাল লিংক যুক্ত করা যাবে।</p><div class="placeholder mt-5">বইয়ের তালিকা / ছবি / লিংক এখানে যুক্ত হবে</div></div></div></div></div></div>
 
-<div class="nibf-modal" id="notice-1" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">NOTICE • ২০ আগস্ট</span><h3>ওয়েবসাইটের নতুন সংস্করণ</h3><div class="nibf-line"></div><p>নতুন ফিচার ও আর্কাইভ যুক্ত করা হয়েছে। বিস্তারিত ঘোষণা এখানে যোগ করা যাবে।</p></section><section class="nibf-page"><span class="nibf-k">DETAILS</span><h3>সম্পূর্ণ নোটিশ</h3><div class="nibf-line"></div><p>ছবি, PDF, ভিডিও এবং প্রয়োজনীয় লিংক এখানে যুক্ত করা যাবে।</p></section></div></div></div>
-<div class="nibf-modal" id="notice-2" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">NOTICE • ১৩ আগস্ট</span><h3>চলমান বইমেলার সমাপনী</h3><div class="nibf-line"></div><p>মেলার শেষ দিনের সময়সূচী ও আপডেট এখানে যুক্ত করা যাবে।</p></section><section class="nibf-page"><span class="nibf-k">DETAILS</span><h3>সম্পূর্ণ তথ্য</h3><div class="nibf-line"></div><p>ছবি, ভিডিও, ফলাফল ও অন্যান্য তথ্য এখানে যোগ করা যাবে।</p></section></div></div></div>
-<div class="nibf-modal" id="notice-3" aria-hidden="true"><div class="nibf-flipbook"><button class="nibf-close" data-nibf-close>×</button><div class="nibf-pages"><section class="nibf-page"><span class="nibf-k">NOTICE • ০৬ আগস্ট</span><h3>বইমেলা উদ্বোধন</h3><div class="nibf-line"></div><p>নতুন আয়োজনের আনুষ্ঠানিক যাত্রা শুরু।</p></section><section class="nibf-page"><span class="nibf-k">DETAILS</span><h3>উদ্বোধনী তথ্য</h3><div class="nibf-line"></div><p>উদ্বোধনের ছবি, ভিডিও, অতিথিদের তথ্য ও সংবাদ এখানে যুক্ত করা যাবে।</p></section></div></div></div>
+<div class="modal" id="modal-book" role="dialog"><div class="stage"><div class="mb"><button class="close" data-close>×</button><div class="pages"><div class="page"><div class="k">BOOK DETAILS</div><h3 id="bookTitle" class="mt-3">বইয়ের নাম</h3><div class="divi"></div><div class="placeholder"><strong>বইয়ের প্রচ্ছদ এখানে</strong>পরবর্তীতে আসল বইয়ের ছবি যুক্ত করা হবে।</div><p id="bookAuthor" class="mt-5"><b>লেখক:</b> —</p></div><div class="page"><div class="k">BOOK INFORMATION</div><h3 class="mt-3">বই সম্পর্কে</h3><div class="divi"></div><p>এখানে বইয়ের বিস্তারিত পরিচিতি, প্রকাশনী, মূল্য, বিষয়, পৃষ্ঠা সংখ্যা, রিভিউ, কেনার লিংক ইত্যাদি যুক্ত করা যাবে।</p><div class="placeholder mt-5">বিস্তারিত লেখা / ছবি / ভিডিও / ক্রয় লিংক</div></div></div></div></div></div>
 
-<div class="nibf-modal" id="pub-1" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ইসলামিক ফাউন্ডেশন বাংলাদেশ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ই</div>
-            <h3>ইসলামিক ফাউন্ডেশন বাংলাদেশ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-2" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="রাহনুমা প্রকাশনী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">র</div>
-            <h3>রাহনুমা প্রকাশনী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-3" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="বাংলাদেশ ইসলামিক ল' রিসার্চ এন্ড লিগ্যাল এইড">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ব</div>
-            <h3>বাংলাদেশ ইসলামিক ল' রিসার্চ এন্ড লিগ্যাল এইড</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-4" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুল খিদমাহ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুল খিদমাহ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-5" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মক্তব প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মক্তব প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-6" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="দারুল আরকাম">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">দ</div>
-            <h3>দারুল আরকাম</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-7" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ইত্তিহাদ পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ই</div>
-            <h3>ইত্তিহাদ পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-8" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুস সালাফ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুস সালাফ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-9" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="গার্ডিয়ান পাবলিকেশন্স">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">গ</div>
-            <h3>গার্ডিয়ান পাবলিকেশন্স</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-10" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সুকুন পাবলিশিং">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সুকুন পাবলিশিং</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-11" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আল যিহান পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আল যিহান পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-12" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সিরাত পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সিরাত পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-13" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="পড় প্রকাশ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">প</div>
-            <h3>পড় প্রকাশ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-14" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="নাশাত পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ন</div>
-            <h3>নাশাত পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-15" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="রিফায়িন পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">র</div>
-            <h3>রিফায়িন পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-16" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ফুলদানী প্রকাশনী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ফ</div>
-            <h3>ফুলদানী প্রকাশনী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-17" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="রাইয়ান প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">র</div>
-            <h3>রাইয়ান প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-18" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আকীক প্রকাশনী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আকীক প্রকাশনী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-19" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সাবাহ পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সাবাহ পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-20" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="পুনরায় প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">প</div>
-            <h3>পুনরায় প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-21" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সন্দীপন প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সন্দীপন প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-22" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আলোকিত প্রকাশনী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আলোকিত প্রকাশনী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-23" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আস সুন্নাহ পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আস সুন্নাহ পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-24" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সবুজপত্র প্রকাশনী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সবুজপত্র প্রকাশনী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-25" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="কাতেবিন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ক</div>
-            <h3>কাতেবিন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-26" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="দারুল ইলম">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">দ</div>
-            <h3>দারুল ইলম</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-27" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="কানন প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ক</div>
-            <h3>কানন প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-28" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আকীল পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আকীল পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-29" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুল আযহার">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুল আযহার</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-30" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="তালবিয়া প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ত</div>
-            <h3>তালবিয়া প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-31" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সিয়ান পাবলিকেশন লিঃ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সিয়ান পাবলিকেশন লিঃ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-32" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="বইপল্লী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ব</div>
-            <h3>বইপল্লী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-33" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মারকাযুত দাওয়াহ প্রকাশনী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মারকাযুত দাওয়াহ প্রকাশনী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-34" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুত দাওয়াহ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুত দাওয়াহ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-35" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুল মদিনাহ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুল মদিনাহ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-36" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুল হাসান">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুল হাসান</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-37" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="চেতনা প্রকাশ ও মাকতাবাতুল আমজাদ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">চ</div>
-            <h3>চেতনা প্রকাশ ও মাকতাবাতুল আমজাদ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-38" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আশরাফিয়া বুক হাউজ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আশরাফিয়া বুক হাউজ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-39" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="প্রচ্ছদ প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">প</div>
-            <h3>প্রচ্ছদ প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-40" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ওয়াফি পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ও</div>
-            <h3>ওয়াফি পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-41" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ফাতিহ প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ফ</div>
-            <h3>ফাতিহ প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-42" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="কালান্তর প্রকাশনী ও বুখারা পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ক</div>
-            <h3>কালান্তর প্রকাশনী ও বুখারা পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-43" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ফাউন্টেন প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ফ</div>
-            <h3>ফাউন্টেন প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-44" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="হাসানাহ পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">হ</div>
-            <h3>হাসানাহ পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-45" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আল-রিহাব পাবলিকেশন্স">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আল-রিহাব পাবলিকেশন্স</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-46" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুল বায়ান">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুল বায়ান</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-47" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="নন্দন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ন</div>
-            <h3>নন্দন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-48" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="বর্ণালী বুক স্কোর">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ব</div>
-            <h3>বর্ণালী বুক স্কোর</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-49" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুল কুরআন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুল কুরআন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-50" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সিজদাহ পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সিজদাহ পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-51" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুল আশরাফ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুল আশরাফ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-52" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সোজলার পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সোজলার পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-53" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আধুনিক প্রকাশনী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আধুনিক প্রকাশনী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-54" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="শব্দতরু পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">শ</div>
-            <h3>শব্দতরু পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-55" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আহসান পাবলিকেশন ও মক্কা পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আহসান পাবলিকেশন ও মক্কা পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-56" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মেশক প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মেশক প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-57" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ইহদা পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ই</div>
-            <h3>ইহদা পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-58" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="বইঘর">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ব</div>
-            <h3>বইঘর</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-59" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="উমেদ প্রকাশ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">উ</div>
-            <h3>উমেদ প্রকাশ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-60" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="তারুণ্য প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ত</div>
-            <h3>তারুণ্য প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-61" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুন নূর">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুন নূর</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-62" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="প্রত্যাশা ও আবরণ প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">প</div>
-            <h3>প্রত্যাশা ও আবরণ প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-63" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="নবপ্রকাশ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ন</div>
-            <h3>নবপ্রকাশ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-64" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুস সাহাবা">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুস সাহাবা</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-65" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="পথিক প্রকাশন ও সাবিল পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">প</div>
-            <h3>পথিক প্রকাশন ও সাবিল পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-66" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মুজাহিদ প্রকাশনী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মুজাহিদ প্রকাশনী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-67" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ওয়াহিদিয়া লাইব্রেরী">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ও</div>
-            <h3>ওয়াহিদিয়া লাইব্রেরী</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-68" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সমকালীন প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সমকালীন প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-69" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="লিটল উম্মাহ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ল</div>
-            <h3>লিটল উম্মাহ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-70" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="স্কলারস পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>স্কলারস পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-71" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ফিউচার উম্মাহ পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ফ</div>
-            <h3>ফিউচার উম্মাহ পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-72" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="টুনটুন বুকস">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ট</div>
-            <h3>টুনটুন বুকস</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-73" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আতফাল">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আতফাল</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-74" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="শিশু কানন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">শ</div>
-            <h3>শিশু কানন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-75" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="অন্যরকম পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">অ</div>
-            <h3>অন্যরকম পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-76" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="আইসিএস পাবলিকেশন ও মুনলাইট পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">আ</div>
-            <h3>আইসিএস পাবলিকেশন ও মুনলাইট পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-77" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="সত্যায়ন প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">স</div>
-            <h3>সত্যায়ন প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-78" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="পেনফিল্ড পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">প</div>
-            <h3>পেনফিল্ড পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-79" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মুহাম্মদ পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মুহাম্মদ পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-80" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="হাদিস ফাউন্ডেশন বাংলাদেশ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">হ</div>
-            <h3>হাদিস ফাউন্ডেশন বাংলাদেশ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-81" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ইলান নূর এডিফিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ই</div>
-            <h3>ইলান নূর এডিফিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-82" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুল আসলাফ">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুল আসলাফ</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-83" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="বিশ্বকল্যাণ পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ব</div>
-            <h3>বিশ্বকল্যাণ পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-84" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="ইলহাম">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ই</div>
-            <h3>ইলহাম</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-85" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="পরিশুদ্ধি প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">প</div>
-            <h3>পরিশুদ্ধি প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-86" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="প্রয়াস প্রকাশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">প</div>
-            <h3>প্রয়াস প্রকাশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-87" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="মাকতাবাতুল ফুরকান">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ম</div>
-            <h3>মাকতাবাতুল ফুরকান</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-88" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="বি আই আই টি">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">ব</div>
-            <h3>বি আই আই টি</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-<div class="nibf-modal" id="pub-89" aria-hidden="true">
-      <div class="nibf-flipbook" role="dialog" aria-modal="true" aria-label="রুহামা পাবলিকেশন">
-        <button class="nibf-close" type="button" data-nibf-close aria-label="বন্ধ করুন">×</button>
-        <div class="nibf-pages">
-          <section class="nibf-page"><span class="nibf-k">PUBLISHER • ২০২৬</span>
-            <div class="nibf-logo-placeholder">র</div>
-            <h3>রুহামা পাবলিকেশন</h3><div class="nibf-line"></div>
-            <p>এখানে এই প্রকাশনীর বিস্তারিত পরিচিতি, ইতিহাস, প্রতিষ্ঠাতা, প্রকাশনার ধরন ও অন্যান্য তথ্য যোগ করা যাবে।</p>
-          </section>
-          <section class="nibf-page"><span class="nibf-k">FAIR DETAILS</span>
-            <h3>এই প্রকাশনী সম্পর্কে</h3><div class="nibf-line"></div>
-            <p><b>স্টল নম্বর:</b> পরে যোগ করা হবে</p>
-            <p><b>মেলায় আনা বই:</b> এখানে বইয়ের তালিকা ও ছবি যোগ করা যাবে।</p>
-            <p><b>বিশেষ অফার:</b> এখানে ছাড় বা ক্যাম্পেইনের তথ্য যোগ করা যাবে।</p>
-            <div class="nibf-links"><a href="#" onclick="return false">Website</a><a href="#" onclick="return false">Facebook</a></div>
-          </section>
-        </div>
-      </div>
-    </div>
-</div>
+<div class="modal" id="modal-notice" role="dialog"><div class="stage"><div class="mb"><button class="close" data-close>×</button><div class="pages"><div class="page"><div class="k">OFFICIAL NOTICE</div><h3 id="noticeTitle" class="mt-3">নোটিশ</h3><div class="divi"></div><span class="noticeBadge" id="noticeDate">তারিখ</span><p id="noticeText" class="mt-5">নোটিশের বিস্তারিত এখানে থাকবে।</p></div><div class="page"><div class="k">NOTICE DETAILS</div><h3 class="mt-3">বিস্তারিত</h3><div class="divi"></div><div class="placeholder">এখানে নোটিশের সম্পূর্ণ লেখা, পোস্টার, PDF, ছবি, ভিডিও ও প্রয়োজনীয় লিংক যুক্ত করা যাবে।</div></div></div></div></div></div>
+
+<div class="modal" id="modal-platform" role="dialog"><div class="stage"><div class="mb"><button class="close" data-close>×</button><div class="pages"><div class="page"><div class="k">OFFICIAL PLATFORMS</div><h3 class="mt-3">আমাদের সকল অফিসিয়াল প্ল্যাটফর্ম</h3><div class="divi"></div><p>আমাদের অফিসিয়াল নাম <b>“ইসলামী বইমেলা”</b> এবং ইউজারনেম <b>@nationalislamicbookfair</b>।</p><p>এই মাধ্যমগুলো ছাড়া অন্য কোনো পেজ, গ্রুপ বা চ্যানেল আমাদের প্রতিনিধিত্ব করে না।</p></div><div class="page"><div class="k">LINKS</div><h3 class="mt-3">অফিসিয়াল লিংকসমূহ</h3><div class="divi"></div>
+<p>Facebook Page — <a class="text-sky-700" href="https://www.facebook.com/NationalIslamicBookFair" target="_blank">Visit</a></p>
+<p>Facebook Group — <a class="text-sky-700" href="https://facebook.com/groups/nationalislamicbookfair/" target="_blank">Visit</a></p>
+<p>WhatsApp — <a class="text-sky-700" href="https://whatsapp.com/channel/0029VbCqbbQ4SpkBRGFpsM2Z" target="_blank">Visit</a></p>
+<p>Telegram — <a class="text-sky-700" href="https://t.me/nationalislamicbookfair" target="_blank">Visit</a></p>
+<p>YouTube — <a class="text-sky-700" href="https://youtube.com/@nationalislamicbookfair" target="_blank">Visit</a></p>
+<p>Instagram — <a class="text-sky-700" href="https://www.instagram.com/nationalislamicbookfair" target="_blank">Visit</a></p>
+<p>Email — nationalislamicbookfair@gmail.com</p>
+</div></div></div></div>
+
 <script>
 (function(){
 const root=document.getElementById('nibf2026');
-if(!root)return;
-const nav=root.querySelector('#nibfNav'),hamb=root.querySelector('#nibfHamb');
-hamb.addEventListener('click',()=>nav.classList.toggle('open'));
+const nav=root.querySelector('#nav'),ham=root.querySelector('#hamb');
 
-root.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
- const id=a.getAttribute('href'),t=root.querySelector(id);
- if(t){e.preventDefault();nav.classList.remove('open');window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-95,behavior:'smooth'});}
-}));
-
-function openModal(id){
- const m=root.querySelector('#'+CSS.escape(id));
- if(!m)return;
- m.classList.add('is-open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+function modal(id){
+let el=root.querySelector('#modal-'+id);
+if(!el)return;
+el.classList.add('open');document.body.style.overflow='hidden';
 }
-function closeModal(m){m.classList.remove('is-open');m.setAttribute('aria-hidden','true');document.body.style.overflow='';}
-
-root.addEventListener('click',e=>{
- const opener=e.target.closest('[data-nibf-open]');
- if(opener){e.preventDefault();openModal(opener.getAttribute('data-nibf-open'));return;}
- const closer=e.target.closest('[data-nibf-close]');
- if(closer){closeModal(closer.closest('.nibf-modal'));return;}
- if(e.target.classList.contains('nibf-modal'))closeModal(e.target);
+function closeAll(){
+root.querySelectorAll('.modal.open').forEach(x=>x.classList.remove('open'));
+document.body.style.overflow='';
+}
+root.querySelectorAll('[data-open]').forEach(el=>{
+el.addEventListener('click',e=>{
+if(el.tagName==='A' && el.getAttribute('href')==='#')e.preventDefault();
+const id=el.dataset.open;
+if(id==='special')modal('special');
+else if(id==='platform')modal('platform');
+else if(id && id.startsWith('archive-'))modal(id);
+else if(id && id.startsWith('book-'))modal('book');
+else if(id && id.startsWith('notice-'))modal('notice');
 });
-
-document.addEventListener('keydown',e=>{
- if(e.key==='Escape')root.querySelectorAll('.nibf-modal.is-open').forEach(closeModal);
 });
+root.querySelectorAll('[data-close]').forEach(x=>x.addEventListener('click',closeAll));
+root.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeAll()}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
 
-const search=root.querySelector('#nibfSearch'),none=root.querySelector('#nibfNone');
-search.addEventListener('input',()=>{
- const q=search.value.trim().toLowerCase();let count=0;
- root.querySelectorAll('.nibf-pub-card').forEach(c=>{
-   const ok=c.innerText.toLowerCase().includes(q);c.style.display=ok?'':'none';if(ok)count++;
- });
- none.style.display=count?'none':'block';
-});
-
-root.querySelectorAll('.nibf-filter').forEach(btn=>btn.addEventListener('click',()=>{
- root.querySelectorAll('.nibf-filter').forEach(x=>{x.className='btn ghost text-slate-700 border-slate-200 bg-white nibf-filter';});
- btn.className='btn primary nibf-filter';
- const f=btn.dataset.filter;
- root.querySelectorAll('[data-book-cat]').forEach(b=>b.style.display=(f==='all'||b.dataset.bookCat===f)?'':'none');
+ham.onclick=()=>{nav.classList.toggle('open');ham.setAttribute('aria-expanded',nav.classList.contains('open'))};
+root.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+const t=root.querySelector(a.getAttribute('href'));
+if(t){e.preventDefault();nav.classList.remove('open');closeAll();window.scrollTo({top:t.offsetTop-95,behavior:'smooth'})}
 }));
+
+/* Publisher popup */
+root.querySelectorAll('#pubs .pub').forEach(card=>card.addEventListener('click',()=>{
+root.querySelector('#pubTitle').textContent=card.dataset.name;
+modal('publisher');
+}));
+
+/* Book popup */
+const bookInfo={
+'book-1':['আলোকিত জীবনের পাঠ','লেখকের নাম এখানে'],
+'book-2':['জ্ঞান ও মনন','লেখকের নাম এখানে'],
+'book-3':['সত্যের অন্বেষণে','লেখকের নাম এখানে'],
+'book-4':['ইতিহাসের আয়নায়','লেখকের নাম এখানে']
+};
+root.querySelectorAll('.bookcard').forEach(card=>card.addEventListener('click',()=>{
+const v=bookInfo[card.dataset.open];root.querySelector('#bookTitle').textContent=v[0];root.querySelector('#bookAuthor').innerHTML='<b>লেখক:</b> '+v[1];modal('book');
+}));
+
+/* Notice popup */
+const notices={
+'notice-1':['ওয়েবসাইটের নতুন সংস্করণ','২০ আগস্ট','নতুন ফিচার ও আর্কাইভ যুক্ত করা হয়েছে।'],
+'notice-2':['চলমান বইমেলার সমাপনী','১৩ আগস্ট','মেলার শেষ দিনের সময়সূচী ও আপডেট দেখুন।'],
+'notice-3':['বইমেলা উদ্বোধন','০৬ আগস্ট','নতুন আয়োজনের আনুষ্ঠানিক যাত্রা শুরু।']
+};
+root.querySelectorAll('.nr[data-open]').forEach(n=>n.addEventListener('click',()=>{
+const v=notices[n.dataset.open];root.querySelector('#noticeTitle').textContent=v[0];root.querySelector('#noticeDate').textContent=v[1];root.querySelector('#noticeText').textContent=v[2];modal('notice');
+}));
+
+/* Publisher search */
+const s=root.querySelector('#search'),cards=[...root.querySelectorAll('#pubs [data-name]')],none=root.querySelector('#none');
+s.oninput=()=>{let q=s.value.toLowerCase().trim(),n=0;cards.forEach(c=>{let ok=c.dataset.name.toLowerCase().includes(q);c.style.display=ok?'':'none';if(ok)n++});none.classList.toggle('hidden',n>0)};
+
+/* Book filters */
+const fs=[...root.querySelectorAll('.f')],bs=[...root.querySelectorAll('#bookgrid [data-cat]')];
+fs.forEach(f=>f.onclick=()=>{
+fs.forEach(x=>x.className='btn ghost text-white border-sky-700 bg-sky-800 f');
+f.className='btn primary f';
+let v=f.dataset.f;bs.forEach(b=>b.style.display=v==='all'||b.dataset.cat===v?'':'none');
+});
+
+/* Countdown — targets the evening of 10 September 2026 as the upper end of the announced 9/10 date window */
+function countdown(){
+const target=new Date('2026-09-10T10:00:00+06:00').getTime(),now=Date.now(),diff=Math.max(0,target-now);
+const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),sec=Math.floor(diff%60000/1000);
+root.querySelector('#dd').textContent=String(d).padStart(2,'0');root.querySelector('#hh').textContent=String(h).padStart(2,'0');root.querySelector('#mm').textContent=String(m).padStart(2,'0');root.querySelector('#ss').textContent=String(sec).padStart(2,'0');
+}
+countdown();setInterval(countdown,1000);
 })();
 </script>
-</body></html>
+
+</div>
+</body>
+</html>
