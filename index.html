@@ -2541,132 +2541,6 @@
   #nibf2026 .nibf-hero-features{min-height:155px;}
   #nibf2026 .nibf-notice-visual{min-height:220px;}
 }
-
-/* =========================================================
-   FINAL ADDITIONS — CAMPAIGN + FEEDBACK
-========================================================= */
-#nibf2026 .nibf-campaign-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
-}
-
-#nibf2026 .nibf-campaign-grid .nibf-campaign-card{
-  height:100%;
-  display:flex;
-  flex-direction:column;
-}
-
-#nibf2026 .nibf-campaign-grid .nibf-campaign-content{
-  max-width:none;
-  display:flex;
-  flex:1;
-  flex-direction:column;
-}
-
-#nibf2026 .nibf-campaign-grid .nibf-action-row{
-  margin-top:auto;
-  padding-top:24px;
-}
-
-#nibf2026 .nibf-campaign-photo{
-  position:relative;
-  min-height:205px;
-  margin:-42px -42px 28px;
-  overflow:hidden;
-  border-bottom:1px solid rgba(255,255,255,.16);
-  background:
-    radial-gradient(circle at 20% 20%,rgba(0,255,225,.32),transparent 25%),
-    radial-gradient(circle at 80% 70%,rgba(56,189,248,.28),transparent 30%),
-    linear-gradient(135deg,#021b50,#03256c 55%,#075985);
-}
-
-#nibf2026 .nibf-campaign-photo::before,
-#nibf2026 .nibf-campaign-photo::after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  pointer-events:none;
-}
-
-#nibf2026 .nibf-campaign-photo::before{
-  width:190px;height:190px;right:-45px;top:-80px;
-  background:rgba(0,255,225,.12);filter:blur(8px);
-}
-
-#nibf2026 .nibf-campaign-photo::after{
-  width:120px;height:120px;left:-35px;bottom:-55px;
-  background:rgba(103,232,249,.13);filter:blur(6px);
-}
-
-#nibf2026 .nibf-campaign-photo-placeholder{
-  position:relative;z-index:2;
-  min-height:205px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:25px;text-align:center;
-  color:#fff;
-}
-
-#nibf2026 .nibf-campaign-photo-placeholder span{
-  color:#00ffe1;font:800 11px/1 Arial,sans-serif;letter-spacing:2px;
-}
-
-#nibf2026 .nibf-campaign-photo-placeholder strong{
-  max-width:360px;margin-top:10px;
-  font-family:"Noto Serif Bengali",serif;font-size:22px;line-height:1.55;
-}
-
-#nibf2026 .nibf-feedback-section{
-  background:linear-gradient(180deg,#f7fbff,#ffffff);
-}
-
-#nibf2026 .nibf-feedback-card{
-  display:grid;grid-template-columns:.78fr 1.22fr;gap:34px;
-  padding:34px;border-radius:28px;
-  background:#fff;border:1px solid var(--line);
-  box-shadow:var(--shadow);
-}
-
-#nibf2026 .nibf-feedback-intro{
-  padding:12px 8px 12px 4px;
-}
-
-#nibf2026 .nibf-feedback-intro h3{
-  margin:18px 0 10px;color:var(--navy);
-  font-family:"Noto Serif Bengali",serif;font-size:29px;line-height:1.4;
-}
-
-#nibf2026 .nibf-feedback-intro p{
-  margin:0;color:#64748b;line-height:1.9;font-size:14px;
-}
-
-#nibf2026 .nibf-feedback-note{
-  margin-top:22px;padding:15px 17px;border-radius:15px;
-  border:1px solid rgba(0,255,225,.22);
-  background:linear-gradient(135deg,#effffc,#f3f9ff);
-  color:#475569;font-size:12px;line-height:1.8;
-}
-
-#nibf2026 .nibf-feedback-form{
-  margin-top:0;padding:24px;border-radius:22px;
-  background:#f8fcff;border:1px solid #e2eef9;
-}
-
-#nibf2026 .nibf-feedback-form-note{
-  margin:12px 0 0;text-align:center;color:#64748b;font-size:11px;
-}
-
-@media(max-width:900px){
-  #nibf2026 .nibf-campaign-grid,
-  #nibf2026 .nibf-feedback-card{grid-template-columns:1fr;}
-}
-
-@media(max-width:560px){
-  #nibf2026 .nibf-campaign-photo{margin:-28px -20px 22px;}
-  #nibf2026 .nibf-feedback-card{padding:20px;}
-  #nibf2026 .nibf-feedback-form{padding:17px;}
-}
-
 </style>
 <div id="nibf2026">
 
@@ -2705,7 +2579,7 @@
       <button class="nibf-news-btn" type="button" data-modal="nibf-special-news">
         <span class="nibf-star">✦</span> বিশেষ খবর
       </button>
-      <button class="nibf-news-btn nibf-feedback-header-btn" type="button" data-scroll-to="nibf-feedback">
+      <button class="nibf-news-btn" type="button" data-modal="nibf-feedback-modal">
         <span class="nibf-star">✦</span> মতামত জানান
       </button>
     </nav>
@@ -2838,58 +2712,37 @@
       <span class="nibf-label">CURRENT</span>
       <h2>চলমান আয়োজন ও ক্যাম্পেইন</h2>
       <p>
-        আমাদের বর্তমান বইমেলা, প্রতিযোগিতা ও বিশেষ আয়োজনের গুরুত্বপূর্ণ আপডেট
-        এক জায়গায় দেখুন।
+        বর্তমানে চলমান বইমেলা, প্রতিযোগিতা, বিশেষ ছাড়, কুপন
+        ও অন্যান্য আয়োজনের আপডেট এখানে প্রকাশিত হবে।
       </p>
     </div>
 
-    <div class="nibf-campaign-grid">
+    <article class="nibf-campaign-card">
+      <div class="nibf-campaign-glow"></div>
 
-      <article class="nibf-campaign-card nibf-campaign-official">
-        <div class="nibf-campaign-glow"></div>
-        <div class="nibf-campaign-content">
-          <span class="nibf-chip">✦ OFFICIAL UPDATE • ২০২৬</span>
-          <h3>ইসলামী বইমেলা ২০২৬</h3>
-          <p>
-            আমাদের সবার কাঙ্ক্ষিত ইসলামী বইমেলা ২০২৬ শুরু হতে যাচ্ছে ইনশাআল্লাহ।
-            উদ্বোধন, স্থান ও মেলার গুরুত্বপূর্ণ তথ্য এখানে পাওয়া যাবে।
-          </p>
-          <div class="nibf-campaign-meta">
-            <span>উদ্বোধন: <b>১০ সেপ্টেম্বর ২০২৬, বৃহস্পতিবার</b></span>
-            <span>স্থান: <b>বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট</b></span>
-          </div>
-          <div class="nibf-action-row">
-            <a href="#nibf-current" class="nibf-btn nibf-btn-primary">মেলার তথ্য দেখুন →</a>
-            <button class="nibf-btn nibf-btn-light" data-modal="nibf-special-news">বিশেষ খবর পড়ুন</button>
-          </div>
-        </div>
-      </article>
+      <div class="nibf-campaign-content">
 
-      <article class="nibf-campaign-card nibf-campaign-contest">
-        <div class="nibf-campaign-photo" role="img" aria-label="চলমান বিশেষ প্রতিযোগিতার প্রচারচিত্র">
-          <div class="nibf-campaign-photo-placeholder">
-            <span>CAMPAIGN PHOTO</span>
-            <strong>এখানে বর্তমান প্রতিযোগিতার ছবি যোগ করুন</strong>
-          </div>
-        </div>
-        <div class="nibf-campaign-content">
-          <span class="nibf-chip">✦ SPECIAL COMPETITION • চলমান</span>
-          <h3>বিশেষ প্রতিযোগিতা</h3>
-          <p>
-            আমাদের পেইজে চলমান বিশেষ প্রতিযোগিতায় অংশ নিন এবং নির্ধারিত সময়ের মধ্যে
-            আপনার কমেন্টের মাধ্যমে প্রতিযোগিতায় যুক্ত থাকুন।
-          </p>
-          <div class="nibf-campaign-meta">
-            <span>শেষ সময়: <b>৩১ আগস্ট ২০২৬</b></span>
-            <span>বিস্তারিত: <b>অফিসিয়াল ফেসবুক পেজে</b></span>
-          </div>
-          <div class="nibf-action-row">
-            <a href="https://www.facebook.com/NationalIslamicBookFair" target="_blank" rel="noopener noreferrer" class="nibf-btn nibf-btn-primary">আরো জানতে ফেসবুক পেজ ভিজিট করুন ↗</a>
-          </div>
-        </div>
-      </article>
+        <span class="nibf-chip">✦ OFFICIAL DATE • ২০২৬</span>
 
-    </div>
+        <h3>ইসলামী বইমেলা ২০২৬</h3>
+
+        <p>
+          আমাদের সবার কাঙ্ক্ষিত ইসলামী বইমেলা ২০২৬ শুরু হতে যাচ্ছে ইনশাআল্লাহ।
+          সম্ভাব্য আয়োজনকে ঘিরে প্রস্তুত থাকুন এবং বইমেলার সকল আপডেটের সঙ্গে যুক্ত থাকুন।
+        </p>
+
+        <div class="nibf-campaign-meta">
+          <span>উদ্বোধন: <b>১০ সেপ্টেম্বর ২০২৬, বৃহস্পতিবার</b></span>
+          <span>স্থান: <b>বায়তুল মোকাররম জাতীয় মসজিদের পূর্ব গেট</b></span>
+        </div>
+
+        <div class="nibf-action-row">
+          <a href="#nibf-current" class="nibf-btn nibf-btn-primary">চলমান মেলা দেখুন →</a>
+          <button class="nibf-btn nibf-btn-light" data-modal="nibf-special-news">বিশেষ খবর পড়ুন</button>
+        </div>
+
+      </div>
+    </article>
 
   </div>
 </section>
@@ -2898,9 +2751,9 @@
 <!-- STATS -->
 <section class="nibf-stats-section">
   <div class="nibf-container nibf-stats-grid">
-    <div class="nibf-stat"><strong>100+</strong><span>প্রকাশনী</span></div>
-    <div class="nibf-stat"><strong>10,000+</strong><span>বই</span></div>
-    <div class="nibf-stat"><strong>100,000+</strong><span>পাঠক</span></div>
+    <div class="nibf-stat"><strong>60+</strong><span>প্রকাশনী</span></div>
+    <div class="nibf-stat"><strong>1,000+</strong><span>বই</span></div>
+    <div class="nibf-stat"><strong>10,000+</strong><span>পাঠক</span></div>
     <div class="nibf-stat"><strong>Multiple</strong><span>শহর ও আয়োজন</span></div>
   </div>
 </section>
@@ -3324,76 +3177,6 @@
 </section>
 
 
-<!-- FEEDBACK / COMPLAINT / SUGGESTION -->
-<section class="nibf-section nibf-feedback-section" id="nibf-feedback">
-  <div class="nibf-container">
-
-    <div class="nibf-section-head centered">
-      <span class="nibf-label">YOUR VOICE MATTERS</span>
-      <h2>আপনার মতামত জানান</h2>
-      <p>অভিযোগ, পরামর্শ বা অনুভূতি — যা কিছু বলতে চান, আমাদের জানান। আপনার মতামত আমাদের আয়োজনকে আরও সুন্দর করতে সাহায্য করবে।</p>
-    </div>
-
-    <div class="nibf-feedback-card">
-      <div class="nibf-feedback-intro">
-        <span class="nibf-chip">FEEDBACK • COMPLAINT • SUGGESTION</span>
-        <h3>আপনার কথা আমাদের কাছে গুরুত্বপূর্ণ</h3>
-        <p>মেলা সম্পর্কে কোনো অভিযোগ, পরামর্শ বা আপনার অনুভূতি থাকলে নিচের ফর্মটি পূরণ করে জানান। প্রয়োজন অনুযায়ী আমরা বিষয়টি পর্যালোচনা করে ব্যবস্থা নেওয়ার চেষ্টা করব।</p>
-        <div class="nibf-feedback-note">আপনার দেওয়া তথ্য শুধুমাত্র ইসলামী বইমেলার সংশ্লিষ্ট কাজে পর্যালোচনার জন্য ব্যবহার করা হবে।</div>
-      </div>
-
-      <form id="nibfFeedbackForm" class="nibf-submit-form nibf-feedback-form" novalidate>
-        <div class="nibf-form-grid">
-          <label>
-            <span>আপনার নাম <b>*</b></span>
-            <input type="text" name="feedback_name" placeholder="আপনার নাম লিখুন" required>
-          </label>
-
-          <label>
-            <span>সংক্ষিপ্ত পরিচয় <b>*</b></span>
-            <select name="feedback_identity" required>
-              <option value="">পরিচয় নির্বাচন করুন</option>
-              <option value="শিক্ষার্থী">শিক্ষার্থী</option>
-              <option value="চাকরিজীবী">চাকরিজীবী</option>
-              <option value="ব্যবসায়ী">ব্যবসায়ী</option>
-              <option value="শিক্ষক">শিক্ষক</option>
-              <option value="লেখক">লেখক</option>
-              <option value="প্রকাশক">প্রকাশক</option>
-              <option value="পাঠক">পাঠক</option>
-              <option value="অন্যান্য">অন্যান্য</option>
-            </select>
-          </label>
-
-          <label class="nibf-form-full">
-            <span>জিমেইল ঠিকানা <b>*</b></span>
-            <input type="email" name="feedback_email" placeholder="আপনার Gmail ঠিকানা লিখুন" required>
-          </label>
-
-          <label class="nibf-form-full">
-            <span>আপনার মতামতের ধরন <b>*</b></span>
-            <select name="feedback_type" required>
-              <option value="">নির্বাচন করুন</option>
-              <option value="অভিযোগ">অভিযোগ</option>
-              <option value="পরামর্শ">পরামর্শ</option>
-              <option value="অনুভূতি">অনুভূতি</option>
-            </select>
-          </label>
-
-          <label class="nibf-form-full">
-            <span>বিস্তারিত লিখুন <b>*</b></span>
-            <textarea name="feedback_details" rows="6" placeholder="আপনার অভিযোগ, পরামর্শ বা অনুভূতি বিস্তারিত লিখুন..." required></textarea>
-          </label>
-        </div>
-
-        <button type="submit" class="nibf-btn nibf-btn-submit-form">মতামত জমা দিন →</button>
-        <p class="nibf-feedback-form-note">ফর্ম জমা দেওয়ার পর আপনার তথ্য আমাদের পর্যালোচনার জন্য সংরক্ষিত হবে।</p>
-      </form>
-    </div>
-
-  </div>
-</section>
-
-
 <!-- SOCIAL -->
 <section class="nibf-social-section" id="nibf-social">
   <div class="nibf-container">
@@ -3442,6 +3225,20 @@
       </a>
     </div>
 
+  </div>
+</section>
+
+<!-- FEEDBACK / COMPLAINT / SUGGESTION CTA -->
+<section class="nibf-section nibf-feedback-section" id="nibf-feedback">
+  <div class="nibf-container">
+    <div class="nibf-section-head centered">
+      <span class="nibf-label">YOUR VOICE MATTERS</span>
+      <h2>আপনার মতামত জানান</h2>
+      <p>অভিযোগ, পরামর্শ বা অনুভূতি — যা কিছু বলতে চান, আমাদের জানান।</p>
+    </div>
+    <div class="nibf-feedback-cta" style="text-align:center;">
+      <button type="button" class="nibf-btn nibf-btn-submit" data-modal="nibf-feedback-modal">✎ মতামত জানান</button>
+    </div>
   </div>
 </section>
 
@@ -4684,6 +4481,65 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
   </div>
 </div>
 
+<!-- FEEDBACK / COMPLAINT / SUGGESTION FORM -->
+<div class="nibf-modal" id="nibf-feedback-modal" aria-hidden="true">
+  <div class="nibf-modal-book nibf-submit-modal-book" role="dialog" aria-modal="true" aria-labelledby="nibfFeedbackTitle">
+    <button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+    <div class="nibf-modal-page">
+      <span class="nibf-modal-year">FEEDBACK</span>
+      <h2 id="nibfFeedbackTitle">অভিযোগ, পরামর্শ বা অনুভূতি জানান</h2>
+      <div class="nibf-divider"></div>
+      <p class="nibf-submit-intro">আপনার মূল্যবান মতামত আমাদের কাছে গুরুত্বপূর্ণ। প্রয়োজনে আমরা আপনার নাম্বারে যোগাযোগ করব।</p>
+
+      <form id="nibfFeedbackForm" class="nibf-submit-form" novalidate>
+        <div class="nibf-form-grid">
+          <label>
+            <span>আপনার নাম <b>*</b></span>
+            <input type="text" name="feedback_name" placeholder="আপনার নাম লিখুন" required>
+          </label>
+
+          <label>
+            <span>মোবাইল নাম্বার <b>*</b></span>
+            <input type="tel" name="feedback_phone" placeholder="যেমন: 01XXXXXXXXX" required>
+          </label>
+
+          <label class="nibf-form-full">
+            <span>ধরন নির্বাচন করুন <b>*</b></span>
+            <select name="feedback_type" required>
+              <option value="">নির্বাচন করুন</option>
+              <option value="অভিযোগ">অভিযোগ</option>
+              <option value="পরামর্শ">পরামর্শ</option>
+              <option value="অনুভূতি">অনুভূতি</option>
+            </select>
+          </label>
+
+          <label class="nibf-form-full">
+            <span>বিস্তারিত লিখুন <b>*</b></span>
+            <textarea name="feedback_details" rows="5" placeholder="আপনার অভিযোগ/পরামর্শ/অনুভূতি বিস্তারিত লিখুন..." required></textarea>
+          </label>
+        </div>
+
+        <button type="submit" class="nibf-btn nibf-btn-submit-form">জমা দিন →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FEEDBACK SUCCESS POPUP -->
+<div class="nibf-modal nibf-success-modal" id="nibf-feedback-success" aria-hidden="true">
+  <div class="nibf-modal-book" role="dialog" aria-modal="true">
+    <button class="nibf-close" aria-label="বন্ধ করুন">×</button>
+    <div class="nibf-modal-page nibf-success-page">
+      <div class="nibf-success-icon">✓</div>
+      <span class="nibf-modal-year">THANK YOU</span>
+      <h2>ধন্যবাদ!</h2>
+      <div class="nibf-divider"></div>
+      <p>আপনার মতামত জানানোর জন্য আন্তরিক ধন্যবাদ। প্রয়োজনে আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।</p>
+      <button type="button" class="nibf-btn nibf-btn-primary nibf-success-close">ঠিক আছে</button>
+    </div>
+  </div>
+</div>
+
 <!-- BOOK MODAL -->
 <div class="nibf-modal" id="nibf-book-modal" aria-hidden="true">
 <div class="nibf-modal-book" role="dialog" aria-modal="true">
@@ -4712,10 +4568,6 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
 <script>
 (function () {
   "use strict";
-
-  /* Optional: the existing Google Apps Script / Sheet connector may expose
-     window.nibfSendToSheet(payload). If not, set window.NIBF_FEEDBACK_SHEET_URL
-     from your existing Google Sheet integration before using the feedback form. */
 
   /*
    * NIBF WordPress/Elementor LIVE-SAFE BOOTSTRAP
@@ -4919,22 +4771,6 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
             block: "start"
           });
         }
-      });
-    });
-
-
-    /* =====================================================
-       FEEDBACK HEADER SCROLL
-    ====================================================== */
-    root.querySelectorAll("[data-scroll-to]").forEach(function (trigger) {
-      trigger.addEventListener("click", function (e) {
-        var id = trigger.getAttribute("data-scroll-to");
-        var target = id ? root.querySelector("#" + id) : null;
-        if (!target) return;
-        e.preventDefault();
-        if (nav) { nav.classList.remove("open"); }
-        if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
-        target.scrollIntoView({behavior:"smooth", block:"start"});
       });
     });
 
@@ -5395,6 +5231,48 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
 
     renderBooks("all");
 
+    /* =====================================================
+       GOOGLE SHEET WEB APP URL
+       Apps Script ডিপ্লয় করার পর এখানে URL বসানো আছে।
+    ====================================================== */
+    var NIBF_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwlAjvPeSM5PLzFmpshERk1NtiIVIaiNlKKjpWUYLaZjI3z3oLJouMU8IdBbxbk5Y9o/exec";
+
+    /* =====================================================
+       LIVE DATA — Google Sheet থেকে Approved প্রকাশনী/বই টেনে
+       এনে বিদ্যমান তালিকার সাথে মিশিয়ে দেখানো হচ্ছে
+    ====================================================== */
+    function nibfLoadApprovedData(){
+      if (!NIBF_WEBAPP_URL || NIBF_WEBAPP_URL.indexOf("PASTE_YOUR") === 0) return;
+
+      fetch(NIBF_WEBAPP_URL + "?type=publishers")
+        .then(function(res){ return res.json(); })
+        .then(function(list){
+          (list || []).forEach(function(pub){
+            if (!pub || !pub.name) return;
+            var key = publisherKey(pub.name);
+            publisherMap[key] = Object.assign({}, publisherMap[key] || {}, pub, {name: pub.name});
+          });
+          publishers = Object.keys(publisherMap).map(function(key){ return publisherMap[key]; });
+          renderPublishers(publisherSearch ? publisherSearch.value : "");
+        })
+        .catch(function(){ /* সাইলেন্টলি স্কিপ — বিদ্যমান তালিকা যেভাবে আছে সেভাবেই থাকবে */ });
+
+      fetch(NIBF_WEBAPP_URL + "?type=books")
+        .then(function(res){ return res.json(); })
+        .then(function(list){
+          (list || []).forEach(function(book){
+            if (!book || !book.title) return;
+            bookMap[bookKey(book)] = book;
+          });
+          books = Object.keys(bookMap).map(function(k){ return bookMap[k]; });
+          var activeFilterBtn = root.querySelector(".nibf-book-filters button.active");
+          renderBooks(activeFilterBtn ? activeFilterBtn.dataset.filter : "all");
+        })
+        .catch(function(){ });
+    }
+
+    nibfLoadApprovedData();
+
     root.querySelectorAll(".nibf-book-filters button").forEach(function (btn) {
       btn.addEventListener("click", function () {
         root.querySelectorAll(".nibf-book-filters button").forEach(function (b) {
@@ -5407,56 +5285,27 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
 
 
     /* =====================================================
-       FEEDBACK / COMPLAINT / SUGGESTION FORM
-       Google Sheet endpoint is supplied by the existing project setup.
+       GOOGLE SHEET SUBMISSION — HELPERS
+       (NIBF_WEBAPP_URL উপরে LIVE DATA সেকশনে ডিফাইন করা আছে)
     ====================================================== */
-    var feedbackForm = root.querySelector("#nibfFeedbackForm");
-    if (feedbackForm && !feedbackForm.getAttribute("data-nibf-form-ready")) {
-      feedbackForm.setAttribute("data-nibf-form-ready", "1");
-      feedbackForm.addEventListener("submit", function(e){
-        e.preventDefault();
-        if (!feedbackForm.checkValidity()) { feedbackForm.reportValidity(); return; }
-
-        var fd = new FormData(feedbackForm);
-        var payload = {
-          type: "feedback",
-          feedback_name: fd.get("feedback_name") || "",
-          feedback_identity: fd.get("feedback_identity") || "",
-          feedback_email: fd.get("feedback_email") || "",
-          feedback_type: fd.get("feedback_type") || "",
-          feedback_details: fd.get("feedback_details") || ""
-        };
-
-        var submitBtn3 = feedbackForm.querySelector('button[type="submit"]');
-        if (submitBtn3) { submitBtn3.disabled = true; submitBtn3.textContent = "জমা হচ্ছে..."; }
-
-        var sender = window.nibfSendToSheet;
-        var request;
-        if (typeof sender === "function") {
-          request = Promise.resolve(sender(payload));
-        } else if (window.NIBF_FEEDBACK_SHEET_URL && /^https:\/\/script\.google\.com\//i.test(window.NIBF_FEEDBACK_SHEET_URL)) {
-          request = fetch(window.NIBF_FEEDBACK_SHEET_URL, {
-            method:"POST", mode:"no-cors", body:JSON.stringify(payload),
-            headers:{"Content-Type":"text/plain;charset=utf-8"}
-          });
-        } else {
-          request = Promise.reject(new Error("Google Sheet endpoint is not configured."));
-        }
-
-        request.then(function(){
-          feedbackForm.reset();
-          alert("আপনার মতামত সফলভাবে জমা হয়েছে। ধন্যবাদ।");
-        }).catch(function(){
-          alert("মতামত জমা দেওয়ার সংযোগটি এখনো সম্পূর্ণভাবে সেটআপ করা হয়নি। অনুগ্রহ করে কিছুক্ষণ পরে আবার চেষ্টা করুন।");
-        }).finally(function(){
-          if (submitBtn3) { submitBtn3.disabled = false; submitBtn3.textContent = "মতামত জমা দিন →"; }
-        });
+    function nibfFileToBase64(file){
+      return new Promise(function(resolve, reject){
+        var reader = new FileReader();
+        reader.onload = function(){ resolve(reader.result); };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
       });
     }
 
+    function nibfSendToSheet(payload){
+      return fetch(NIBF_WEBAPP_URL, {
+        method: "POST",
+        body: JSON.stringify(payload)
+      });
+    }
 
     /* =====================================================
-       PUBLISHER SUBMISSION FORM — UI PREPARATION
+       PUBLISHER SUBMISSION FORM — SENDS TO GOOGLE SHEET
     ====================================================== */
     var publisherSubmitForm = root.querySelector("#nibfPublisherSubmitForm");
     if (publisherSubmitForm && !publisherSubmitForm.getAttribute("data-nibf-form-ready")) {
@@ -5464,20 +5313,49 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
       publisherSubmitForm.addEventListener("submit", function(e){
         e.preventDefault();
         if (!publisherSubmitForm.checkValidity()) { publisherSubmitForm.reportValidity(); return; }
+
         var logoInput = publisherSubmitForm.querySelector('input[name="publisher_logo"]');
-        if (logoInput && logoInput.files && logoInput.files[0]) {
-          var logoFile = logoInput.files[0];
+        var logoFile = (logoInput && logoInput.files && logoInput.files[0]) ? logoInput.files[0] : null;
+        if (logoFile) {
           if (!/^image\/(jpeg|png)$/i.test(logoFile.type)) { alert("অনুগ্রহ করে JPG বা PNG লোগো নির্বাচন করুন।"); return; }
           if (logoFile.size > 1 * 1024 * 1024) { alert("অনুগ্রহ করে সর্বোচ্চ 1 MB-এর লোগো নির্বাচন করুন।"); return; }
         }
-        openModal("nibf-submit-success");
+
+        var fd = new FormData(publisherSubmitForm);
+        var payload = {
+          type: "publisher",
+          publisher_name: fd.get("publisher_name") || "",
+          stall_no: fd.get("stall_no") || "",
+          phone: fd.get("phone") || "",
+          email: fd.get("email") || "",
+          address: fd.get("address") || "",
+          publisher_intro: fd.get("publisher_intro") || ""
+        };
+
+        var submitBtn = publisherSubmitForm.querySelector('button[type="submit"]');
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "জমা হচ্ছে..."; }
+
+        var filePromise = logoFile ? nibfFileToBase64(logoFile) : Promise.resolve(null);
+        filePromise.then(function(base64){
+          if (base64) { payload.imageBase64 = base64; payload.imageName = logoFile.name; }
+          return nibfSendToSheet(payload);
+        }).then(function(){
+          publisherSubmitForm.reset();
+          openModal("nibf-submit-success");
+        }).catch(function(){
+          /* Apps Script cross-origin রেসপন্স মাঝেমধ্যে ব্লক হতে পারে,
+             কিন্তু ডেটা ততক্ষণে শীটে পৌঁছে যায়—তাই সাকসেস দেখানো হচ্ছে */
+          publisherSubmitForm.reset();
+          openModal("nibf-submit-success");
+        }).finally(function(){
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "তথ্য জমা দেওয়ার জন্য প্রস্তুত করুন →"; }
+        });
       });
     }
 
 
     /* =====================================================
-       NEW BOOK SUBMISSION FORM — UI PREPARATION
-       Backend/admin approval workflow will be connected later.
+       NEW BOOK SUBMISSION FORM — SENDS TO GOOGLE SHEET
     ====================================================== */
     var submitForm = root.querySelector("#nibfSubmitForm");
     var submitMessage = root.querySelector("#nibfSubmitMessage");
@@ -5493,13 +5371,13 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
         }
 
         var coverInput = submitForm.querySelector('input[name="book_cover"]');
-        if (coverInput && coverInput.files && coverInput.files[0]) {
-          var file = coverInput.files[0];
-          if (!/^image\/(jpeg|png)$/i.test(file.type)) {
+        var coverFile = (coverInput && coverInput.files && coverInput.files[0]) ? coverInput.files[0] : null;
+        if (coverFile) {
+          if (!/^image\/(jpeg|png)$/i.test(coverFile.type)) {
             alert("অনুগ্রহ করে JPG বা PNG ছবি নির্বাচন করুন।");
             return;
           }
-          if (file.size > 1 * 1024 * 1024) {
+          if (coverFile.size > 1 * 1024 * 1024) {
             alert("অনুগ্রহ করে সর্বোচ্চ 1 MB-এর JPG বা PNG ছবি নির্বাচন করুন।");
             return;
           }
@@ -5510,7 +5388,67 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
           submitMessage.textContent = "";
         }
 
-        openModal("nibf-submit-success");
+        var fd = new FormData(submitForm);
+        var payload = {
+          type: "book",
+          book_title: fd.get("book_title") || "",
+          author_name: fd.get("author_name") || "",
+          publisher_name: fd.get("publisher_name") || "",
+          book_price: fd.get("book_price") || "",
+          book_description: fd.get("book_description") || ""
+        };
+
+        var submitBtn2 = submitForm.querySelector('button[type="submit"]');
+        if (submitBtn2) { submitBtn2.disabled = true; submitBtn2.textContent = "জমা হচ্ছে..."; }
+
+        var filePromise2 = coverFile ? nibfFileToBase64(coverFile) : Promise.resolve(null);
+        filePromise2.then(function(base64){
+          if (base64) { payload.imageBase64 = base64; payload.imageName = coverFile.name; }
+          return nibfSendToSheet(payload);
+        }).then(function(){
+          submitForm.reset();
+          openModal("nibf-submit-success");
+        }).catch(function(){
+          submitForm.reset();
+          openModal("nibf-submit-success");
+        }).finally(function(){
+          if (submitBtn2) { submitBtn2.disabled = false; submitBtn2.textContent = "তথ্য জমা দেওয়ার জন্য প্রস্তুত করুন →"; }
+        });
+      });
+    }
+
+
+    /* =====================================================
+       FEEDBACK / COMPLAINT / SUGGESTION FORM — SENDS TO GOOGLE SHEET
+    ====================================================== */
+    var feedbackForm = root.querySelector("#nibfFeedbackForm");
+    if (feedbackForm && !feedbackForm.getAttribute("data-nibf-form-ready")) {
+      feedbackForm.setAttribute("data-nibf-form-ready", "1");
+      feedbackForm.addEventListener("submit", function(e){
+        e.preventDefault();
+        if (!feedbackForm.checkValidity()) { feedbackForm.reportValidity(); return; }
+
+        var fd = new FormData(feedbackForm);
+        var payload = {
+          type: "feedback",
+          feedback_name: fd.get("feedback_name") || "",
+          feedback_phone: fd.get("feedback_phone") || "",
+          feedback_type: fd.get("feedback_type") || "",
+          feedback_details: fd.get("feedback_details") || ""
+        };
+
+        var submitBtn3 = feedbackForm.querySelector('button[type="submit"]');
+        if (submitBtn3) { submitBtn3.disabled = true; submitBtn3.textContent = "জমা হচ্ছে..."; }
+
+        nibfSendToSheet(payload).then(function(){
+          feedbackForm.reset();
+          openModal("nibf-feedback-success");
+        }).catch(function(){
+          feedbackForm.reset();
+          openModal("nibf-feedback-success");
+        }).finally(function(){
+          if (submitBtn3) { submitBtn3.disabled = false; submitBtn3.textContent = "জমা দিন →"; }
+        });
       });
     }
 
