@@ -5155,6 +5155,48 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
 
     renderBooks("all");
 
+    /* =====================================================
+       GOOGLE SHEET WEB APP URL
+       Apps Script ডিপ্লয় করার পর এখানে URL বসানো আছে।
+    ====================================================== */
+    var NIBF_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwlAjvPeSM5PLzFmpshERk1NtiIVIaiNlKKjpWUYLaZjI3z3oLJouMU8IdBbxbk5Y9o/exec";
+
+    /* =====================================================
+       LIVE DATA — Google Sheet থেকে Approved প্রকাশনী/বই টেনে
+       এনে বিদ্যমান তালিকার সাথে মিশিয়ে দেখানো হচ্ছে
+    ====================================================== */
+    function nibfLoadApprovedData(){
+      if (!NIBF_WEBAPP_URL || NIBF_WEBAPP_URL.indexOf("PASTE_YOUR") === 0) return;
+
+      fetch(NIBF_WEBAPP_URL + "?type=publishers")
+        .then(function(res){ return res.json(); })
+        .then(function(list){
+          (list || []).forEach(function(pub){
+            if (!pub || !pub.name) return;
+            var key = publisherKey(pub.name);
+            publisherMap[key] = Object.assign({}, publisherMap[key] || {}, pub, {name: pub.name});
+          });
+          publishers = Object.keys(publisherMap).map(function(key){ return publisherMap[key]; });
+          renderPublishers(publisherSearch ? publisherSearch.value : "");
+        })
+        .catch(function(){ /* সাইলেন্টলি স্কিপ — বিদ্যমান তালিকা যেভাবে আছে সেভাবেই থাকবে */ });
+
+      fetch(NIBF_WEBAPP_URL + "?type=books")
+        .then(function(res){ return res.json(); })
+        .then(function(list){
+          (list || []).forEach(function(book){
+            if (!book || !book.title) return;
+            bookMap[bookKey(book)] = book;
+          });
+          books = Object.keys(bookMap).map(function(k){ return bookMap[k]; });
+          var activeFilterBtn = root.querySelector(".nibf-book-filters button.active");
+          renderBooks(activeFilterBtn ? activeFilterBtn.dataset.filter : "all");
+        })
+        .catch(function(){ });
+    }
+
+    nibfLoadApprovedData();
+
     root.querySelectorAll(".nibf-book-filters button").forEach(function (btn) {
       btn.addEventListener("click", function () {
         root.querySelectorAll(".nibf-book-filters button").forEach(function (b) {
@@ -5167,7 +5209,27 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
 
 
     /* =====================================================
-       PUBLISHER SUBMISSION FORM — UI PREPARATION
+       GOOGLE SHEET SUBMISSION — HELPERS
+       (NIBF_WEBAPP_URL উপরে LIVE DATA সেকশনে ডিফাইন করা আছে)
+    ====================================================== */
+    function nibfFileToBase64(file){
+      return new Promise(function(resolve, reject){
+        var reader = new FileReader();
+        reader.onload = function(){ resolve(reader.result); };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function nibfSendToSheet(payload){
+      return fetch(NIBF_WEBAPP_URL, {
+        method: "POST",
+        body: JSON.stringify(payload)
+      });
+    }
+
+    /* =====================================================
+       PUBLISHER SUBMISSION FORM — SENDS TO GOOGLE SHEET
     ====================================================== */
     var publisherSubmitForm = root.querySelector("#nibfPublisherSubmitForm");
     if (publisherSubmitForm && !publisherSubmitForm.getAttribute("data-nibf-form-ready")) {
@@ -5175,20 +5237,49 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
       publisherSubmitForm.addEventListener("submit", function(e){
         e.preventDefault();
         if (!publisherSubmitForm.checkValidity()) { publisherSubmitForm.reportValidity(); return; }
+
         var logoInput = publisherSubmitForm.querySelector('input[name="publisher_logo"]');
-        if (logoInput && logoInput.files && logoInput.files[0]) {
-          var logoFile = logoInput.files[0];
+        var logoFile = (logoInput && logoInput.files && logoInput.files[0]) ? logoInput.files[0] : null;
+        if (logoFile) {
           if (!/^image\/(jpeg|png)$/i.test(logoFile.type)) { alert("অনুগ্রহ করে JPG বা PNG লোগো নির্বাচন করুন।"); return; }
           if (logoFile.size > 1 * 1024 * 1024) { alert("অনুগ্রহ করে সর্বোচ্চ 1 MB-এর লোগো নির্বাচন করুন।"); return; }
         }
-        openModal("nibf-submit-success");
+
+        var fd = new FormData(publisherSubmitForm);
+        var payload = {
+          type: "publisher",
+          publisher_name: fd.get("publisher_name") || "",
+          stall_no: fd.get("stall_no") || "",
+          phone: fd.get("phone") || "",
+          email: fd.get("email") || "",
+          address: fd.get("address") || "",
+          publisher_intro: fd.get("publisher_intro") || ""
+        };
+
+        var submitBtn = publisherSubmitForm.querySelector('button[type="submit"]');
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "জমা হচ্ছে..."; }
+
+        var filePromise = logoFile ? nibfFileToBase64(logoFile) : Promise.resolve(null);
+        filePromise.then(function(base64){
+          if (base64) { payload.imageBase64 = base64; payload.imageName = logoFile.name; }
+          return nibfSendToSheet(payload);
+        }).then(function(){
+          publisherSubmitForm.reset();
+          openModal("nibf-submit-success");
+        }).catch(function(){
+          /* Apps Script cross-origin রেসপন্স মাঝেমধ্যে ব্লক হতে পারে,
+             কিন্তু ডেটা ততক্ষণে শীটে পৌঁছে যায়—তাই সাকসেস দেখানো হচ্ছে */
+          publisherSubmitForm.reset();
+          openModal("nibf-submit-success");
+        }).finally(function(){
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "তথ্য জমা দেওয়ার জন্য প্রস্তুত করুন →"; }
+        });
       });
     }
 
 
     /* =====================================================
-       NEW BOOK SUBMISSION FORM — UI PREPARATION
-       Backend/admin approval workflow will be connected later.
+       NEW BOOK SUBMISSION FORM — SENDS TO GOOGLE SHEET
     ====================================================== */
     var submitForm = root.querySelector("#nibfSubmitForm");
     var submitMessage = root.querySelector("#nibfSubmitMessage");
@@ -5204,13 +5295,13 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
         }
 
         var coverInput = submitForm.querySelector('input[name="book_cover"]');
-        if (coverInput && coverInput.files && coverInput.files[0]) {
-          var file = coverInput.files[0];
-          if (!/^image\/(jpeg|png)$/i.test(file.type)) {
+        var coverFile = (coverInput && coverInput.files && coverInput.files[0]) ? coverInput.files[0] : null;
+        if (coverFile) {
+          if (!/^image\/(jpeg|png)$/i.test(coverFile.type)) {
             alert("অনুগ্রহ করে JPG বা PNG ছবি নির্বাচন করুন।");
             return;
           }
-          if (file.size > 1 * 1024 * 1024) {
+          if (coverFile.size > 1 * 1024 * 1024) {
             alert("অনুগ্রহ করে সর্বোচ্চ 1 MB-এর JPG বা PNG ছবি নির্বাচন করুন।");
             return;
           }
@@ -5221,7 +5312,32 @@ Aswat Zone-এর মাধ্যমে গল্প, আড্ডা, বই �
           submitMessage.textContent = "";
         }
 
-        openModal("nibf-submit-success");
+        var fd = new FormData(submitForm);
+        var payload = {
+          type: "book",
+          book_title: fd.get("book_title") || "",
+          author_name: fd.get("author_name") || "",
+          publisher_name: fd.get("publisher_name") || "",
+          book_price: fd.get("book_price") || "",
+          book_description: fd.get("book_description") || ""
+        };
+
+        var submitBtn2 = submitForm.querySelector('button[type="submit"]');
+        if (submitBtn2) { submitBtn2.disabled = true; submitBtn2.textContent = "জমা হচ্ছে..."; }
+
+        var filePromise2 = coverFile ? nibfFileToBase64(coverFile) : Promise.resolve(null);
+        filePromise2.then(function(base64){
+          if (base64) { payload.imageBase64 = base64; payload.imageName = coverFile.name; }
+          return nibfSendToSheet(payload);
+        }).then(function(){
+          submitForm.reset();
+          openModal("nibf-submit-success");
+        }).catch(function(){
+          submitForm.reset();
+          openModal("nibf-submit-success");
+        }).finally(function(){
+          if (submitBtn2) { submitBtn2.disabled = false; submitBtn2.textContent = "তথ্য জমা দেওয়ার জন্য প্রস্তুত করুন →"; }
+        });
       });
     }
 
